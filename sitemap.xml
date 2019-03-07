@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+
+
+  <!--  created with free sitemap generation system www.sitemapxml.jp  -->
+
+  <url>
+    <loc>http://amazondeals.github.io/amazonDealsJP/</loc>
+    <priority>1.0</priority>
+    <lastmod>2019-03-07T17:00:32+09:00</lastmod>
+    <changefreq>daily</changefreq>
+  </url>
+
+  <url>
+    <loc>http://amazondeals.github.io/amazonDealsJP/index.html</loc>
+    <priority>0.8</priority>
+    <changefreq>daily</changefreq>
+  </url>
+
+  <url>
+    <loc>http://amazondeals.github.io/amazonDealsJP/DIYGardening.html</loc>
+    <priority>0.8</priority>
+    <changefreq>daily</changefreq>
+  </url>
+
+  <url>
+    <loc>http://amazondeals.github.io/amazonDealsJP/Camera.html</loc>
+    <priority>0.8</priority>
+    <changefreq>daily</changefreq>
+  </url>
+
+  <url>
+    <loc>http://amazondeals.github.io/amazonDealsJP/FoodDrink.html</loc>
+    <priority>0.8</priority>
+    <changefreq>daily</changefreq>
+  </url>
+
+  <url>
+    <loc>http://amazondeals.github.io/amazonDealsJP/Beauty.html</loc>
+    <priority>0.8</priority>
+    <changefreq>daily</changefreq>
+  </url>
+
+  <url>
+    <loc>http://amazondeals.github.io/amazonDealsJP/Shoes.html</loc>
+    <priority>0.8</priority>
+    <changefreq>daily</changefreq>
+  </url>
+
+  <url>
+    <loc>http://amazondeals.github.io/amazonDealsJP/CarBike.html</loc>
+    <priority>0.8</priority>
+    <changefreq>daily</changefreq>
+  </url>
+
+  <url>
+    <loc>http://amazondeals.github.io/amazonDealsJP/Furniture.html</loc>
+    <priority>0.8</priority>
+    <changefreq>daily</changefreq>
+  </url>
+
+  <url>
+    <loc>http://amazondeals.github.io/amazonDealsJP/SmartPhone.html</loc>
+    <priority>0.8</priority>
+    <changefreq>daily</changefreq>
+  </url>
+
+  <url>
+    <loc>http://amazondeals.github.io/amazonDealsJP/Hobby.html</loc>
+    <priority>0.8</priority>
+    <changefreq>daily</changefreq>
+  </url>
+
+  <url>
+    <loc>http://amazondeals.github.io/amazonDealsJP/Kaden.html</loc>
+    <priority>0.8</priority>
+    <changefreq>daily</changefreq>
+  </url>
+
+  <url>
+    <loc>http://amazondeals.github.io/amazonDealsJP/Stationary.html</loc>
+    <priority>0.8</priority>
+    <changefreq>daily</changefreq>
+  </url>
+
+  <url>
+    <loc>http://amazondeals.github.io/amazonDealsJP/Pet.html</loc>
+    <priority>0.8</priority>
+    <changefreq>daily</changefreq>
+  </url>
+
+  <url>
+    <loc>http://amazondeals.github.io/amazonDealsJP/DrugStore.html</loc>
+    <priority>0.8</priority>
+    <changefreq>daily</changefreq>
+  </url>
+
+</urlset>
