@@ -1,15 +1,17 @@
 <!DOCTYPE html>
 <html class="no-js" lang="en">
 <head>
-
-    <!--- basic page needs
-    ================================================== -->
+    <!--- basic page needs    ================================================== -->
     <meta charset="utf-8">
     <title>ルーセなムイタ</title>
-    <meta content="today, amazon, japan, deals, gold, 日本, アマゾン, 本日, タイムセール, 商品 " name="keywords">
-    <meta content="アマゾンのタイムセール商品を8時頃に更新します" name="description">
+    <meta content="amazon.co.jp, アマゾン, amazon, セール, goldbox, sale, 毎日, 自動更新, everyday, autorefresh, パソコン,周辺機器,DIY,工具,ガーデン,カメラ,家電,イヤホン,ヘッドホン,ホビー,携帯電話,スマートフォン,ドラッグストア,ビューティー,食品,飲料,お酒,ホーム,キッチン,メンズ,シューズ,レディース,スポーツ,アウトドア,カー,バイク," name="keywords">
+    <meta content="amazon.co.jpの本日のセール品を収集します。毎日自動更新します。収集する商品のカテゴリは『パソコン・周辺機器』『DIY・工具・ガーデン』『カメラ』『家電』『イヤホン・ヘッドホン』『ホビー』『携帯電話・スマートフォン』『ドラッグストア』『ビューティー』『食品・飲料・お酒』『ホーム＆キッチン』『メンズシューズ』『レディースシューズ』『スポーツ＆アウトドア』『カー＆バイク用品』" name="description">
     <meta name="author" content="">
-
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet"/>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
     <!-- Global site tag (gtag.js) - Google Analytics -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=UA-133844353-2"></script>
     <script>
@@ -19,287 +21,424 @@
       
       gtag('config', 'UA-133844353-2');
     </script>
-
-    <!-- Twitter Cards -->
-    <meta name="twitter:card" content="summary" />
-    <meta name="twitter:site" content="@haine_xxx" />
-    <meta property="og:url" content="https://amazondeals.github.io/amazonDealsJP" />
-    <meta property="og:title" content="ルーセなムイタ" />
-    <meta property="og:description" content="アマゾンのタイムセールを8時頃に更新します" />
-    <meta property="og:image" content="https://amazondeals.github.io/amazonDealsJP/img/ama_logo.jpg" />
-  
-    <!-- mobile specific metas
-    ================================================== -->
-    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-
-    <!-- Google Fonts -->
-    <link href="https://fonts.googleapis.com/css?family=Kosugi+Maru&amp;subset=cyrillic,japanese" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css?family=Kanit" rel="stylesheet">
-
-    <!-- CSS
-    ================================================== -->
-    <link rel="stylesheet" href="css/base.css">
-    <link rel="stylesheet" href="css/vendor.css">
-    <link rel="stylesheet" href="css/main.css">
-
-    <!-- script
-    ================================================== -->
-    <script src="js/modernizr.js"></script>
-    <script src="js/pace.min.js"></script>
-
-    <!-- favicons
-    ================================================== -->
-    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
-    <link rel="icon" href="favicon.ico" type="image/x-icon">
-
 </head>
-
+<style>
+    @media screen {
+        .card-columns {
+            -webkit-column-count: 4;
+            -moz-column-count: 4;
+            column-count: 4;
+        }
+    }
+    @media screen and (max-width: 1920px) {
+        .card-columns {
+            -webkit-column-count: 3;
+            -moz-column-count: 3;
+            column-count: 3;
+        }
+    }
+    @media screen and (max-width: 1280px) {
+        .card-columns {
+            -webkit-column-count: 2;
+            -moz-column-count: 2;
+            column-count: 2;
+        }
+    }
+    @media screen and (max-width: 640px) {
+        .card-columns {
+            -webkit-column-count: 1;
+            -moz-column-count: 1;
+            column-count: 1;
+        }
+    }
+    .card {
+        border-radius: 0 !important;
+        border: 0 none;
+        -webkit-box-shadow: 0px 2px 5px 0px rgba(0,0,0,0.5);
+        -moz-box-shadow: 0px 2px 5px 0px rgba(0,0,0,0.5);
+        box-shadow: 0px 2px 5px 0px rgba(0,0,0,0.5);
+        margin-left: 1px;
+        margin-right: 1px;
+    }
+    .card-img-top {
+        width: 100%;
+        border-radius: 0 !important;
+    }
+    .card-columns {
+        padding-top: 15px;
+    }
+</style>
 <body id="top">
-
-    <!-- pageheader
-    ================================================== -->
-    <section class="s-pageheader s-pageheader--home">
-
-        <header class="header">
-            <div class="header__content row">
-
-	      <h1 style="color: white;">ルーセ な ムイタ</h1>
-
-                <a class="header__toggle-menu" href="#0" title="Menu"><span>Menu</span></a>
-
-                <nav class="header__nav-wrap">
-
-                    <h2 class="header__nav-heading h6">Site Navigation</h2>
-
-                    <ul class="header__nav">
-                        <li><a href="index.html" title="">パソコン・周辺機器</a></li>
-                        <li><a href="DIY.html" title="">DIY・工具・ガーデン</a></li>
-                        <li><a href="Camera.html" title="">カメラ</a></li>
-                        <li><a href="Homeerectronics.html" title="">家電</a></li>
-                        <li><a href="Headphone.html" title="">イヤホン・ヘッドホン</a></li>
-                        <li><a href="Hobby.html" title="">ホビー</a></li>
-                        <li><a href="Smartphone.html" title="">携帯電話・スマートフォン</a></li>
-                        <li><a href="Drugstore.html" title="">ドラッグストア</a></li>
-                        <li><a href="Beauty.html" title="">ビューティー</a></li>
-                        <li><a href="Drink.html" title="">食品・飲料・お酒</a></li>
-                        <li><a href="HomeKitchen.html" title="">ホーム＆キッチン</a></li>
-                        <li><a href="MensShoes.html" title="">メンズシューズ</a></li>
-                        <li><a href="LadiesShoes.html" title="">レディースシューズ</a></li>
-                        <li><a href="Outdoor.html" title="">スポーツ＆アウトドア</a></li>
-                        <li><a href="CarBike.html" title="">カー＆バイク用品</a></li>
-                        <!-- li><a href="style-guide.html" title="">Styles</a></li>
-                        <li><a href="about.html" title="">About</a></li -->
-                    </ul> <!-- end header__nav -->
-
-                    <a href="#0" title="Close Menu" class="header__overlay-close close-mobile-menu">Close</a>
-
-                </nav> <!-- end header__nav-wrap -->
-
-            </div> <!-- header-content -->
-        </header> <!-- header -->
-
-    </section> <!-- end s-pageheader -->
-
-
-    <!-- s-content
-    ================================================== -->
-    <section class="s-content">
-        
-        <div class="row narrow section-intro add-bottom text-center">
-            <div class="col-twelve tab-full">
-                <h1>ホビー</h1>
+    <div class="container mt-3 mb-5">
+                    <h2><b><u>ホビーのセール商品</u></b></h2>
+                    <p>2019-10-19 19:31:56に更新しました</p><hr>
+        <div class="card-columns transaction">
+            <div class="card col-12">
+                <a href="./PC.html" class="btn btn-warning">パソコン・周辺機器</a>
+                <a href="./DIY.html" class="btn btn-warning">DIY・工具・ガーデン</a>
+                <a href="./Camera.html"class="btn btn-warning">カメラ</a>
+                <a href="./Homeerectronics.html"class="btn btn-warning">家電</a>
+                <a href="./Headphone.html"class="btn btn-warning">イヤホン・ヘッドホン</a>
+                <a href="./Hobby.html"class="btn btn-warning">ホビー</a>
+                <a href="./Smartphone.html"class="btn btn-warning">携帯電話・スマートフォン</a>
+                <a href="./Drugstore.html"class="btn btn-warning">ドラッグストア</a>
+                <a href="./Beauty.html"class="btn btn-warning">ビューティー</a>
+                <a href="./Drink.html"class="btn btn-warning">食品・飲料・お酒</a>
+                <a href="./HomeKitchen.html"class="btn btn-warning">ホーム＆キッチン</a>
+                <a href="./MensShoes.html"class="btn btn-warning">メンズシューズ</a>
+                <a href="./LadiesShoes.html"class="btn btn-warning">レディースシューズ</a>
+                <a href="./Outdoor.html"class="btn btn-warning">スポーツ＆アウトドア</a>
+                <a href="./CarBike.html"class="btn btn-warning">カー＆バイク用品</a>
             </div>
-        </div>
-
-                <div class="row" id="allitems">
-                    <div class="col-twelve">
-                        <div class="table-responsive">
-                            <table><tbody>
-                                <tr>
-                                    <td><a href="#item_0"><img src="https://images-na.ssl-images-amazon.com/images/I/51Mn7wCY+dL._SCLZZZZZZZ___AA640_.jpg" alt=""><br><p>¥2,448<sup style="color:red"><s>価格:¥2,880</s>(15%OFF)</span></p></a>
-                                    <td><a href="#item_1"><img src="https://images-na.ssl-images-amazon.com/images/I/51eIPigcg-L._SCLZZZZZZZ___AA640_.jpg" alt=""><br><p>¥1,929<sup style="color:red"><s>価格:¥2,279</s>(15%OFF)</span></p></a>
-                                    <td><a href="#item_2"><img src="https://images-na.ssl-images-amazon.com/images/I/411W5uAV1CL._SCLZZZZZZZ___AA640_.jpg" alt=""><br><p>¥1,529<sup style="color:red"><s>価格:¥1,799</s>(15%OFF)</span></p></a>
-                                <tr>
-                                <tr>
-                                    <td><a href="#item_3"><img src="https://images-na.ssl-images-amazon.com/images/I/61kK1F3iaDL._SCLZZZZZZZ___AA640_.jpg" alt=""><br><p>¥849-¥4,079<sup style="color:red"><s>価格:¥999-¥4,799</s>(15%OFF)</span></p></a>
-                                    <td><a href="#item_4"><img src="https://images-na.ssl-images-amazon.com/images/I/31iJRsxF0zL._AA640_.jpg" alt=""><br><p>¥899-¥9,800<sup style="color:red"><s>価格:¥29,000</s>(15%OFF)</span></p></a>
-                                    <td><a href="#item_5"><img src="https://images-na.ssl-images-amazon.com/images/I/31XeojhX7rL._SCLZZZZZZZ___AA640_.jpg" alt=""><br><p>¥2,096<sup style="color:red"><s>価格:¥2,480</s>(15%OFF)</span></p></a>
-                                <tr>
-                                <tr>
-                                    <td><a href="#item_6"><img src="https://images-na.ssl-images-amazon.com/images/I/41VjlpBsc9L._SCLZZZZZZZ___AA640_.jpg" alt=""><br><p>¥24,650<sup style="color:red"><s>価格:¥29,000</s>(15%OFF)</span></p></a>
-                                <tr>
-                            </tbody></table>
-                        </div>
-                    </div>
+            <!-- div class="card-group">
+                <div class="card">
+                    <table><tbody>
+                        <tr>
+                            <td><a href="#card-p-id-0"><img src="https://images-na.ssl-images-amazon.com/images/I/41xA5zQtGXL._AA640_.jpg" alt="" width="33%"><br><p>¥3,580<sup style="color:red"><s>参考価格:¥7,344</s>(51%OFF)</span></p></a>
+                            <td><a href="#card-p-id-1"><img src="https://images-na.ssl-images-amazon.com/images/I/51sDP2s5bzL._SCLZZZZZZZ___AA640_.jpg" alt="" width="33%"><br><p>¥1,699<sup style="color:red"><s>価格:¥2,399</s>(29%OFF)</span></p></a>
+                            <td><a href="#card-p-id-2"><img src="https://images-na.ssl-images-amazon.com/images/I/41eQXfaaT6L._AA640_.jpg" alt="" width="33%"><br><p>¥849<sup style="color:red"><s>価格:¥1,099</s>(23%OFF)</span></p></a>
+                        </tr>
+                        <tr>
+                            <td><a href="#card-p-id-3"><img src="https://images-na.ssl-images-amazon.com/images/I/51D1qN88%2BgL._AA640_.jpg" alt="" width="33%"><br><p>¥1,019<sup style="color:red"><s>価格:¥1,299</s>(22%OFF)</span></p></a>
+                            <td><a href="#card-p-id-4"><img src="https://images-na.ssl-images-amazon.com/images/I/51BFS-cDrsL._SCLZZZZZZZ___AA640_.jpg" alt="" width="33%"><br><p>¥899<sup style="color:red"><s>価格:¥1,080</s>(17%OFF)</span></p></a>
+                            <td><a href="#card-p-id-5"><img src="https://images-na.ssl-images-amazon.com/images/I/411W5uAV1CL._SCLZZZZZZZ___AA640_.jpg" alt="" width="33%"><br><p>¥1,529<sup style="color:red"><s>価格:¥1,799</s>(15%OFF)</span></p></a>
+                        </tr>
+                        <tr>
+                            <td><a href="#card-p-id-6"><img src="https://images-na.ssl-images-amazon.com/images/I/511GT4S-bML._AA640_.jpg" alt="" width="33%"><br><p>¥1,428<sup style="color:red"><s>価格:¥1,680</s>(15%OFF)</span></p></a>
+                            <td><a href="#card-p-id-7"><img src="https://images-na.ssl-images-amazon.com/images/I/51TbF-1LPFL._AA640_.jpg" alt="" width="33%"><br><p>¥6,534<sup style="color:red"><s>価格:¥7,688</s>(15%OFF)</span></p></a>
+                            <td><a href="#card-p-id-8"><img src="https://images-na.ssl-images-amazon.com/images/I/41iDBGAywSL._AA640_.jpg" alt="" width="33%"><br><p>¥1,147<sup style="color:red"><s>価格:¥1,350</s>(15%OFF)</span></p></a>
+                        </tr>
+                        <tr>
+                            <td><a href="#card-p-id-9"><img src="https://images-na.ssl-images-amazon.com/images/I/51tTWNcwqEL._AA640_.jpg" alt="" width="33%"><br><p>¥1,359<sup style="color:red"><s>価格:¥1,599</s>(15%OFF)</span></p></a>
+                            <td><a href="#card-p-id-10"><img src="https://images-na.ssl-images-amazon.com/images/I/51mVAguN60L._AA640_.jpg" alt="" width="33%"><br><p>¥6,799<sup style="color:red"><s>価格:¥7,999</s>(15%OFF)</span></p></a>
+                            <td><a href="#card-p-id-11"><img src="https://images-na.ssl-images-amazon.com/images/I/61kK1F3iaDL._SCLZZZZZZZ___AA640_.jpg" alt="" width="33%"><br><p>¥849-¥4,079<sup style="color:red"><s>価格:¥999-¥4,799</s>(15%OFF)</span></p></a>
+                        </tr>
+                        <tr>
+                            <td><a href="#card-p-id-12"><img src="https://images-na.ssl-images-amazon.com/images/I/41kl9ZY-lxL._SCLZZZZZZZ___AA640_.jpg" alt="" width="33%"><br><p>¥4,519<sup style="color:red"><s>参考価格:¥23,800</s>(81%OFF)</span></p></a>
+                            <td><a href="#card-p-id-13"><img src="https://images-na.ssl-images-amazon.com/images/I/413AXvQd3wL._SCLZZZZZZZ___AA640_.jpg" alt="" width="33%"><br><p>¥2,380<sup style="color:red"><s>価格:¥3,280</s>(27%OFF)</span></p></a>
+                            <td><a href="#card-p-id-14"><img src="https://images-na.ssl-images-amazon.com/images/I/41dP1oBYAHL._SCLZZZZZZZ___AA640_.jpg" alt="" width="33%"><br><p>¥2,363<sup style="color:red"><s>参考価格:¥8,280</s>(71%OFF)</span></p></a>
+                        </tr>
+                        <tr>
+                    </tbody></table>
                 </div>
-                <div class="row" id="item_0">
-                    <div class="s-content__media col-full">
-                         <img src="https://images-na.ssl-images-amazon.com/images/I/51Mn7wCY+dL._SCLZZZZZZZ___AA640_.jpg" alt="">
-                    </div>
-                    <div class="col-twelve tab-full">
-                        <h3 class="yy_title"><a href="https://px.a8.net/svt/ejp?a8mat=1ZIM2A+34J5TU+249K+BWGDT&a8ejpredirect=https%3A%2F%2Fwww.amazon.co.jp%2F%E3%83%A9%E3%82%B8%E3%82%B3%E3%83%B3%E3%82%AB%E3%83%BC-2-4GHZ-%E3%82%AA%E3%83%95%E3%83%AD%E3%83%BC%E3%83%89%E3%83%AA%E3%83%A2%E3%82%B3%E3%83%B3%E3%82%AB%E3%83%BC-%E3%83%A9%E3%82%B8%E3%82%B3%E3%83%B3%E3%82%AA%E3%83%95%E3%83%AD%E3%83%BC%E3%83%89-%E9%9B%BB%E5%8B%95%E3%82%AA%E3%83%95%E3%83%AD%E3%83%BC%E3%83%89%E3%83%90%E3%82%AE%E3%83%BC/dp/B01N7JI0GL/ref=gbps_tit_s-4_d0fd_46110957%3F%0D%0Asmid=A3U48BWYVTZFPH%26pf_rd_p=ba82fec7-afd7-4772-8d95-aa1aa054d0fd%26pf_rd_s=slot-4%26pf_rd_t=701%26pf_rd_i=gb_main%26pf_rd_m=AN1VRQENFRJN5%26pf_rd_r=CS6SK6B0DK1PY5QSMRNR%2F%3Ftag%3Da8-affi-258507-22.html">ラジコンカーRCカー2つのバッテリー付2.4GHZ4WDオフロードリモコンカーラジコンオフロード四駆電動オフロードバギーバギー男の子向け乗り越え抜群子供向けおもちゃ贈り物</a></h3>
-                        <ul>
-                            <li><a href="https://px.a8.net/svt/ejp?a8mat=1ZIM2A+34J5TU+249K+BWGDT&a8ejpredirect=https%3A%2F%2Fwww.amazon.co.jp%2F%E3%83%A9%E3%82%B8%E3%82%B3%E3%83%B3%E3%82%AB%E3%83%BC-2-4GHZ-%E3%82%AA%E3%83%95%E3%83%AD%E3%83%BC%E3%83%89%E3%83%AA%E3%83%A2%E3%82%B3%E3%83%B3%E3%82%AB%E3%83%BC-%E3%83%A9%E3%82%B8%E3%82%B3%E3%83%B3%E3%82%AA%E3%83%95%E3%83%AD%E3%83%BC%E3%83%89-%E9%9B%BB%E5%8B%95%E3%82%AA%E3%83%95%E3%83%AD%E3%83%BC%E3%83%89%E3%83%90%E3%82%AE%E3%83%BC/dp/B01N7JI0GL/ref=gbps_tit_s-4_d0fd_46110957%3F%0D%0Asmid=A3U48BWYVTZFPH%26pf_rd_p=ba82fec7-afd7-4772-8d95-aa1aa054d0fd%26pf_rd_s=slot-4%26pf_rd_t=701%26pf_rd_i=gb_main%26pf_rd_m=AN1VRQENFRJN5%26pf_rd_r=CS6SK6B0DK1PY5QSMRNR%2F%3Ftag%3Da8-affi-258507-22">価格 ¥2,448<sup style="color: red;"><s>価格:¥2,880</s>(15%OFF)</sup></a></li>
-                            <li><a href="https://px.a8.net/svt/ejp?a8mat=1ZIM2A+34J5TU+249K+BWGDT&a8ejpredirect=https%3A%2F%2Fwww.amazon.co.jp%2F%E3%83%A9%E3%82%B8%E3%82%B3%E3%83%B3%E3%82%AB%E3%83%BC-2-4GHZ-%E3%82%AA%E3%83%95%E3%83%AD%E3%83%BC%E3%83%89%E3%83%AA%E3%83%A2%E3%82%B3%E3%83%B3%E3%82%AB%E3%83%BC-%E3%83%A9%E3%82%B8%E3%82%B3%E3%83%B3%E3%82%AA%E3%83%95%E3%83%AD%E3%83%BC%E3%83%89-%E9%9B%BB%E5%8B%95%E3%82%AA%E3%83%95%E3%83%AD%E3%83%BC%E3%83%89%E3%83%90%E3%82%AE%E3%83%BC/dp/B01N7JI0GL/ref=gbps_tit_s-4_d0fd_46110957%3F%0D%0Asmid=A3U48BWYVTZFPH%26pf_rd_p=ba82fec7-afd7-4772-8d95-aa1aa054d0fd%26pf_rd_s=slot-4%26pf_rd_t=701%26pf_rd_i=gb_main%26pf_rd_m=AN1VRQENFRJN5%26pf_rd_r=CS6SK6B0DK1PY5QSMRNR%2F%3Ftag%3Da8-affi-258507-22">評価 <font style="color: orange;">★★★★</font></a></li>
-                            <li><a href="https://px.a8.net/svt/ejp?a8mat=1ZIM2A+34J5TU+249K+BWGDT&a8ejpredirect=https%3A%2F%2Fwww.amazon.co.jp%2F%E3%83%A9%E3%82%B8%E3%82%B3%E3%83%B3%E3%82%AB%E3%83%BC-2-4GHZ-%E3%82%AA%E3%83%95%E3%83%AD%E3%83%BC%E3%83%89%E3%83%AA%E3%83%A2%E3%82%B3%E3%83%B3%E3%82%AB%E3%83%BC-%E3%83%A9%E3%82%B8%E3%82%B3%E3%83%B3%E3%82%AA%E3%83%95%E3%83%AD%E3%83%BC%E3%83%89-%E9%9B%BB%E5%8B%95%E3%82%AA%E3%83%95%E3%83%AD%E3%83%BC%E3%83%89%E3%83%90%E3%82%AE%E3%83%BC/dp/B01N7JI0GL/ref=gbps_tit_s-4_d0fd_46110957%3F%0D%0Asmid=A3U48BWYVTZFPH%26pf_rd_p=ba82fec7-afd7-4772-8d95-aa1aa054d0fd%26pf_rd_s=slot-4%26pf_rd_t=701%26pf_rd_i=gb_main%26pf_rd_m=AN1VRQENFRJN5%26pf_rd_r=CS6SK6B0DK1PY5QSMRNR%2F%3Ftag%3Da8-affi-258507-22">98件のレビュー</a></li>
-                        </ul>
-                            <hr><p><u><b>レビュー</b></u><br>
-                            四駆は走破性は高い一方で、バッテリーの減りも早いです。タイヤが大きくて、坂とかを登りやすいし、速いです。子どもより大人の私のほうがもっと楽しんで遊んでいます。ただ充電するときにライトが消えないので、満充電かどうかわかりません。,初めてトイラジのクローラー買いました。期待してなかったのですが、しっかり4輪駆動でタイヤと同等の高さの障害物なら難なく乗り越えて行きますね。スピードは10km程度だと思いますが、スケール速度だと180km程度。障害物を乗り越えて走らせるには逆に程よい速度に感じました。値段が安価なのでしょうがないですが、スロットルやステアリングはオン・オフのみで小刻みな操作を必要としますが、あまり気にならなかったです。良く出来たトイラジだったので部品の塗装と電飾、スケールが合わないスペアタイヤを撤去してアンテナ部品を取り付けてみました。大人でも遊び方を工夫すると面白いと思いますよ。,価格より、期待していませんでしたが、4輪駆動、独立懸架パワーともこの価格で驚きましたバッテリーも予備が付属しており、十分に遊べます欲を言えば、灯火類があれば、なお一層魅力が上がると思います、唯一価格なりはバッテリーチャージ中も、完了しても、付属の充電器のインジケーターランプが赤く点灯し続けることぐらいです</p>
-                        <br>
-                        <a href="http://twitter.com/share?url=https%3A%2F%2Famazondeals.github.io%2FamazonDealsJP%2FHobby.html%23item_0&text=%E9%A7%86%E3%81%AF%E8%B5%B0%E7%A0%B4%E6%80%A7%E3%81%AF%E9%AB%98%E3%81%84%E4%B8%80%E6%96%B9%E3%81%A7%E3%80%81%E3%83%90%E3%83%83%E3%83%86%E3%83%AA%E3%83%BC%E3%81%AE%E6%B8%9B%E3%82%8A%E3%82%82%E6%97%A9%E3%81%84%E3%81%A7%E3%81%99%E3%80%82%E3%82%BF%E3%82%A4%E3%83%A4%E3%81%8C%E5%A4%A7%E3%81%8D%E3%81%8F%E3%81%A6%E3%80%81%E5%9D%82%E3%81%A8%E3%81%8B%E3%82%92%E7%99%BB%E3%82%8A%E3%82%84%E3%81%99%E3%81%84%E3%81%97%E3%80%81%E9%80%9F%E3%81%84%E3%81%A7%E3%81%99%E3%80%82%E5%AD%90%E3%81%A9%E3%82%82%E3%82%88%E3%82%8A%E5%A4%A7%E4%BA%BA%E3%81%AE%E7%A7%81%E3%81%AE%E3%81%BB%E3%81%86%E3%81%8C%E3%82%82%E3%81%A3%E3%81%A8%E6%A5%BD%E3%81%97%E3%82%93%E3%81%A7%E9%81%8A%E3%82%93%E3%81%A7%E3%81%84%E3%81%BE%E3%81%99%E3%80%82%E3%81%9F%E3%81%A0%E5%85%85%E9%9B%BB%E3%81%99%E3%82%8B%E3%81%A8%E3%81%8D%E3%81%AB%E3%83%A9%E3%82%A4%E3%83%88%E3%81%8C%E6%B6%88%E3%81%88%E3%81%AA%E3%81%84%E3%81%AE%E3%81%A7%E3%80%81%E6%BA%80%E5%85%85&hashtags=%E4%BB%8A%E6%97%A5%E3%81%AE%E3%82%BB%E3%83%BC%E3%83%AB%20%23%E3%83%9B%E3%83%93%E3%83%BC">この商品をツイート</a>
-                    </div>
-                </div>
-                <div class="row" id="item_1">
-                    <div class="s-content__media col-full">
-                         <img src="https://images-na.ssl-images-amazon.com/images/I/51eIPigcg-L._SCLZZZZZZZ___AA640_.jpg" alt="">
-                    </div>
-                    <div class="col-twelve tab-full">
-                        <h3 class="yy_title"><a href="https://px.a8.net/svt/ejp?a8mat=1ZIM2A+34J5TU+249K+BWGDT&a8ejpredirect=https%3A%2F%2Fwww.amazon.co.jp%2F%E3%83%A9%E3%82%B8%E3%82%B3%E3%83%B3%E3%82%AB%E3%83%BC-TANOKI-USB%E5%85%85%E9%9B%BB%E5%BC%8F-%E5%A3%81%E3%83%BB%E5%A4%A9%E4%BA%95%E3%83%BB%E5%BA%8A-%E3%83%AA%E3%83%A2%E3%82%B3%E3%83%B3%E3%82%AB%E3%83%BC/dp/B07WZS5KCB/ref=gbps_tit_s-4_d0fd_15db75ae%3F%0D%0Asmid=A2FFKS2N0XBRMH%26pf_rd_p=ba82fec7-afd7-4772-8d95-aa1aa054d0fd%26pf_rd_s=slot-4%26pf_rd_t=701%26pf_rd_i=gb_main%26pf_rd_m=AN1VRQENFRJN5%26pf_rd_r=CS6SK6B0DK1PY5QSMRNR%2F%3Ftag%3Da8-affi-258507-22.html">ラジコンカーTANOKIラジコン壁を走る</a></h3>
-                        <ul>
-                            <li><a href="https://px.a8.net/svt/ejp?a8mat=1ZIM2A+34J5TU+249K+BWGDT&a8ejpredirect=https%3A%2F%2Fwww.amazon.co.jp%2F%E3%83%A9%E3%82%B8%E3%82%B3%E3%83%B3%E3%82%AB%E3%83%BC-TANOKI-USB%E5%85%85%E9%9B%BB%E5%BC%8F-%E5%A3%81%E3%83%BB%E5%A4%A9%E4%BA%95%E3%83%BB%E5%BA%8A-%E3%83%AA%E3%83%A2%E3%82%B3%E3%83%B3%E3%82%AB%E3%83%BC/dp/B07WZS5KCB/ref=gbps_tit_s-4_d0fd_15db75ae%3F%0D%0Asmid=A2FFKS2N0XBRMH%26pf_rd_p=ba82fec7-afd7-4772-8d95-aa1aa054d0fd%26pf_rd_s=slot-4%26pf_rd_t=701%26pf_rd_i=gb_main%26pf_rd_m=AN1VRQENFRJN5%26pf_rd_r=CS6SK6B0DK1PY5QSMRNR%2F%3Ftag%3Da8-affi-258507-22">価格 ¥1,929<sup style="color: red;"><s>価格:¥2,279</s>(15%OFF)</sup></a></li>
-                            <li><a href="https://px.a8.net/svt/ejp?a8mat=1ZIM2A+34J5TU+249K+BWGDT&a8ejpredirect=https%3A%2F%2Fwww.amazon.co.jp%2F%E3%83%A9%E3%82%B8%E3%82%B3%E3%83%B3%E3%82%AB%E3%83%BC-TANOKI-USB%E5%85%85%E9%9B%BB%E5%BC%8F-%E5%A3%81%E3%83%BB%E5%A4%A9%E4%BA%95%E3%83%BB%E5%BA%8A-%E3%83%AA%E3%83%A2%E3%82%B3%E3%83%B3%E3%82%AB%E3%83%BC/dp/B07WZS5KCB/ref=gbps_tit_s-4_d0fd_15db75ae%3F%0D%0Asmid=A2FFKS2N0XBRMH%26pf_rd_p=ba82fec7-afd7-4772-8d95-aa1aa054d0fd%26pf_rd_s=slot-4%26pf_rd_t=701%26pf_rd_i=gb_main%26pf_rd_m=AN1VRQENFRJN5%26pf_rd_r=CS6SK6B0DK1PY5QSMRNR%2F%3Ftag%3Da8-affi-258507-22">評価 <font style="color: orange;">★★★★★</font></a></li>
-                            <li><a href="https://px.a8.net/svt/ejp?a8mat=1ZIM2A+34J5TU+249K+BWGDT&a8ejpredirect=https%3A%2F%2Fwww.amazon.co.jp%2F%E3%83%A9%E3%82%B8%E3%82%B3%E3%83%B3%E3%82%AB%E3%83%BC-TANOKI-USB%E5%85%85%E9%9B%BB%E5%BC%8F-%E5%A3%81%E3%83%BB%E5%A4%A9%E4%BA%95%E3%83%BB%E5%BA%8A-%E3%83%AA%E3%83%A2%E3%82%B3%E3%83%B3%E3%82%AB%E3%83%BC/dp/B07WZS5KCB/ref=gbps_tit_s-4_d0fd_15db75ae%3F%0D%0Asmid=A2FFKS2N0XBRMH%26pf_rd_p=ba82fec7-afd7-4772-8d95-aa1aa054d0fd%26pf_rd_s=slot-4%26pf_rd_t=701%26pf_rd_i=gb_main%26pf_rd_m=AN1VRQENFRJN5%26pf_rd_r=CS6SK6B0DK1PY5QSMRNR%2F%3Ftag%3Da8-affi-258507-22">9件のレビュー</a></li>
-                        </ul>
-                            <hr><p><u><b>レビュー</b></u><br>
-                            子供がドラえもんを観てて、スネ夫のラジコンが欲しいと内容を聞いたらところ、天井走るという如何にもアニメ設定でしたが、なんとそんな商品があるではないですか(笑)動画も付いてて分かり易かったので、試しに購入してみました。期待を込めて星5つです。,最高でした。3つ購入、2つはプレゼント。とてもよろこばれました。充電のコードが別に購入できるとうれしいのですが。,四歳・五歳・六歳に色違いでプレゼントしました！</p>
-                        <br>
-                        <a href="http://twitter.com/share?url=https%3A%2F%2Famazondeals.github.io%2FamazonDealsJP%2FHobby.html%23item_1&text=%E4%BE%9B%E3%81%8C%E3%83%89%E3%83%A9%E3%81%88%E3%82%82%E3%82%93%E3%82%92%E8%A6%B3%E3%81%A6%E3%81%A6%E3%80%81%E3%82%B9%E3%83%8D%E5%A4%AB%E3%81%AE%E3%83%A9%E3%82%B8%E3%82%B3%E3%83%B3%E3%81%8C%E6%AC%B2%E3%81%97%E3%81%84%E3%81%A8%E5%86%85%E5%AE%B9%E3%82%92%E8%81%9E%E3%81%84%E3%81%9F%E3%82%89%E3%81%A8%E3%81%93%E3%82%8D%E3%80%81%E5%A4%A9%E4%BA%95%E8%B5%B0%E3%82%8B%E3%81%A8%E3%81%84%E3%81%86%E5%A6%82%E4%BD%95%E3%81%AB%E3%82%82%E3%82%A2%E3%83%8B%E3%83%A1%E8%A8%AD%E5%AE%9A%E3%81%A7%E3%81%97%E3%81%9F%E3%81%8C%E3%80%81%E3%81%AA%E3%82%93%E3%81%A8%E3%81%9D%E3%82%93%E3%81%AA%E5%95%86%E5%93%81%E3%81%8C%E3%81%82%E3%82%8B%E3%81%A7%E3%81%AF%E3%81%AA%E3%81%84%E3%81%A7%E3%81%99%E3%81%8B(%E7%AC%91)%E5%8B%95%E7%94%BB%E3%82%82%E4%BB%98%E3%81%84%E3%81%A6%E3%81%A6%E5%88%86%E3%81%8B%E3%82%8A%E6%98%93%E3%81%8B%E3%81%A3%E3%81%9F%E3%81%AE%E3%81%A7%E3%80%81%E8%A9%A6%E3%81%97%E3%81%AB%E8%B3%BC%E5%85%A5&hashtags=%E4%BB%8A%E6%97%A5%E3%81%AE%E3%82%BB%E3%83%BC%E3%83%AB%20%23%E3%83%9B%E3%83%93%E3%83%BC">この商品をツイート</a>
-                    </div>
-                </div>
-                <div class="row" id="item_2">
-                    <div class="s-content__media col-full">
-                         <img src="https://images-na.ssl-images-amazon.com/images/I/411W5uAV1CL._SCLZZZZZZZ___AA640_.jpg" alt="">
-                    </div>
-                    <div class="col-twelve tab-full">
-                        <h3 class="yy_title"><a href="https://px.a8.net/svt/ejp?a8mat=1ZIM2A+34J5TU+249K+BWGDT&a8ejpredirect=https%3A%2F%2Fwww.amazon.co.jp%2F%E3%83%88%E3%83%AC%E3%83%BC%E3%82%B9%E5%8F%B0-%E3%83%A9%E3%82%A4%E3%83%88%E3%83%9C%E3%83%83%E3%82%AF%E3%82%B9-%E3%83%A9%E3%82%A4%E3%83%88%E3%83%86%E3%83%BC%E3%83%96%E3%83%AB-%E5%85%A8%E9%9D%A2%E3%83%95%E3%83%A9%E3%83%83%E3%83%88-USB%E3%82%B1%E3%83%BC%E3%83%96%E3%83%AB/dp/B07RTVDMZP/ref=gbps_tit_s-4_d0fd_bae1581e%3F%0D%0Asmid=A1JPIWW5NTFKXE%26pf_rd_p=ba82fec7-afd7-4772-8d95-aa1aa054d0fd%26pf_rd_s=slot-4%26pf_rd_t=701%26pf_rd_i=gb_main%26pf_rd_m=AN1VRQENFRJN5%26pf_rd_r=CS6SK6B0DK1PY5QSMRNR%2F%3Ftag%3Da8-affi-258507-22.html">トレース台LED2019ライトボックスLEDA4サイズ超薄型ライトテーブル全面フラット3段階調光付き製図マンガスケッチデッサンイラスト子供適用1.5mUSBケーブル/紙挟み付き</a></h3>
-                        <ul>
-                            <li><a href="https://px.a8.net/svt/ejp?a8mat=1ZIM2A+34J5TU+249K+BWGDT&a8ejpredirect=https%3A%2F%2Fwww.amazon.co.jp%2F%E3%83%88%E3%83%AC%E3%83%BC%E3%82%B9%E5%8F%B0-%E3%83%A9%E3%82%A4%E3%83%88%E3%83%9C%E3%83%83%E3%82%AF%E3%82%B9-%E3%83%A9%E3%82%A4%E3%83%88%E3%83%86%E3%83%BC%E3%83%96%E3%83%AB-%E5%85%A8%E9%9D%A2%E3%83%95%E3%83%A9%E3%83%83%E3%83%88-USB%E3%82%B1%E3%83%BC%E3%83%96%E3%83%AB/dp/B07RTVDMZP/ref=gbps_tit_s-4_d0fd_bae1581e%3F%0D%0Asmid=A1JPIWW5NTFKXE%26pf_rd_p=ba82fec7-afd7-4772-8d95-aa1aa054d0fd%26pf_rd_s=slot-4%26pf_rd_t=701%26pf_rd_i=gb_main%26pf_rd_m=AN1VRQENFRJN5%26pf_rd_r=CS6SK6B0DK1PY5QSMRNR%2F%3Ftag%3Da8-affi-258507-22">価格 ¥1,529<sup style="color: red;"><s>価格:¥1,799</s>(15%OFF)</sup></a></li>
-                            <li><a href="https://px.a8.net/svt/ejp?a8mat=1ZIM2A+34J5TU+249K+BWGDT&a8ejpredirect=https%3A%2F%2Fwww.amazon.co.jp%2F%E3%83%88%E3%83%AC%E3%83%BC%E3%82%B9%E5%8F%B0-%E3%83%A9%E3%82%A4%E3%83%88%E3%83%9C%E3%83%83%E3%82%AF%E3%82%B9-%E3%83%A9%E3%82%A4%E3%83%88%E3%83%86%E3%83%BC%E3%83%96%E3%83%AB-%E5%85%A8%E9%9D%A2%E3%83%95%E3%83%A9%E3%83%83%E3%83%88-USB%E3%82%B1%E3%83%BC%E3%83%96%E3%83%AB/dp/B07RTVDMZP/ref=gbps_tit_s-4_d0fd_bae1581e%3F%0D%0Asmid=A1JPIWW5NTFKXE%26pf_rd_p=ba82fec7-afd7-4772-8d95-aa1aa054d0fd%26pf_rd_s=slot-4%26pf_rd_t=701%26pf_rd_i=gb_main%26pf_rd_m=AN1VRQENFRJN5%26pf_rd_r=CS6SK6B0DK1PY5QSMRNR%2F%3Ftag%3Da8-affi-258507-22">評価 <font style="color: orange;">★★★★☆</font></a></li>
-                            <li><a href="https://px.a8.net/svt/ejp?a8mat=1ZIM2A+34J5TU+249K+BWGDT&a8ejpredirect=https%3A%2F%2Fwww.amazon.co.jp%2F%E3%83%88%E3%83%AC%E3%83%BC%E3%82%B9%E5%8F%B0-%E3%83%A9%E3%82%A4%E3%83%88%E3%83%9C%E3%83%83%E3%82%AF%E3%82%B9-%E3%83%A9%E3%82%A4%E3%83%88%E3%83%86%E3%83%BC%E3%83%96%E3%83%AB-%E5%85%A8%E9%9D%A2%E3%83%95%E3%83%A9%E3%83%83%E3%83%88-USB%E3%82%B1%E3%83%BC%E3%83%96%E3%83%AB/dp/B07RTVDMZP/ref=gbps_tit_s-4_d0fd_bae1581e%3F%0D%0Asmid=A1JPIWW5NTFKXE%26pf_rd_p=ba82fec7-afd7-4772-8d95-aa1aa054d0fd%26pf_rd_s=slot-4%26pf_rd_t=701%26pf_rd_i=gb_main%26pf_rd_m=AN1VRQENFRJN5%26pf_rd_r=CS6SK6B0DK1PY5QSMRNR%2F%3Ftag%3Da8-affi-258507-22">52件のレビュー</a></li>
-                        </ul>
-                            <hr><p><u><b>レビュー</b></u><br>
-                            趣味でイラストやってますがもっぱらアナログ派です。中学の頃、漫画家に憧れていた頃、1万円のトレース台を指をくわえて眺めていたのを覚えています。あの時これが売っていたらもっと幸せだったかなと思います。ですが今こうして、手軽に買えて、十分楽しめる商品があって幸せです。光ムラも気になるところはありません。正直もう1万円のもの持ってますが特に差を感じません。コスパ最高です。,想像以上に軽かったです。今回こちらの商品を購入しようと思ったキッカケはデジ絵にチャレンジして基礎からやらないといけないと気づきまして。写真撮影のため手持ちのスタンドに立てていますが、通常はこのような使い方はしません。LEDのバックライトが3段階調整可能です。これが非常に便利で重宝しています。何度も言いますが薄くて軽いので本棚とかにも収納できます。机の上を占領しないので助かっています！,写し絵にハマっている娘に買いました。少女漫画の上に写し紙を乗せ、せっと毎日のように書いていたのでもう少し書きやすいように、と思い購入しました。子供用なのでお安めのものを探していてこちらの商品にたどりつきました。届いてびっくり。ものすごく軽い！子供のお絵かき帳よりも全然軽い。そして薄い。子供も書きやすくなって絵を描くのが余計に楽しいようで届いてから毎日使っています。良い点である軽さと薄さが娘の扱いでどれくらい持つのかが気になるところですがとても良い買物させていただけました。</p>
-                        <br>
-                        <a href="http://twitter.com/share?url=https%3A%2F%2Famazondeals.github.io%2FamazonDealsJP%2FHobby.html%23item_2&text=%E5%91%B3%E3%81%A7%E3%82%A4%E3%83%A9%E3%82%B9%E3%83%88%E3%82%84%E3%81%A3%E3%81%A6%E3%81%BE%E3%81%99%E3%81%8C%E3%82%82%E3%81%A3%E3%81%B1%E3%82%89%E3%82%A2%E3%83%8A%E3%83%AD%E3%82%B0%E6%B4%BE%E3%81%A7%E3%81%99%E3%80%82%E4%B8%AD%E5%AD%A6%E3%81%AE%E9%A0%83%E3%80%81%E6%BC%AB%E7%94%BB%E5%AE%B6%E3%81%AB%E6%86%A7%E3%82%8C%E3%81%A6%E3%81%84%E3%81%9F%E9%A0%83%E3%80%811%E4%B8%87%E5%86%86%E3%81%AE%E3%83%88%E3%83%AC%E3%83%BC%E3%82%B9%E5%8F%B0%E3%82%92%E6%8C%87%E3%82%92%E3%81%8F%E3%82%8F%E3%81%88%E3%81%A6%E7%9C%BA%E3%82%81%E3%81%A6%E3%81%84%E3%81%9F%E3%81%AE%E3%82%92%E8%A6%9A%E3%81%88%E3%81%A6%E3%81%84%E3%81%BE%E3%81%99%E3%80%82%E3%81%82%E3%81%AE%E6%99%82%E3%81%93%E3%82%8C%E3%81%8C%E5%A3%B2%E3%81%A3%E3%81%A6%E3%81%84%E3%81%9F%E3%82%89%E3%82%82%E3%81%A3%E3%81%A8%E5%B9%B8%E3%81%9B%E3%81%A0%E3%81%A3%E3%81%9F%E3%81%8B%E3%81%AA%E3%81%A8%E6%80%9D%E3%81%84%E3%81%BE%E3%81%99%E3%80%82%E3%81%A7%E3%81%99&hashtags=%E4%BB%8A%E6%97%A5%E3%81%AE%E3%82%BB%E3%83%BC%E3%83%AB%20%23%E3%83%9B%E3%83%93%E3%83%BC">この商品をツイート</a>
-                    </div>
-                </div>
-                <div class="row" id="item_3">
-                    <div class="s-content__media col-full">
-                         <img src="https://images-na.ssl-images-amazon.com/images/I/61kK1F3iaDL._SCLZZZZZZZ___AA640_.jpg" alt="">
-                    </div>
-                    <div class="col-twelve tab-full">
-                        <h3 class="yy_title"><a href="https://px.a8.net/svt/ejp?a8mat=1ZIM2A+34J5TU+249K+BWGDT&a8ejpredirect=https%3A%2F%2Fwww.amazon.co.jp%2FWanshui-4336949091-%E3%82%B9%E3%82%B1%E3%83%83%E3%83%81%E9%89%9B%E7%AD%86/dp/B076D9Q56C/ref=gbps_tit_s-4_d0fd_1c55ced3%3F%0D%0Asmid=A1JGUDHI5O20KQ%26pf_rd_p=ba82fec7-afd7-4772-8d95-aa1aa054d0fd%26pf_rd_s=slot-4%26pf_rd_t=701%26pf_rd_i=gb_main%26pf_rd_m=AN1VRQENFRJN5%26pf_rd_r=CS6SK6B0DK1PY5QSMRNR%2F%3Ftag%3Da8-affi-258507-22.html">160色セットすぐに使える塗り絵の本のためにデザインされて、アティスト鉛筆画</a></h3>
-                        <ul>
-                            <li><a href="https://px.a8.net/svt/ejp?a8mat=1ZIM2A+34J5TU+249K+BWGDT&a8ejpredirect=https%3A%2F%2Fwww.amazon.co.jp%2FWanshui-4336949091-%E3%82%B9%E3%82%B1%E3%83%83%E3%83%81%E9%89%9B%E7%AD%86/dp/B076D9Q56C/ref=gbps_tit_s-4_d0fd_1c55ced3%3F%0D%0Asmid=A1JGUDHI5O20KQ%26pf_rd_p=ba82fec7-afd7-4772-8d95-aa1aa054d0fd%26pf_rd_s=slot-4%26pf_rd_t=701%26pf_rd_i=gb_main%26pf_rd_m=AN1VRQENFRJN5%26pf_rd_r=CS6SK6B0DK1PY5QSMRNR%2F%3Ftag%3Da8-affi-258507-22">価格 ¥849-¥4,079<sup style="color: red;"><s>価格:¥999-¥4,799</s>(15%OFF)</sup></a></li>
-                            <li><a href="https://px.a8.net/svt/ejp?a8mat=1ZIM2A+34J5TU+249K+BWGDT&a8ejpredirect=https%3A%2F%2Fwww.amazon.co.jp%2FWanshui-4336949091-%E3%82%B9%E3%82%B1%E3%83%83%E3%83%81%E9%89%9B%E7%AD%86/dp/B076D9Q56C/ref=gbps_tit_s-4_d0fd_1c55ced3%3F%0D%0Asmid=A1JGUDHI5O20KQ%26pf_rd_p=ba82fec7-afd7-4772-8d95-aa1aa054d0fd%26pf_rd_s=slot-4%26pf_rd_t=701%26pf_rd_i=gb_main%26pf_rd_m=AN1VRQENFRJN5%26pf_rd_r=CS6SK6B0DK1PY5QSMRNR%2F%3Ftag%3Da8-affi-258507-22">評価 <font style="color: orange;">★★★★☆</font></a></li>
-                            <li><a href="https://px.a8.net/svt/ejp?a8mat=1ZIM2A+34J5TU+249K+BWGDT&a8ejpredirect=https%3A%2F%2Fwww.amazon.co.jp%2FWanshui-4336949091-%E3%82%B9%E3%82%B1%E3%83%83%E3%83%81%E9%89%9B%E7%AD%86/dp/B076D9Q56C/ref=gbps_tit_s-4_d0fd_1c55ced3%3F%0D%0Asmid=A1JGUDHI5O20KQ%26pf_rd_p=ba82fec7-afd7-4772-8d95-aa1aa054d0fd%26pf_rd_s=slot-4%26pf_rd_t=701%26pf_rd_i=gb_main%26pf_rd_m=AN1VRQENFRJN5%26pf_rd_r=CS6SK6B0DK1PY5QSMRNR%2F%3Ftag%3Da8-affi-258507-22">21件のレビュー</a></li>
-                        </ul>
-                            <hr><p><u><b>レビュー</b></u><br>
-                            中に入っていたカラーリストを、色番順に作成するところから始め、グラデーションで並べるべきか番号で並べるべきか迷った結果、カラーリストを見ながら必要な色をチョイスして、ペン立てに立てて置くほうが、使い勝手は良いのではないか、と。発色も特に問題ない（というか、コンテの水彩色鉛筆より色乗りは良い）ので、あとは紙質と腕の問題…でしょう…多分。アップした画像は、1870年のフランスの挿絵コピーを彩色してみた画像です。グレーのローブとジュポン、帽子をこの色鉛筆セットだけで塗ってみました。ちなみに、美術専攻でも仏文専攻でもなく日本文学専攻でしたが、それでもこの位の仕上がりにはなります、ということで。,最近になって、番号ごとにマス目を塗りつぶしていく塗り絵に夢中の母です。手元には24色の色鉛筆しかなく、「お手本のようにきれいな絵に仕上がらない」と嘆いていましたので、色数の豊富なセットをあちこち出向いて探していました。でも、母の希望するような微妙なグラデーションを出すには相応しくないものばかり。いいな、っと思っても、お値段がバカ高かったりして、お遊びのお絵かき用には、と、躊躇しました。ふと、そうだ、ネットでも検索してみよう、と思い立ち、見つけたのがこのセットでした。こちらは驚くような微妙に異なる色が何本も揃って居るのに、お値段もお手頃。思い切って購入してみましたところ、母は「うわあ、こんなに沢山あったら迷っちゃうわねえ」と、大喜びでした。発色も良く、塗り絵のページごとに、気に入った色を何本か取り出して鉛筆立てに立てて使用しています。特に嫌な匂いもないため使いやすく、芯が折れにくいという問題も今のところはないようです。購入して良かった、親孝行できた、と思えた品でした。,昨夜頼んで、今日到着しました。あまりの早さにビックリです。とても綺麗な色が沢山入っており、子供たちも大満足です。ただ、何色とかの表示がなく、番号で表示されておりますが、あれだけ色があれば、色名表示は難しいかと思います。鉛筆の芯や本体の色と実際に描いたときの色が結構違って見えるので、付属のカラーリストに色と番号を書き込めば、色を選ぶのに大変便利です。色番号で、単色追加注文出来たらいいのにと思いました。でも大満足です。</p>
-                        <br>
-                        <a href="http://twitter.com/share?url=https%3A%2F%2Famazondeals.github.io%2FamazonDealsJP%2FHobby.html%23item_3&text=%E3%81%AB%E5%85%A5%E3%81%A3%E3%81%A6%E3%81%84%E3%81%9F%E3%82%AB%E3%83%A9%E3%83%BC%E3%83%AA%E3%82%B9%E3%83%88%E3%82%92%E3%80%81%E8%89%B2%E7%95%AA%E9%A0%86%E3%81%AB%E4%BD%9C%E6%88%90%E3%81%99%E3%82%8B%E3%81%A8%E3%81%93%E3%82%8D%E3%81%8B%E3%82%89%E5%A7%8B%E3%82%81%E3%80%81%E3%82%B0%E3%83%A9%E3%83%87%E3%83%BC%E3%82%B7%E3%83%A7%E3%83%B3%E3%81%A7%E4%B8%A6%E3%81%B9%E3%82%8B%E3%81%B9%E3%81%8D%E3%81%8B%E7%95%AA%E5%8F%B7%E3%81%A7%E4%B8%A6%E3%81%B9%E3%82%8B%E3%81%B9%E3%81%8D%E3%81%8B%E8%BF%B7%E3%81%A3%E3%81%9F%E7%B5%90%E6%9E%9C%E3%80%81%E3%82%AB%E3%83%A9%E3%83%BC%E3%83%AA%E3%82%B9%E3%83%88%E3%82%92%E8%A6%8B%E3%81%AA%E3%81%8C%E3%82%89%E5%BF%85%E8%A6%81%E3%81%AA%E8%89%B2%E3%82%92%E3%83%81%E3%83%A7%E3%82%A4%E3%82%B9%E3%81%97%E3%81%A6%E3%80%81%E3%83%9A%E3%83%B3%E7%AB%8B%E3%81%A6%E3%81%AB%E7%AB%8B%E3%81%A6%E3%81%A6%E7%BD%AE%E3%81%8F%E3%81%BB%E3%81%86%E3%81%8C%E3%80%81%E4%BD%BF%E3%81%84%E5%8B%9D%E6%89%8B&hashtags=%E4%BB%8A%E6%97%A5%E3%81%AE%E3%82%BB%E3%83%BC%E3%83%AB%20%23%E3%83%9B%E3%83%93%E3%83%BC">この商品をツイート</a>
-                    </div>
-                </div>
-                <div class="row" id="item_4">
-                    <div class="s-content__media col-full">
-                         <img src="https://images-na.ssl-images-amazon.com/images/I/31iJRsxF0zL._AA640_.jpg" alt="">
-                    </div>
-                    <div class="col-twelve tab-full">
-                        <h3 class="yy_title"><a href="https://px.a8.net/svt/ejp?a8mat=1ZIM2A+34J5TU+249K+BWGDT&a8ejpredirect=https%3A%2F%2Fwww.amazon.co.jp%2FALLDOCUBE-%E3%82%BF%E3%83%96%E3%83%AC%E3%83%83%E3%83%88%E3%80%8110-5%E3%82%A4%E3%83%B3%E3%83%81AMOLED%E3%82%B9%E3%82%AF%E3%83%AA%E3%83%BC%E3%83%B3%E3%80%812560x1600%E8%A7%A3%E5%83%8F%E5%BA%A6%E3%80%812-1GHz-RAM%E3%80%8164GB-ROM%E3%80%81Android-8MP%E3%82%AB%E3%83%A1%E3%83%A9%E3%80%81%E3%82%B7%E3%83%AB%E3%83%90%E3%83%BC/dp/B07LGZ4QTW/ref=gbph_tit_s-7_59d9_f972609f%3F%0D%0Asmid=AUBDWRX2VSQX2%26pf_rd_p=172feb36-7c12-4e76-afe0-4ec2d6c159d9%26pf_rd_s=slot-7%26pf_rd_t=701%26pf_rd_i=gb_main%26pf_rd_m=AN1VRQENFRJN5%26pf_rd_r=B6ZGBB06MEKM92XDQF14%2F%3Ftag%3Da8-affi-258507-22.html">【10-25まで】MYHOホームグッツお買い得セール</a></h3>
-                        <ul>
-                            <li><a href="https://px.a8.net/svt/ejp?a8mat=1ZIM2A+34J5TU+249K+BWGDT&a8ejpredirect=https%3A%2F%2Fwww.amazon.co.jp%2FALLDOCUBE-%E3%82%BF%E3%83%96%E3%83%AC%E3%83%83%E3%83%88%E3%80%8110-5%E3%82%A4%E3%83%B3%E3%83%81AMOLED%E3%82%B9%E3%82%AF%E3%83%AA%E3%83%BC%E3%83%B3%E3%80%812560x1600%E8%A7%A3%E5%83%8F%E5%BA%A6%E3%80%812-1GHz-RAM%E3%80%8164GB-ROM%E3%80%81Android-8MP%E3%82%AB%E3%83%A1%E3%83%A9%E3%80%81%E3%82%B7%E3%83%AB%E3%83%90%E3%83%BC/dp/B07LGZ4QTW/ref=gbph_tit_s-7_59d9_f972609f%3F%0D%0Asmid=AUBDWRX2VSQX2%26pf_rd_p=172feb36-7c12-4e76-afe0-4ec2d6c159d9%26pf_rd_s=slot-7%26pf_rd_t=701%26pf_rd_i=gb_main%26pf_rd_m=AN1VRQENFRJN5%26pf_rd_r=B6ZGBB06MEKM92XDQF14%2F%3Ftag%3Da8-affi-258507-22">価格 ¥899-¥9,800<sup style="color: red;"><s>価格:¥29,000</s>(15%OFF)</sup></a></li>
-                            <li><a href="https://px.a8.net/svt/ejp?a8mat=1ZIM2A+34J5TU+249K+BWGDT&a8ejpredirect=https%3A%2F%2Fwww.amazon.co.jp%2FALLDOCUBE-%E3%82%BF%E3%83%96%E3%83%AC%E3%83%83%E3%83%88%E3%80%8110-5%E3%82%A4%E3%83%B3%E3%83%81AMOLED%E3%82%B9%E3%82%AF%E3%83%AA%E3%83%BC%E3%83%B3%E3%80%812560x1600%E8%A7%A3%E5%83%8F%E5%BA%A6%E3%80%812-1GHz-RAM%E3%80%8164GB-ROM%E3%80%81Android-8MP%E3%82%AB%E3%83%A1%E3%83%A9%E3%80%81%E3%82%B7%E3%83%AB%E3%83%90%E3%83%BC/dp/B07LGZ4QTW/ref=gbph_tit_s-7_59d9_f972609f%3F%0D%0Asmid=AUBDWRX2VSQX2%26pf_rd_p=172feb36-7c12-4e76-afe0-4ec2d6c159d9%26pf_rd_s=slot-7%26pf_rd_t=701%26pf_rd_i=gb_main%26pf_rd_m=AN1VRQENFRJN5%26pf_rd_r=B6ZGBB06MEKM92XDQF14%2F%3Ftag%3Da8-affi-258507-22">評価 <font style="color: orange;">★★★☆</font></a></li>
-                            <li><a href="https://px.a8.net/svt/ejp?a8mat=1ZIM2A+34J5TU+249K+BWGDT&a8ejpredirect=https%3A%2F%2Fwww.amazon.co.jp%2FALLDOCUBE-%E3%82%BF%E3%83%96%E3%83%AC%E3%83%83%E3%83%88%E3%80%8110-5%E3%82%A4%E3%83%B3%E3%83%81AMOLED%E3%82%B9%E3%82%AF%E3%83%AA%E3%83%BC%E3%83%B3%E3%80%812560x1600%E8%A7%A3%E5%83%8F%E5%BA%A6%E3%80%812-1GHz-RAM%E3%80%8164GB-ROM%E3%80%81Android-8MP%E3%82%AB%E3%83%A1%E3%83%A9%E3%80%81%E3%82%B7%E3%83%AB%E3%83%90%E3%83%BC/dp/B07LGZ4QTW/ref=gbph_tit_s-7_59d9_f972609f%3F%0D%0Asmid=AUBDWRX2VSQX2%26pf_rd_p=172feb36-7c12-4e76-afe0-4ec2d6c159d9%26pf_rd_s=slot-7%26pf_rd_t=701%26pf_rd_i=gb_main%26pf_rd_m=AN1VRQENFRJN5%26pf_rd_r=B6ZGBB06MEKM92XDQF14%2F%3Ftag%3Da8-affi-258507-22">22件のレビュー</a></li>
-                        </ul>
-                            <hr><p><u><b>レビュー</b></u><br>
-                            amazonのfireよりちょい画面が大きくて解像度も高いので画面はさすがに綺麗kindleやpvなんかを見るには良いね素のandroidなので、fireのようにgp入れたりする必要もなくカスタマイズも楽勝ゲームとか重いアプリ入れなければ良いタブレットだと思うただし、ゲームすると評価はほぼ真逆になるsocの割にベンチマーク点数が高いのはかなりocしてるんだろねゲームはしめてしばらくすると下半分、横画面の場合は右半分がさわるのに躊躇するほど熱くなるバッテリー温度計るソフト使ったら45℃越えてた手に持ってゲームしてたら低温ヤケドするレベルスタンドなどに置いてプレイしていても、指先が熱くなってくる当然バッテリー持ちは最悪で、満充電から3時間持たないくらいバッテリーの劣化も早いだろうし心配になるちょっとでもゲームする人は買わない方が良いね,手持ちのXperiaTabletの操作のもたつきが気になりだしたので、タブレットを探しておりました。動画視聴とブラウジングでの利用が中心で、画面の大きさとAmoledの発色はさすがで大変満足しています。気になった点は、①バッテリーは大容量ですが減りが若干早い気がする➁指紋センサーが若干バカになるときがあり、効かない時がある①はSoCが若干世代が古いのでまぁ予想の範疇でしたが、XperiaTabletの方が持つ気がします(性能的にはXperiaの方が低いのでこの辺りはトレードオフかな)。動画3時間程度の視聴＋3時間程度のブラウジングは可能ですので、及第点かなと思います。➁については、セットアップ後すぐにシステムアップデートがあり適用しましたが、改善されたようには思えませんでした。システムアップデートで改善されればと期待しています。あと、これはこのタブレットと直接関係ないですが、純正のケース（ALLDOCUBE製）は買って後悔しました。ケースの蓋が閉じれるものと思い購入しましたが、蓋がパカパカするやつだったので。ケースの選択肢がamazonでは少ないのが玉に瑕です。,全体的なサイズ感は、iPadPro11インチとほぼ同じです。本体側面に指紋センサを搭載しています。USBはType-C。3.5mmジャックもあります。高音質について、AK4376AHi-Fiチップを搭載し、本体上部にスピーカーからCDを遙かに超えるオーディオ品質を実現するとしています。肝心の音ですが、ステレオスピーカーでの広がり感は確かに感じますただ、有線接続時にはかなりよい感じの音質になります。使用するヘッドホンにもよるのでしょうが、U1005の音質の良さは、ヘッドホン前提なのかもしれません。付属のACアダプターは超急速充電対応。最大18Wでの出力が可能なFASTCHARGERなので短時間でバッテリーを充電できます。</p>
-                        <br>
-                        <a href="http://twitter.com/share?url=https%3A%2F%2Famazondeals.github.io%2FamazonDealsJP%2FHobby.html%23item_4&text=mazon%E3%81%AEfire%E3%82%88%E3%82%8A%E3%81%A1%E3%82%87%E3%81%84%E7%94%BB%E9%9D%A2%E3%81%8C%E5%A4%A7%E3%81%8D%E3%81%8F%E3%81%A6%E8%A7%A3%E5%83%8F%E5%BA%A6%E3%82%82%E9%AB%98%E3%81%84%E3%81%AE%E3%81%A7%E7%94%BB%E9%9D%A2%E3%81%AF%E3%81%95%E3%81%99%E3%81%8C%E3%81%AB%E7%B6%BA%E9%BA%97kindle%E3%82%84pv%E3%81%AA%E3%82%93%E3%81%8B%E3%82%92%E8%A6%8B%E3%82%8B%E3%81%AB%E3%81%AF%E8%89%AF%E3%81%84%E3%81%AD%E7%B4%A0%E3%81%AEandroid%E3%81%AA%E3%81%AE%E3%81%A7%E3%80%81fire%E3%81%AE%E3%82%88%E3%81%86%E3%81%ABgp%E5%85%A5%E3%82%8C%E3%81%9F%E3%82%8A%E3%81%99%E3%82%8B%E5%BF%85%E8%A6%81%E3%82%82%E3%81%AA%E3%81%8F%E3%82%AB%E3%82%B9%E3%82%BF%E3%83%9E%E3%82%A4%E3%82%BA%E3%82%82&hashtags=%E4%BB%8A%E6%97%A5%E3%81%AE%E3%82%BB%E3%83%BC%E3%83%AB%20%23%E3%83%9B%E3%83%93%E3%83%BC">この商品をツイート</a>
-                    </div>
-                </div>
-                <div class="row" id="item_5">
-                    <div class="s-content__media col-full">
-                         <img src="https://images-na.ssl-images-amazon.com/images/I/31XeojhX7rL._SCLZZZZZZZ___AA640_.jpg" alt="">
-                    </div>
-                    <div class="col-twelve tab-full">
-                        <h3 class="yy_title"><a href="https://px.a8.net/svt/ejp?a8mat=1ZIM2A+34J5TU+249K+BWGDT&a8ejpredirect=https%3A%2F%2Fwww.amazon.co.jp%2FPLATINUM-%E3%82%B7%E3%83%88%E3%83%AB%E3%83%AA%E3%83%B3-%E3%82%A2%E3%83%AB%E3%82%AE%E3%83%8B%E3%83%B3-%E5%8E%B3%E9%81%B88%E6%88%90%E5%88%86%E9%85%8D%E5%90%88-%E6%A0%84%E9%A4%8A%E6%A9%9F%E8%83%BD%E9%A3%9F%E5%93%81/dp/B075MDQWM2/ref=gbph_tit_s-7_59d9_4359d031%3F%0D%0Asmid=A23A9D59TZ7DYH%26pf_rd_p=172feb36-7c12-4e76-afe0-4ec2d6c159d9%26pf_rd_s=slot-7%26pf_rd_t=701%26pf_rd_i=gb_main%26pf_rd_m=AN1VRQENFRJN5%26pf_rd_r=CS6SK6B0DK1PY5QSMRNR%2F%3Ftag%3Da8-affi-258507-22.html">ULBOPLATINUMシトルリンアルギニン亜鉛厳選8成分配合180粒栄養機能食品</a></h3>
-                        <ul>
-                            <li><a href="https://px.a8.net/svt/ejp?a8mat=1ZIM2A+34J5TU+249K+BWGDT&a8ejpredirect=https%3A%2F%2Fwww.amazon.co.jp%2FPLATINUM-%E3%82%B7%E3%83%88%E3%83%AB%E3%83%AA%E3%83%B3-%E3%82%A2%E3%83%AB%E3%82%AE%E3%83%8B%E3%83%B3-%E5%8E%B3%E9%81%B88%E6%88%90%E5%88%86%E9%85%8D%E5%90%88-%E6%A0%84%E9%A4%8A%E6%A9%9F%E8%83%BD%E9%A3%9F%E5%93%81/dp/B075MDQWM2/ref=gbph_tit_s-7_59d9_4359d031%3F%0D%0Asmid=A23A9D59TZ7DYH%26pf_rd_p=172feb36-7c12-4e76-afe0-4ec2d6c159d9%26pf_rd_s=slot-7%26pf_rd_t=701%26pf_rd_i=gb_main%26pf_rd_m=AN1VRQENFRJN5%26pf_rd_r=CS6SK6B0DK1PY5QSMRNR%2F%3Ftag%3Da8-affi-258507-22">価格 ¥2,096<sup style="color: red;"><s>価格:¥2,480</s>(15%OFF)</sup></a></li>
-                            <li><a href="https://px.a8.net/svt/ejp?a8mat=1ZIM2A+34J5TU+249K+BWGDT&a8ejpredirect=https%3A%2F%2Fwww.amazon.co.jp%2FPLATINUM-%E3%82%B7%E3%83%88%E3%83%AB%E3%83%AA%E3%83%B3-%E3%82%A2%E3%83%AB%E3%82%AE%E3%83%8B%E3%83%B3-%E5%8E%B3%E9%81%B88%E6%88%90%E5%88%86%E9%85%8D%E5%90%88-%E6%A0%84%E9%A4%8A%E6%A9%9F%E8%83%BD%E9%A3%9F%E5%93%81/dp/B075MDQWM2/ref=gbph_tit_s-7_59d9_4359d031%3F%0D%0Asmid=A23A9D59TZ7DYH%26pf_rd_p=172feb36-7c12-4e76-afe0-4ec2d6c159d9%26pf_rd_s=slot-7%26pf_rd_t=701%26pf_rd_i=gb_main%26pf_rd_m=AN1VRQENFRJN5%26pf_rd_r=CS6SK6B0DK1PY5QSMRNR%2F%3Ftag%3Da8-affi-258507-22">評価 <font style="color: orange;">★★★☆</font></a></li>
-                            <li><a href="https://px.a8.net/svt/ejp?a8mat=1ZIM2A+34J5TU+249K+BWGDT&a8ejpredirect=https%3A%2F%2Fwww.amazon.co.jp%2FPLATINUM-%E3%82%B7%E3%83%88%E3%83%AB%E3%83%AA%E3%83%B3-%E3%82%A2%E3%83%AB%E3%82%AE%E3%83%8B%E3%83%B3-%E5%8E%B3%E9%81%B88%E6%88%90%E5%88%86%E9%85%8D%E5%90%88-%E6%A0%84%E9%A4%8A%E6%A9%9F%E8%83%BD%E9%A3%9F%E5%93%81/dp/B075MDQWM2/ref=gbph_tit_s-7_59d9_4359d031%3F%0D%0Asmid=A23A9D59TZ7DYH%26pf_rd_p=172feb36-7c12-4e76-afe0-4ec2d6c159d9%26pf_rd_s=slot-7%26pf_rd_t=701%26pf_rd_i=gb_main%26pf_rd_m=AN1VRQENFRJN5%26pf_rd_r=CS6SK6B0DK1PY5QSMRNR%2F%3Ftag%3Da8-affi-258507-22">445件のレビュー</a></li>
-                        </ul>
-                            <hr><p><u><b>レビュー</b></u><br>
-                            サプリ初購入。思ってた以上にのみやすい。味もそこまでしないし、なんせ粒が小さいからすっとのめます。,国内生産がやっぱり安心でそれが決め手になりました。怖いところなどもなく安心して飲めてます！,今まではマカや亜鉛、シトルリンなど別々に買っていましたがこれなら一個でいいので便利です（笑）配合量も問題なし。気に入って使っています</p>
-                        <br>
-                        <a href="http://twitter.com/share?url=https%3A%2F%2Famazondeals.github.io%2FamazonDealsJP%2FHobby.html%23item_5&text=%E3%83%97%E3%83%AA%E5%88%9D%E8%B3%BC%E5%85%A5%E3%80%82%E6%80%9D%E3%81%A3%E3%81%A6%E3%81%9F%E4%BB%A5%E4%B8%8A%E3%81%AB%E3%81%AE%E3%81%BF%E3%82%84%E3%81%99%E3%81%84%E3%80%82%E5%91%B3%E3%82%82%E3%81%9D%E3%81%93%E3%81%BE%E3%81%A7%E3%81%97%E3%81%AA%E3%81%84%E3%81%97%E3%80%81%E3%81%AA%E3%82%93%E3%81%9B%E7%B2%92%E3%81%8C%E5%B0%8F%E3%81%95%E3%81%84%E3%81%8B%E3%82%89%E3%81%99%E3%81%A3%E3%81%A8%E3%81%AE%E3%82%81%E3%81%BE%E3%81%99%E3%80%82%2C%E5%9B%BD%E5%86%85%E7%94%9F%E7%94%A3%E3%81%8C%E3%82%84%E3%81%A3%E3%81%B1%E3%82%8A%E5%AE%89%E5%BF%83%E3%81%A7%E3%81%9D%E3%82%8C%E3%81%8C%E6%B1%BA%E3%82%81%E6%89%8B%E3%81%AB%E3%81%AA%E3%82%8A%E3%81%BE%E3%81%97%E3%81%9F%E3%80%82%E6%80%96%E3%81%84%E3%81%A8%E3%81%93%E3%82%8D%E3%81%AA%E3%81%A9%E3%82%82%E3%81%AA%E3%81%8F%E5%AE%89%E5%BF%83%E3%81%97%E3%81%A6%E9%A3%B2%E3%82%81%E3%81%A6%E3%81%BE%E3%81%99%EF%BC%81%2C%E4%BB%8A%E3%81%BE%E3%81%A7%E3%81%AF%E3%83%9E&hashtags=%E4%BB%8A%E6%97%A5%E3%81%AE%E3%82%BB%E3%83%BC%E3%83%AB%20%23%E3%83%9B%E3%83%93%E3%83%BC">この商品をツイート</a>
-                    </div>
-                </div>
-                <div class="row" id="item_6">
-                    <div class="s-content__media col-full">
-                         <img src="https://images-na.ssl-images-amazon.com/images/I/41VjlpBsc9L._SCLZZZZZZZ___AA640_.jpg" alt="">
-                    </div>
-                    <div class="col-twelve tab-full">
-                        <h3 class="yy_title"><a href="https://px.a8.net/svt/ejp?a8mat=1ZIM2A+34J5TU+249K+BWGDT&a8ejpredirect=https%3A%2F%2Fwww.amazon.co.jp%2FALLDOCUBE-%E3%82%BF%E3%83%96%E3%83%AC%E3%83%83%E3%83%88%E3%80%8110-5%E3%82%A4%E3%83%B3%E3%83%81AMOLED%E3%82%B9%E3%82%AF%E3%83%AA%E3%83%BC%E3%83%B3%E3%80%812560x1600%E8%A7%A3%E5%83%8F%E5%BA%A6%E3%80%812-1GHz-RAM%E3%80%8164GB-ROM%E3%80%81Android-8MP%E3%82%AB%E3%83%A1%E3%83%A9%E3%80%81%E3%82%B7%E3%83%AB%E3%83%90%E3%83%BC/dp/B07LGZ4QTW/ref=gbph_tit_s-7_59d9_f972609f%3F%0D%0Asmid=AUBDWRX2VSQX2%26pf_rd_p=172feb36-7c12-4e76-afe0-4ec2d6c159d9%26pf_rd_s=slot-7%26pf_rd_t=701%26pf_rd_i=gb_main%26pf_rd_m=AN1VRQENFRJN5%26pf_rd_r=CS6SK6B0DK1PY5QSMRNR%2F%3Ftag%3Da8-affi-258507-22.html">ALLDOCUBEXタブレットPC、10.5インチAMOLEDスクリーン、2560x1600解像度、2.1GHzMTKMT8176CPU、4GBRAM、64GBROM、Android8.1、8MP/8MPカメラ、シルバー</a></h3>
-                        <ul>
-                            <li><a href="https://px.a8.net/svt/ejp?a8mat=1ZIM2A+34J5TU+249K+BWGDT&a8ejpredirect=https%3A%2F%2Fwww.amazon.co.jp%2FALLDOCUBE-%E3%82%BF%E3%83%96%E3%83%AC%E3%83%83%E3%83%88%E3%80%8110-5%E3%82%A4%E3%83%B3%E3%83%81AMOLED%E3%82%B9%E3%82%AF%E3%83%AA%E3%83%BC%E3%83%B3%E3%80%812560x1600%E8%A7%A3%E5%83%8F%E5%BA%A6%E3%80%812-1GHz-RAM%E3%80%8164GB-ROM%E3%80%81Android-8MP%E3%82%AB%E3%83%A1%E3%83%A9%E3%80%81%E3%82%B7%E3%83%AB%E3%83%90%E3%83%BC/dp/B07LGZ4QTW/ref=gbph_tit_s-7_59d9_f972609f%3F%0D%0Asmid=AUBDWRX2VSQX2%26pf_rd_p=172feb36-7c12-4e76-afe0-4ec2d6c159d9%26pf_rd_s=slot-7%26pf_rd_t=701%26pf_rd_i=gb_main%26pf_rd_m=AN1VRQENFRJN5%26pf_rd_r=CS6SK6B0DK1PY5QSMRNR%2F%3Ftag%3Da8-affi-258507-22">価格 ¥24,650<sup style="color: red;"><s>価格:¥29,000</s>(15%OFF)</sup></a></li>
-                            <li><a href="https://px.a8.net/svt/ejp?a8mat=1ZIM2A+34J5TU+249K+BWGDT&a8ejpredirect=https%3A%2F%2Fwww.amazon.co.jp%2FALLDOCUBE-%E3%82%BF%E3%83%96%E3%83%AC%E3%83%83%E3%83%88%E3%80%8110-5%E3%82%A4%E3%83%B3%E3%83%81AMOLED%E3%82%B9%E3%82%AF%E3%83%AA%E3%83%BC%E3%83%B3%E3%80%812560x1600%E8%A7%A3%E5%83%8F%E5%BA%A6%E3%80%812-1GHz-RAM%E3%80%8164GB-ROM%E3%80%81Android-8MP%E3%82%AB%E3%83%A1%E3%83%A9%E3%80%81%E3%82%B7%E3%83%AB%E3%83%90%E3%83%BC/dp/B07LGZ4QTW/ref=gbph_tit_s-7_59d9_f972609f%3F%0D%0Asmid=AUBDWRX2VSQX2%26pf_rd_p=172feb36-7c12-4e76-afe0-4ec2d6c159d9%26pf_rd_s=slot-7%26pf_rd_t=701%26pf_rd_i=gb_main%26pf_rd_m=AN1VRQENFRJN5%26pf_rd_r=CS6SK6B0DK1PY5QSMRNR%2F%3Ftag%3Da8-affi-258507-22">評価 <font style="color: orange;">★★★☆</font></a></li>
-                            <li><a href="https://px.a8.net/svt/ejp?a8mat=1ZIM2A+34J5TU+249K+BWGDT&a8ejpredirect=https%3A%2F%2Fwww.amazon.co.jp%2FALLDOCUBE-%E3%82%BF%E3%83%96%E3%83%AC%E3%83%83%E3%83%88%E3%80%8110-5%E3%82%A4%E3%83%B3%E3%83%81AMOLED%E3%82%B9%E3%82%AF%E3%83%AA%E3%83%BC%E3%83%B3%E3%80%812560x1600%E8%A7%A3%E5%83%8F%E5%BA%A6%E3%80%812-1GHz-RAM%E3%80%8164GB-ROM%E3%80%81Android-8MP%E3%82%AB%E3%83%A1%E3%83%A9%E3%80%81%E3%82%B7%E3%83%AB%E3%83%90%E3%83%BC/dp/B07LGZ4QTW/ref=gbph_tit_s-7_59d9_f972609f%3F%0D%0Asmid=AUBDWRX2VSQX2%26pf_rd_p=172feb36-7c12-4e76-afe0-4ec2d6c159d9%26pf_rd_s=slot-7%26pf_rd_t=701%26pf_rd_i=gb_main%26pf_rd_m=AN1VRQENFRJN5%26pf_rd_r=CS6SK6B0DK1PY5QSMRNR%2F%3Ftag%3Da8-affi-258507-22">22件のレビュー</a></li>
-                        </ul>
-                            <hr><p><u><b>レビュー</b></u><br>
-                            amazonのfireよりちょい画面が大きくて解像度も高いので画面はさすがに綺麗kindleやpvなんかを見るには良いね素のandroidなので、fireのようにgp入れたりする必要もなくカスタマイズも楽勝ゲームとか重いアプリ入れなければ良いタブレットだと思うただし、ゲームすると評価はほぼ真逆になるsocの割にベンチマーク点数が高いのはかなりocしてるんだろねゲームはしめてしばらくすると下半分、横画面の場合は右半分がさわるのに躊躇するほど熱くなるバッテリー温度計るソフト使ったら45℃越えてた手に持ってゲームしてたら低温ヤケドするレベルスタンドなどに置いてプレイしていても、指先が熱くなってくる当然バッテリー持ちは最悪で、満充電から3時間持たないくらいバッテリーの劣化も早いだろうし心配になるちょっとでもゲームする人は買わない方が良いね,手持ちのXperiaTabletの操作のもたつきが気になりだしたので、タブレットを探しておりました。動画視聴とブラウジングでの利用が中心で、画面の大きさとAmoledの発色はさすがで大変満足しています。気になった点は、①バッテリーは大容量ですが減りが若干早い気がする➁指紋センサーが若干バカになるときがあり、効かない時がある①はSoCが若干世代が古いのでまぁ予想の範疇でしたが、XperiaTabletの方が持つ気がします(性能的にはXperiaの方が低いのでこの辺りはトレードオフかな)。動画3時間程度の視聴＋3時間程度のブラウジングは可能ですので、及第点かなと思います。➁については、セットアップ後すぐにシステムアップデートがあり適用しましたが、改善されたようには思えませんでした。システムアップデートで改善されればと期待しています。あと、これはこのタブレットと直接関係ないですが、純正のケース（ALLDOCUBE製）は買って後悔しました。ケースの蓋が閉じれるものと思い購入しましたが、蓋がパカパカするやつだったので。ケースの選択肢がamazonでは少ないのが玉に瑕です。,全体的なサイズ感は、iPadPro11インチとほぼ同じです。本体側面に指紋センサを搭載しています。USBはType-C。3.5mmジャックもあります。高音質について、AK4376AHi-Fiチップを搭載し、本体上部にスピーカーからCDを遙かに超えるオーディオ品質を実現するとしています。肝心の音ですが、ステレオスピーカーでの広がり感は確かに感じますただ、有線接続時にはかなりよい感じの音質になります。使用するヘッドホンにもよるのでしょうが、U1005の音質の良さは、ヘッドホン前提なのかもしれません。付属のACアダプターは超急速充電対応。最大18Wでの出力が可能なFASTCHARGERなので短時間でバッテリーを充電できます。</p>
-                        <br>
-                        <a href="http://twitter.com/share?url=https%3A%2F%2Famazondeals.github.io%2FamazonDealsJP%2FHobby.html%23item_6&text=mazon%E3%81%AEfire%E3%82%88%E3%82%8A%E3%81%A1%E3%82%87%E3%81%84%E7%94%BB%E9%9D%A2%E3%81%8C%E5%A4%A7%E3%81%8D%E3%81%8F%E3%81%A6%E8%A7%A3%E5%83%8F%E5%BA%A6%E3%82%82%E9%AB%98%E3%81%84%E3%81%AE%E3%81%A7%E7%94%BB%E9%9D%A2%E3%81%AF%E3%81%95%E3%81%99%E3%81%8C%E3%81%AB%E7%B6%BA%E9%BA%97kindle%E3%82%84pv%E3%81%AA%E3%82%93%E3%81%8B%E3%82%92%E8%A6%8B%E3%82%8B%E3%81%AB%E3%81%AF%E8%89%AF%E3%81%84%E3%81%AD%E7%B4%A0%E3%81%AEandroid%E3%81%AA%E3%81%AE%E3%81%A7%E3%80%81fire%E3%81%AE%E3%82%88%E3%81%86%E3%81%ABgp%E5%85%A5%E3%82%8C%E3%81%9F%E3%82%8A%E3%81%99%E3%82%8B%E5%BF%85%E8%A6%81%E3%82%82%E3%81%AA%E3%81%8F%E3%82%AB%E3%82%B9%E3%82%BF%E3%83%9E%E3%82%A4%E3%82%BA%E3%82%82&hashtags=%E4%BB%8A%E6%97%A5%E3%81%AE%E3%82%BB%E3%83%BC%E3%83%AB%20%23%E3%83%9B%E3%83%93%E3%83%BC">この商品をツイート</a>
-                    </div>
-                </div>
-
-    </section>
-    <footer class="s-footer">
-
-        <div class="s-footer__main">
-            <div class="row">
-
-            </div>
-        </div> <!-- end s-footer__main -->
-
-        <div class="s-footer__bottom">
-            <div class="row">
-                <div class="col-full">
-                    <div class="s-footer__copyright">
-                        <span>© Copyright Philosophy 2018</span> 
-                        <span>Site Template by <a href="https://colorlib.com/">Colorlib</a></span>
-                    </div>
-
-                    <div class="go-top">
-                        <a class="smoothscroll" title="Back to Top" href="#top"></a>
-                    </div>
-                </div>
-            </div>
-        </div> <!-- end s-footer__bottom -->
-
-    </footer> <!-- end s-footer -->
-
-
-    <!-- preloader
-    ================================================== -->
-    <div id="preloader">
-        <div id="loader">
-            <div class="line-scale">
-                <div></div>
-                <div></div>
-                <div></div>
-                <div></div>
-                <div></div>
+            </div -->
+            <div id="card-p-id-1" class="card product-card">
+               <img class="card-img-top" src="https://images-na.ssl-images-amazon.com/images/I/41xA5zQtGXL._AA640_.jpg" alt="">
+               <div class="card-body">
+                   <h5 class="card-title mb-0"><a href="https://px.a8.net/svt/ejp?a8mat=1ZIM2A+34J5TU+249K+BWGDT&a8ejpredirect=https%3A%2F%2Fwww.amazon.co.jp%2F%E3%83%90%E3%83%B3%E3%83%80%E3%82%A4-BANDAI-%E4%BB%AE%E9%9D%A2%E3%83%A9%E3%82%A4%E3%83%80%E3%83%BC%E3%83%89%E3%83%A9%E3%82%A4%E3%83%96-%E4%B8%89%E6%AE%B5%E5%A4%89%E5%BD%A2-DX%E3%83%88%E3%83%A9%E3%82%A4%E3%83%89%E3%83%AD%E3%83%B3/dp/B00N7BYJBK/ref=gbps_tit_s-4_28cb_dff562b7%3F%0D%0Asmid=A3H4NKY3S5PIO7%26pf_rd_p=fa73587f-9e6a-48eb-84c4-73cb5e3e28cb%26pf_rd_s=slot-4%26pf_rd_t=701%26pf_rd_i=gb_main%26pf_rd_m=AN1VRQENFRJN5%26pf_rd_r=QGA1XCRFR1H4ZBF8V2CJ%2F%3Ftag%3Da8-affi-258507-22.html">仮面ライダードライブ三段変形DXトライドロンが35%OFF</a></h5>
+                   <ul>
+                       <li><a href="https://px.a8.net/svt/ejp?a8mat=1ZIM2A+34J5TU+249K+BWGDT&a8ejpredirect=https%3A%2F%2Fwww.amazon.co.jp%2F%E3%83%90%E3%83%B3%E3%83%80%E3%82%A4-BANDAI-%E4%BB%AE%E9%9D%A2%E3%83%A9%E3%82%A4%E3%83%80%E3%83%BC%E3%83%89%E3%83%A9%E3%82%A4%E3%83%96-%E4%B8%89%E6%AE%B5%E5%A4%89%E5%BD%A2-DX%E3%83%88%E3%83%A9%E3%82%A4%E3%83%89%E3%83%AD%E3%83%B3/dp/B00N7BYJBK/ref=gbps_tit_s-4_28cb_dff562b7%3F%0D%0Asmid=A3H4NKY3S5PIO7%26pf_rd_p=fa73587f-9e6a-48eb-84c4-73cb5e3e28cb%26pf_rd_s=slot-4%26pf_rd_t=701%26pf_rd_i=gb_main%26pf_rd_m=AN1VRQENFRJN5%26pf_rd_r=QGA1XCRFR1H4ZBF8V2CJ%2F%3Ftag%3Da8-affi-258507-22">価格 ¥3,580<sup style="color: red;"><s>参考価格:¥7,344</s>(51%OFF)</sup></a></li>
+                       <li><a href="https://px.a8.net/svt/ejp?a8mat=1ZIM2A+34J5TU+249K+BWGDT&a8ejpredirect=https%3A%2F%2Fwww.amazon.co.jp%2F%E3%83%90%E3%83%B3%E3%83%80%E3%82%A4-BANDAI-%E4%BB%AE%E9%9D%A2%E3%83%A9%E3%82%A4%E3%83%80%E3%83%BC%E3%83%89%E3%83%A9%E3%82%A4%E3%83%96-%E4%B8%89%E6%AE%B5%E5%A4%89%E5%BD%A2-DX%E3%83%88%E3%83%A9%E3%82%A4%E3%83%89%E3%83%AD%E3%83%B3/dp/B00N7BYJBK/ref=gbps_tit_s-4_28cb_dff562b7%3F%0D%0Asmid=A3H4NKY3S5PIO7%26pf_rd_p=fa73587f-9e6a-48eb-84c4-73cb5e3e28cb%26pf_rd_s=slot-4%26pf_rd_t=701%26pf_rd_i=gb_main%26pf_rd_m=AN1VRQENFRJN5%26pf_rd_r=QGA1XCRFR1H4ZBF8V2CJ%2F%3Ftag%3Da8-affi-258507-22">評価 <font style="color: orange;">★★★★</font></a></li>
+                       <li><a href="https://px.a8.net/svt/ejp?a8mat=1ZIM2A+34J5TU+249K+BWGDT&a8ejpredirect=https%3A%2F%2Fwww.amazon.co.jp%2F%E3%83%90%E3%83%B3%E3%83%80%E3%82%A4-BANDAI-%E4%BB%AE%E9%9D%A2%E3%83%A9%E3%82%A4%E3%83%80%E3%83%BC%E3%83%89%E3%83%A9%E3%82%A4%E3%83%96-%E4%B8%89%E6%AE%B5%E5%A4%89%E5%BD%A2-DX%E3%83%88%E3%83%A9%E3%82%A4%E3%83%89%E3%83%AD%E3%83%B3/dp/B00N7BYJBK/ref=gbps_tit_s-4_28cb_dff562b7%3F%0D%0Asmid=A3H4NKY3S5PIO7%26pf_rd_p=fa73587f-9e6a-48eb-84c4-73cb5e3e28cb%26pf_rd_s=slot-4%26pf_rd_t=701%26pf_rd_i=gb_main%26pf_rd_m=AN1VRQENFRJN5%26pf_rd_r=QGA1XCRFR1H4ZBF8V2CJ%2F%3Ftag%3Da8-affi-258507-22">86件のレビュー</a></li>
+                   </ul>
+                       <hr>
+                       <p>
+                           <u><b>レビュー</b></u><br>
+                           タイプスピードからタイプワイルドへタイプスピードからタイプテクニックへ組み換えるときにジョイントが外れますが格好いいです,かなり遊べる。音も出るし変形も再現。タイヤ交換シリーズも乗せられて、満足のひと品。,3歳息子のクリスマスプレゼントで購入。定価が結構な値段だったし、またシリーズ終了でどこにも売ってなかったので息子の期待に応えられないなぁと思っていたところ、ものすごくお買い得な金額で購入できました。発送も早く、本当に新品なのか不安でしたが問題なしでした。</p>
+                   </div>
+                   <a href="http://twitter.com/share?url=https%3A%2F%2Famazondeals.github.io%2FamazonDealsJP%2FHobby.html%23card-p-id-1&text=%E3%82%A4%E3%83%97%E3%82%B9%E3%83%94%E3%83%BC%E3%83%89%E3%81%8B%E3%82%89%E3%82%BF%E3%82%A4%E3%83%97%E3%83%AF%E3%82%A4%E3%83%AB%E3%83%89%E3%81%B8%E3%82%BF%E3%82%A4%E3%83%97%E3%82%B9%E3%83%94%E3%83%BC%E3%83%89%E3%81%8B%E3%82%89%E3%82%BF%E3%82%A4%E3%83%97%E3%83%86%E3%82%AF%E3%83%8B%E3%83%83%E3%82%AF%E3%81%B8%E7%B5%84%E3%81%BF%E6%8F%9B%E3%81%88%E3%82%8B%E3%81%A8%E3%81%8D%E3%81%AB%E3%82%B8%E3%83%A7%E3%82%A4%E3%83%B3%E3%83%88%E3%81%8C%E5%A4%96%E3%82%8C%E3%81%BE%E3%81%99%E3%81%8C%E6%A0%BC%E5%A5%BD%E3%81%84%E3%81%84%E3%81%A7%E3%81%99%2C%E3%81%8B%E3%81%AA%E3%82%8A%E9%81%8A%E3%81%B9%E3%82%8B%E3%80%82%E9%9F%B3%E3%82%82%E5%87%BA%E3%82%8B%E3%81%97%E5%A4%89%E5%BD%A2%E3%82%82%E5%86%8D%E7%8F%BE%E3%80%82%E3%82%BF%E3%82%A4%E3%83%A4%E4%BA%A4%E6%8F%9B%E3%82%B7%E3%83%AA%E3%83%BC%E3%82%BA%E3%82%82%E4%B9%97%E3%81%9B%E3%82%89%E3%82%8C%E3%81%A6%E3%80%81%E6%BA%80%E8%B6%B3%E3%81%AE%E3%81%B2%E3%81%A8%E5%93%81&hashtags=%E3%83%9B%E3%83%93%E3%83%BC">
+                       <button type="button" class="btn btn-primary d-block center-margin-0-auto ccs-product-counter">Tweet
+                       </button>
+                   </a>
+               </div>
+           </div>
+            <div id="card-p-id-2" class="card product-card">
+               <img class="card-img-top" src="https://images-na.ssl-images-amazon.com/images/I/51sDP2s5bzL._SCLZZZZZZZ___AA640_.jpg" alt="">
+               <div class="card-body">
+                   <h5 class="card-title mb-0"><a href="https://px.a8.net/svt/ejp?a8mat=1ZIM2A+34J5TU+249K+BWGDT&a8ejpredirect=https%3A%2F%2Fwww.amazon.co.jp%2FAKARUED%E3%83%97%E3%83%AD%E8%A3%81%E7%B8%AB%E9%81%93%E5%85%B7-%E3%82%BD%E3%83%BC%E3%82%A4%E3%83%B3%E3%82%B0%E3%82%BB%E3%83%83%E3%83%88-38%E7%A8%AE%E3%82%AB%E3%83%A9%E3%83%BC-%E3%83%9D%E3%83%BC%E3%82%BF%E3%83%96%E3%83%AB%E3%83%9F%E3%82%B7%E3%83%B3%E3%82%A2%E3%82%AF%E3%82%BB%E3%82%B5%E3%83%AA%E3%83%BC%E6%97%85%E8%A1%8C%E8%80%85%E3%80%81%E5%88%9D%E5%BF%83%E8%80%85%E3%80%81%E7%B7%8A%E6%80%A5%E7%94%A8%E3%81%AE%E3%83%9F%E3%83%8B%E7%B8%AB%E8%A3%BD%E4%BF%AE%E7%90%86%E3%82%AD%E3%83%83%E3%83%88-%E3%83%96%E3%83%A9%E3%83%83%E3%82%AF%E5%8F%8E%E7%B4%8D%E3%83%90%E3%83%83%E3%82%B0%E4%BB%98%E3%81%8D/dp/B07XBJJ95N/ref=gbps_tit_s-4_28cb_90b33b66%3F%0D%0Asmid=A280M2PQ7BQBYV%26pf_rd_p=fa73587f-9e6a-48eb-84c4-73cb5e3e28cb%26pf_rd_s=slot-4%26pf_rd_t=701%26pf_rd_i=gb_main%26pf_rd_m=AN1VRQENFRJN5%26pf_rd_r=QGA1XCRFR1H4ZBF8V2CJ%2F%3Ftag%3Da8-affi-258507-22.html">AKARUEDプロ裁縫道具裁縫セットソーイングセット38種カラー鮮やかな糸手縫い針携帯式ポータブルミシンアクセサリー旅行者、初心者、緊急用のミニ縫製修理キットブラック収納バッグ付き</a></h5>
+                   <ul>
+                       <li><a href="https://px.a8.net/svt/ejp?a8mat=1ZIM2A+34J5TU+249K+BWGDT&a8ejpredirect=https%3A%2F%2Fwww.amazon.co.jp%2FAKARUED%E3%83%97%E3%83%AD%E8%A3%81%E7%B8%AB%E9%81%93%E5%85%B7-%E3%82%BD%E3%83%BC%E3%82%A4%E3%83%B3%E3%82%B0%E3%82%BB%E3%83%83%E3%83%88-38%E7%A8%AE%E3%82%AB%E3%83%A9%E3%83%BC-%E3%83%9D%E3%83%BC%E3%82%BF%E3%83%96%E3%83%AB%E3%83%9F%E3%82%B7%E3%83%B3%E3%82%A2%E3%82%AF%E3%82%BB%E3%82%B5%E3%83%AA%E3%83%BC%E6%97%85%E8%A1%8C%E8%80%85%E3%80%81%E5%88%9D%E5%BF%83%E8%80%85%E3%80%81%E7%B7%8A%E6%80%A5%E7%94%A8%E3%81%AE%E3%83%9F%E3%83%8B%E7%B8%AB%E8%A3%BD%E4%BF%AE%E7%90%86%E3%82%AD%E3%83%83%E3%83%88-%E3%83%96%E3%83%A9%E3%83%83%E3%82%AF%E5%8F%8E%E7%B4%8D%E3%83%90%E3%83%83%E3%82%B0%E4%BB%98%E3%81%8D/dp/B07XBJJ95N/ref=gbps_tit_s-4_28cb_90b33b66%3F%0D%0Asmid=A280M2PQ7BQBYV%26pf_rd_p=fa73587f-9e6a-48eb-84c4-73cb5e3e28cb%26pf_rd_s=slot-4%26pf_rd_t=701%26pf_rd_i=gb_main%26pf_rd_m=AN1VRQENFRJN5%26pf_rd_r=QGA1XCRFR1H4ZBF8V2CJ%2F%3Ftag%3Da8-affi-258507-22">価格 ¥1,699<sup style="color: red;"><s>価格:¥2,399</s>(29%OFF)</sup></a></li>
+                       <li><a href="https://px.a8.net/svt/ejp?a8mat=1ZIM2A+34J5TU+249K+BWGDT&a8ejpredirect=https%3A%2F%2Fwww.amazon.co.jp%2FAKARUED%E3%83%97%E3%83%AD%E8%A3%81%E7%B8%AB%E9%81%93%E5%85%B7-%E3%82%BD%E3%83%BC%E3%82%A4%E3%83%B3%E3%82%B0%E3%82%BB%E3%83%83%E3%83%88-38%E7%A8%AE%E3%82%AB%E3%83%A9%E3%83%BC-%E3%83%9D%E3%83%BC%E3%82%BF%E3%83%96%E3%83%AB%E3%83%9F%E3%82%B7%E3%83%B3%E3%82%A2%E3%82%AF%E3%82%BB%E3%82%B5%E3%83%AA%E3%83%BC%E6%97%85%E8%A1%8C%E8%80%85%E3%80%81%E5%88%9D%E5%BF%83%E8%80%85%E3%80%81%E7%B7%8A%E6%80%A5%E7%94%A8%E3%81%AE%E3%83%9F%E3%83%8B%E7%B8%AB%E8%A3%BD%E4%BF%AE%E7%90%86%E3%82%AD%E3%83%83%E3%83%88-%E3%83%96%E3%83%A9%E3%83%83%E3%82%AF%E5%8F%8E%E7%B4%8D%E3%83%90%E3%83%83%E3%82%B0%E4%BB%98%E3%81%8D/dp/B07XBJJ95N/ref=gbps_tit_s-4_28cb_90b33b66%3F%0D%0Asmid=A280M2PQ7BQBYV%26pf_rd_p=fa73587f-9e6a-48eb-84c4-73cb5e3e28cb%26pf_rd_s=slot-4%26pf_rd_t=701%26pf_rd_i=gb_main%26pf_rd_m=AN1VRQENFRJN5%26pf_rd_r=QGA1XCRFR1H4ZBF8V2CJ%2F%3Ftag%3Da8-affi-258507-22">評価 <font style="color: orange;">★★★★★</font></a></li>
+                       <li><a href="https://px.a8.net/svt/ejp?a8mat=1ZIM2A+34J5TU+249K+BWGDT&a8ejpredirect=https%3A%2F%2Fwww.amazon.co.jp%2FAKARUED%E3%83%97%E3%83%AD%E8%A3%81%E7%B8%AB%E9%81%93%E5%85%B7-%E3%82%BD%E3%83%BC%E3%82%A4%E3%83%B3%E3%82%B0%E3%82%BB%E3%83%83%E3%83%88-38%E7%A8%AE%E3%82%AB%E3%83%A9%E3%83%BC-%E3%83%9D%E3%83%BC%E3%82%BF%E3%83%96%E3%83%AB%E3%83%9F%E3%82%B7%E3%83%B3%E3%82%A2%E3%82%AF%E3%82%BB%E3%82%B5%E3%83%AA%E3%83%BC%E6%97%85%E8%A1%8C%E8%80%85%E3%80%81%E5%88%9D%E5%BF%83%E8%80%85%E3%80%81%E7%B7%8A%E6%80%A5%E7%94%A8%E3%81%AE%E3%83%9F%E3%83%8B%E7%B8%AB%E8%A3%BD%E4%BF%AE%E7%90%86%E3%82%AD%E3%83%83%E3%83%88-%E3%83%96%E3%83%A9%E3%83%83%E3%82%AF%E5%8F%8E%E7%B4%8D%E3%83%90%E3%83%83%E3%82%B0%E4%BB%98%E3%81%8D/dp/B07XBJJ95N/ref=gbps_tit_s-4_28cb_90b33b66%3F%0D%0Asmid=A280M2PQ7BQBYV%26pf_rd_p=fa73587f-9e6a-48eb-84c4-73cb5e3e28cb%26pf_rd_s=slot-4%26pf_rd_t=701%26pf_rd_i=gb_main%26pf_rd_m=AN1VRQENFRJN5%26pf_rd_r=QGA1XCRFR1H4ZBF8V2CJ%2F%3Ftag%3Da8-affi-258507-22">7件のレビュー</a></li>
+                   </ul>
+                       <hr>
+                       <p>
+                           <u><b>レビュー</b></u><br>
+                           新しく作った裁縫箱なので、中身も同じです。色を探してみましたが、中に物がたくさん入っていて値段が安いので注文しました。ハサミもよくできていて、糸、針山、針、待ち針、糸束、巻尺など、想像以上に充実しています♪利益感があふれていて、学校の家庭科などのレッスンの裁縫セットとしても最適です。そんなセットを家族や友人にプレゼントするのもいいかもしれません！,最近ミシンで小物をDIY縫製に夢中になっている、こんな完璧な縫製セットが手入りしたいです、丈夫なスプールが38色、針入れ、ハサミ、巻尺など必要な縫製ツールが含まれているセットで、素晴らしいです。ポータブル収納バッグがジッパーロックが付いている、小さい物が紛失の心配もない、便利です。,娘が保育園に決めて、やることがいっぱいので、購入しました。届いたら、驚きました。とてもいい商品でした。中に使う色が全部入って、道具も付いています。ケースはあるので、片付けも簡単です。触りも良いです。</p>
+                   </div>
+                   <a href="http://twitter.com/share?url=https%3A%2F%2Famazondeals.github.io%2FamazonDealsJP%2FHobby.html%23card-p-id-2&text=%E3%81%97%E3%81%8F%E4%BD%9C%E3%81%A3%E3%81%9F%E8%A3%81%E7%B8%AB%E7%AE%B1%E3%81%AA%E3%81%AE%E3%81%A7%E3%80%81%E4%B8%AD%E8%BA%AB%E3%82%82%E5%90%8C%E3%81%98%E3%81%A7%E3%81%99%E3%80%82%E8%89%B2%E3%82%92%E6%8E%A2%E3%81%97%E3%81%A6%E3%81%BF%E3%81%BE%E3%81%97%E3%81%9F%E3%81%8C%E3%80%81%E4%B8%AD%E3%81%AB%E7%89%A9%E3%81%8C%E3%81%9F%E3%81%8F%E3%81%95%E3%82%93%E5%85%A5%E3%81%A3%E3%81%A6%E3%81%84%E3%81%A6%E5%80%A4%E6%AE%B5%E3%81%8C%E5%AE%89%E3%81%84%E3%81%AE%E3%81%A7%E6%B3%A8%E6%96%87%E3%81%97%E3%81%BE%E3%81%97%E3%81%9F%E3%80%82%E3%83%8F%E3%82%B5%E3%83%9F%E3%82%82%E3%82%88%E3%81%8F%E3%81%A7%E3%81%8D%E3%81%A6%E3%81%84%E3%81%A6%E3%80%81%E7%B3%B8%E3%80%81%E9%87%9D%E5%B1%B1%E3%80%81%E9%87%9D%E3%80%81%E5%BE%85%E3%81%A1%E9%87%9D%E3%80%81%E7%B3%B8%E6%9D%9F%E3%80%81%E5%B7%BB%E5%B0%BA%E3%81%AA%E3%81%A9%E3%80%81%E6%83%B3%E5%83%8F%E4%BB%A5%E4%B8%8A%E3%81%AB%E5%85%85%E5%AE%9F%E3%81%97%E3%81%A6%E3%81%84%E3%81%BE&hashtags=%E3%83%9B%E3%83%93%E3%83%BC">
+                       <button type="button" class="btn btn-primary d-block center-margin-0-auto ccs-product-counter">Tweet
+                       </button>
+                   </a>
+               </div>
+           </div>
+            <div id="card-p-id-3" class="card product-card">
+               <img class="card-img-top" src="https://images-na.ssl-images-amazon.com/images/I/41eQXfaaT6L._AA640_.jpg" alt="">
+               <div class="card-body">
+                   <h5 class="card-title mb-0"><a href="https://px.a8.net/svt/ejp?a8mat=1ZIM2A+34J5TU+249K+BWGDT&a8ejpredirect=https%3A%2F%2Fwww.amazon.co.jp%2F%E3%83%95%E3%83%BC%E3%83%89%E4%BB%98%E3%81%8D-%E3%83%8B%E3%83%83%E3%83%88%E7%94%9F%E5%9C%B0-%E3%82%AA%E3%82%B7%E3%83%A3%E3%83%AC-%E3%83%95%E3%83%AA%E3%83%BC%E3%82%B5%E3%82%A4%E3%82%BA-%E7%94%B7%E5%A5%B3%E5%85%BC%E7%94%A8/dp/B07WRCD49X/ref=gbps_tit_s-4_28cb_74e5a02e%3F%0D%0Asmid=A1GKCS7A2TW82H%26pf_rd_p=fa73587f-9e6a-48eb-84c4-73cb5e3e28cb%26pf_rd_s=slot-4%26pf_rd_t=701%26pf_rd_i=gb_main%26pf_rd_m=AN1VRQENFRJN5%26pf_rd_r=QGA1XCRFR1H4ZBF8V2CJ%2F%3Ftag%3Da8-affi-258507-22.html">品牌名マントフード付きニット生地オシャレフリーサイズ男女兼用演劇舞台学園祭コスプレやや透明黒ブラック</a></h5>
+                   <ul>
+                       <li><a href="https://px.a8.net/svt/ejp?a8mat=1ZIM2A+34J5TU+249K+BWGDT&a8ejpredirect=https%3A%2F%2Fwww.amazon.co.jp%2F%E3%83%95%E3%83%BC%E3%83%89%E4%BB%98%E3%81%8D-%E3%83%8B%E3%83%83%E3%83%88%E7%94%9F%E5%9C%B0-%E3%82%AA%E3%82%B7%E3%83%A3%E3%83%AC-%E3%83%95%E3%83%AA%E3%83%BC%E3%82%B5%E3%82%A4%E3%82%BA-%E7%94%B7%E5%A5%B3%E5%85%BC%E7%94%A8/dp/B07WRCD49X/ref=gbps_tit_s-4_28cb_74e5a02e%3F%0D%0Asmid=A1GKCS7A2TW82H%26pf_rd_p=fa73587f-9e6a-48eb-84c4-73cb5e3e28cb%26pf_rd_s=slot-4%26pf_rd_t=701%26pf_rd_i=gb_main%26pf_rd_m=AN1VRQENFRJN5%26pf_rd_r=QGA1XCRFR1H4ZBF8V2CJ%2F%3Ftag%3Da8-affi-258507-22">価格 ¥849<sup style="color: red;"><s>価格:¥1,099</s>(23%OFF)</sup></a></li>
+                       <li><a href="https://px.a8.net/svt/ejp?a8mat=1ZIM2A+34J5TU+249K+BWGDT&a8ejpredirect=https%3A%2F%2Fwww.amazon.co.jp%2F%E3%83%95%E3%83%BC%E3%83%89%E4%BB%98%E3%81%8D-%E3%83%8B%E3%83%83%E3%83%88%E7%94%9F%E5%9C%B0-%E3%82%AA%E3%82%B7%E3%83%A3%E3%83%AC-%E3%83%95%E3%83%AA%E3%83%BC%E3%82%B5%E3%82%A4%E3%82%BA-%E7%94%B7%E5%A5%B3%E5%85%BC%E7%94%A8/dp/B07WRCD49X/ref=gbps_tit_s-4_28cb_74e5a02e%3F%0D%0Asmid=A1GKCS7A2TW82H%26pf_rd_p=fa73587f-9e6a-48eb-84c4-73cb5e3e28cb%26pf_rd_s=slot-4%26pf_rd_t=701%26pf_rd_i=gb_main%26pf_rd_m=AN1VRQENFRJN5%26pf_rd_r=QGA1XCRFR1H4ZBF8V2CJ%2F%3Ftag%3Da8-affi-258507-22">評価 <font style="color: orange;">★★★★★</font></a></li>
+                       <li><a href="https://px.a8.net/svt/ejp?a8mat=1ZIM2A+34J5TU+249K+BWGDT&a8ejpredirect=https%3A%2F%2Fwww.amazon.co.jp%2F%E3%83%95%E3%83%BC%E3%83%89%E4%BB%98%E3%81%8D-%E3%83%8B%E3%83%83%E3%83%88%E7%94%9F%E5%9C%B0-%E3%82%AA%E3%82%B7%E3%83%A3%E3%83%AC-%E3%83%95%E3%83%AA%E3%83%BC%E3%82%B5%E3%82%A4%E3%82%BA-%E7%94%B7%E5%A5%B3%E5%85%BC%E7%94%A8/dp/B07WRCD49X/ref=gbps_tit_s-4_28cb_74e5a02e%3F%0D%0Asmid=A1GKCS7A2TW82H%26pf_rd_p=fa73587f-9e6a-48eb-84c4-73cb5e3e28cb%26pf_rd_s=slot-4%26pf_rd_t=701%26pf_rd_i=gb_main%26pf_rd_m=AN1VRQENFRJN5%26pf_rd_r=QGA1XCRFR1H4ZBF8V2CJ%2F%3Ftag%3Da8-affi-258507-22">1件のレビュー</a></li>
+                   </ul>
+                       <hr>
+                       <p>
+                           <u><b>レビュー</b></u><br>
+                           今年の学祭のコスプレ用として購入しました。毎年色々なコスプレをしているのですが、今年はシンプルにしました。フードもついていて、急な雨や寒さ対策にも、ないよりはましかなぁと。学生生活最後の学祭なので、楽しみです。</p>
+                   </div>
+                   <a href="http://twitter.com/share?url=https%3A%2F%2Famazondeals.github.io%2FamazonDealsJP%2FHobby.html%23card-p-id-3&text=%E5%B9%B4%E3%81%AE%E5%AD%A6%E7%A5%AD%E3%81%AE%E3%82%B3%E3%82%B9%E3%83%97%E3%83%AC%E7%94%A8%E3%81%A8%E3%81%97%E3%81%A6%E8%B3%BC%E5%85%A5%E3%81%97%E3%81%BE%E3%81%97%E3%81%9F%E3%80%82%E6%AF%8E%E5%B9%B4%E8%89%B2%E3%80%85%E3%81%AA%E3%82%B3%E3%82%B9%E3%83%97%E3%83%AC%E3%82%92%E3%81%97%E3%81%A6%E3%81%84%E3%82%8B%E3%81%AE%E3%81%A7%E3%81%99%E3%81%8C%E3%80%81%E4%BB%8A%E5%B9%B4%E3%81%AF%E3%82%B7%E3%83%B3%E3%83%97%E3%83%AB%E3%81%AB%E3%81%97%E3%81%BE%E3%81%97%E3%81%9F%E3%80%82%E3%83%95%E3%83%BC%E3%83%89%E3%82%82%E3%81%A4%E3%81%84%E3%81%A6%E3%81%84%E3%81%A6%E3%80%81%E6%80%A5%E3%81%AA%E9%9B%A8%E3%82%84%E5%AF%92%E3%81%95%E5%AF%BE%E7%AD%96%E3%81%AB%E3%82%82%E3%80%81%E3%81%AA%E3%81%84%E3%82%88%E3%82%8A%E3%81%AF%E3%81%BE%E3%81%97%E3%81%8B%E3%81%AA%E3%81%81%E3%81%A8%E3%80%82%E5%AD%A6%E7%94%9F%E7%94%9F%E6%B4%BB%E6%9C%80%E5%BE%8C%E3%81%AE%E5%AD%A6%E7%A5%AD%E3%81%AA%E3%81%AE%E3%81%A7%E3%80%81%E6%A5%BD%E3%81%97&hashtags=%E3%83%9B%E3%83%93%E3%83%BC">
+                       <button type="button" class="btn btn-primary d-block center-margin-0-auto ccs-product-counter">Tweet
+                       </button>
+                   </a>
+               </div>
+           </div>
+            <div id="card-p-id-4" class="card product-card">
+               <img class="card-img-top" src="https://images-na.ssl-images-amazon.com/images/I/51D1qN88%2BgL._AA640_.jpg" alt="">
+               <div class="card-body">
+                   <h5 class="card-title mb-0"><a href="https://px.a8.net/svt/ejp?a8mat=1ZIM2A+34J5TU+249K+BWGDT&a8ejpredirect=https%3A%2F%2Fwww.amazon.co.jp%2F%E3%83%95%E3%83%BC%E3%83%89%E4%BB%98%E3%81%8D-%E3%83%97%E3%83%A9%E3%82%B7%E5%A4%A9-%E3%82%AA%E3%82%B7%E3%83%A3%E3%83%AC-%E3%83%95%E3%83%AA%E3%83%BC%E3%82%B5%E3%82%A4%E3%82%BA-%E7%94%B7%E5%A5%B3%E5%85%BC%E7%94%A8/dp/B07WJ3XPTH/ref=gbps_tit_s-4_28cb_89c28767%3F%0D%0Asmid=A1GKCS7A2TW82H%26pf_rd_p=fa73587f-9e6a-48eb-84c4-73cb5e3e28cb%26pf_rd_s=slot-4%26pf_rd_t=701%26pf_rd_i=gb_main%26pf_rd_m=AN1VRQENFRJN5%26pf_rd_r=QGA1XCRFR1H4ZBF8V2CJ%2F%3Ftag%3Da8-affi-258507-22.html">マントフード付きプラシ天オシャレフリーサイズ男女兼用演劇舞台学園祭コスプレ黒、赤、紫、青、緑</a></h5>
+                   <ul>
+                       <li><a href="https://px.a8.net/svt/ejp?a8mat=1ZIM2A+34J5TU+249K+BWGDT&a8ejpredirect=https%3A%2F%2Fwww.amazon.co.jp%2F%E3%83%95%E3%83%BC%E3%83%89%E4%BB%98%E3%81%8D-%E3%83%97%E3%83%A9%E3%82%B7%E5%A4%A9-%E3%82%AA%E3%82%B7%E3%83%A3%E3%83%AC-%E3%83%95%E3%83%AA%E3%83%BC%E3%82%B5%E3%82%A4%E3%82%BA-%E7%94%B7%E5%A5%B3%E5%85%BC%E7%94%A8/dp/B07WJ3XPTH/ref=gbps_tit_s-4_28cb_89c28767%3F%0D%0Asmid=A1GKCS7A2TW82H%26pf_rd_p=fa73587f-9e6a-48eb-84c4-73cb5e3e28cb%26pf_rd_s=slot-4%26pf_rd_t=701%26pf_rd_i=gb_main%26pf_rd_m=AN1VRQENFRJN5%26pf_rd_r=QGA1XCRFR1H4ZBF8V2CJ%2F%3Ftag%3Da8-affi-258507-22">価格 ¥1,019<sup style="color: red;"><s>価格:¥1,299</s>(22%OFF)</sup></a></li>
+                       <li><a href="https://px.a8.net/svt/ejp?a8mat=1ZIM2A+34J5TU+249K+BWGDT&a8ejpredirect=https%3A%2F%2Fwww.amazon.co.jp%2F%E3%83%95%E3%83%BC%E3%83%89%E4%BB%98%E3%81%8D-%E3%83%97%E3%83%A9%E3%82%B7%E5%A4%A9-%E3%82%AA%E3%82%B7%E3%83%A3%E3%83%AC-%E3%83%95%E3%83%AA%E3%83%BC%E3%82%B5%E3%82%A4%E3%82%BA-%E7%94%B7%E5%A5%B3%E5%85%BC%E7%94%A8/dp/B07WJ3XPTH/ref=gbps_tit_s-4_28cb_89c28767%3F%0D%0Asmid=A1GKCS7A2TW82H%26pf_rd_p=fa73587f-9e6a-48eb-84c4-73cb5e3e28cb%26pf_rd_s=slot-4%26pf_rd_t=701%26pf_rd_i=gb_main%26pf_rd_m=AN1VRQENFRJN5%26pf_rd_r=QGA1XCRFR1H4ZBF8V2CJ%2F%3Ftag%3Da8-affi-258507-22">評価 <font style="color: orange;">★★★★★</font></a></li>
+                       <li><a href="https://px.a8.net/svt/ejp?a8mat=1ZIM2A+34J5TU+249K+BWGDT&a8ejpredirect=https%3A%2F%2Fwww.amazon.co.jp%2F%E3%83%95%E3%83%BC%E3%83%89%E4%BB%98%E3%81%8D-%E3%83%97%E3%83%A9%E3%82%B7%E5%A4%A9-%E3%82%AA%E3%82%B7%E3%83%A3%E3%83%AC-%E3%83%95%E3%83%AA%E3%83%BC%E3%82%B5%E3%82%A4%E3%82%BA-%E7%94%B7%E5%A5%B3%E5%85%BC%E7%94%A8/dp/B07WJ3XPTH/ref=gbps_tit_s-4_28cb_89c28767%3F%0D%0Asmid=A1GKCS7A2TW82H%26pf_rd_p=fa73587f-9e6a-48eb-84c4-73cb5e3e28cb%26pf_rd_s=slot-4%26pf_rd_t=701%26pf_rd_i=gb_main%26pf_rd_m=AN1VRQENFRJN5%26pf_rd_r=QGA1XCRFR1H4ZBF8V2CJ%2F%3Ftag%3Da8-affi-258507-22">2件のレビュー</a></li>
+                   </ul>
+                       <hr>
+                       <p>
+                           <u><b>レビュー</b></u><br>
+                           娘が劇に使用するため、購入。1度きりになりそうなので安いものでもいいと思っていましたが、光沢があり安くは見えないので満足です。長さはちょっと長めで、158cmの子でギリギリ床につかない位。長すぎたら切るなり縫うなりするつもりでしたが、支障なく歩けそうなのでそのまま使います。,コントの衣装としてマントが必要だったのでこちらの商品を購入させていただきました。しっかりと光沢もあり、お値段以上にしっかりとした作りになっております。サイズ感も記載に合った通りのサイズ感で届いたときに着用してみたら、ぴったりでした。ゆったりとした感じで首元もきつくならないです。今後も使っていくので、いい衣装を買ったと思います。</p>
+                   </div>
+                   <a href="http://twitter.com/share?url=https%3A%2F%2Famazondeals.github.io%2FamazonDealsJP%2FHobby.html%23card-p-id-4&text=%E3%81%8C%E5%8A%87%E3%81%AB%E4%BD%BF%E7%94%A8%E3%81%99%E3%82%8B%E3%81%9F%E3%82%81%E3%80%81%E8%B3%BC%E5%85%A5%E3%80%821%E5%BA%A6%E3%81%8D%E3%82%8A%E3%81%AB%E3%81%AA%E3%82%8A%E3%81%9D%E3%81%86%E3%81%AA%E3%81%AE%E3%81%A7%E5%AE%89%E3%81%84%E3%82%82%E3%81%AE%E3%81%A7%E3%82%82%E3%81%84%E3%81%84%E3%81%A8%E6%80%9D%E3%81%A3%E3%81%A6%E3%81%84%E3%81%BE%E3%81%97%E3%81%9F%E3%81%8C%E3%80%81%E5%85%89%E6%B2%A2%E3%81%8C%E3%81%82%E3%82%8A%E5%AE%89%E3%81%8F%E3%81%AF%E8%A6%8B%E3%81%88%E3%81%AA%E3%81%84%E3%81%AE%E3%81%A7%E6%BA%80%E8%B6%B3%E3%81%A7%E3%81%99%E3%80%82%E9%95%B7%E3%81%95%E3%81%AF%E3%81%A1%E3%82%87%E3%81%A3%E3%81%A8%E9%95%B7%E3%82%81%E3%81%A7%E3%80%81158cm%E3%81%AE%E5%AD%90%E3%81%A7%E3%82%AE%E3%83%AA%E3%82%AE%E3%83%AA%E5%BA%8A%E3%81%AB%E3%81%A4%E3%81%8B%E3%81%AA%E3%81%84%E4%BD%8D%E3%80%82%E9%95%B7%E3%81%99%E3%81%8E%E3%81%9F%E3%82%89%E5%88%87%E3%82%8B&hashtags=%E3%83%9B%E3%83%93%E3%83%BC">
+                       <button type="button" class="btn btn-primary d-block center-margin-0-auto ccs-product-counter">Tweet
+                       </button>
+                   </a>
+               </div>
+           </div>
+            <div id="card-p-id-5" class="card product-card">
+               <img class="card-img-top" src="https://images-na.ssl-images-amazon.com/images/I/51BFS-cDrsL._SCLZZZZZZZ___AA640_.jpg" alt="">
+               <div class="card-body">
+                   <h5 class="card-title mb-0"><a href="https://px.a8.net/svt/ejp?a8mat=1ZIM2A+34J5TU+249K+BWGDT&a8ejpredirect=https%3A%2F%2Fwww.amazon.co.jp%2FHailiCare-%E3%83%95%E3%82%A1%E3%82%B9%E3%83%8A%E3%83%BC%E4%BF%AE%E7%90%86%E3%82%AD%E3%83%83%E3%83%88-%E3%83%95%E3%82%A1%E3%82%B9%E3%83%8A%E3%83%BC%E5%BC%95%E3%81%A3%E5%BC%B5%E3%82%8A-%E5%A4%9A%E6%A9%9F%E8%83%BD%E3%82%B8%E3%83%83%E3%83%91%E3%83%BC%E3%83%98%E3%83%83%E3%83%89-%E7%B0%A1%E5%8D%98%E3%82%B8%E3%83%83%E3%83%91%E3%83%BC%E4%BF%AE%E7%90%86%E5%B1%8B%E3%81%95%E3%82%93/dp/B07G5T2NZH/ref=gbps_tit_s-4_28cb_925a4807%3F%0D%0Asmid=A1RLB4BEPTO66I%26pf_rd_p=fa73587f-9e6a-48eb-84c4-73cb5e3e28cb%26pf_rd_s=slot-4%26pf_rd_t=701%26pf_rd_i=gb_main%26pf_rd_m=AN1VRQENFRJN5%26pf_rd_r=QGA1XCRFR1H4ZBF8V2CJ%2F%3Ftag%3Da8-affi-258507-22.html">HailiCareジッパーファスナー修理キットペンチ付き縫製交換用DIY多機能ジッパーヘッド財布手作り服装手芸コート修理屋さんに適用85pcs入り</a></h5>
+                   <ul>
+                       <li><a href="https://px.a8.net/svt/ejp?a8mat=1ZIM2A+34J5TU+249K+BWGDT&a8ejpredirect=https%3A%2F%2Fwww.amazon.co.jp%2FHailiCare-%E3%83%95%E3%82%A1%E3%82%B9%E3%83%8A%E3%83%BC%E4%BF%AE%E7%90%86%E3%82%AD%E3%83%83%E3%83%88-%E3%83%95%E3%82%A1%E3%82%B9%E3%83%8A%E3%83%BC%E5%BC%95%E3%81%A3%E5%BC%B5%E3%82%8A-%E5%A4%9A%E6%A9%9F%E8%83%BD%E3%82%B8%E3%83%83%E3%83%91%E3%83%BC%E3%83%98%E3%83%83%E3%83%89-%E7%B0%A1%E5%8D%98%E3%82%B8%E3%83%83%E3%83%91%E3%83%BC%E4%BF%AE%E7%90%86%E5%B1%8B%E3%81%95%E3%82%93/dp/B07G5T2NZH/ref=gbps_tit_s-4_28cb_925a4807%3F%0D%0Asmid=A1RLB4BEPTO66I%26pf_rd_p=fa73587f-9e6a-48eb-84c4-73cb5e3e28cb%26pf_rd_s=slot-4%26pf_rd_t=701%26pf_rd_i=gb_main%26pf_rd_m=AN1VRQENFRJN5%26pf_rd_r=QGA1XCRFR1H4ZBF8V2CJ%2F%3Ftag%3Da8-affi-258507-22">価格 ¥899<sup style="color: red;"><s>価格:¥1,080</s>(17%OFF)</sup></a></li>
+                       <li><a href="https://px.a8.net/svt/ejp?a8mat=1ZIM2A+34J5TU+249K+BWGDT&a8ejpredirect=https%3A%2F%2Fwww.amazon.co.jp%2FHailiCare-%E3%83%95%E3%82%A1%E3%82%B9%E3%83%8A%E3%83%BC%E4%BF%AE%E7%90%86%E3%82%AD%E3%83%83%E3%83%88-%E3%83%95%E3%82%A1%E3%82%B9%E3%83%8A%E3%83%BC%E5%BC%95%E3%81%A3%E5%BC%B5%E3%82%8A-%E5%A4%9A%E6%A9%9F%E8%83%BD%E3%82%B8%E3%83%83%E3%83%91%E3%83%BC%E3%83%98%E3%83%83%E3%83%89-%E7%B0%A1%E5%8D%98%E3%82%B8%E3%83%83%E3%83%91%E3%83%BC%E4%BF%AE%E7%90%86%E5%B1%8B%E3%81%95%E3%82%93/dp/B07G5T2NZH/ref=gbps_tit_s-4_28cb_925a4807%3F%0D%0Asmid=A1RLB4BEPTO66I%26pf_rd_p=fa73587f-9e6a-48eb-84c4-73cb5e3e28cb%26pf_rd_s=slot-4%26pf_rd_t=701%26pf_rd_i=gb_main%26pf_rd_m=AN1VRQENFRJN5%26pf_rd_r=QGA1XCRFR1H4ZBF8V2CJ%2F%3Ftag%3Da8-affi-258507-22">評価 <font style="color: orange;">★★★★</font></a></li>
+                       <li><a href="https://px.a8.net/svt/ejp?a8mat=1ZIM2A+34J5TU+249K+BWGDT&a8ejpredirect=https%3A%2F%2Fwww.amazon.co.jp%2FHailiCare-%E3%83%95%E3%82%A1%E3%82%B9%E3%83%8A%E3%83%BC%E4%BF%AE%E7%90%86%E3%82%AD%E3%83%83%E3%83%88-%E3%83%95%E3%82%A1%E3%82%B9%E3%83%8A%E3%83%BC%E5%BC%95%E3%81%A3%E5%BC%B5%E3%82%8A-%E5%A4%9A%E6%A9%9F%E8%83%BD%E3%82%B8%E3%83%83%E3%83%91%E3%83%BC%E3%83%98%E3%83%83%E3%83%89-%E7%B0%A1%E5%8D%98%E3%82%B8%E3%83%83%E3%83%91%E3%83%BC%E4%BF%AE%E7%90%86%E5%B1%8B%E3%81%95%E3%82%93/dp/B07G5T2NZH/ref=gbps_tit_s-4_28cb_925a4807%3F%0D%0Asmid=A1RLB4BEPTO66I%26pf_rd_p=fa73587f-9e6a-48eb-84c4-73cb5e3e28cb%26pf_rd_s=slot-4%26pf_rd_t=701%26pf_rd_i=gb_main%26pf_rd_m=AN1VRQENFRJN5%26pf_rd_r=QGA1XCRFR1H4ZBF8V2CJ%2F%3Ftag%3Da8-affi-258507-22">60件のレビュー</a></li>
+                   </ul>
+                       <hr>
+                       <p>
+                           <u><b>レビュー</b></u><br>
+                           クーポンサイトで安く買ったカバンながら、けっこう気に入って使っていたものがあるのですが、メインのチャックが壊れてしまい、安いものだし買い直そうかとも思いつつ、でもチャック以外は何ともないのでもったいないう気持ちもあり、いいものがないか検索してこれに行きつき購入しました。結果は見事に交換で直り、さらにもともとのファスナーよりスムーズに開閉出来るようになりました。実はこれを見つける前に、プラスチック製の似たような修復キットを購入したのですが、それは交換してもすぐに外れてしまい全く役に立たずゴミとなってしまいましたが、これは金属製で作りもしっかりしてるので長持ちしそうです。ただ、説明書がないので、添付されている工具を同使うのが正しいのかがわかりません。私がファスナーヘッドを交換したカバンはチャック部分が特殊な取り付け方になっているので、どちらにしても工具や添付されている金具類は使えそうになかったので、無理やりファスナーヘッドを合わさる歯？の隙間に押し込んではめることが出来ましたが、たぶん本来はチャックの端に付いてるファスナーヘッド止めを外して、そこからヘッドを通して、添付の金具で再度抜け止めするためのものなのかなと思います。,カバンのファスナーが外れてしまったのでその修理のために購入。修理屋さん見積もりしたらファスナー交換で1万8000円と言われ、、自分で修理することにしました。修理方法ですが、今回はファスナー本体で駄目になっているところがあるので、留金でそこを塞いでしまうことにしました。そしたら大成功。助かりました。,①ファスナーのエレメント(噛み合わせ部)の末端にある、留め具をはずす。(付属の器具でも、自前のペンチなと自分で使いやすいものを使ってください。留め具の代わりに糸で縛ってある場合もあります。)②スライダーを留め具を外したエレメントの末端まで移動させると、留め具がないので、スライダーが外れます。③購入したセットから、大きさがあうスライダーをさがして、②で古いスライダーを外したエレメントの末端からいれます。細かい作業でちょっと大変ですが、何回かやれば、はいります。左右のエレメントの位置が多少ずれていても、後から調整できるから気にしないでら大丈夫。④スライダーを動かして、エレメントを噛み合わせてみます。左右のエレメントのずれは、この時に調整します。⑤エレメントの末端にセットに入っている留め具を付けて完成。留め具の代わりに、針と糸で縫いつけても、OK</p>
+                   </div>
+                   <a href="http://twitter.com/share?url=https%3A%2F%2Famazondeals.github.io%2FamazonDealsJP%2FHobby.html%23card-p-id-5&text=%E3%83%BC%E3%83%9D%E3%83%B3%E3%82%B5%E3%82%A4%E3%83%88%E3%81%A7%E5%AE%89%E3%81%8F%E8%B2%B7%E3%81%A3%E3%81%9F%E3%82%AB%E3%83%90%E3%83%B3%E3%81%AA%E3%81%8C%E3%82%89%E3%80%81%E3%81%91%E3%81%A3%E3%81%93%E3%81%86%E6%B0%97%E3%81%AB%E5%85%A5%E3%81%A3%E3%81%A6%E4%BD%BF%E3%81%A3%E3%81%A6%E3%81%84%E3%81%9F%E3%82%82%E3%81%AE%E3%81%8C%E3%81%82%E3%82%8B%E3%81%AE%E3%81%A7%E3%81%99%E3%81%8C%E3%80%81%E3%83%A1%E3%82%A4%E3%83%B3%E3%81%AE%E3%83%81%E3%83%A3%E3%83%83%E3%82%AF%E3%81%8C%E5%A3%8A%E3%82%8C%E3%81%A6%E3%81%97%E3%81%BE%E3%81%84%E3%80%81%E5%AE%89%E3%81%84%E3%82%82%E3%81%AE%E3%81%A0%E3%81%97%E8%B2%B7%E3%81%84%E7%9B%B4%E3%81%9D%E3%81%86%E3%81%8B%E3%81%A8%E3%82%82%E6%80%9D%E3%81%84%E3%81%A4%E3%81%A4%E3%80%81%E3%81%A7%E3%82%82%E3%83%81%E3%83%A3%E3%83%83%E3%82%AF%E4%BB%A5%E5%A4%96%E3%81%AF%E4%BD%95%E3%81%A8%E3%82%82%E3%81%AA%E3%81%84%E3%81%AE%E3%81%A7%E3%82%82%E3%81%A3%E3%81%9F%E3%81%84%E3%81%AA%E3%81%84&hashtags=%E3%83%9B%E3%83%93%E3%83%BC">
+                       <button type="button" class="btn btn-primary d-block center-margin-0-auto ccs-product-counter">Tweet
+                       </button>
+                   </a>
+               </div>
+           </div>
+            <div id="card-p-id-6" class="card product-card">
+               <img class="card-img-top" src="https://images-na.ssl-images-amazon.com/images/I/411W5uAV1CL._SCLZZZZZZZ___AA640_.jpg" alt="">
+               <div class="card-body">
+                   <h5 class="card-title mb-0"><a href="https://px.a8.net/svt/ejp?a8mat=1ZIM2A+34J5TU+249K+BWGDT&a8ejpredirect=https%3A%2F%2Fwww.amazon.co.jp%2F%E3%83%88%E3%83%AC%E3%83%BC%E3%82%B9%E5%8F%B0-%E3%83%A9%E3%82%A4%E3%83%88%E3%83%9C%E3%83%83%E3%82%AF%E3%82%B9-%E3%83%A9%E3%82%A4%E3%83%88%E3%83%86%E3%83%BC%E3%83%96%E3%83%AB-%E5%85%A8%E9%9D%A2%E3%83%95%E3%83%A9%E3%83%83%E3%83%88-USB%E3%82%B1%E3%83%BC%E3%83%96%E3%83%AB/dp/B07RTVDMZP/ref=gbps_tit_s-4_28cb_bae1581e%3F%0D%0Asmid=A1JPIWW5NTFKXE%26pf_rd_p=fa73587f-9e6a-48eb-84c4-73cb5e3e28cb%26pf_rd_s=slot-4%26pf_rd_t=701%26pf_rd_i=gb_main%26pf_rd_m=AN1VRQENFRJN5%26pf_rd_r=QGA1XCRFR1H4ZBF8V2CJ%2F%3Ftag%3Da8-affi-258507-22.html">トレース台LED2019ライトボックスLEDA4サイズ超薄型ライトテーブル全面フラット3段階調光付き製図マンガスケッチデッサンイラスト子供適用1.5mUSBケーブル/紙挟み付き</a></h5>
+                   <ul>
+                       <li><a href="https://px.a8.net/svt/ejp?a8mat=1ZIM2A+34J5TU+249K+BWGDT&a8ejpredirect=https%3A%2F%2Fwww.amazon.co.jp%2F%E3%83%88%E3%83%AC%E3%83%BC%E3%82%B9%E5%8F%B0-%E3%83%A9%E3%82%A4%E3%83%88%E3%83%9C%E3%83%83%E3%82%AF%E3%82%B9-%E3%83%A9%E3%82%A4%E3%83%88%E3%83%86%E3%83%BC%E3%83%96%E3%83%AB-%E5%85%A8%E9%9D%A2%E3%83%95%E3%83%A9%E3%83%83%E3%83%88-USB%E3%82%B1%E3%83%BC%E3%83%96%E3%83%AB/dp/B07RTVDMZP/ref=gbps_tit_s-4_28cb_bae1581e%3F%0D%0Asmid=A1JPIWW5NTFKXE%26pf_rd_p=fa73587f-9e6a-48eb-84c4-73cb5e3e28cb%26pf_rd_s=slot-4%26pf_rd_t=701%26pf_rd_i=gb_main%26pf_rd_m=AN1VRQENFRJN5%26pf_rd_r=QGA1XCRFR1H4ZBF8V2CJ%2F%3Ftag%3Da8-affi-258507-22">価格 ¥1,529<sup style="color: red;"><s>価格:¥1,799</s>(15%OFF)</sup></a></li>
+                       <li><a href="https://px.a8.net/svt/ejp?a8mat=1ZIM2A+34J5TU+249K+BWGDT&a8ejpredirect=https%3A%2F%2Fwww.amazon.co.jp%2F%E3%83%88%E3%83%AC%E3%83%BC%E3%82%B9%E5%8F%B0-%E3%83%A9%E3%82%A4%E3%83%88%E3%83%9C%E3%83%83%E3%82%AF%E3%82%B9-%E3%83%A9%E3%82%A4%E3%83%88%E3%83%86%E3%83%BC%E3%83%96%E3%83%AB-%E5%85%A8%E9%9D%A2%E3%83%95%E3%83%A9%E3%83%83%E3%83%88-USB%E3%82%B1%E3%83%BC%E3%83%96%E3%83%AB/dp/B07RTVDMZP/ref=gbps_tit_s-4_28cb_bae1581e%3F%0D%0Asmid=A1JPIWW5NTFKXE%26pf_rd_p=fa73587f-9e6a-48eb-84c4-73cb5e3e28cb%26pf_rd_s=slot-4%26pf_rd_t=701%26pf_rd_i=gb_main%26pf_rd_m=AN1VRQENFRJN5%26pf_rd_r=QGA1XCRFR1H4ZBF8V2CJ%2F%3Ftag%3Da8-affi-258507-22">評価 <font style="color: orange;">★★★★☆</font></a></li>
+                       <li><a href="https://px.a8.net/svt/ejp?a8mat=1ZIM2A+34J5TU+249K+BWGDT&a8ejpredirect=https%3A%2F%2Fwww.amazon.co.jp%2F%E3%83%88%E3%83%AC%E3%83%BC%E3%82%B9%E5%8F%B0-%E3%83%A9%E3%82%A4%E3%83%88%E3%83%9C%E3%83%83%E3%82%AF%E3%82%B9-%E3%83%A9%E3%82%A4%E3%83%88%E3%83%86%E3%83%BC%E3%83%96%E3%83%AB-%E5%85%A8%E9%9D%A2%E3%83%95%E3%83%A9%E3%83%83%E3%83%88-USB%E3%82%B1%E3%83%BC%E3%83%96%E3%83%AB/dp/B07RTVDMZP/ref=gbps_tit_s-4_28cb_bae1581e%3F%0D%0Asmid=A1JPIWW5NTFKXE%26pf_rd_p=fa73587f-9e6a-48eb-84c4-73cb5e3e28cb%26pf_rd_s=slot-4%26pf_rd_t=701%26pf_rd_i=gb_main%26pf_rd_m=AN1VRQENFRJN5%26pf_rd_r=QGA1XCRFR1H4ZBF8V2CJ%2F%3Ftag%3Da8-affi-258507-22">53件のレビュー</a></li>
+                   </ul>
+                       <hr>
+                       <p>
+                           <u><b>レビュー</b></u><br>
+                           趣味でイラストやってますがもっぱらアナログ派です。中学の頃、漫画家に憧れていた頃、1万円のトレース台を指をくわえて眺めていたのを覚えています。あの時これが売っていたらもっと幸せだったかなと思います。ですが今こうして、手軽に買えて、十分楽しめる商品があって幸せです。光ムラも気になるところはありません。正直もう1万円のもの持ってますが特に差を感じません。コスパ最高です。,想像以上に軽かったです。今回こちらの商品を購入しようと思ったキッカケはデジ絵にチャレンジして基礎からやらないといけないと気づきまして。写真撮影のため手持ちのスタンドに立てていますが、通常はこのような使い方はしません。LEDのバックライトが3段階調整可能です。これが非常に便利で重宝しています。何度も言いますが薄くて軽いので本棚とかにも収納できます。机の上を占領しないので助かっています！,写し絵にハマっている娘に買いました。少女漫画の上に写し紙を乗せ、せっと毎日のように書いていたのでもう少し書きやすいように、と思い購入しました。子供用なのでお安めのものを探していてこちらの商品にたどりつきました。届いてびっくり。ものすごく軽い！子供のお絵かき帳よりも全然軽い。そして薄い。子供も書きやすくなって絵を描くのが余計に楽しいようで届いてから毎日使っています。良い点である軽さと薄さが娘の扱いでどれくらい持つのかが気になるところですがとても良い買物させていただけました。</p>
+                   </div>
+                   <a href="http://twitter.com/share?url=https%3A%2F%2Famazondeals.github.io%2FamazonDealsJP%2FHobby.html%23card-p-id-6&text=%E5%91%B3%E3%81%A7%E3%82%A4%E3%83%A9%E3%82%B9%E3%83%88%E3%82%84%E3%81%A3%E3%81%A6%E3%81%BE%E3%81%99%E3%81%8C%E3%82%82%E3%81%A3%E3%81%B1%E3%82%89%E3%82%A2%E3%83%8A%E3%83%AD%E3%82%B0%E6%B4%BE%E3%81%A7%E3%81%99%E3%80%82%E4%B8%AD%E5%AD%A6%E3%81%AE%E9%A0%83%E3%80%81%E6%BC%AB%E7%94%BB%E5%AE%B6%E3%81%AB%E6%86%A7%E3%82%8C%E3%81%A6%E3%81%84%E3%81%9F%E9%A0%83%E3%80%811%E4%B8%87%E5%86%86%E3%81%AE%E3%83%88%E3%83%AC%E3%83%BC%E3%82%B9%E5%8F%B0%E3%82%92%E6%8C%87%E3%82%92%E3%81%8F%E3%82%8F%E3%81%88%E3%81%A6%E7%9C%BA%E3%82%81%E3%81%A6%E3%81%84%E3%81%9F%E3%81%AE%E3%82%92%E8%A6%9A%E3%81%88%E3%81%A6%E3%81%84%E3%81%BE%E3%81%99%E3%80%82%E3%81%82%E3%81%AE%E6%99%82%E3%81%93%E3%82%8C%E3%81%8C%E5%A3%B2%E3%81%A3%E3%81%A6%E3%81%84%E3%81%9F%E3%82%89%E3%82%82%E3%81%A3%E3%81%A8%E5%B9%B8%E3%81%9B%E3%81%A0%E3%81%A3%E3%81%9F%E3%81%8B%E3%81%AA%E3%81%A8%E6%80%9D%E3%81%84%E3%81%BE%E3%81%99%E3%80%82%E3%81%A7%E3%81%99&hashtags=%E3%83%9B%E3%83%93%E3%83%BC">
+                       <button type="button" class="btn btn-primary d-block center-margin-0-auto ccs-product-counter">Tweet
+                       </button>
+                   </a>
+               </div>
+           </div>
+            <div id="card-p-id-7" class="card product-card">
+               <img class="card-img-top" src="https://images-na.ssl-images-amazon.com/images/I/511GT4S-bML._AA640_.jpg" alt="">
+               <div class="card-body">
+                   <h5 class="card-title mb-0"><a href="https://px.a8.net/svt/ejp?a8mat=1ZIM2A+34J5TU+249K+BWGDT&a8ejpredirect=https%3A%2F%2Fwww.amazon.co.jp%2F%E3%83%87%E3%82%B3%E3%83%AC%E3%83%BC%E3%82%B7%E3%83%A7%E3%83%B3-%E3%83%9E%E3%82%B9%E3%82%AB%E3%83%AC%E3%83%BC%E3%83%89%E3%83%9E%E3%82%B9%E3%82%AF-%E3%83%99%E3%83%8D%E3%83%81%E3%82%A2%E3%83%B3%E3%83%9E%E3%82%B9%E3%82%AF-%E3%83%B4%E3%82%A7%E3%83%8D%E3%83%81%E3%82%A2%E3%83%B3%E3%83%9E%E3%82%B9%E3%82%AF-%E3%82%B3%E3%82%B9%E3%83%97%E3%83%AC%E7%94%A8%E3%81%AE%E3%83%9E%E3%82%B9%E3%82%AF%E3%82%B3%E3%82%B9%E3%83%81%E3%83%A5%E3%83%BC%E3%83%A0%E7%94%A8%E5%B0%8F%E7%89%A9/dp/B07WFTRGLB/ref=gbps_tit_s-4_28cb_6ac99d11%3F%0D%0Asmid=A1GKCS7A2TW82H%26pf_rd_p=fa73587f-9e6a-48eb-84c4-73cb5e3e28cb%26pf_rd_s=slot-4%26pf_rd_t=701%26pf_rd_i=gb_main%26pf_rd_m=AN1VRQENFRJN5%26pf_rd_r=QGA1XCRFR1H4ZBF8V2CJ%2F%3Ftag%3Da8-affi-258507-22.html">パーティー用デコレーションマスカレードマスク仮面舞踏会演劇社交ダンスベネチアンマスクヴェネチアンマスクコスプレ用のマスクコスチ</a></h5>
+                   <ul>
+                       <li><a href="https://px.a8.net/svt/ejp?a8mat=1ZIM2A+34J5TU+249K+BWGDT&a8ejpredirect=https%3A%2F%2Fwww.amazon.co.jp%2F%E3%83%87%E3%82%B3%E3%83%AC%E3%83%BC%E3%82%B7%E3%83%A7%E3%83%B3-%E3%83%9E%E3%82%B9%E3%82%AB%E3%83%AC%E3%83%BC%E3%83%89%E3%83%9E%E3%82%B9%E3%82%AF-%E3%83%99%E3%83%8D%E3%83%81%E3%82%A2%E3%83%B3%E3%83%9E%E3%82%B9%E3%82%AF-%E3%83%B4%E3%82%A7%E3%83%8D%E3%83%81%E3%82%A2%E3%83%B3%E3%83%9E%E3%82%B9%E3%82%AF-%E3%82%B3%E3%82%B9%E3%83%97%E3%83%AC%E7%94%A8%E3%81%AE%E3%83%9E%E3%82%B9%E3%82%AF%E3%82%B3%E3%82%B9%E3%83%81%E3%83%A5%E3%83%BC%E3%83%A0%E7%94%A8%E5%B0%8F%E7%89%A9/dp/B07WFTRGLB/ref=gbps_tit_s-4_28cb_6ac99d11%3F%0D%0Asmid=A1GKCS7A2TW82H%26pf_rd_p=fa73587f-9e6a-48eb-84c4-73cb5e3e28cb%26pf_rd_s=slot-4%26pf_rd_t=701%26pf_rd_i=gb_main%26pf_rd_m=AN1VRQENFRJN5%26pf_rd_r=QGA1XCRFR1H4ZBF8V2CJ%2F%3Ftag%3Da8-affi-258507-22">価格 ¥1,428<sup style="color: red;"><s>価格:¥1,680</s>(15%OFF)</sup></a></li>
+                       <li><a href="https://px.a8.net/svt/ejp?a8mat=1ZIM2A+34J5TU+249K+BWGDT&a8ejpredirect=https%3A%2F%2Fwww.amazon.co.jp%2F%E3%83%87%E3%82%B3%E3%83%AC%E3%83%BC%E3%82%B7%E3%83%A7%E3%83%B3-%E3%83%9E%E3%82%B9%E3%82%AB%E3%83%AC%E3%83%BC%E3%83%89%E3%83%9E%E3%82%B9%E3%82%AF-%E3%83%99%E3%83%8D%E3%83%81%E3%82%A2%E3%83%B3%E3%83%9E%E3%82%B9%E3%82%AF-%E3%83%B4%E3%82%A7%E3%83%8D%E3%83%81%E3%82%A2%E3%83%B3%E3%83%9E%E3%82%B9%E3%82%AF-%E3%82%B3%E3%82%B9%E3%83%97%E3%83%AC%E7%94%A8%E3%81%AE%E3%83%9E%E3%82%B9%E3%82%AF%E3%82%B3%E3%82%B9%E3%83%81%E3%83%A5%E3%83%BC%E3%83%A0%E7%94%A8%E5%B0%8F%E7%89%A9/dp/B07WFTRGLB/ref=gbps_tit_s-4_28cb_6ac99d11%3F%0D%0Asmid=A1GKCS7A2TW82H%26pf_rd_p=fa73587f-9e6a-48eb-84c4-73cb5e3e28cb%26pf_rd_s=slot-4%26pf_rd_t=701%26pf_rd_i=gb_main%26pf_rd_m=AN1VRQENFRJN5%26pf_rd_r=QGA1XCRFR1H4ZBF8V2CJ%2F%3Ftag%3Da8-affi-258507-22">評価 <font style="color: orange;">★★★★★</font></a></li>
+                       <li><a href="https://px.a8.net/svt/ejp?a8mat=1ZIM2A+34J5TU+249K+BWGDT&a8ejpredirect=https%3A%2F%2Fwww.amazon.co.jp%2F%E3%83%87%E3%82%B3%E3%83%AC%E3%83%BC%E3%82%B7%E3%83%A7%E3%83%B3-%E3%83%9E%E3%82%B9%E3%82%AB%E3%83%AC%E3%83%BC%E3%83%89%E3%83%9E%E3%82%B9%E3%82%AF-%E3%83%99%E3%83%8D%E3%83%81%E3%82%A2%E3%83%B3%E3%83%9E%E3%82%B9%E3%82%AF-%E3%83%B4%E3%82%A7%E3%83%8D%E3%83%81%E3%82%A2%E3%83%B3%E3%83%9E%E3%82%B9%E3%82%AF-%E3%82%B3%E3%82%B9%E3%83%97%E3%83%AC%E7%94%A8%E3%81%AE%E3%83%9E%E3%82%B9%E3%82%AF%E3%82%B3%E3%82%B9%E3%83%81%E3%83%A5%E3%83%BC%E3%83%A0%E7%94%A8%E5%B0%8F%E7%89%A9/dp/B07WFTRGLB/ref=gbps_tit_s-4_28cb_6ac99d11%3F%0D%0Asmid=A1GKCS7A2TW82H%26pf_rd_p=fa73587f-9e6a-48eb-84c4-73cb5e3e28cb%26pf_rd_s=slot-4%26pf_rd_t=701%26pf_rd_i=gb_main%26pf_rd_m=AN1VRQENFRJN5%26pf_rd_r=QGA1XCRFR1H4ZBF8V2CJ%2F%3Ftag%3Da8-affi-258507-22">1件のレビュー</a></li>
+                   </ul>
+                       <hr>
+                       <p>
+                           <u><b>レビュー</b></u><br>
+                           ハロウィン用のパーティーグッズとして購入しました。パーティーの使い捨て用に準備したのですがとてもリーズナブルで、使い勝手が良かったです。</p>
+                   </div>
+                   <a href="http://twitter.com/share?url=https%3A%2F%2Famazondeals.github.io%2FamazonDealsJP%2FHobby.html%23card-p-id-7&text=%E3%83%AD%E3%82%A6%E3%82%A3%E3%83%B3%E7%94%A8%E3%81%AE%E3%83%91%E3%83%BC%E3%83%86%E3%82%A3%E3%83%BC%E3%82%B0%E3%83%83%E3%82%BA%E3%81%A8%E3%81%97%E3%81%A6%E8%B3%BC%E5%85%A5%E3%81%97%E3%81%BE%E3%81%97%E3%81%9F%E3%80%82%E3%83%91%E3%83%BC%E3%83%86%E3%82%A3%E3%83%BC%E3%81%AE%E4%BD%BF%E3%81%84%E6%8D%A8%E3%81%A6%E7%94%A8%E3%81%AB%E6%BA%96%E5%82%99%E3%81%97%E3%81%9F%E3%81%AE%E3%81%A7%E3%81%99%E3%81%8C%E3%81%A8%E3%81%A6%E3%82%82%E3%83%AA%E3%83%BC%E3%82%BA%E3%83%8A%E3%83%96%E3%83%AB%E3%81%A7%E3%80%81%E4%BD%BF%E3%81%84%E5%8B%9D%E6%89%8B%E3%81%8C%E8%89%AF%E3%81%8B%E3%81%A3%E3%81%9F%E3%81%A7%E3%81%99%E3%80%82&hashtags=%E3%83%9B%E3%83%93%E3%83%BC">
+                       <button type="button" class="btn btn-primary d-block center-margin-0-auto ccs-product-counter">Tweet
+                       </button>
+                   </a>
+               </div>
+           </div>
+            <div id="card-p-id-8" class="card product-card">
+               <img class="card-img-top" src="https://images-na.ssl-images-amazon.com/images/I/51TbF-1LPFL._AA640_.jpg" alt="">
+               <div class="card-body">
+                   <h5 class="card-title mb-0"><a href="https://px.a8.net/svt/ejp?a8mat=1ZIM2A+34J5TU+249K+BWGDT&a8ejpredirect=https%3A%2F%2Fwww.amazon.co.jp%2FHBX-2-4Ghz%E7%84%A1%E7%B7%9A%E6%93%8D%E4%BD%9C-%E3%82%AA%E3%83%95%E3%83%AD%E3%83%BC%E3%83%89%E4%BA%8C%E3%81%A4%E3%81%AE%E3%82%B9%E3%83%94%E3%83%BC%E3%83%89%E3%83%A2%E3%83%BC%E3%83%89-%E3%83%AD%E3%83%83%E3%82%AF%E3%82%AF%E3%83%AD%E3%83%BC%E3%83%AA%E3%83%B3%E3%82%B0-%E3%82%AA%E3%83%BC%E3%83%AB%E3%83%86%E3%83%AC%E3%83%BC%E3%83%B3%E9%98%B2%E6%B0%B4%E3%83%88%E3%83%A9%E3%83%83%E3%82%AF%E3%83%A9%E3%82%B8%E3%82%B3%E3%83%B3%E3%82%AB%E3%83%BC/dp/B07THWCT17/ref=gbps_tit_s-4_28cb_6bffeece%3F%0D%0Asmid=A3PD3IKD5BRC84%26pf_rd_p=fa73587f-9e6a-48eb-84c4-73cb5e3e28cb%26pf_rd_s=slot-4%26pf_rd_t=701%26pf_rd_i=gb_main%26pf_rd_m=AN1VRQENFRJN5%26pf_rd_r=QGA1XCRFR1H4ZBF8V2CJ%2F%3Ftag%3Da8-affi-258507-22.html">ラジコンカーHBXリモコンカー1/184WDRTR電動RCカー2.4Ghz無線操作36km/h高速競技可能ラジコンバ</a></h5>
+                   <ul>
+                       <li><a href="https://px.a8.net/svt/ejp?a8mat=1ZIM2A+34J5TU+249K+BWGDT&a8ejpredirect=https%3A%2F%2Fwww.amazon.co.jp%2FHBX-2-4Ghz%E7%84%A1%E7%B7%9A%E6%93%8D%E4%BD%9C-%E3%82%AA%E3%83%95%E3%83%AD%E3%83%BC%E3%83%89%E4%BA%8C%E3%81%A4%E3%81%AE%E3%82%B9%E3%83%94%E3%83%BC%E3%83%89%E3%83%A2%E3%83%BC%E3%83%89-%E3%83%AD%E3%83%83%E3%82%AF%E3%82%AF%E3%83%AD%E3%83%BC%E3%83%AA%E3%83%B3%E3%82%B0-%E3%82%AA%E3%83%BC%E3%83%AB%E3%83%86%E3%83%AC%E3%83%BC%E3%83%B3%E9%98%B2%E6%B0%B4%E3%83%88%E3%83%A9%E3%83%83%E3%82%AF%E3%83%A9%E3%82%B8%E3%82%B3%E3%83%B3%E3%82%AB%E3%83%BC/dp/B07THWCT17/ref=gbps_tit_s-4_28cb_6bffeece%3F%0D%0Asmid=A3PD3IKD5BRC84%26pf_rd_p=fa73587f-9e6a-48eb-84c4-73cb5e3e28cb%26pf_rd_s=slot-4%26pf_rd_t=701%26pf_rd_i=gb_main%26pf_rd_m=AN1VRQENFRJN5%26pf_rd_r=QGA1XCRFR1H4ZBF8V2CJ%2F%3Ftag%3Da8-affi-258507-22">価格 ¥6,534<sup style="color: red;"><s>価格:¥7,688</s>(15%OFF)</sup></a></li>
+                       <li><a href="https://px.a8.net/svt/ejp?a8mat=1ZIM2A+34J5TU+249K+BWGDT&a8ejpredirect=https%3A%2F%2Fwww.amazon.co.jp%2FHBX-2-4Ghz%E7%84%A1%E7%B7%9A%E6%93%8D%E4%BD%9C-%E3%82%AA%E3%83%95%E3%83%AD%E3%83%BC%E3%83%89%E4%BA%8C%E3%81%A4%E3%81%AE%E3%82%B9%E3%83%94%E3%83%BC%E3%83%89%E3%83%A2%E3%83%BC%E3%83%89-%E3%83%AD%E3%83%83%E3%82%AF%E3%82%AF%E3%83%AD%E3%83%BC%E3%83%AA%E3%83%B3%E3%82%B0-%E3%82%AA%E3%83%BC%E3%83%AB%E3%83%86%E3%83%AC%E3%83%BC%E3%83%B3%E9%98%B2%E6%B0%B4%E3%83%88%E3%83%A9%E3%83%83%E3%82%AF%E3%83%A9%E3%82%B8%E3%82%B3%E3%83%B3%E3%82%AB%E3%83%BC/dp/B07THWCT17/ref=gbps_tit_s-4_28cb_6bffeece%3F%0D%0Asmid=A3PD3IKD5BRC84%26pf_rd_p=fa73587f-9e6a-48eb-84c4-73cb5e3e28cb%26pf_rd_s=slot-4%26pf_rd_t=701%26pf_rd_i=gb_main%26pf_rd_m=AN1VRQENFRJN5%26pf_rd_r=QGA1XCRFR1H4ZBF8V2CJ%2F%3Ftag%3Da8-affi-258507-22">評価 <font style="color: orange;">★★★★★</font></a></li>
+                       <li><a href="https://px.a8.net/svt/ejp?a8mat=1ZIM2A+34J5TU+249K+BWGDT&a8ejpredirect=https%3A%2F%2Fwww.amazon.co.jp%2FHBX-2-4Ghz%E7%84%A1%E7%B7%9A%E6%93%8D%E4%BD%9C-%E3%82%AA%E3%83%95%E3%83%AD%E3%83%BC%E3%83%89%E4%BA%8C%E3%81%A4%E3%81%AE%E3%82%B9%E3%83%94%E3%83%BC%E3%83%89%E3%83%A2%E3%83%BC%E3%83%89-%E3%83%AD%E3%83%83%E3%82%AF%E3%82%AF%E3%83%AD%E3%83%BC%E3%83%AA%E3%83%B3%E3%82%B0-%E3%82%AA%E3%83%BC%E3%83%AB%E3%83%86%E3%83%AC%E3%83%BC%E3%83%B3%E9%98%B2%E6%B0%B4%E3%83%88%E3%83%A9%E3%83%83%E3%82%AF%E3%83%A9%E3%82%B8%E3%82%B3%E3%83%B3%E3%82%AB%E3%83%BC/dp/B07THWCT17/ref=gbps_tit_s-4_28cb_6bffeece%3F%0D%0Asmid=A3PD3IKD5BRC84%26pf_rd_p=fa73587f-9e6a-48eb-84c4-73cb5e3e28cb%26pf_rd_s=slot-4%26pf_rd_t=701%26pf_rd_i=gb_main%26pf_rd_m=AN1VRQENFRJN5%26pf_rd_r=QGA1XCRFR1H4ZBF8V2CJ%2F%3Ftag%3Da8-affi-258507-22">18件のレビュー</a></li>
+                   </ul>
+                       <hr>
+                       <p>
+                           <u><b>レビュー</b></u><br>
+                           子供の誕生日プレゼントに購入しました！トイラジというよりは、ホビーラジコンに近いラジコンですね。小学1年生には、ハイパワー過ぎか、ガンガンぶつけて、ゴロゴロ転がりましたが、壊れることなく、楽しんでます。完成品でこれだけ走るとは思いもよらなかったです。発送も早く、注文から中1日で届きました。大人も楽しめそうなモデルでオススメですょ。操作が簡単そうで、頑丈そうなこのラジコンを購入。実際に走らせてみました。操作はとても簡単で大人のラジコンカーにありがちな面倒な設定など一切なし。車側の本体のスイッチとコントローラー側のスイッチを入れるだけです。ヘンドルは微妙なカーブコントロールなく、右左進むバックのシンプルな操作で教える操作を教えなくても小さな子どもでも勝手に遊び始めます。バッテリーは充電式で、かつ一つ付いていて、バックアップ電池を買ったら、室外で長くて遊べますし、コントローラー側は単三電池ですが、同梱されています。車体側の電池の交換は、小さなネジで落ちないように絞めるので、子供が予備バッテリーを外で交換する場合は、予め家でバッテリーの交換の練習をさせてから、出かけるときにはドライバーをもたせてあげましょう。この値段でこのサイズで、シンプルなラジコンが良いなら、これでよいと思います。参考になれば幸いです。ちなみに、LEDも付けて、面白くなりました。ありがとうございます。,子供の頃からラジコンで遊ぶことが多かった私は、ひさしぶりに子供たちと遊びたくてラジコンを購入！するとこちらのラジコン。競技用としても利用できるくらいの高性能！高速36キロまで出るようで、走らせてみても確かに高速！ちょっと広い庭じゃないと危ないくらい笑リモコンの形も特徴的で、今時のリモコンはこんな形なのかと思いつつ使ってみると直感的に使うことができました！雨の中での使用も問題ありませんでしたし、小さな水たまりもなんなくクリアしました！丸いハンドルを右回り左回しで走行しますので操作しててとても楽しいです！左折右折も問題なく、坂道もラクラク！もうワクワクが止まらなくなります！形もかっこいいですし、持ってるだけで自慢したくなります！充電についても問題ありませんでしたし、USBを使えるのがいいですね！これからもたくさん使って楽しみたいです！いい買い物ができました☆,大人も子供も楽しめます！息子の誕生日プレゼントで購入しました。オフロード仕様でスピードが出そうなものを探していてこちらを購入しました。組み立てもないので届いて充電すれば、すぐに使えました。見た目のデザインは写真掲載の通り、オレンジを基調としたかっこいいデザインになっています。操作の感度はとても良く、操作すると発進が早いです。かなりスピードが出るので最初は操作が難しかったです。設定がノーマルとスローがあるので最初はスローで走らせた方がいいでしょう。パワーがあるので坂道も難なく登ります。オフロード用の4WD仕様なので凸凹の道でもしっかりとクッションするので安定して走ります。防水機能もついているので、水たまりなどの走行でも安心です。何台かラジコンを扱ってきましたが、かなりハイスペックのラジコンだと思います。息子と休日を楽しめて喜ばしいです。</p>
+                   </div>
+                   <a href="http://twitter.com/share?url=https%3A%2F%2Famazondeals.github.io%2FamazonDealsJP%2FHobby.html%23card-p-id-8&text=%E4%BE%9B%E3%81%AE%E8%AA%95%E7%94%9F%E6%97%A5%E3%83%97%E3%83%AC%E3%82%BC%E3%83%B3%E3%83%88%E3%81%AB%E8%B3%BC%E5%85%A5%E3%81%97%E3%81%BE%E3%81%97%E3%81%9F%EF%BC%81%E3%83%88%E3%82%A4%E3%83%A9%E3%82%B8%E3%81%A8%E3%81%84%E3%81%86%E3%82%88%E3%82%8A%E3%81%AF%E3%80%81%E3%83%9B%E3%83%93%E3%83%BC%E3%83%A9%E3%82%B8%E3%82%B3%E3%83%B3%E3%81%AB%E8%BF%91%E3%81%84%E3%83%A9%E3%82%B8%E3%82%B3%E3%83%B3%E3%81%A7%E3%81%99%E3%81%AD%E3%80%82%E5%B0%8F%E5%AD%A61%E5%B9%B4%E7%94%9F%E3%81%AB%E3%81%AF%E3%80%81%E3%83%8F%E3%82%A4%E3%83%91%E3%83%AF%E3%83%BC%E9%81%8E%E3%81%8E%E3%81%8B%E3%80%81%E3%82%AC%E3%83%B3%E3%82%AC%E3%83%B3%E3%81%B6%E3%81%A4%E3%81%91%E3%81%A6%E3%80%81%E3%82%B4%E3%83%AD%E3%82%B4%E3%83%AD%E8%BB%A2%E3%81%8C%E3%82%8A%E3%81%BE%E3%81%97%E3%81%9F%E3%81%8C%E3%80%81%E5%A3%8A%E3%82%8C%E3%82%8B%E3%81%93%E3%81%A8%E3%81%AA%E3%81%8F%E3%80%81%E6%A5%BD%E3%81%97%E3%82%93%E3%81%A7%E3%81%BE%E3%81%99%E3%80%82&hashtags=%E3%83%9B%E3%83%93%E3%83%BC">
+                       <button type="button" class="btn btn-primary d-block center-margin-0-auto ccs-product-counter">Tweet
+                       </button>
+                   </a>
+               </div>
+           </div>
+            <div id="card-p-id-9" class="card product-card">
+               <img class="card-img-top" src="https://images-na.ssl-images-amazon.com/images/I/41iDBGAywSL._AA640_.jpg" alt="">
+               <div class="card-body">
+                   <h5 class="card-title mb-0"><a href="https://px.a8.net/svt/ejp?a8mat=1ZIM2A+34J5TU+249K+BWGDT&a8ejpredirect=https%3A%2F%2Fwww.amazon.co.jp%2F%E3%83%95%E3%83%BC%E3%83%89%E4%BB%98%E3%81%8D-%E3%83%8B%E3%83%83%E3%83%88%E7%94%9F%E5%9C%B0-%E3%82%AA%E3%82%B7%E3%83%A3%E3%83%AC-%E3%83%95%E3%83%AA%E3%83%BC%E3%82%B5%E3%82%A4%E3%82%BA-%E7%94%B7%E5%A5%B3%E5%85%BC%E7%94%A8/dp/B07WS962T3/ref=gbps_tit_s-4_28cb_dab41270%3F%0D%0Asmid=A1GKCS7A2TW82H%26pf_rd_p=fa73587f-9e6a-48eb-84c4-73cb5e3e28cb%26pf_rd_s=slot-4%26pf_rd_t=701%26pf_rd_i=gb_main%26pf_rd_m=AN1VRQENFRJN5%26pf_rd_r=QGA1XCRFR1H4ZBF8V2CJ%2F%3Ftag%3Da8-affi-258507-22.html">マントフード付きニット生地オシャレフリーサイズ男女兼用演劇舞台学園祭コスプレ両面着用黒と赤ブラックレッド</a></h5>
+                   <ul>
+                       <li><a href="https://px.a8.net/svt/ejp?a8mat=1ZIM2A+34J5TU+249K+BWGDT&a8ejpredirect=https%3A%2F%2Fwww.amazon.co.jp%2F%E3%83%95%E3%83%BC%E3%83%89%E4%BB%98%E3%81%8D-%E3%83%8B%E3%83%83%E3%83%88%E7%94%9F%E5%9C%B0-%E3%82%AA%E3%82%B7%E3%83%A3%E3%83%AC-%E3%83%95%E3%83%AA%E3%83%BC%E3%82%B5%E3%82%A4%E3%82%BA-%E7%94%B7%E5%A5%B3%E5%85%BC%E7%94%A8/dp/B07WS962T3/ref=gbps_tit_s-4_28cb_dab41270%3F%0D%0Asmid=A1GKCS7A2TW82H%26pf_rd_p=fa73587f-9e6a-48eb-84c4-73cb5e3e28cb%26pf_rd_s=slot-4%26pf_rd_t=701%26pf_rd_i=gb_main%26pf_rd_m=AN1VRQENFRJN5%26pf_rd_r=QGA1XCRFR1H4ZBF8V2CJ%2F%3Ftag%3Da8-affi-258507-22">価格 ¥1,147<sup style="color: red;"><s>価格:¥1,350</s>(15%OFF)</sup></a></li>
+                       <li><a href="https://px.a8.net/svt/ejp?a8mat=1ZIM2A+34J5TU+249K+BWGDT&a8ejpredirect=https%3A%2F%2Fwww.amazon.co.jp%2F%E3%83%95%E3%83%BC%E3%83%89%E4%BB%98%E3%81%8D-%E3%83%8B%E3%83%83%E3%83%88%E7%94%9F%E5%9C%B0-%E3%82%AA%E3%82%B7%E3%83%A3%E3%83%AC-%E3%83%95%E3%83%AA%E3%83%BC%E3%82%B5%E3%82%A4%E3%82%BA-%E7%94%B7%E5%A5%B3%E5%85%BC%E7%94%A8/dp/B07WS962T3/ref=gbps_tit_s-4_28cb_dab41270%3F%0D%0Asmid=A1GKCS7A2TW82H%26pf_rd_p=fa73587f-9e6a-48eb-84c4-73cb5e3e28cb%26pf_rd_s=slot-4%26pf_rd_t=701%26pf_rd_i=gb_main%26pf_rd_m=AN1VRQENFRJN5%26pf_rd_r=QGA1XCRFR1H4ZBF8V2CJ%2F%3Ftag%3Da8-affi-258507-22">評価 <font style="color: orange;">★★★★★</font></a></li>
+                       <li><a href="https://px.a8.net/svt/ejp?a8mat=1ZIM2A+34J5TU+249K+BWGDT&a8ejpredirect=https%3A%2F%2Fwww.amazon.co.jp%2F%E3%83%95%E3%83%BC%E3%83%89%E4%BB%98%E3%81%8D-%E3%83%8B%E3%83%83%E3%83%88%E7%94%9F%E5%9C%B0-%E3%82%AA%E3%82%B7%E3%83%A3%E3%83%AC-%E3%83%95%E3%83%AA%E3%83%BC%E3%82%B5%E3%82%A4%E3%82%BA-%E7%94%B7%E5%A5%B3%E5%85%BC%E7%94%A8/dp/B07WS962T3/ref=gbps_tit_s-4_28cb_dab41270%3F%0D%0Asmid=A1GKCS7A2TW82H%26pf_rd_p=fa73587f-9e6a-48eb-84c4-73cb5e3e28cb%26pf_rd_s=slot-4%26pf_rd_t=701%26pf_rd_i=gb_main%26pf_rd_m=AN1VRQENFRJN5%26pf_rd_r=QGA1XCRFR1H4ZBF8V2CJ%2F%3Ftag%3Da8-affi-258507-22">1件のレビュー</a></li>
+                   </ul>
+                       <hr>
+                       <p>
+                           <u><b>レビュー</b></u><br>
+                           今年の学祭のコスプレ用として購入しました。毎年色々なコスプレをしているのですが、今年はシンプルにしました。フードもついていて、急な雨や寒さ対策にも、ないよりはましかなぁと。学生生活最後の学祭なので、楽しみです。</p>
+                   </div>
+                   <a href="http://twitter.com/share?url=https%3A%2F%2Famazondeals.github.io%2FamazonDealsJP%2FHobby.html%23card-p-id-9&text=%E5%B9%B4%E3%81%AE%E5%AD%A6%E7%A5%AD%E3%81%AE%E3%82%B3%E3%82%B9%E3%83%97%E3%83%AC%E7%94%A8%E3%81%A8%E3%81%97%E3%81%A6%E8%B3%BC%E5%85%A5%E3%81%97%E3%81%BE%E3%81%97%E3%81%9F%E3%80%82%E6%AF%8E%E5%B9%B4%E8%89%B2%E3%80%85%E3%81%AA%E3%82%B3%E3%82%B9%E3%83%97%E3%83%AC%E3%82%92%E3%81%97%E3%81%A6%E3%81%84%E3%82%8B%E3%81%AE%E3%81%A7%E3%81%99%E3%81%8C%E3%80%81%E4%BB%8A%E5%B9%B4%E3%81%AF%E3%82%B7%E3%83%B3%E3%83%97%E3%83%AB%E3%81%AB%E3%81%97%E3%81%BE%E3%81%97%E3%81%9F%E3%80%82%E3%83%95%E3%83%BC%E3%83%89%E3%82%82%E3%81%A4%E3%81%84%E3%81%A6%E3%81%84%E3%81%A6%E3%80%81%E6%80%A5%E3%81%AA%E9%9B%A8%E3%82%84%E5%AF%92%E3%81%95%E5%AF%BE%E7%AD%96%E3%81%AB%E3%82%82%E3%80%81%E3%81%AA%E3%81%84%E3%82%88%E3%82%8A%E3%81%AF%E3%81%BE%E3%81%97%E3%81%8B%E3%81%AA%E3%81%81%E3%81%A8%E3%80%82%E5%AD%A6%E7%94%9F%E7%94%9F%E6%B4%BB%E6%9C%80%E5%BE%8C%E3%81%AE%E5%AD%A6%E7%A5%AD%E3%81%AA%E3%81%AE%E3%81%A7%E3%80%81%E6%A5%BD%E3%81%97&hashtags=%E3%83%9B%E3%83%93%E3%83%BC">
+                       <button type="button" class="btn btn-primary d-block center-margin-0-auto ccs-product-counter">Tweet
+                       </button>
+                   </a>
+               </div>
+           </div>
+            <div id="card-p-id-10" class="card product-card">
+               <img class="card-img-top" src="https://images-na.ssl-images-amazon.com/images/I/51tTWNcwqEL._AA640_.jpg" alt="">
+               <div class="card-body">
+                   <h5 class="card-title mb-0"><a href="https://px.a8.net/svt/ejp?a8mat=1ZIM2A+34J5TU+249K+BWGDT&a8ejpredirect=https%3A%2F%2Fwww.amazon.co.jp%2FSMTTW-24%E8%89%B2%E3%82%BB%E3%83%83%E3%83%88-%E6%B0%B4%E5%BD%A9%E3%83%9A%E3%83%B3%E3%82%BB%E3%83%83%E3%83%88-%E6%B0%B4%E3%83%9A%E3%83%B31%E6%9C%AC-%E3%82%AB%E3%83%A9%E3%83%BC%E3%83%9A%E3%83%B3/dp/B07PT78S2W/ref=gbps_tit_s-4_28cb_91d64ab1%3F%0D%0Asmid=A1G5ZLOBUEI5TD%26pf_rd_p=fa73587f-9e6a-48eb-84c4-73cb5e3e28cb%26pf_rd_s=slot-4%26pf_rd_t=701%26pf_rd_i=gb_main%26pf_rd_m=AN1VRQENFRJN5%26pf_rd_r=QGA1XCRFR1H4ZBF8V2CJ%2F%3Ftag%3Da8-affi-258507-22.html">SMTTW水彩毛筆24色セット水彩ペンセット水ペン1本筆ペンカラーカラーペン塗り絵画筆絵用</a></h5>
+                   <ul>
+                       <li><a href="https://px.a8.net/svt/ejp?a8mat=1ZIM2A+34J5TU+249K+BWGDT&a8ejpredirect=https%3A%2F%2Fwww.amazon.co.jp%2FSMTTW-24%E8%89%B2%E3%82%BB%E3%83%83%E3%83%88-%E6%B0%B4%E5%BD%A9%E3%83%9A%E3%83%B3%E3%82%BB%E3%83%83%E3%83%88-%E6%B0%B4%E3%83%9A%E3%83%B31%E6%9C%AC-%E3%82%AB%E3%83%A9%E3%83%BC%E3%83%9A%E3%83%B3/dp/B07PT78S2W/ref=gbps_tit_s-4_28cb_91d64ab1%3F%0D%0Asmid=A1G5ZLOBUEI5TD%26pf_rd_p=fa73587f-9e6a-48eb-84c4-73cb5e3e28cb%26pf_rd_s=slot-4%26pf_rd_t=701%26pf_rd_i=gb_main%26pf_rd_m=AN1VRQENFRJN5%26pf_rd_r=QGA1XCRFR1H4ZBF8V2CJ%2F%3Ftag%3Da8-affi-258507-22">価格 ¥1,359<sup style="color: red;"><s>価格:¥1,599</s>(15%OFF)</sup></a></li>
+                       <li><a href="https://px.a8.net/svt/ejp?a8mat=1ZIM2A+34J5TU+249K+BWGDT&a8ejpredirect=https%3A%2F%2Fwww.amazon.co.jp%2FSMTTW-24%E8%89%B2%E3%82%BB%E3%83%83%E3%83%88-%E6%B0%B4%E5%BD%A9%E3%83%9A%E3%83%B3%E3%82%BB%E3%83%83%E3%83%88-%E6%B0%B4%E3%83%9A%E3%83%B31%E6%9C%AC-%E3%82%AB%E3%83%A9%E3%83%BC%E3%83%9A%E3%83%B3/dp/B07PT78S2W/ref=gbps_tit_s-4_28cb_91d64ab1%3F%0D%0Asmid=A1G5ZLOBUEI5TD%26pf_rd_p=fa73587f-9e6a-48eb-84c4-73cb5e3e28cb%26pf_rd_s=slot-4%26pf_rd_t=701%26pf_rd_i=gb_main%26pf_rd_m=AN1VRQENFRJN5%26pf_rd_r=QGA1XCRFR1H4ZBF8V2CJ%2F%3Ftag%3Da8-affi-258507-22">評価 <font style="color: orange;">★★★★★</font></a></li>
+                       <li><a href="https://px.a8.net/svt/ejp?a8mat=1ZIM2A+34J5TU+249K+BWGDT&a8ejpredirect=https%3A%2F%2Fwww.amazon.co.jp%2FSMTTW-24%E8%89%B2%E3%82%BB%E3%83%83%E3%83%88-%E6%B0%B4%E5%BD%A9%E3%83%9A%E3%83%B3%E3%82%BB%E3%83%83%E3%83%88-%E6%B0%B4%E3%83%9A%E3%83%B31%E6%9C%AC-%E3%82%AB%E3%83%A9%E3%83%BC%E3%83%9A%E3%83%B3/dp/B07PT78S2W/ref=gbps_tit_s-4_28cb_91d64ab1%3F%0D%0Asmid=A1G5ZLOBUEI5TD%26pf_rd_p=fa73587f-9e6a-48eb-84c4-73cb5e3e28cb%26pf_rd_s=slot-4%26pf_rd_t=701%26pf_rd_i=gb_main%26pf_rd_m=AN1VRQENFRJN5%26pf_rd_r=QGA1XCRFR1H4ZBF8V2CJ%2F%3Ftag%3Da8-affi-258507-22">1件のレビュー</a></li>
+                   </ul>
+                       <hr>
+                       <p>
+                           <u><b>レビュー</b></u><br>
+                           先端はブラシのような形をしていますが、それ自体が色付けされているので、自分でペイントを調整する必要はありません。さらに、ペン先を浸すことができます。ペン先は水を吸収すると消えます。しばらく使用すると、色がゆっくりと深まります。これを行うと、美しいグラデーションを描くことができます。これは非常に興味深いプロセスだと思います。</p>
+                   </div>
+                   <a href="http://twitter.com/share?url=https%3A%2F%2Famazondeals.github.io%2FamazonDealsJP%2FHobby.html%23card-p-id-10&text=%E7%AB%AF%E3%81%AF%E3%83%96%E3%83%A9%E3%82%B7%E3%81%AE%E3%82%88%E3%81%86%E3%81%AA%E5%BD%A2%E3%82%92%E3%81%97%E3%81%A6%E3%81%84%E3%81%BE%E3%81%99%E3%81%8C%E3%80%81%E3%81%9D%E3%82%8C%E8%87%AA%E4%BD%93%E3%81%8C%E8%89%B2%E4%BB%98%E3%81%91%E3%81%95%E3%82%8C%E3%81%A6%E3%81%84%E3%82%8B%E3%81%AE%E3%81%A7%E3%80%81%E8%87%AA%E5%88%86%E3%81%A7%E3%83%9A%E3%82%A4%E3%83%B3%E3%83%88%E3%82%92%E8%AA%BF%E6%95%B4%E3%81%99%E3%82%8B%E5%BF%85%E8%A6%81%E3%81%AF%E3%81%82%E3%82%8A%E3%81%BE%E3%81%9B%E3%82%93%E3%80%82%E3%81%95%E3%82%89%E3%81%AB%E3%80%81%E3%83%9A%E3%83%B3%E5%85%88%E3%82%92%E6%B5%B8%E3%81%99%E3%81%93%E3%81%A8%E3%81%8C%E3%81%A7%E3%81%8D%E3%81%BE%E3%81%99%E3%80%82%E3%83%9A%E3%83%B3%E5%85%88%E3%81%AF%E6%B0%B4%E3%82%92%E5%90%B8%E5%8F%8E%E3%81%99%E3%82%8B%E3%81%A8%E6%B6%88%E3%81%88%E3%81%BE%E3%81%99%E3%80%82%E3%81%97%E3%81%B0%E3%82%89%E3%81%8F%E4%BD%BF%E7%94%A8%E3%81%99%E3%82%8B%E3%81%A8%E3%80%81%E8%89%B2&hashtags=%E3%83%9B%E3%83%93%E3%83%BC">
+                       <button type="button" class="btn btn-primary d-block center-margin-0-auto ccs-product-counter">Tweet
+                       </button>
+                   </a>
+               </div>
+           </div>
+            <div id="card-p-id-11" class="card product-card">
+               <img class="card-img-top" src="https://images-na.ssl-images-amazon.com/images/I/51mVAguN60L._AA640_.jpg" alt="">
+               <div class="card-body">
+                   <h5 class="card-title mb-0"><a href="https://px.a8.net/svt/ejp?a8mat=1ZIM2A+34J5TU+249K+BWGDT&a8ejpredirect=https%3A%2F%2Fwww.amazon.co.jp%2FHBX-%E9%9B%BB%E5%8B%95%E3%82%AA%E3%83%95%E3%83%AD%E3%83%BC%E3%83%89%E3%83%90%E3%82%AE%E3%83%BC-%E4%BA%8C%E3%81%A4%E3%81%AE%E3%82%B9%E3%83%94%E3%83%BC%E3%83%89%E3%83%A2%E3%83%BC%E3%83%89-%E3%83%A9%E3%83%81%E3%82%A7%E3%83%83%E3%83%88%E3%82%B5%E3%83%B3%E3%83%89%E3%83%AC%E3%83%BC%E3%83%AB%E3%82%AA%E3%83%95%E3%83%AD%E3%83%BC%E3%83%89-%E9%98%B2%E6%B0%B4%E7%A0%82%E6%BC%A0%E3%81%AE%E3%83%88%E3%83%A9%E3%83%83%E3%82%AF/dp/B07RBPFW87/ref=gbps_tit_s-4_28cb_66d9d75a%3F%0D%0Asmid=A3PD3IKD5BRC84%26pf_rd_p=fa73587f-9e6a-48eb-84c4-73cb5e3e28cb%26pf_rd_s=slot-4%26pf_rd_t=701%26pf_rd_i=gb_main%26pf_rd_m=AN1VRQENFRJN5%26pf_rd_r=QGA1XCRFR1H4ZBF8V2CJ%2F%3Ftag%3Da8-affi-258507-22.html">ラジコンカーHBXリモコンカー1/182.4Ghz4WDRTR電動オフロードバギー36km/h高速RCカー競技可能</a></h5>
+                   <ul>
+                       <li><a href="https://px.a8.net/svt/ejp?a8mat=1ZIM2A+34J5TU+249K+BWGDT&a8ejpredirect=https%3A%2F%2Fwww.amazon.co.jp%2FHBX-%E9%9B%BB%E5%8B%95%E3%82%AA%E3%83%95%E3%83%AD%E3%83%BC%E3%83%89%E3%83%90%E3%82%AE%E3%83%BC-%E4%BA%8C%E3%81%A4%E3%81%AE%E3%82%B9%E3%83%94%E3%83%BC%E3%83%89%E3%83%A2%E3%83%BC%E3%83%89-%E3%83%A9%E3%83%81%E3%82%A7%E3%83%83%E3%83%88%E3%82%B5%E3%83%B3%E3%83%89%E3%83%AC%E3%83%BC%E3%83%AB%E3%82%AA%E3%83%95%E3%83%AD%E3%83%BC%E3%83%89-%E9%98%B2%E6%B0%B4%E7%A0%82%E6%BC%A0%E3%81%AE%E3%83%88%E3%83%A9%E3%83%83%E3%82%AF/dp/B07RBPFW87/ref=gbps_tit_s-4_28cb_66d9d75a%3F%0D%0Asmid=A3PD3IKD5BRC84%26pf_rd_p=fa73587f-9e6a-48eb-84c4-73cb5e3e28cb%26pf_rd_s=slot-4%26pf_rd_t=701%26pf_rd_i=gb_main%26pf_rd_m=AN1VRQENFRJN5%26pf_rd_r=QGA1XCRFR1H4ZBF8V2CJ%2F%3Ftag%3Da8-affi-258507-22">価格 ¥6,799<sup style="color: red;"><s>価格:¥7,999</s>(15%OFF)</sup></a></li>
+                       <li><a href="https://px.a8.net/svt/ejp?a8mat=1ZIM2A+34J5TU+249K+BWGDT&a8ejpredirect=https%3A%2F%2Fwww.amazon.co.jp%2FHBX-%E9%9B%BB%E5%8B%95%E3%82%AA%E3%83%95%E3%83%AD%E3%83%BC%E3%83%89%E3%83%90%E3%82%AE%E3%83%BC-%E4%BA%8C%E3%81%A4%E3%81%AE%E3%82%B9%E3%83%94%E3%83%BC%E3%83%89%E3%83%A2%E3%83%BC%E3%83%89-%E3%83%A9%E3%83%81%E3%82%A7%E3%83%83%E3%83%88%E3%82%B5%E3%83%B3%E3%83%89%E3%83%AC%E3%83%BC%E3%83%AB%E3%82%AA%E3%83%95%E3%83%AD%E3%83%BC%E3%83%89-%E9%98%B2%E6%B0%B4%E7%A0%82%E6%BC%A0%E3%81%AE%E3%83%88%E3%83%A9%E3%83%83%E3%82%AF/dp/B07RBPFW87/ref=gbps_tit_s-4_28cb_66d9d75a%3F%0D%0Asmid=A3PD3IKD5BRC84%26pf_rd_p=fa73587f-9e6a-48eb-84c4-73cb5e3e28cb%26pf_rd_s=slot-4%26pf_rd_t=701%26pf_rd_i=gb_main%26pf_rd_m=AN1VRQENFRJN5%26pf_rd_r=QGA1XCRFR1H4ZBF8V2CJ%2F%3Ftag%3Da8-affi-258507-22">評価 <font style="color: orange;">★★★★☆</font></a></li>
+                       <li><a href="https://px.a8.net/svt/ejp?a8mat=1ZIM2A+34J5TU+249K+BWGDT&a8ejpredirect=https%3A%2F%2Fwww.amazon.co.jp%2FHBX-%E9%9B%BB%E5%8B%95%E3%82%AA%E3%83%95%E3%83%AD%E3%83%BC%E3%83%89%E3%83%90%E3%82%AE%E3%83%BC-%E4%BA%8C%E3%81%A4%E3%81%AE%E3%82%B9%E3%83%94%E3%83%BC%E3%83%89%E3%83%A2%E3%83%BC%E3%83%89-%E3%83%A9%E3%83%81%E3%82%A7%E3%83%83%E3%83%88%E3%82%B5%E3%83%B3%E3%83%89%E3%83%AC%E3%83%BC%E3%83%AB%E3%82%AA%E3%83%95%E3%83%AD%E3%83%BC%E3%83%89-%E9%98%B2%E6%B0%B4%E7%A0%82%E6%BC%A0%E3%81%AE%E3%83%88%E3%83%A9%E3%83%83%E3%82%AF/dp/B07RBPFW87/ref=gbps_tit_s-4_28cb_66d9d75a%3F%0D%0Asmid=A3PD3IKD5BRC84%26pf_rd_p=fa73587f-9e6a-48eb-84c4-73cb5e3e28cb%26pf_rd_s=slot-4%26pf_rd_t=701%26pf_rd_i=gb_main%26pf_rd_m=AN1VRQENFRJN5%26pf_rd_r=QGA1XCRFR1H4ZBF8V2CJ%2F%3Ftag%3Da8-affi-258507-22">24件のレビュー</a></li>
+                   </ul>
+                       <hr>
+                       <p>
+                           <u><b>レビュー</b></u><br>
+                           小学生の息子が、どうしてもラジコンが欲しいと。誕生日だから仕方ないと、誕生日プレゼントで購入しました。もうこれが、すごく喜んでくれました。こちら、簡単操作。左手でリモコンを握りながら、右手で丸い部分を回すことによってスピードが出ます。わたしも子供のころにラジコンにはまりましたが、その時のようなリモコンとはちょっと違う感じ。そしてこちらは、オンロードで高速で走行させることも可能ですが、オフロードでの走行もしっかりできます。家の庭で使っていますが、芝のところでも砂利のところでも問題なく走行できることにびっくりしました。プラスチック製でできているボディーに、ゴムタイヤ。そして、坂道でも問題なく走行できる能力はすごいです。走らせてて、すごく楽しくなります。防水仕様ですので、小雨での走行も、少々の水たまりがあっても問題ないのが嬉しいです。子供も大人も夢中になれるこのラジコンカーを購入してよかったなぁと。充電時間も１２０分で、約１０分の走行が可能でした。やっぱり、いろんなところを走行できる能力なので、オフロードがすごく楽しいですね。ここでも走行できるかな？ってところを探して走行させてみるのが楽しみです。耐久性については未知数ですが、サスペンションもしっかりしてるので、基本的にはどんな道でも走行できるので信頼しています。これからも、息子と一緒に楽しみ似たいです。いい買い物ができました。,こちらの商品、今年で小学生になる息子が家でゲームばかりするため、少しでも外で遊ばせたく、昔私が好きだったラジコンを、息子のために購入いたしました。しかしながら、家の周りに広い駐車場がなく砂利のスペースしかないため、こちちらのオフロードでも走れるタイプを選んだのですが、いざ走らせてみたところ、思いのほか速く砂利道にもかかわらず全く問題なく走ります。スピードの強弱ができ、急にハンドルを切ると砂煙をまくのでスピードの速さと走破性の強さを感じられます。以前何万もするバッテリーカーを本格的にやっていたため、こちらの商品お値段が安いため、あまり期待していなかったのですが、正直おどろきました。バッテリーも予備がついているため、子供にとっては十分ではないかと思います。このシリーズのラジコンは初めての購入ですが、どんどん新商品が出てくる中でも、セットで売られていて、しっかりと作られている部類のいい商品だと思います。ラジコンはカスタマイズするのが好きではまっていたのですがこちらの商品、わざわざまたお金を出してカスタマイズする必要がなく息子本人にとっては十分ではないかと。ただ一つ心配なのは、息子が休みの日には外に持ち出しまだ操作に慣れていないためそこら中にぶつけてしまうことです。スピードが出てる分、ラジコン本体のダメージが気になりますが、今のところ全く不具合が出ておりません。操作の仕方にもよると思いますが、ラジコン本体の耐久性も高いのではないでしょうか。息子用だけではなく、私用にまたラジコンをはじめてみたくなってしまう商品でした。,ラジコンカーが大好きなおとうとの誕生日プレゼント用に購入しました。とっても喜んでます、思ったよりもスピードが速いです、なんと36km/hも行けそうです、十分に楽しめそうです。また、値段の割にはしっかりしてる感じの作りです。リモコンで簡単に操作できて、６歳のおとうともすぐ遊べます。大人の私も楽しんでいます。ありがとうございました。</p>
+                   </div>
+                   <a href="http://twitter.com/share?url=https%3A%2F%2Famazondeals.github.io%2FamazonDealsJP%2FHobby.html%23card-p-id-11&text=%E5%AD%A6%E7%94%9F%E3%81%AE%E6%81%AF%E5%AD%90%E3%81%8C%E3%80%81%E3%81%A9%E3%81%86%E3%81%97%E3%81%A6%E3%82%82%E3%83%A9%E3%82%B8%E3%82%B3%E3%83%B3%E3%81%8C%E6%AC%B2%E3%81%97%E3%81%84%E3%81%A8%E3%80%82%E8%AA%95%E7%94%9F%E6%97%A5%E3%81%A0%E3%81%8B%E3%82%89%E4%BB%95%E6%96%B9%E3%81%AA%E3%81%84%E3%81%A8%E3%80%81%E8%AA%95%E7%94%9F%E6%97%A5%E3%83%97%E3%83%AC%E3%82%BC%E3%83%B3%E3%83%88%E3%81%A7%E8%B3%BC%E5%85%A5%E3%81%97%E3%81%BE%E3%81%97%E3%81%9F%E3%80%82%E3%82%82%E3%81%86%E3%81%93%E3%82%8C%E3%81%8C%E3%80%81%E3%81%99%E3%81%94%E3%81%8F%E5%96%9C%E3%82%93%E3%81%A7%E3%81%8F%E3%82%8C%E3%81%BE%E3%81%97%E3%81%9F%E3%80%82%E3%81%93%E3%81%A1%E3%82%89%E3%80%81%E7%B0%A1%E5%8D%98%E6%93%8D%E4%BD%9C%E3%80%82%E5%B7%A6%E6%89%8B%E3%81%A7%E3%83%AA%E3%83%A2%E3%82%B3%E3%83%B3%E3%82%92%E6%8F%A1%E3%82%8A%E3%81%AA%E3%81%8C%E3%82%89%E3%80%81%E5%8F%B3%E6%89%8B%E3%81%A7%E4%B8%B8%E3%81%84%E9%83%A8%E5%88%86%E3%82%92%E5%9B%9E&hashtags=%E3%83%9B%E3%83%93%E3%83%BC">
+                       <button type="button" class="btn btn-primary d-block center-margin-0-auto ccs-product-counter">Tweet
+                       </button>
+                   </a>
+               </div>
+           </div>
+            <div id="card-p-id-12" class="card product-card">
+               <img class="card-img-top" src="https://images-na.ssl-images-amazon.com/images/I/61kK1F3iaDL._SCLZZZZZZZ___AA640_.jpg" alt="">
+               <div class="card-body">
+                   <h5 class="card-title mb-0"><a href="https://px.a8.net/svt/ejp?a8mat=1ZIM2A+34J5TU+249K+BWGDT&a8ejpredirect=https%3A%2F%2Fwww.amazon.co.jp%2FWanshui-4336949091-%E3%82%B9%E3%82%B1%E3%83%83%E3%83%81%E9%89%9B%E7%AD%86/dp/B076D9Q56C/ref=gbps_tit_s-4_28cb_1c55ced3%3F%0D%0Asmid=A1JGUDHI5O20KQ%26pf_rd_p=fa73587f-9e6a-48eb-84c4-73cb5e3e28cb%26pf_rd_s=slot-4%26pf_rd_t=701%26pf_rd_i=gb_main%26pf_rd_m=AN1VRQENFRJN5%26pf_rd_r=QGA1XCRFR1H4ZBF8V2CJ%2F%3Ftag%3Da8-affi-258507-22.html">160色セットすぐに使える塗り絵の本のためにデザインされて、アティスト鉛筆画</a></h5>
+                   <ul>
+                       <li><a href="https://px.a8.net/svt/ejp?a8mat=1ZIM2A+34J5TU+249K+BWGDT&a8ejpredirect=https%3A%2F%2Fwww.amazon.co.jp%2FWanshui-4336949091-%E3%82%B9%E3%82%B1%E3%83%83%E3%83%81%E9%89%9B%E7%AD%86/dp/B076D9Q56C/ref=gbps_tit_s-4_28cb_1c55ced3%3F%0D%0Asmid=A1JGUDHI5O20KQ%26pf_rd_p=fa73587f-9e6a-48eb-84c4-73cb5e3e28cb%26pf_rd_s=slot-4%26pf_rd_t=701%26pf_rd_i=gb_main%26pf_rd_m=AN1VRQENFRJN5%26pf_rd_r=QGA1XCRFR1H4ZBF8V2CJ%2F%3Ftag%3Da8-affi-258507-22">価格 ¥849-¥4,079<sup style="color: red;"><s>価格:¥999-¥4,799</s>(15%OFF)</sup></a></li>
+                       <li><a href="https://px.a8.net/svt/ejp?a8mat=1ZIM2A+34J5TU+249K+BWGDT&a8ejpredirect=https%3A%2F%2Fwww.amazon.co.jp%2FWanshui-4336949091-%E3%82%B9%E3%82%B1%E3%83%83%E3%83%81%E9%89%9B%E7%AD%86/dp/B076D9Q56C/ref=gbps_tit_s-4_28cb_1c55ced3%3F%0D%0Asmid=A1JGUDHI5O20KQ%26pf_rd_p=fa73587f-9e6a-48eb-84c4-73cb5e3e28cb%26pf_rd_s=slot-4%26pf_rd_t=701%26pf_rd_i=gb_main%26pf_rd_m=AN1VRQENFRJN5%26pf_rd_r=QGA1XCRFR1H4ZBF8V2CJ%2F%3Ftag%3Da8-affi-258507-22">評価 <font style="color: orange;">★★★★☆</font></a></li>
+                       <li><a href="https://px.a8.net/svt/ejp?a8mat=1ZIM2A+34J5TU+249K+BWGDT&a8ejpredirect=https%3A%2F%2Fwww.amazon.co.jp%2FWanshui-4336949091-%E3%82%B9%E3%82%B1%E3%83%83%E3%83%81%E9%89%9B%E7%AD%86/dp/B076D9Q56C/ref=gbps_tit_s-4_28cb_1c55ced3%3F%0D%0Asmid=A1JGUDHI5O20KQ%26pf_rd_p=fa73587f-9e6a-48eb-84c4-73cb5e3e28cb%26pf_rd_s=slot-4%26pf_rd_t=701%26pf_rd_i=gb_main%26pf_rd_m=AN1VRQENFRJN5%26pf_rd_r=QGA1XCRFR1H4ZBF8V2CJ%2F%3Ftag%3Da8-affi-258507-22">21件のレビュー</a></li>
+                   </ul>
+                       <hr>
+                       <p>
+                           <u><b>レビュー</b></u><br>
+                           中に入っていたカラーリストを、色番順に作成するところから始め、グラデーションで並べるべきか番号で並べるべきか迷った結果、カラーリストを見ながら必要な色をチョイスして、ペン立てに立てて置くほうが、使い勝手は良いのではないか、と。発色も特に問題ない（というか、コンテの水彩色鉛筆より色乗りは良い）ので、あとは紙質と腕の問題…でしょう…多分。アップした画像は、1870年のフランスの挿絵コピーを彩色してみた画像です。グレーのローブとジュポン、帽子をこの色鉛筆セットだけで塗ってみました。ちなみに、美術専攻でも仏文専攻でもなく日本文学専攻でしたが、それでもこの位の仕上がりにはなります、ということで。,最近になって、番号ごとにマス目を塗りつぶしていく塗り絵に夢中の母です。手元には24色の色鉛筆しかなく、「お手本のようにきれいな絵に仕上がらない」と嘆いていましたので、色数の豊富なセットをあちこち出向いて探していました。でも、母の希望するような微妙なグラデーションを出すには相応しくないものばかり。いいな、っと思っても、お値段がバカ高かったりして、お遊びのお絵かき用には、と、躊躇しました。ふと、そうだ、ネットでも検索してみよう、と思い立ち、見つけたのがこのセットでした。こちらは驚くような微妙に異なる色が何本も揃って居るのに、お値段もお手頃。思い切って購入してみましたところ、母は「うわあ、こんなに沢山あったら迷っちゃうわねえ」と、大喜びでした。発色も良く、塗り絵のページごとに、気に入った色を何本か取り出して鉛筆立てに立てて使用しています。特に嫌な匂いもないため使いやすく、芯が折れにくいという問題も今のところはないようです。購入して良かった、親孝行できた、と思えた品でした。,昨夜頼んで、今日到着しました。あまりの早さにビックリです。とても綺麗な色が沢山入っており、子供たちも大満足です。ただ、何色とかの表示がなく、番号で表示されておりますが、あれだけ色があれば、色名表示は難しいかと思います。鉛筆の芯や本体の色と実際に描いたときの色が結構違って見えるので、付属のカラーリストに色と番号を書き込めば、色を選ぶのに大変便利です。色番号で、単色追加注文出来たらいいのにと思いました。でも大満足です。</p>
+                   </div>
+                   <a href="http://twitter.com/share?url=https%3A%2F%2Famazondeals.github.io%2FamazonDealsJP%2FHobby.html%23card-p-id-12&text=%E3%81%AB%E5%85%A5%E3%81%A3%E3%81%A6%E3%81%84%E3%81%9F%E3%82%AB%E3%83%A9%E3%83%BC%E3%83%AA%E3%82%B9%E3%83%88%E3%82%92%E3%80%81%E8%89%B2%E7%95%AA%E9%A0%86%E3%81%AB%E4%BD%9C%E6%88%90%E3%81%99%E3%82%8B%E3%81%A8%E3%81%93%E3%82%8D%E3%81%8B%E3%82%89%E5%A7%8B%E3%82%81%E3%80%81%E3%82%B0%E3%83%A9%E3%83%87%E3%83%BC%E3%82%B7%E3%83%A7%E3%83%B3%E3%81%A7%E4%B8%A6%E3%81%B9%E3%82%8B%E3%81%B9%E3%81%8D%E3%81%8B%E7%95%AA%E5%8F%B7%E3%81%A7%E4%B8%A6%E3%81%B9%E3%82%8B%E3%81%B9%E3%81%8D%E3%81%8B%E8%BF%B7%E3%81%A3%E3%81%9F%E7%B5%90%E6%9E%9C%E3%80%81%E3%82%AB%E3%83%A9%E3%83%BC%E3%83%AA%E3%82%B9%E3%83%88%E3%82%92%E8%A6%8B%E3%81%AA%E3%81%8C%E3%82%89%E5%BF%85%E8%A6%81%E3%81%AA%E8%89%B2%E3%82%92%E3%83%81%E3%83%A7%E3%82%A4%E3%82%B9%E3%81%97%E3%81%A6%E3%80%81%E3%83%9A%E3%83%B3%E7%AB%8B%E3%81%A6%E3%81%AB%E7%AB%8B%E3%81%A6%E3%81%A6%E7%BD%AE%E3%81%8F%E3%81%BB%E3%81%86%E3%81%8C%E3%80%81%E4%BD%BF%E3%81%84%E5%8B%9D%E6%89%8B&hashtags=%E3%83%9B%E3%83%93%E3%83%BC">
+                       <button type="button" class="btn btn-primary d-block center-margin-0-auto ccs-product-counter">Tweet
+                       </button>
+                   </a>
+               </div>
+           </div>
+            <div id="card-p-id-13" class="card product-card">
+               <img class="card-img-top" src="https://images-na.ssl-images-amazon.com/images/I/41kl9ZY-lxL._SCLZZZZZZZ___AA640_.jpg" alt="">
+               <div class="card-body">
+                   <h5 class="card-title mb-0"><a href="https://px.a8.net/svt/ejp?a8mat=1ZIM2A+34J5TU+249K+BWGDT&a8ejpredirect=https%3A%2F%2Fwww.amazon.co.jp%2F%E3%83%89%E3%83%A9%E3%82%A4%E3%83%96%E3%83%AC%E3%82%B3%E3%83%BC%E3%83%80%E3%83%BC-32G%E3%82%AB%E3%83%BC%E3%83%89%E4%BB%98%E3%81%8D%E3%80%91-1080P%E3%83%95%E3%83%ABHD-%E3%83%87%E3%83%A5%E3%82%A2%E3%83%AB%E3%83%89%E3%83%A9%E3%82%A4%E3%83%96%E3%83%AC%E3%82%B3%E3%83%BC%E3%83%80%E3%83%BC-170%C2%B0%E5%BA%83%E8%A6%96%E9%87%8E%E8%A7%92/dp/B07JH7S9YB/ref=gbph_tit_s-7_59d9_eb48df2b%3F%0D%0Asmid=A3590H6L2XVQW6%26pf_rd_p=172feb36-7c12-4e76-afe0-4ec2d6c159d9%26pf_rd_s=slot-7%26pf_rd_t=701%26pf_rd_i=gb_main%26pf_rd_m=AN1VRQENFRJN5%26pf_rd_r=QGA1XCRFR1H4ZBF8V2CJ%2F%3Ftag%3Da8-affi-258507-22.html">ドライブレコーダー前後カメラ【最新32Gカード付き】1080PフルHD1800万画素デュアルドライブレコーダー170°広視野角ドラレコSONYセンサー/レンズ常時録画衝撃録画高速起動G-sensorWDR(ブラック)</a></h5>
+                   <ul>
+                       <li><a href="https://px.a8.net/svt/ejp?a8mat=1ZIM2A+34J5TU+249K+BWGDT&a8ejpredirect=https%3A%2F%2Fwww.amazon.co.jp%2F%E3%83%89%E3%83%A9%E3%82%A4%E3%83%96%E3%83%AC%E3%82%B3%E3%83%BC%E3%83%80%E3%83%BC-32G%E3%82%AB%E3%83%BC%E3%83%89%E4%BB%98%E3%81%8D%E3%80%91-1080P%E3%83%95%E3%83%ABHD-%E3%83%87%E3%83%A5%E3%82%A2%E3%83%AB%E3%83%89%E3%83%A9%E3%82%A4%E3%83%96%E3%83%AC%E3%82%B3%E3%83%BC%E3%83%80%E3%83%BC-170%C2%B0%E5%BA%83%E8%A6%96%E9%87%8E%E8%A7%92/dp/B07JH7S9YB/ref=gbph_tit_s-7_59d9_eb48df2b%3F%0D%0Asmid=A3590H6L2XVQW6%26pf_rd_p=172feb36-7c12-4e76-afe0-4ec2d6c159d9%26pf_rd_s=slot-7%26pf_rd_t=701%26pf_rd_i=gb_main%26pf_rd_m=AN1VRQENFRJN5%26pf_rd_r=QGA1XCRFR1H4ZBF8V2CJ%2F%3Ftag%3Da8-affi-258507-22">価格 ¥4,519<sup style="color: red;"><s>参考価格:¥23,800</s>(81%OFF)</sup></a></li>
+                       <li><a href="https://px.a8.net/svt/ejp?a8mat=1ZIM2A+34J5TU+249K+BWGDT&a8ejpredirect=https%3A%2F%2Fwww.amazon.co.jp%2F%E3%83%89%E3%83%A9%E3%82%A4%E3%83%96%E3%83%AC%E3%82%B3%E3%83%BC%E3%83%80%E3%83%BC-32G%E3%82%AB%E3%83%BC%E3%83%89%E4%BB%98%E3%81%8D%E3%80%91-1080P%E3%83%95%E3%83%ABHD-%E3%83%87%E3%83%A5%E3%82%A2%E3%83%AB%E3%83%89%E3%83%A9%E3%82%A4%E3%83%96%E3%83%AC%E3%82%B3%E3%83%BC%E3%83%80%E3%83%BC-170%C2%B0%E5%BA%83%E8%A6%96%E9%87%8E%E8%A7%92/dp/B07JH7S9YB/ref=gbph_tit_s-7_59d9_eb48df2b%3F%0D%0Asmid=A3590H6L2XVQW6%26pf_rd_p=172feb36-7c12-4e76-afe0-4ec2d6c159d9%26pf_rd_s=slot-7%26pf_rd_t=701%26pf_rd_i=gb_main%26pf_rd_m=AN1VRQENFRJN5%26pf_rd_r=QGA1XCRFR1H4ZBF8V2CJ%2F%3Ftag%3Da8-affi-258507-22">評価 <font style="color: orange;">★★★★</font></a></li>
+                       <li><a href="https://px.a8.net/svt/ejp?a8mat=1ZIM2A+34J5TU+249K+BWGDT&a8ejpredirect=https%3A%2F%2Fwww.amazon.co.jp%2F%E3%83%89%E3%83%A9%E3%82%A4%E3%83%96%E3%83%AC%E3%82%B3%E3%83%BC%E3%83%80%E3%83%BC-32G%E3%82%AB%E3%83%BC%E3%83%89%E4%BB%98%E3%81%8D%E3%80%91-1080P%E3%83%95%E3%83%ABHD-%E3%83%87%E3%83%A5%E3%82%A2%E3%83%AB%E3%83%89%E3%83%A9%E3%82%A4%E3%83%96%E3%83%AC%E3%82%B3%E3%83%BC%E3%83%80%E3%83%BC-170%C2%B0%E5%BA%83%E8%A6%96%E9%87%8E%E8%A7%92/dp/B07JH7S9YB/ref=gbph_tit_s-7_59d9_eb48df2b%3F%0D%0Asmid=A3590H6L2XVQW6%26pf_rd_p=172feb36-7c12-4e76-afe0-4ec2d6c159d9%26pf_rd_s=slot-7%26pf_rd_t=701%26pf_rd_i=gb_main%26pf_rd_m=AN1VRQENFRJN5%26pf_rd_r=QGA1XCRFR1H4ZBF8V2CJ%2F%3Ftag%3Da8-affi-258507-22">1620件のレビュー</a></li>
+                   </ul>
+                       <hr>
+                       <p>
+                           <u><b>レビュー</b></u><br>
+                           最近は運転中のトラブルが多いのでドラレコは必需品になりましたね。お手頃価格の物も増えて買いやすくなりました。車は2台あるのですが、とりあえず仕事用の車に付けるためリアカメラ付きのこちらを購入。設置は簡単ですがリアの配線を綺麗にするのに工夫が必要かも。駐車場モードもあるため安心なので良ければもう1台の分も購入しようと思います。,近隣で車上荒しが増えているみたいなので、ドラレコを探していました。この商品はカードも付いて、リアのカメラも付いているので購入しました。取り付けてみると、視野角も広く画質もいいので満足してます。リアカメラは配線の取り回しが面倒なので仮付けですが、リアカメラの映像もモニター画面の右上にきれいに映ります。ドラレコの本体も迫力があり、防犯対策として威嚇するにはいいと思います。,ニュースなどでも、車のトラブル、危険運転などが多くなったので、自己防衛対策の為に買いました。配線や設定、カメラ取り付けも思ってたより簡単でした。画質も綺麗だったので、充分対策になりそうです。SDカードもついているので、すぐ録画出来ます。あと1年2年で車を買い替えるので、コスト的にも助かりました。</p>
+                   </div>
+                   <a href="http://twitter.com/share?url=https%3A%2F%2Famazondeals.github.io%2FamazonDealsJP%2FHobby.html%23card-p-id-13&text=%E8%BF%91%E3%81%AF%E9%81%8B%E8%BB%A2%E4%B8%AD%E3%81%AE%E3%83%88%E3%83%A9%E3%83%96%E3%83%AB%E3%81%8C%E5%A4%9A%E3%81%84%E3%81%AE%E3%81%A7%E3%83%89%E3%83%A9%E3%83%AC%E3%82%B3%E3%81%AF%E5%BF%85%E9%9C%80%E5%93%81%E3%81%AB%E3%81%AA%E3%82%8A%E3%81%BE%E3%81%97%E3%81%9F%E3%81%AD%E3%80%82%E3%81%8A%E6%89%8B%E9%A0%83%E4%BE%A1%E6%A0%BC%E3%81%AE%E7%89%A9%E3%82%82%E5%A2%97%E3%81%88%E3%81%A6%E8%B2%B7%E3%81%84%E3%82%84%E3%81%99%E3%81%8F%E3%81%AA%E3%82%8A%E3%81%BE%E3%81%97%E3%81%9F%E3%80%82%E8%BB%8A%E3%81%AF2%E5%8F%B0%E3%81%82%E3%82%8B%E3%81%AE%E3%81%A7%E3%81%99%E3%81%8C%E3%80%81%E3%81%A8%E3%82%8A%E3%81%82%E3%81%88%E3%81%9A%E4%BB%95%E4%BA%8B%E7%94%A8%E3%81%AE%E8%BB%8A%E3%81%AB%E4%BB%98%E3%81%91%E3%82%8B%E3%81%9F%E3%82%81%E3%83%AA%E3%82%A2%E3%82%AB%E3%83%A1%E3%83%A9%E4%BB%98%E3%81%8D%E3%81%AE%E3%81%93%E3%81%A1%E3%82%89%E3%82%92%E8%B3%BC%E5%85%A5%E3%80%82%E8%A8%AD%E7%BD%AE%E3%81%AF%E7%B0%A1%E5%8D%98&hashtags=%E3%83%9B%E3%83%93%E3%83%BC">
+                       <button type="button" class="btn btn-primary d-block center-margin-0-auto ccs-product-counter">Tweet
+                       </button>
+                   </a>
+               </div>
+           </div>
+            <div id="card-p-id-14" class="card product-card">
+               <img class="card-img-top" src="https://images-na.ssl-images-amazon.com/images/I/413AXvQd3wL._SCLZZZZZZZ___AA640_.jpg" alt="">
+               <div class="card-body">
+                   <h5 class="card-title mb-0"><a href="https://px.a8.net/svt/ejp?a8mat=1ZIM2A+34J5TU+249K+BWGDT&a8ejpredirect=https%3A%2F%2Fwww.amazon.co.jp%2F%E5%9C%A7%E7%B8%AE%E3%83%90%E3%83%83%E3%82%B0-%E3%83%95%E3%82%A1%E3%82%B9%E3%83%8A%E3%83%BC-%E3%82%B8%E3%83%83%E3%83%91%E3%83%BC%E3%82%BF%E3%83%96%E4%BB%98%E3%81%8D-50%EF%BC%85%E5%AE%B9%E9%87%8F%E7%AF%80%E7%B4%84-%E5%8F%8E%E7%B4%8D%E3%83%90%E3%83%83%E3%82%B0/dp/B07WNDG8P3/ref=gbph_tit_s-7_59d9_ad6bf89e%3F%0D%0Asmid=AG12YTGI94C0S%26pf_rd_p=172feb36-7c12-4e76-afe0-4ec2d6c159d9%26pf_rd_s=slot-7%26pf_rd_t=701%26pf_rd_i=gb_main%26pf_rd_m=AN1VRQENFRJN5%26pf_rd_r=QGA1XCRFR1H4ZBF8V2CJ%2F%3Ftag%3Da8-affi-258507-22.html">旅行圧縮バッグ最新版ファスナージッパータブ付き超大容量50％容量節約防水軽量収納バッグ出張ジム衣類荷物着替えタオル便利グッズ</a></h5>
+                   <ul>
+                       <li><a href="https://px.a8.net/svt/ejp?a8mat=1ZIM2A+34J5TU+249K+BWGDT&a8ejpredirect=https%3A%2F%2Fwww.amazon.co.jp%2F%E5%9C%A7%E7%B8%AE%E3%83%90%E3%83%83%E3%82%B0-%E3%83%95%E3%82%A1%E3%82%B9%E3%83%8A%E3%83%BC-%E3%82%B8%E3%83%83%E3%83%91%E3%83%BC%E3%82%BF%E3%83%96%E4%BB%98%E3%81%8D-50%EF%BC%85%E5%AE%B9%E9%87%8F%E7%AF%80%E7%B4%84-%E5%8F%8E%E7%B4%8D%E3%83%90%E3%83%83%E3%82%B0/dp/B07WNDG8P3/ref=gbph_tit_s-7_59d9_ad6bf89e%3F%0D%0Asmid=AG12YTGI94C0S%26pf_rd_p=172feb36-7c12-4e76-afe0-4ec2d6c159d9%26pf_rd_s=slot-7%26pf_rd_t=701%26pf_rd_i=gb_main%26pf_rd_m=AN1VRQENFRJN5%26pf_rd_r=QGA1XCRFR1H4ZBF8V2CJ%2F%3Ftag%3Da8-affi-258507-22">価格 ¥2,380<sup style="color: red;"><s>価格:¥3,280</s>(27%OFF)</sup></a></li>
+                       <li><a href="https://px.a8.net/svt/ejp?a8mat=1ZIM2A+34J5TU+249K+BWGDT&a8ejpredirect=https%3A%2F%2Fwww.amazon.co.jp%2F%E5%9C%A7%E7%B8%AE%E3%83%90%E3%83%83%E3%82%B0-%E3%83%95%E3%82%A1%E3%82%B9%E3%83%8A%E3%83%BC-%E3%82%B8%E3%83%83%E3%83%91%E3%83%BC%E3%82%BF%E3%83%96%E4%BB%98%E3%81%8D-50%EF%BC%85%E5%AE%B9%E9%87%8F%E7%AF%80%E7%B4%84-%E5%8F%8E%E7%B4%8D%E3%83%90%E3%83%83%E3%82%B0/dp/B07WNDG8P3/ref=gbph_tit_s-7_59d9_ad6bf89e%3F%0D%0Asmid=AG12YTGI94C0S%26pf_rd_p=172feb36-7c12-4e76-afe0-4ec2d6c159d9%26pf_rd_s=slot-7%26pf_rd_t=701%26pf_rd_i=gb_main%26pf_rd_m=AN1VRQENFRJN5%26pf_rd_r=QGA1XCRFR1H4ZBF8V2CJ%2F%3Ftag%3Da8-affi-258507-22">評価 <font style="color: orange;">★★★★★</font></a></li>
+                       <li><a href="https://px.a8.net/svt/ejp?a8mat=1ZIM2A+34J5TU+249K+BWGDT&a8ejpredirect=https%3A%2F%2Fwww.amazon.co.jp%2F%E5%9C%A7%E7%B8%AE%E3%83%90%E3%83%83%E3%82%B0-%E3%83%95%E3%82%A1%E3%82%B9%E3%83%8A%E3%83%BC-%E3%82%B8%E3%83%83%E3%83%91%E3%83%BC%E3%82%BF%E3%83%96%E4%BB%98%E3%81%8D-50%EF%BC%85%E5%AE%B9%E9%87%8F%E7%AF%80%E7%B4%84-%E5%8F%8E%E7%B4%8D%E3%83%90%E3%83%83%E3%82%B0/dp/B07WNDG8P3/ref=gbph_tit_s-7_59d9_ad6bf89e%3F%0D%0Asmid=AG12YTGI94C0S%26pf_rd_p=172feb36-7c12-4e76-afe0-4ec2d6c159d9%26pf_rd_s=slot-7%26pf_rd_t=701%26pf_rd_i=gb_main%26pf_rd_m=AN1VRQENFRJN5%26pf_rd_r=QGA1XCRFR1H4ZBF8V2CJ%2F%3Ftag%3Da8-affi-258507-22">83件のレビュー</a></li>
+                   </ul>
+                       <hr>
+                       <p>
+                           <u><b>レビュー</b></u><br>
+                           普段持っている圧縮バッグをよく使用していましたが、破れたので、代替品を探してこちらの商品を購入しました。こちらの商品はファスナーで締め付けるため、通常の圧縮袋の空気漏れの心配もなく、汚れ物と分けられ、別々に収納できるのも気に入っています。旅行中の使用前と使用後のものをしっかり分けて圧縮できて、カバンのスペースが無駄にならず、とても重宝しています、おすすめです。,普段の旅行用にカヤックで使われてる圧縮バッグを使用していましたが、酷使した結果空気漏れをするようになってきたので、代替品を探していました。これはジッパーで締め付けるため空気漏れの心配もなく、汚れ物を表裏別々に収納できるので、旅行中の使用前と使用済みのどちらかを圧縮できずにカバンのスペースを無駄に使用することもなく、今では欠かせないアイテムとなりました。値段が高い気がしましたが、その価値が十分あるアイテムです。,この商品は高耐久性だけではなく、防水性も抜群です。非常に簡単で手軽にスペースを節約することができます。衣類を圧縮することができ、しわを気にすることもなくなりストレスが減りました。結構パンパンに入れてますが、丈夫でいい感じです！予想以上の収納力です。</p>
+                   </div>
+                   <a href="http://twitter.com/share?url=https%3A%2F%2Famazondeals.github.io%2FamazonDealsJP%2FHobby.html%23card-p-id-14&text=%E6%AE%B5%E6%8C%81%E3%81%A3%E3%81%A6%E3%81%84%E3%82%8B%E5%9C%A7%E7%B8%AE%E3%83%90%E3%83%83%E3%82%B0%E3%82%92%E3%82%88%E3%81%8F%E4%BD%BF%E7%94%A8%E3%81%97%E3%81%A6%E3%81%84%E3%81%BE%E3%81%97%E3%81%9F%E3%81%8C%E3%80%81%E7%A0%B4%E3%82%8C%E3%81%9F%E3%81%AE%E3%81%A7%E3%80%81%E4%BB%A3%E6%9B%BF%E5%93%81%E3%82%92%E6%8E%A2%E3%81%97%E3%81%A6%E3%81%93%E3%81%A1%E3%82%89%E3%81%AE%E5%95%86%E5%93%81%E3%82%92%E8%B3%BC%E5%85%A5%E3%81%97%E3%81%BE%E3%81%97%E3%81%9F%E3%80%82%E3%81%93%E3%81%A1%E3%82%89%E3%81%AE%E5%95%86%E5%93%81%E3%81%AF%E3%83%95%E3%82%A1%E3%82%B9%E3%83%8A%E3%83%BC%E3%81%A7%E7%B7%A0%E3%82%81%E4%BB%98%E3%81%91%E3%82%8B%E3%81%9F%E3%82%81%E3%80%81%E9%80%9A%E5%B8%B8%E3%81%AE%E5%9C%A7%E7%B8%AE%E8%A2%8B%E3%81%AE%E7%A9%BA%E6%B0%97%E6%BC%8F%E3%82%8C%E3%81%AE%E5%BF%83%E9%85%8D%E3%82%82%E3%81%AA%E3%81%8F%E3%80%81%E6%B1%9A%E3%82%8C%E7%89%A9%E3%81%A8%E5%88%86%E3%81%91%E3%82%89%E3%82%8C%E3%80%81%E5%88%A5&hashtags=%E3%83%9B%E3%83%93%E3%83%BC">
+                       <button type="button" class="btn btn-primary d-block center-margin-0-auto ccs-product-counter">Tweet
+                       </button>
+                   </a>
+               </div>
+           </div>
+            <div id="card-p-id-15" class="card product-card">
+               <img class="card-img-top" src="https://images-na.ssl-images-amazon.com/images/I/41dP1oBYAHL._SCLZZZZZZZ___AA640_.jpg" alt="">
+               <div class="card-body">
+                   <h5 class="card-title mb-0"><a href="https://px.a8.net/svt/ejp?a8mat=1ZIM2A+34J5TU+249K+BWGDT&a8ejpredirect=https%3A%2F%2Fwww.amazon.co.jp%2FHomwarm-%E3%83%90%E3%82%A4%E3%82%AF%E3%82%AB%E3%83%90%E3%83%BC-300D%E5%8E%9A%E6%89%8B-%E7%B4%AB%E5%A4%96%E7%B7%9A%E9%98%B2%E6%AD%A2-%E5%8F%8E%E7%B4%8D%E3%83%90%E3%83%83%E3%82%B0%E4%BB%98%E3%81%8D/dp/B07KMV7D63/ref=gbph_tit_s-7_59d9_2c7d7e44%3F%0D%0Asmid=AQTP16Y9KLDK3%26pf_rd_p=172feb36-7c12-4e76-afe0-4ec2d6c159d9%26pf_rd_s=slot-7%26pf_rd_t=701%26pf_rd_i=gb_main%26pf_rd_m=AN1VRQENFRJN5%26pf_rd_r=QGA1XCRFR1H4ZBF8V2CJ%2F%3Ftag%3Da8-affi-258507-22.html">Homwarmバイクカバー高品質300D厚手防水紫外線防止盗難防止収納バッグ付き(XXXL,ブラック)</a></h5>
+                   <ul>
+                       <li><a href="https://px.a8.net/svt/ejp?a8mat=1ZIM2A+34J5TU+249K+BWGDT&a8ejpredirect=https%3A%2F%2Fwww.amazon.co.jp%2FHomwarm-%E3%83%90%E3%82%A4%E3%82%AF%E3%82%AB%E3%83%90%E3%83%BC-300D%E5%8E%9A%E6%89%8B-%E7%B4%AB%E5%A4%96%E7%B7%9A%E9%98%B2%E6%AD%A2-%E5%8F%8E%E7%B4%8D%E3%83%90%E3%83%83%E3%82%B0%E4%BB%98%E3%81%8D/dp/B07KMV7D63/ref=gbph_tit_s-7_59d9_2c7d7e44%3F%0D%0Asmid=AQTP16Y9KLDK3%26pf_rd_p=172feb36-7c12-4e76-afe0-4ec2d6c159d9%26pf_rd_s=slot-7%26pf_rd_t=701%26pf_rd_i=gb_main%26pf_rd_m=AN1VRQENFRJN5%26pf_rd_r=QGA1XCRFR1H4ZBF8V2CJ%2F%3Ftag%3Da8-affi-258507-22">価格 ¥2,363<sup style="color: red;"><s>参考価格:¥8,280</s>(71%OFF)</sup></a></li>
+                       <li><a href="https://px.a8.net/svt/ejp?a8mat=1ZIM2A+34J5TU+249K+BWGDT&a8ejpredirect=https%3A%2F%2Fwww.amazon.co.jp%2FHomwarm-%E3%83%90%E3%82%A4%E3%82%AF%E3%82%AB%E3%83%90%E3%83%BC-300D%E5%8E%9A%E6%89%8B-%E7%B4%AB%E5%A4%96%E7%B7%9A%E9%98%B2%E6%AD%A2-%E5%8F%8E%E7%B4%8D%E3%83%90%E3%83%83%E3%82%B0%E4%BB%98%E3%81%8D/dp/B07KMV7D63/ref=gbph_tit_s-7_59d9_2c7d7e44%3F%0D%0Asmid=AQTP16Y9KLDK3%26pf_rd_p=172feb36-7c12-4e76-afe0-4ec2d6c159d9%26pf_rd_s=slot-7%26pf_rd_t=701%26pf_rd_i=gb_main%26pf_rd_m=AN1VRQENFRJN5%26pf_rd_r=QGA1XCRFR1H4ZBF8V2CJ%2F%3Ftag%3Da8-affi-258507-22">評価 <font style="color: orange;">★★★★☆</font></a></li>
+                       <li><a href="https://px.a8.net/svt/ejp?a8mat=1ZIM2A+34J5TU+249K+BWGDT&a8ejpredirect=https%3A%2F%2Fwww.amazon.co.jp%2FHomwarm-%E3%83%90%E3%82%A4%E3%82%AF%E3%82%AB%E3%83%90%E3%83%BC-300D%E5%8E%9A%E6%89%8B-%E7%B4%AB%E5%A4%96%E7%B7%9A%E9%98%B2%E6%AD%A2-%E5%8F%8E%E7%B4%8D%E3%83%90%E3%83%83%E3%82%B0%E4%BB%98%E3%81%8D/dp/B07KMV7D63/ref=gbph_tit_s-7_59d9_2c7d7e44%3F%0D%0Asmid=AQTP16Y9KLDK3%26pf_rd_p=172feb36-7c12-4e76-afe0-4ec2d6c159d9%26pf_rd_s=slot-7%26pf_rd_t=701%26pf_rd_i=gb_main%26pf_rd_m=AN1VRQENFRJN5%26pf_rd_r=QGA1XCRFR1H4ZBF8V2CJ%2F%3Ftag%3Da8-affi-258507-22">694件のレビュー</a></li>
+                   </ul>
+                       <hr>
+                       <p>
+                           <u><b>レビュー</b></u><br>
+                           大型のアメリカンタイプのバイクに乗っています。しかし、寒い季節になると全然バイクに乗らなくなるので、春まで耐えてくれるバイクカバーを探していました。定価から大幅値引きされていて、少し不安に思っていましたが、生地はかなりしっかりしています。内側は、銀色のシートになっていて、熱にも強い感じがしますね。商品説明には、溶けてしまうとのことだったので、ある程度冷えてから、カバーを被せていますが。反射板も視認性が上がり、いいですね。盗難防止のチェーンを通すところは、しっかりと縫われているので、何度もロックをかけても、耐久性が見込めると思います。,届いた時に箱の重さが手にずっしりときたので、これはしっかりした商品だと重さだけでもわかりました。広げてみるとほんとにしっかりした生地でした。カバーの盗難防止にタイヤとカバーが止められる用になっているほか、カバーの内側（中心のあたり）にもバックルのついたベルトがついていました。カバーをかけたり、外したりの手間はかかりますが、雨晒しにしているとメンテナンスにもお金がかかるので、カバーの費用対効果はバツグンです。,届いてから中々バイクにつけれず…。付けたら結構でかかった。デカかったけど全体的に覆えたのと、下の部分にカチッとして固定できる部分もついてたので量販店に売ってる同価格のものよりも、使い勝手がいい感じです。そしてこれは多分、原チャじゃなくて小型バイクとかジャイロとかに付けるものだと思いました。</p>
+                   </div>
+                   <a href="http://twitter.com/share?url=https%3A%2F%2Famazondeals.github.io%2FamazonDealsJP%2FHobby.html%23card-p-id-15&text=%E5%9E%8B%E3%81%AE%E3%82%A2%E3%83%A1%E3%83%AA%E3%82%AB%E3%83%B3%E3%82%BF%E3%82%A4%E3%83%97%E3%81%AE%E3%83%90%E3%82%A4%E3%82%AF%E3%81%AB%E4%B9%97%E3%81%A3%E3%81%A6%E3%81%84%E3%81%BE%E3%81%99%E3%80%82%E3%81%97%E3%81%8B%E3%81%97%E3%80%81%E5%AF%92%E3%81%84%E5%AD%A3%E7%AF%80%E3%81%AB%E3%81%AA%E3%82%8B%E3%81%A8%E5%85%A8%E7%84%B6%E3%83%90%E3%82%A4%E3%82%AF%E3%81%AB%E4%B9%97%E3%82%89%E3%81%AA%E3%81%8F%E3%81%AA%E3%82%8B%E3%81%AE%E3%81%A7%E3%80%81%E6%98%A5%E3%81%BE%E3%81%A7%E8%80%90%E3%81%88%E3%81%A6%E3%81%8F%E3%82%8C%E3%82%8B%E3%83%90%E3%82%A4%E3%82%AF%E3%82%AB%E3%83%90%E3%83%BC%E3%82%92%E6%8E%A2%E3%81%97%E3%81%A6%E3%81%84%E3%81%BE%E3%81%97%E3%81%9F%E3%80%82%E5%AE%9A%E4%BE%A1%E3%81%8B%E3%82%89%E5%A4%A7%E5%B9%85%E5%80%A4%E5%BC%95%E3%81%8D%E3%81%95%E3%82%8C%E3%81%A6%E3%81%84%E3%81%A6%E3%80%81%E5%B0%91%E3%81%97%E4%B8%8D%E5%AE%89%E3%81%AB%E6%80%9D%E3%81%A3%E3%81%A6%E3%81%84%E3%81%BE%E3%81%97%E3%81%9F&hashtags=%E3%83%9B%E3%83%93%E3%83%BC">
+                       <button type="button" class="btn btn-primary d-block center-margin-0-auto ccs-product-counter">Tweet
+                       </button>
+                   </a>
+               </div>
+           </div>
+            <div class="card col-12">
+                <a href="./PC.html" class="btn btn-warning">パソコン・周辺機器</a>
+                <a href="./DIY.html" class="btn btn-warning">DIY・工具・ガーデン</a>
+                <a href="./Camera.html"class="btn btn-warning">カメラ</a>
+                <a href="./Homeerectronics.html"class="btn btn-warning">家電</a>
+                <a href="./Headphone.html"class="btn btn-warning">イヤホン・ヘッドホン</a>
+                <a href="./Hobby.html"class="btn btn-warning">ホビー</a>
+                <a href="./Smartphone.html"class="btn btn-warning">携帯電話・スマートフォン</a>
+                <a href="./Drugstore.html"class="btn btn-warning">ドラッグストア</a>
+                <a href="./Beauty.html"class="btn btn-warning">ビューティー</a>
+                <a href="./Drink.html"class="btn btn-warning">食品・飲料・お酒</a>
+                <a href="./HomeKitchen.html"class="btn btn-warning">ホーム＆キッチン</a>
+                <a href="./MensShoes.html"class="btn btn-warning">メンズシューズ</a>
+                <a href="./LadiesShoes.html"class="btn btn-warning">レディースシューズ</a>
+                <a href="./Outdoor.html"class="btn btn-warning">スポーツ＆アウトドア</a>
+                <a href="./CarBike.html"class="btn btn-warning">カー＆バイク用品</a>
             </div>
         </div>
     </div>
-
-
-    <!-- Java Script
-    ================================================== -->
-    <script src="js/jquery-3.2.1.min.js"></script>
-    <script src="js/plugins.js"></script>
-    <script src="js/main.js"></script>
-
 </body>
-
-</html>
