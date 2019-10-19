@@ -1,15 +1,17 @@
 <!DOCTYPE html>
 <html class="no-js" lang="en">
 <head>
-
-    <!--- basic page needs
-    ================================================== -->
+    <!--- basic page needs    ================================================== -->
     <meta charset="utf-8">
     <title>ルーセなムイタ</title>
-    <meta content="today, amazon, japan, deals, gold, 日本, アマゾン, 本日, タイムセール, 商品 " name="keywords">
-    <meta content="アマゾンのタイムセール商品を8時頃に更新します" name="description">
+    <meta content="amazon.co.jp, アマゾン, amazon, セール, goldbox, sale, 毎日, 自動更新, everyday, autorefresh, パソコン,周辺機器,DIY,工具,ガーデン,カメラ,家電,イヤホン,ヘッドホン,ホビー,携帯電話,スマートフォン,ドラッグストア,ビューティー,食品,飲料,お酒,ホーム,キッチン,メンズ,シューズ,レディース,スポーツ,アウトドア,カー,バイク," name="keywords">
+    <meta content="amazon.co.jpの本日のセール品を収集します。毎日自動更新します。収集する商品のカテゴリは『パソコン・周辺機器』『DIY・工具・ガーデン』『カメラ』『家電』『イヤホン・ヘッドホン』『ホビー』『携帯電話・スマートフォン』『ドラッグストア』『ビューティー』『食品・飲料・お酒』『ホーム＆キッチン』『メンズシューズ』『レディースシューズ』『スポーツ＆アウトドア』『カー＆バイク用品』" name="description">
     <meta name="author" content="">
-
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet"/>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
     <!-- Global site tag (gtag.js) - Google Analytics -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=UA-133844353-2"></script>
     <script>
@@ -19,323 +21,255 @@
       
       gtag('config', 'UA-133844353-2');
     </script>
-
-    <!-- Twitter Cards -->
-    <meta name="twitter:card" content="summary" />
-    <meta name="twitter:site" content="@haine_xxx" />
-    <meta property="og:url" content="https://amazondeals.github.io/amazonDealsJP" />
-    <meta property="og:title" content="ルーセなムイタ" />
-    <meta property="og:description" content="アマゾンのタイムセールを8時頃に更新します" />
-    <meta property="og:image" content="https://amazondeals.github.io/amazonDealsJP/img/ama_logo.jpg" />
-  
-    <!-- mobile specific metas
-    ================================================== -->
-    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-
-    <!-- Google Fonts -->
-    <link href="https://fonts.googleapis.com/css?family=Kosugi+Maru&amp;subset=cyrillic,japanese" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css?family=Kanit" rel="stylesheet">
-
-    <!-- CSS
-    ================================================== -->
-    <link rel="stylesheet" href="css/base.css">
-    <link rel="stylesheet" href="css/vendor.css">
-    <link rel="stylesheet" href="css/main.css">
-
-    <!-- script
-    ================================================== -->
-    <script src="js/modernizr.js"></script>
-    <script src="js/pace.min.js"></script>
-
-    <!-- favicons
-    ================================================== -->
-    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
-    <link rel="icon" href="favicon.ico" type="image/x-icon">
-
 </head>
-
+<style>
+    @media screen {
+        .card-columns {
+            -webkit-column-count: 4;
+            -moz-column-count: 4;
+            column-count: 4;
+        }
+    }
+    @media screen and (max-width: 1920px) {
+        .card-columns {
+            -webkit-column-count: 3;
+            -moz-column-count: 3;
+            column-count: 3;
+        }
+    }
+    @media screen and (max-width: 1280px) {
+        .card-columns {
+            -webkit-column-count: 2;
+            -moz-column-count: 2;
+            column-count: 2;
+        }
+    }
+    @media screen and (max-width: 640px) {
+        .card-columns {
+            -webkit-column-count: 1;
+            -moz-column-count: 1;
+            column-count: 1;
+        }
+    }
+    .card {
+        border-radius: 0 !important;
+        border: 0 none;
+        -webkit-box-shadow: 0px 2px 5px 0px rgba(0,0,0,0.5);
+        -moz-box-shadow: 0px 2px 5px 0px rgba(0,0,0,0.5);
+        box-shadow: 0px 2px 5px 0px rgba(0,0,0,0.5);
+        margin-left: 1px;
+        margin-right: 1px;
+    }
+    .card-img-top {
+        width: 100%;
+        border-radius: 0 !important;
+    }
+    .card-columns {
+        padding-top: 15px;
+    }
+</style>
 <body id="top">
-
-    <!-- pageheader
-    ================================================== -->
-    <section class="s-pageheader s-pageheader--home">
-
-        <header class="header">
-            <div class="header__content row">
-
-	      <h1 style="color: white;">ルーセ な ムイタ</h1>
-
-                <a class="header__toggle-menu" href="#0" title="Menu"><span>Menu</span></a>
-
-                <nav class="header__nav-wrap">
-
-                    <h2 class="header__nav-heading h6">Site Navigation</h2>
-
-                    <ul class="header__nav">
-                        <li><a href="index.html" title="">パソコン・周辺機器</a></li>
-                        <li><a href="DIY.html" title="">DIY・工具・ガーデン</a></li>
-                        <li><a href="Camera.html" title="">カメラ</a></li>
-                        <li><a href="Homeerectronics.html" title="">家電</a></li>
-                        <li><a href="Headphone.html" title="">イヤホン・ヘッドホン</a></li>
-                        <li><a href="Hobby.html" title="">ホビー</a></li>
-                        <li><a href="Smartphone.html" title="">携帯電話・スマートフォン</a></li>
-                        <li><a href="Drugstore.html" title="">ドラッグストア</a></li>
-                        <li><a href="Beauty.html" title="">ビューティー</a></li>
-                        <li><a href="Drink.html" title="">食品・飲料・お酒</a></li>
-                        <li><a href="HomeKitchen.html" title="">ホーム＆キッチン</a></li>
-                        <li><a href="MensShoes.html" title="">メンズシューズ</a></li>
-                        <li><a href="LadiesShoes.html" title="">レディースシューズ</a></li>
-                        <li><a href="Outdoor.html" title="">スポーツ＆アウトドア</a></li>
-                        <li><a href="CarBike.html" title="">カー＆バイク用品</a></li>
-                        <!-- li><a href="style-guide.html" title="">Styles</a></li>
-                        <li><a href="about.html" title="">About</a></li -->
-                    </ul> <!-- end header__nav -->
-
-                    <a href="#0" title="Close Menu" class="header__overlay-close close-mobile-menu">Close</a>
-
-                </nav> <!-- end header__nav-wrap -->
-
-            </div> <!-- header-content -->
-        </header> <!-- header -->
-
-    </section> <!-- end s-pageheader -->
-
-
-    <!-- s-content
-    ================================================== -->
-    <section class="s-content">
-        
-        <div class="row narrow section-intro add-bottom text-center">
-            <div class="col-twelve tab-full">
-                <h1>レディースシューズ</h1>
+    <div>
+        <h2><b><u>レディースシューズのセール商品</u></b></h2>
+        <p>2019-10-19 09:48:44に更新しました</p><hr>
+    </div>
+    <div class="container mt-3 mb-5">
+        <div class="card-group">
+            <div class="card">
+                <button type="button" class="btn btn-warning d-block center-margin-0-auto ccs-product-counter"><a href="./PC.html">パソコン・周辺機器</a></button><button type="button" class="btn btn-warning d-block center-margin-0-auto ccs-product-counter"><a href="./DIY.html">DIY・工具・ガーデン</a></button><button type="button" class="btn btn-warning d-block center-margin-0-auto ccs-product-counter"><a href="./Camera.html">カメラ</a></button><button type="button" class="btn btn-warning d-block center-margin-0-auto ccs-product-counter"><a href="./Homeerectronics.html">家電</a></button><button type="button" class="btn btn-warning d-block center-margin-0-auto ccs-product-counter"><a href="./Headphone.html">イヤホン・ヘッドホン</a></button><button type="button" class="btn btn-warning d-block center-margin-0-auto ccs-product-counter"><a href="./Hobby.html">ホビー</a></button><button type="button" class="btn btn-warning d-block center-margin-0-auto ccs-product-counter"><a href="./Smartphone.html">携帯電話・スマートフォン</a></button><button type="button" class="btn btn-warning d-block center-margin-0-auto ccs-product-counter"><a href="./Drugstore.html">ドラッグストア</a></button><button type="button" class="btn btn-warning d-block center-margin-0-auto ccs-product-counter"><a href="./Beauty.html">ビューティー</a></button><button type="button" class="btn btn-warning d-block center-margin-0-auto ccs-product-counter"><a href="./Drink.html">食品・飲料・お酒</a></button><button type="button" class="btn btn-warning d-block center-margin-0-auto ccs-product-counter"><a href="./HomeKitchen.html">ホーム＆キッチン</a></button><button type="button" class="btn btn-warning d-block center-margin-0-auto ccs-product-counter"><a href="./MensShoes.html">メンズシューズ</a></button><button type="button" class="btn btn-warning d-block center-margin-0-auto ccs-product-counter"><a href="./LadiesShoes.html">レディースシューズ</a></button><button type="button" class="btn btn-warning d-block center-margin-0-auto ccs-product-counter"><a href="./Outdoor.html">スポーツ＆アウトドア</a></button><button type="button" class="btn btn-warning d-block center-margin-0-auto ccs-product-counter"><a href="./CarBike.html">カー＆バイク用品</a></button>
             </div>
         </div>
-
-                <div class="row" id="allitems">
-                    <div class="col-twelve">
-                        <div class="table-responsive">
-                            <table><tbody>
-                                <tr>
-                                    <td><a href="#item_0"><img src="https://images-na.ssl-images-amazon.com/images/I/41KU2aT4wtL._SCLZZZZZZZ___AA640_.jpg" alt=""><br><p>¥1,280<sup style="color:red"><s>参考価格:¥7,250</s>(82%OFF)</span></p></a>
-                                    <td><a href="#item_1"><img src="https://images-na.ssl-images-amazon.com/images/I/41X64UUnNBL._SCLZZZZZZZ___AA640_.jpg" alt=""><br><p>¥2,672<sup style="color:red"><s>価格:¥3,699</s>(28%OFF)</span></p></a>
-                                    <td><a href="#item_2"><img src="https://images-na.ssl-images-amazon.com/images/I/41UcvJmc9FL._AA640_.jpg" alt=""><br><p>¥2,625<sup style="color:red"><s>参考価格:¥3,520</s>(25%OFF)</span></p></a>
-                                <tr>
-                                <tr>
-                                    <td><a href="#item_3"><img src="https://images-na.ssl-images-amazon.com/images/I/416XPz1TqXL._SCLZZZZZZZ___AA640_.jpg" alt=""><br><p>¥2,422-¥2,549<sup style="color:red"><s>価格:¥2,850-¥2,999</s>(15%OFF)</span></p></a>
-                                    <td><a href="#item_4"><img src="https://images-na.ssl-images-amazon.com/images/I/51FGR6eu+DL._SCLZZZZZZZ___AA640_.jpg" alt=""><br><p>¥2,006-¥2,340<sup style="color:red"><s>価格:¥2,360-¥2,754</s>(15%OFF)</span></p></a>
-                                    <td><a href="#item_5"><img src="https://images-na.ssl-images-amazon.com/images/I/413FDqpWPjL._SCLZZZZZZZ___AA640_.jpg" alt=""><br><p>¥2,464<sup style="color:red"><s>価格:¥2,899</s>(15%OFF)</span></p></a>
-                                <tr>
-                                <tr>
-                                    <td><a href="#item_6"><img src="https://images-na.ssl-images-amazon.com/images/I/41WbD%2Ba5maL._AA640_.jpg" alt=""><br><p>¥2,527<sup style="color:red"><s>参考価格:¥2,860</s>(12%OFF)</span></p></a>
-                                    <td><a href="#item_7"><img src="https://images-na.ssl-images-amazon.com/images/I/51KbFdWtGEL._SCLZZZZZZZ___AA640_.jpg" alt=""><br><p>¥1,698<sup style="color:red"><s>参考価格:¥7,580</s>(78%OFF)</span></p></a>
-                                    <td><a href="#item_8"><img src="https://images-na.ssl-images-amazon.com/images/I/41-J9hWar9L._SCLZZZZZZZ___AA640_.jpg" alt=""><br><p>¥2,000<sup style="color:red"><s>価格:¥2,850</s>(30%OFF)</span></p></a>
-                                <tr>
-                            </tbody></table>
-                        </div>
-                    </div>
-                </div>
-                <div class="row" id="item_0">
-                    <div class="s-content__media col-full">
-                         <img src="https://images-na.ssl-images-amazon.com/images/I/41KU2aT4wtL._SCLZZZZZZZ___AA640_.jpg" alt="">
-                    </div>
-                    <div class="col-twelve tab-full">
-                        <h3 class="yy_title"><a href="https://px.a8.net/svt/ejp?a8mat=1ZIM2A+34J5TU+249K+BWGDT&a8ejpredirect=https%3A%2F%2Fwww.amazon.co.jp%2FHAFOS-%E3%82%B9%E3%83%9D%E3%83%BC%E3%83%84%E3%82%B5%E3%83%B3%E3%83%80%E3%83%AB-%E3%83%95%E3%82%A1%E3%83%83%E3%82%B7%E3%83%A7%E3%83%B3-HUATENG-22-5cm-27-0cm/dp/B07TF4HLMT/ref=gbps_tit_s-4_d0fd_455837a5%3F%0D%0Asmid=A2D7MJ36OFIVCG%26pf_rd_p=ba82fec7-afd7-4772-8d95-aa1aa054d0fd%26pf_rd_s=slot-4%26pf_rd_t=701%26pf_rd_i=gb_main%26pf_rd_m=AN1VRQENFRJN5%26pf_rd_r=WZQBPGKZR79KQ6M1KAE7%2F%3Ftag%3Da8-affi-258507-22.html">[HAFOS]サンダルレディーススポーツサンダル厚底ヒールファッションメンズ男女兼用歩きやすい水陸両用美脚(HUATENG)22.5cm~27.0cm</a></h3>
-                        <ul>
-                            <li><a href="https://px.a8.net/svt/ejp?a8mat=1ZIM2A+34J5TU+249K+BWGDT&a8ejpredirect=https%3A%2F%2Fwww.amazon.co.jp%2FHAFOS-%E3%82%B9%E3%83%9D%E3%83%BC%E3%83%84%E3%82%B5%E3%83%B3%E3%83%80%E3%83%AB-%E3%83%95%E3%82%A1%E3%83%83%E3%82%B7%E3%83%A7%E3%83%B3-HUATENG-22-5cm-27-0cm/dp/B07TF4HLMT/ref=gbps_tit_s-4_d0fd_455837a5%3F%0D%0Asmid=A2D7MJ36OFIVCG%26pf_rd_p=ba82fec7-afd7-4772-8d95-aa1aa054d0fd%26pf_rd_s=slot-4%26pf_rd_t=701%26pf_rd_i=gb_main%26pf_rd_m=AN1VRQENFRJN5%26pf_rd_r=WZQBPGKZR79KQ6M1KAE7%2F%3Ftag%3Da8-affi-258507-22">価格 ¥1,280<sup style="color: red;"><s>参考価格:¥7,250</s>(82%OFF)</sup></a></li>
-                            <li><a href="https://px.a8.net/svt/ejp?a8mat=1ZIM2A+34J5TU+249K+BWGDT&a8ejpredirect=https%3A%2F%2Fwww.amazon.co.jp%2FHAFOS-%E3%82%B9%E3%83%9D%E3%83%BC%E3%83%84%E3%82%B5%E3%83%B3%E3%83%80%E3%83%AB-%E3%83%95%E3%82%A1%E3%83%83%E3%82%B7%E3%83%A7%E3%83%B3-HUATENG-22-5cm-27-0cm/dp/B07TF4HLMT/ref=gbps_tit_s-4_d0fd_455837a5%3F%0D%0Asmid=A2D7MJ36OFIVCG%26pf_rd_p=ba82fec7-afd7-4772-8d95-aa1aa054d0fd%26pf_rd_s=slot-4%26pf_rd_t=701%26pf_rd_i=gb_main%26pf_rd_m=AN1VRQENFRJN5%26pf_rd_r=WZQBPGKZR79KQ6M1KAE7%2F%3Ftag%3Da8-affi-258507-22">評価 <font style="color: orange;">★★★★</font></a></li>
-                            <li><a href="https://px.a8.net/svt/ejp?a8mat=1ZIM2A+34J5TU+249K+BWGDT&a8ejpredirect=https%3A%2F%2Fwww.amazon.co.jp%2FHAFOS-%E3%82%B9%E3%83%9D%E3%83%BC%E3%83%84%E3%82%B5%E3%83%B3%E3%83%80%E3%83%AB-%E3%83%95%E3%82%A1%E3%83%83%E3%82%B7%E3%83%A7%E3%83%B3-HUATENG-22-5cm-27-0cm/dp/B07TF4HLMT/ref=gbps_tit_s-4_d0fd_455837a5%3F%0D%0Asmid=A2D7MJ36OFIVCG%26pf_rd_p=ba82fec7-afd7-4772-8d95-aa1aa054d0fd%26pf_rd_s=slot-4%26pf_rd_t=701%26pf_rd_i=gb_main%26pf_rd_m=AN1VRQENFRJN5%26pf_rd_r=WZQBPGKZR79KQ6M1KAE7%2F%3Ftag%3Da8-affi-258507-22">53件のレビュー</a></li>
-                        </ul>
-                            <hr><p><u><b>レビュー</b></u><br>
-                            このお値段で、この履きやすさとデザインは最高です！普段24.5を履いていてサンダルも24.5を購入致しました。サイズはピッタリで良かったです！土踏まずのところがぺったんこではなく、盛り上がってる(?)のですごい履きやすいし疲れないです！,小指を怪我して、履ける物が無く、口コミを信じて購入。いつものサイズでピッタリ！足裏にフイットして、当たる所の素材は柔らかく、沢山歩いても大丈夫そう。底の角度も非常に良い。こんなにお値打ちで嬉しいです。60日間保証もついて、、あり得ないです。,お店でサンダルを探しましたがなかなか見つからず、Amazonで探してたらこのサンダルを見つけて、自分好みだったので注文しました。ネット注文で最初はちゃんと足に合うか不安だったけど、実際に届いたサンダルを履いたら足にとてもフィットしていて、この値段でこれはスゴいです。</p>
-                        <br>
-                        <a href="http://twitter.com/share?url=https%3A%2F%2Famazondeals.github.io%2FamazonDealsJP%2FLadiesShoes.html%23item_0&text=%E3%81%AE%E3%81%8A%E5%80%A4%E6%AE%B5%E3%81%A7%E3%80%81%E3%81%93%E3%81%AE%E5%B1%A5%E3%81%8D%E3%82%84%E3%81%99%E3%81%95%E3%81%A8%E3%83%87%E3%82%B6%E3%82%A4%E3%83%B3%E3%81%AF%E6%9C%80%E9%AB%98%E3%81%A7%E3%81%99%EF%BC%81%E6%99%AE%E6%AE%B524.5%E3%82%92%E5%B1%A5%E3%81%84%E3%81%A6%E3%81%84%E3%81%A6%E3%82%B5%E3%83%B3%E3%83%80%E3%83%AB%E3%82%8224.5%E3%82%92%E8%B3%BC%E5%85%A5%E8%87%B4%E3%81%97%E3%81%BE%E3%81%97%E3%81%9F%E3%80%82%E3%82%B5%E3%82%A4%E3%82%BA%E3%81%AF%E3%83%94%E3%83%83%E3%82%BF%E3%83%AA%E3%81%A7%E8%89%AF%E3%81%8B%E3%81%A3%E3%81%9F%E3%81%A7%E3%81%99%EF%BC%81%E5%9C%9F%E8%B8%8F%E3%81%BE%E3%81%9A%E3%81%AE%E3%81%A8%E3%81%93%E3%82%8D%E3%81%8C%E3%81%BA%E3%81%A3%E3%81%9F%E3%82%93%E3%81%93%E3%81%A7%E3%81%AF%E3%81%AA%E3%81%8F%E3%80%81%E7%9B%9B%E3%82%8A%E4%B8%8A%E3%81%8C%E3%81%A3%E3%81%A6%E3%82%8B(%3F)%E3%81%AE&hashtags=%E4%BB%8A%E6%97%A5%E3%81%AE%E3%82%BB%E3%83%BC%E3%83%AB%20%23%E3%83%AC%E3%83%87%E3%82%A3%E3%83%BC%E3%82%B9%E3%82%B7%E3%83%A5%E3%83%BC%E3%82%BA">この商品をツイート</a>
-                    </div>
-                </div>
-                <div class="row" id="item_1">
-                    <div class="s-content__media col-full">
-                         <img src="https://images-na.ssl-images-amazon.com/images/I/41X64UUnNBL._SCLZZZZZZZ___AA640_.jpg" alt="">
-                    </div>
-                    <div class="col-twelve tab-full">
-                        <h3 class="yy_title"><a href="https://px.a8.net/svt/ejp?a8mat=1ZIM2A+34J5TU+249K+BWGDT&a8ejpredirect=https%3A%2F%2Fwww.amazon.co.jp%2F%E3%82%B9%E3%83%9D%E3%83%BC%E3%83%84%E3%82%B5%E3%83%B3%E3%83%80%E3%83%AB-%E3%83%9E%E3%82%B8%E3%83%83%E3%82%AF%E3%83%86%E3%83%BC%E3%83%97-%E3%82%A2%E3%83%B3%E3%82%AF%E3%83%AB%E3%82%B9%E3%83%88%E3%83%A9%E3%83%83%E3%83%97-%E3%83%AC%E3%83%87%E3%82%A3%E3%83%BC%E3%82%B9%E3%82%B7%E3%83%A5%E3%83%BC%E3%82%BA-23-0cm%E3%83%96%E3%83%A9%E3%83%83%E3%82%AF2/dp/B07BTRJC5F/ref=gbps_tit_s-4_d0fd_f2612ba5%3F%0D%0Asmid=A2RSQPRA1S3PPP%26pf_rd_p=ba82fec7-afd7-4772-8d95-aa1aa054d0fd%26pf_rd_s=slot-4%26pf_rd_t=701%26pf_rd_i=gb_main%26pf_rd_m=AN1VRQENFRJN5%26pf_rd_r=WZQBPGKZR79KQ6M1KAE7%2F%3Ftag%3Da8-affi-258507-22.html">MAIQU厚底サンダルスポーツサンダルマジックテープアンクルストラップレディースシューズ軽量6～8CM</a></h3>
-                        <ul>
-                            <li><a href="https://px.a8.net/svt/ejp?a8mat=1ZIM2A+34J5TU+249K+BWGDT&a8ejpredirect=https%3A%2F%2Fwww.amazon.co.jp%2F%E3%82%B9%E3%83%9D%E3%83%BC%E3%83%84%E3%82%B5%E3%83%B3%E3%83%80%E3%83%AB-%E3%83%9E%E3%82%B8%E3%83%83%E3%82%AF%E3%83%86%E3%83%BC%E3%83%97-%E3%82%A2%E3%83%B3%E3%82%AF%E3%83%AB%E3%82%B9%E3%83%88%E3%83%A9%E3%83%83%E3%83%97-%E3%83%AC%E3%83%87%E3%82%A3%E3%83%BC%E3%82%B9%E3%82%B7%E3%83%A5%E3%83%BC%E3%82%BA-23-0cm%E3%83%96%E3%83%A9%E3%83%83%E3%82%AF2/dp/B07BTRJC5F/ref=gbps_tit_s-4_d0fd_f2612ba5%3F%0D%0Asmid=A2RSQPRA1S3PPP%26pf_rd_p=ba82fec7-afd7-4772-8d95-aa1aa054d0fd%26pf_rd_s=slot-4%26pf_rd_t=701%26pf_rd_i=gb_main%26pf_rd_m=AN1VRQENFRJN5%26pf_rd_r=WZQBPGKZR79KQ6M1KAE7%2F%3Ftag%3Da8-affi-258507-22">価格 ¥2,672<sup style="color: red;"><s>価格:¥3,699</s>(28%OFF)</sup></a></li>
-                            <li><a href="https://px.a8.net/svt/ejp?a8mat=1ZIM2A+34J5TU+249K+BWGDT&a8ejpredirect=https%3A%2F%2Fwww.amazon.co.jp%2F%E3%82%B9%E3%83%9D%E3%83%BC%E3%83%84%E3%82%B5%E3%83%B3%E3%83%80%E3%83%AB-%E3%83%9E%E3%82%B8%E3%83%83%E3%82%AF%E3%83%86%E3%83%BC%E3%83%97-%E3%82%A2%E3%83%B3%E3%82%AF%E3%83%AB%E3%82%B9%E3%83%88%E3%83%A9%E3%83%83%E3%83%97-%E3%83%AC%E3%83%87%E3%82%A3%E3%83%BC%E3%82%B9%E3%82%B7%E3%83%A5%E3%83%BC%E3%82%BA-23-0cm%E3%83%96%E3%83%A9%E3%83%83%E3%82%AF2/dp/B07BTRJC5F/ref=gbps_tit_s-4_d0fd_f2612ba5%3F%0D%0Asmid=A2RSQPRA1S3PPP%26pf_rd_p=ba82fec7-afd7-4772-8d95-aa1aa054d0fd%26pf_rd_s=slot-4%26pf_rd_t=701%26pf_rd_i=gb_main%26pf_rd_m=AN1VRQENFRJN5%26pf_rd_r=WZQBPGKZR79KQ6M1KAE7%2F%3Ftag%3Da8-affi-258507-22">評価 <font style="color: orange;">★★★★☆</font></a></li>
-                            <li><a href="https://px.a8.net/svt/ejp?a8mat=1ZIM2A+34J5TU+249K+BWGDT&a8ejpredirect=https%3A%2F%2Fwww.amazon.co.jp%2F%E3%82%B9%E3%83%9D%E3%83%BC%E3%83%84%E3%82%B5%E3%83%B3%E3%83%80%E3%83%AB-%E3%83%9E%E3%82%B8%E3%83%83%E3%82%AF%E3%83%86%E3%83%BC%E3%83%97-%E3%82%A2%E3%83%B3%E3%82%AF%E3%83%AB%E3%82%B9%E3%83%88%E3%83%A9%E3%83%83%E3%83%97-%E3%83%AC%E3%83%87%E3%82%A3%E3%83%BC%E3%82%B9%E3%82%B7%E3%83%A5%E3%83%BC%E3%82%BA-23-0cm%E3%83%96%E3%83%A9%E3%83%83%E3%82%AF2/dp/B07BTRJC5F/ref=gbps_tit_s-4_d0fd_f2612ba5%3F%0D%0Asmid=A2RSQPRA1S3PPP%26pf_rd_p=ba82fec7-afd7-4772-8d95-aa1aa054d0fd%26pf_rd_s=slot-4%26pf_rd_t=701%26pf_rd_i=gb_main%26pf_rd_m=AN1VRQENFRJN5%26pf_rd_r=WZQBPGKZR79KQ6M1KAE7%2F%3Ftag%3Da8-affi-258507-22">146件のレビュー</a></li>
-                        </ul>
-                            <hr><p><u><b>レビュー</b></u><br>
-                            普段24.5を着用、24.5でぴったりサイズです。ベルトが2箇所あるので多少は調節できるので、幅広さん、甲高さんにもオススメできます。厚底で若干ヒール気味なので、盛れるし痩せ見えします。似たような商品は他にもありますが、ソール部分まで黒なのはなかなかなく、汚れが気にならないのが意外とグッドです。白ソックスとか履いて、秋冬もおしゃれに履きこなせそうで楽しみです。,シューズは23センチヒールやサンダルは22.5センチを履くので22.5センチを最初に購入したのですが私の足が幅広の甲高で22.5センチでも履けるのですが前は調節できずギュッと締めつけ感があり後ろはマジックテープで少し調節可能ですが伸ばすとマジックテープでひっつく部分が短くなるなで歩いててとれないか不安で返品しました改めてワンサイズ大きめの23センチを購入したところ前の足幅は締めつけ感もなくしっくりきました後ろのマジックテープですこしキツめに調節したらばっちりでした後ろのマジックテープは短めに調節する場合はマジックテープでひっつく部分ができるので履いてて安心装置もカチッとはめるだけで楽だし歩くとクッションが効いてる感じで快適でした,いつもは23.5～24.0を履いているので24.0にしましたが、つま先がオープンなのでワンサイズ大きくても良かったなと思いました。ベルトの調整は少ししかできませんが、これは問題ありませんでした。残念だったのは、インソールのマーク。今回、私にとってはそこもポイントだったわけですが、紹介されている画像のマークと届いたものは全く違う別物でした。返品も考えましたが、それほど高価なものではないし、サンダルのデザインも履き心地も悪くないし、履いてしまえばマークは見えないのでよしとしました。でも画像どおりでなければ偽物ともいえるので、星マイナスさせてもらいました。</p>
-                        <br>
-                        <a href="http://twitter.com/share?url=https%3A%2F%2Famazondeals.github.io%2FamazonDealsJP%2FLadiesShoes.html%23item_1&text=%E6%AE%B524.5%E3%82%92%E7%9D%80%E7%94%A8%E3%80%8124.5%E3%81%A7%E3%81%B4%E3%81%A3%E3%81%9F%E3%82%8A%E3%82%B5%E3%82%A4%E3%82%BA%E3%81%A7%E3%81%99%E3%80%82%E3%83%99%E3%83%AB%E3%83%88%E3%81%8C2%E7%AE%87%E6%89%80%E3%81%82%E3%82%8B%E3%81%AE%E3%81%A7%E5%A4%9A%E5%B0%91%E3%81%AF%E8%AA%BF%E7%AF%80%E3%81%A7%E3%81%8D%E3%82%8B%E3%81%AE%E3%81%A7%E3%80%81%E5%B9%85%E5%BA%83%E3%81%95%E3%82%93%E3%80%81%E7%94%B2%E9%AB%98%E3%81%95%E3%82%93%E3%81%AB%E3%82%82%E3%82%AA%E3%82%B9%E3%82%B9%E3%83%A1%E3%81%A7%E3%81%8D%E3%81%BE%E3%81%99%E3%80%82%E5%8E%9A%E5%BA%95%E3%81%A7%E8%8B%A5%E5%B9%B2%E3%83%92%E3%83%BC%E3%83%AB%E6%B0%97%E5%91%B3%E3%81%AA%E3%81%AE%E3%81%A7%E3%80%81%E7%9B%9B%E3%82%8C%E3%82%8B%E3%81%97%E7%97%A9%E3%81%9B%E8%A6%8B%E3%81%88%E3%81%97%E3%81%BE%E3%81%99%E3%80%82%E4%BC%BC%E3%81%9F%E3%82%88%E3%81%86%E3%81%AA%E5%95%86%E5%93%81%E3%81%AF&hashtags=%E4%BB%8A%E6%97%A5%E3%81%AE%E3%82%BB%E3%83%BC%E3%83%AB%20%23%E3%83%AC%E3%83%87%E3%82%A3%E3%83%BC%E3%82%B9%E3%82%B7%E3%83%A5%E3%83%BC%E3%82%BA">この商品をツイート</a>
-                    </div>
-                </div>
-                <div class="row" id="item_2">
-                    <div class="s-content__media col-full">
-                         <img src="https://images-na.ssl-images-amazon.com/images/I/41UcvJmc9FL._AA640_.jpg" alt="">
-                    </div>
-                    <div class="col-twelve tab-full">
-                        <h3 class="yy_title"><a href="https://px.a8.net/svt/ejp?a8mat=1ZIM2A+34J5TU+249K+BWGDT&a8ejpredirect=https%3A%2F%2Fwww.amazon.co.jp%2Fs/browse/ref=gbps_tit_s-4_d0fd_0b723e99%3F%0D%0Aie=UTF8%26node=3765531051%26smid=AN1VRQENFRJN5%26pf_rd_p=ba82fec7-afd7-4772-8d95-aa1aa054d0fd%26pf_rd_s=slot-4%26pf_rd_t=701%26pf_rd_i=gb_main%26pf_rd_m=AN1VRQENFRJN5%26pf_rd_r=WZQBPGKZR79KQ6M1KAE7%2F%3Ftag%3Da8-affi-258507-22.html">[エーエムエス]かかとが踏めるバブーシュレディース2wayパンプスおしゃれかわいい外履き履きやすいブラックシルバーブラック-A24.0~24.5cm</a></h3>
-                        <ul>
-                            <li><a href="https://px.a8.net/svt/ejp?a8mat=1ZIM2A+34J5TU+249K+BWGDT&a8ejpredirect=https%3A%2F%2Fwww.amazon.co.jp%2Fs/browse/ref=gbps_tit_s-4_d0fd_0b723e99%3F%0D%0Aie=UTF8%26node=3765531051%26smid=AN1VRQENFRJN5%26pf_rd_p=ba82fec7-afd7-4772-8d95-aa1aa054d0fd%26pf_rd_s=slot-4%26pf_rd_t=701%26pf_rd_i=gb_main%26pf_rd_m=AN1VRQENFRJN5%26pf_rd_r=WZQBPGKZR79KQ6M1KAE7%2F%3Ftag%3Da8-affi-258507-22">価格 ¥2,625<sup style="color: red;"><s>参考価格:¥3,520</s>(25%OFF)</sup></a></li>
-                            <li><a href="https://px.a8.net/svt/ejp?a8mat=1ZIM2A+34J5TU+249K+BWGDT&a8ejpredirect=https%3A%2F%2Fwww.amazon.co.jp%2Fs/browse/ref=gbps_tit_s-4_d0fd_0b723e99%3F%0D%0Aie=UTF8%26node=3765531051%26smid=AN1VRQENFRJN5%26pf_rd_p=ba82fec7-afd7-4772-8d95-aa1aa054d0fd%26pf_rd_s=slot-4%26pf_rd_t=701%26pf_rd_i=gb_main%26pf_rd_m=AN1VRQENFRJN5%26pf_rd_r=WZQBPGKZR79KQ6M1KAE7%2F%3Ftag%3Da8-affi-258507-22">評価 <font style="color: orange;">★★★☆</font></a></li>
-                            <li><a href="https://px.a8.net/svt/ejp?a8mat=1ZIM2A+34J5TU+249K+BWGDT&a8ejpredirect=https%3A%2F%2Fwww.amazon.co.jp%2Fs/browse/ref=gbps_tit_s-4_d0fd_0b723e99%3F%0D%0Aie=UTF8%26node=3765531051%26smid=AN1VRQENFRJN5%26pf_rd_p=ba82fec7-afd7-4772-8d95-aa1aa054d0fd%26pf_rd_s=slot-4%26pf_rd_t=701%26pf_rd_i=gb_main%26pf_rd_m=AN1VRQENFRJN5%26pf_rd_r=WZQBPGKZR79KQ6M1KAE7%2F%3Ftag%3Da8-affi-258507-22">4件のレビュー</a></li>
-                        </ul>
-                            <hr><p><u><b>レビュー</b></u><br>
-                            普段23.5を履いている。サイズ違いで注文し、小さすぎた23〜23.5の方は返品し、23.5〜24.0を購入した。ただ、これも夕方に足がむくんでくると、きつく感じてくる(そのため、かかとが踏めるデザインが幸いしている)。デザインが素敵なので、ダメ押しでもう１サイズ上を購入するか思案中。,全体的に硬い材質かなと思います。履きこんだら馴染んでくるといいなという期待を込めて星4個です。,レビューに、小さめとあったので、少し大きめを買いましたが、なお小さく感じました。素材はペラペラっとしていて、軽いですが伸縮性はありません。靴というよりスリッパのような感覚です。</p>
-                        <br>
-                        <a href="http://twitter.com/share?url=https%3A%2F%2Famazondeals.github.io%2FamazonDealsJP%2FLadiesShoes.html%23item_2&text=%E6%AE%B523.5%E3%82%92%E5%B1%A5%E3%81%84%E3%81%A6%E3%81%84%E3%82%8B%E3%80%82%E3%82%B5%E3%82%A4%E3%82%BA%E9%81%95%E3%81%84%E3%81%A7%E6%B3%A8%E6%96%87%E3%81%97%E3%80%81%E5%B0%8F%E3%81%95%E3%81%99%E3%81%8E%E3%81%9F23%E3%80%9C23.5%E3%81%AE%E6%96%B9%E3%81%AF%E8%BF%94%E5%93%81%E3%81%97%E3%80%8123.5%E3%80%9C24.0%E3%82%92%E8%B3%BC%E5%85%A5%E3%81%97%E3%81%9F%E3%80%82%E3%81%9F%E3%81%A0%E3%80%81%E3%81%93%E3%82%8C%E3%82%82%E5%A4%95%E6%96%B9%E3%81%AB%E8%B6%B3%E3%81%8C%E3%82%80%E3%81%8F%E3%82%93%E3%81%A7%E3%81%8F%E3%82%8B%E3%81%A8%E3%80%81%E3%81%8D%E3%81%A4%E3%81%8F%E6%84%9F%E3%81%98%E3%81%A6%E3%81%8F%E3%82%8B(%E3%81%9D%E3%81%AE%E3%81%9F%E3%82%81%E3%80%81%E3%81%8B%E3%81%8B%E3%81%A8%E3%81%8C%E8%B8%8F%E3%82%81%E3%82%8B%E3%83%87%E3%82%B6%E3%82%A4%E3%83%B3&hashtags=%E4%BB%8A%E6%97%A5%E3%81%AE%E3%82%BB%E3%83%BC%E3%83%AB%20%23%E3%83%AC%E3%83%87%E3%82%A3%E3%83%BC%E3%82%B9%E3%82%B7%E3%83%A5%E3%83%BC%E3%82%BA">この商品をツイート</a>
-                    </div>
-                </div>
-                <div class="row" id="item_3">
-                    <div class="s-content__media col-full">
-                         <img src="https://images-na.ssl-images-amazon.com/images/I/416XPz1TqXL._SCLZZZZZZZ___AA640_.jpg" alt="">
-                    </div>
-                    <div class="col-twelve tab-full">
-                        <h3 class="yy_title"><a href="https://px.a8.net/svt/ejp?a8mat=1ZIM2A+34J5TU+249K+BWGDT&a8ejpredirect=https%3A%2F%2Fwww.amazon.co.jp%2FNomioce-%E3%82%AA%E3%83%83%E3%82%AF%E3%82%B9%E3%83%95%E3%82%A9%E3%83%BC%E3%83%89-%E3%83%AC%E3%83%87%E3%82%A3%E3%83%BC%E3%82%B9-%E3%83%AC%E3%83%BC%E3%82%B9%E3%82%A2%E3%83%83%E3%83%97-22-5cm/dp/B07PX1BW82/ref=gbps_tit_s-4_d0fd_bc6b4a91%3F%0D%0Asmid=AR83I0KIPEJJ0%26pf_rd_p=ba82fec7-afd7-4772-8d95-aa1aa054d0fd%26pf_rd_s=slot-4%26pf_rd_t=701%26pf_rd_i=gb_main%26pf_rd_m=AN1VRQENFRJN5%26pf_rd_r=WZQBPGKZR79KQ6M1KAE7%2F%3Ftag%3Da8-affi-258507-22.html">[Nomioce]オックスフォードレディース革靴本革レザー通学通勤レースアップパンプスシューズ靴おじ靴ヒールカジュアル女性用</a></h3>
-                        <ul>
-                            <li><a href="https://px.a8.net/svt/ejp?a8mat=1ZIM2A+34J5TU+249K+BWGDT&a8ejpredirect=https%3A%2F%2Fwww.amazon.co.jp%2FNomioce-%E3%82%AA%E3%83%83%E3%82%AF%E3%82%B9%E3%83%95%E3%82%A9%E3%83%BC%E3%83%89-%E3%83%AC%E3%83%87%E3%82%A3%E3%83%BC%E3%82%B9-%E3%83%AC%E3%83%BC%E3%82%B9%E3%82%A2%E3%83%83%E3%83%97-22-5cm/dp/B07PX1BW82/ref=gbps_tit_s-4_d0fd_bc6b4a91%3F%0D%0Asmid=AR83I0KIPEJJ0%26pf_rd_p=ba82fec7-afd7-4772-8d95-aa1aa054d0fd%26pf_rd_s=slot-4%26pf_rd_t=701%26pf_rd_i=gb_main%26pf_rd_m=AN1VRQENFRJN5%26pf_rd_r=WZQBPGKZR79KQ6M1KAE7%2F%3Ftag%3Da8-affi-258507-22">価格 ¥2,422-¥2,549<sup style="color: red;"><s>価格:¥2,850-¥2,999</s>(15%OFF)</sup></a></li>
-                            <li><a href="https://px.a8.net/svt/ejp?a8mat=1ZIM2A+34J5TU+249K+BWGDT&a8ejpredirect=https%3A%2F%2Fwww.amazon.co.jp%2FNomioce-%E3%82%AA%E3%83%83%E3%82%AF%E3%82%B9%E3%83%95%E3%82%A9%E3%83%BC%E3%83%89-%E3%83%AC%E3%83%87%E3%82%A3%E3%83%BC%E3%82%B9-%E3%83%AC%E3%83%BC%E3%82%B9%E3%82%A2%E3%83%83%E3%83%97-22-5cm/dp/B07PX1BW82/ref=gbps_tit_s-4_d0fd_bc6b4a91%3F%0D%0Asmid=AR83I0KIPEJJ0%26pf_rd_p=ba82fec7-afd7-4772-8d95-aa1aa054d0fd%26pf_rd_s=slot-4%26pf_rd_t=701%26pf_rd_i=gb_main%26pf_rd_m=AN1VRQENFRJN5%26pf_rd_r=WZQBPGKZR79KQ6M1KAE7%2F%3Ftag%3Da8-affi-258507-22">評価 <font style="color: orange;">★★★★☆</font></a></li>
-                            <li><a href="https://px.a8.net/svt/ejp?a8mat=1ZIM2A+34J5TU+249K+BWGDT&a8ejpredirect=https%3A%2F%2Fwww.amazon.co.jp%2FNomioce-%E3%82%AA%E3%83%83%E3%82%AF%E3%82%B9%E3%83%95%E3%82%A9%E3%83%BC%E3%83%89-%E3%83%AC%E3%83%87%E3%82%A3%E3%83%BC%E3%82%B9-%E3%83%AC%E3%83%BC%E3%82%B9%E3%82%A2%E3%83%83%E3%83%97-22-5cm/dp/B07PX1BW82/ref=gbps_tit_s-4_d0fd_bc6b4a91%3F%0D%0Asmid=AR83I0KIPEJJ0%26pf_rd_p=ba82fec7-afd7-4772-8d95-aa1aa054d0fd%26pf_rd_s=slot-4%26pf_rd_t=701%26pf_rd_i=gb_main%26pf_rd_m=AN1VRQENFRJN5%26pf_rd_r=WZQBPGKZR79KQ6M1KAE7%2F%3Ftag%3Da8-affi-258507-22">5件のレビュー</a></li>
-                        </ul>
-                            <hr><p><u><b>レビュー</b></u><br>
-                            サイズ交換に迅速にご対応いただけ大変助かりました。ご親切にありがとうございます。サイズは皆様のレビュー通り普段履く靴より1cmくらい大きめを選び、中敷などで調整するのが良いようです。皮部分が硬めでかかとの上野あたり靴づれを起こしかけたので部分用インソールでかかとをあげてすれないように調整しました。雨の日も気にせず履け、私の普段着る服になんでも合わせられるのが魅力です。次回また購入を検討したいと思える一足でした。,何方かのレビューにも書いてありましたように、靴底はぐにゅっとしたゴム感があります。でも、私はそこが良くて買ったところがあったので二重丸です。ゴム感のせいで他の靴に比べ、長時間歩いても疲れません。靴の上の部分は皮なので、履いていくと段々と柔らかくなって馴染んで来ています。このお値段でと考えたら、グッド！としか言いようがありません。次回もお洒落なウォーキングシューズとして購入したいと思います。,靴底が柔らかいので、立ち仕事で履いても全然疲れませんでした。サイズは大きめを買うのをお勧めします！</p>
-                        <br>
-                        <a href="http://twitter.com/share?url=https%3A%2F%2Famazondeals.github.io%2FamazonDealsJP%2FLadiesShoes.html%23item_3&text=%E3%82%A4%E3%82%BA%E4%BA%A4%E6%8F%9B%E3%81%AB%E8%BF%85%E9%80%9F%E3%81%AB%E3%81%94%E5%AF%BE%E5%BF%9C%E3%81%84%E3%81%9F%E3%81%A0%E3%81%91%E5%A4%A7%E5%A4%89%E5%8A%A9%E3%81%8B%E3%82%8A%E3%81%BE%E3%81%97%E3%81%9F%E3%80%82%E3%81%94%E8%A6%AA%E5%88%87%E3%81%AB%E3%81%82%E3%82%8A%E3%81%8C%E3%81%A8%E3%81%86%E3%81%94%E3%81%96%E3%81%84%E3%81%BE%E3%81%99%E3%80%82%E3%82%B5%E3%82%A4%E3%82%BA%E3%81%AF%E7%9A%86%E6%A7%98%E3%81%AE%E3%83%AC%E3%83%93%E3%83%A5%E3%83%BC%E9%80%9A%E3%82%8A%E6%99%AE%E6%AE%B5%E5%B1%A5%E3%81%8F%E9%9D%B4%E3%82%88%E3%82%8A1cm%E3%81%8F%E3%82%89%E3%81%84%E5%A4%A7%E3%81%8D%E3%82%81%E3%82%92%E9%81%B8%E3%81%B3%E3%80%81%E4%B8%AD%E6%95%B7%E3%81%AA%E3%81%A9%E3%81%A7%E8%AA%BF%E6%95%B4%E3%81%99%E3%82%8B%E3%81%AE%E3%81%8C%E8%89%AF%E3%81%84%E3%82%88%E3%81%86%E3%81%A7%E3%81%99%E3%80%82%E7%9A%AE%E9%83%A8%E5%88%86%E3%81%8C%E7%A1%AC%E3%82%81%E3%81%A7%E3%81%8B%E3%81%8B%E3%81%A8&hashtags=%E4%BB%8A%E6%97%A5%E3%81%AE%E3%82%BB%E3%83%BC%E3%83%AB%20%23%E3%83%AC%E3%83%87%E3%82%A3%E3%83%BC%E3%82%B9%E3%82%B7%E3%83%A5%E3%83%BC%E3%82%BA">この商品をツイート</a>
-                    </div>
-                </div>
-                <div class="row" id="item_4">
-                    <div class="s-content__media col-full">
-                         <img src="https://images-na.ssl-images-amazon.com/images/I/51FGR6eu+DL._SCLZZZZZZZ___AA640_.jpg" alt="">
-                    </div>
-                    <div class="col-twelve tab-full">
-                        <h3 class="yy_title"><a href="https://px.a8.net/svt/ejp?a8mat=1ZIM2A+34J5TU+249K+BWGDT&a8ejpredirect=https%3A%2F%2Fwww.amazon.co.jp%2F%E3%83%A9%E3%83%B3%E3%83%8B%E3%83%B3%E3%82%B0%E3%82%B7%E3%83%A5%E3%83%BC%E3%82%BA-%E3%83%8F%E3%82%A4%E3%82%AB%E3%83%83%E3%83%88%E3%82%B9%E3%83%8B%E3%83%BC%E3%82%AB%E3%83%BC-%E3%83%95%E3%82%A3%E3%83%83%E3%83%88%E3%83%8D%E3%82%B9%E3%82%B7%E3%83%A5%E3%83%BC%E3%82%BA-%E3%82%AB%E3%82%B8%E3%83%A5%E3%82%A2%E3%83%AB%E3%82%B7%E3%83%A5%E3%83%BC%E3%82%BA-%E3%83%A1%E3%83%B3%E3%82%BA%E3%82%B9%E3%83%9D%E3%83%BC%E3%83%84%E3%82%B7%E3%83%A5%E3%83%BC%E3%82%BA/dp/B07SCB522R/ref=gbps_tit_s-4_d0fd_1bdbfbaf%3F%0D%0Asmid=A12H7KEY9RDPPH%26pf_rd_p=ba82fec7-afd7-4772-8d95-aa1aa054d0fd%26pf_rd_s=slot-4%26pf_rd_t=701%26pf_rd_i=gb_main%26pf_rd_m=AN1VRQENFRJN5%26pf_rd_r=WZQBPGKZR79KQ6M1KAE7%2F%3Ftag%3Da8-affi-258507-22.html">[ANDITTRO]ランニングシューズメンズスニーカーレディースカップルシューズ体育館シューズロートップスニーカー運動靴中学生黒、白、赤、グレー、ピンク、紫6色レディースシューズ22.5CM-28.0CM</a></h3>
-                        <ul>
-                            <li><a href="https://px.a8.net/svt/ejp?a8mat=1ZIM2A+34J5TU+249K+BWGDT&a8ejpredirect=https%3A%2F%2Fwww.amazon.co.jp%2F%E3%83%A9%E3%83%B3%E3%83%8B%E3%83%B3%E3%82%B0%E3%82%B7%E3%83%A5%E3%83%BC%E3%82%BA-%E3%83%8F%E3%82%A4%E3%82%AB%E3%83%83%E3%83%88%E3%82%B9%E3%83%8B%E3%83%BC%E3%82%AB%E3%83%BC-%E3%83%95%E3%82%A3%E3%83%83%E3%83%88%E3%83%8D%E3%82%B9%E3%82%B7%E3%83%A5%E3%83%BC%E3%82%BA-%E3%82%AB%E3%82%B8%E3%83%A5%E3%82%A2%E3%83%AB%E3%82%B7%E3%83%A5%E3%83%BC%E3%82%BA-%E3%83%A1%E3%83%B3%E3%82%BA%E3%82%B9%E3%83%9D%E3%83%BC%E3%83%84%E3%82%B7%E3%83%A5%E3%83%BC%E3%82%BA/dp/B07SCB522R/ref=gbps_tit_s-4_d0fd_1bdbfbaf%3F%0D%0Asmid=A12H7KEY9RDPPH%26pf_rd_p=ba82fec7-afd7-4772-8d95-aa1aa054d0fd%26pf_rd_s=slot-4%26pf_rd_t=701%26pf_rd_i=gb_main%26pf_rd_m=AN1VRQENFRJN5%26pf_rd_r=WZQBPGKZR79KQ6M1KAE7%2F%3Ftag%3Da8-affi-258507-22">価格 ¥2,006-¥2,340<sup style="color: red;"><s>価格:¥2,360-¥2,754</s>(15%OFF)</sup></a></li>
-                            <li><a href="https://px.a8.net/svt/ejp?a8mat=1ZIM2A+34J5TU+249K+BWGDT&a8ejpredirect=https%3A%2F%2Fwww.amazon.co.jp%2F%E3%83%A9%E3%83%B3%E3%83%8B%E3%83%B3%E3%82%B0%E3%82%B7%E3%83%A5%E3%83%BC%E3%82%BA-%E3%83%8F%E3%82%A4%E3%82%AB%E3%83%83%E3%83%88%E3%82%B9%E3%83%8B%E3%83%BC%E3%82%AB%E3%83%BC-%E3%83%95%E3%82%A3%E3%83%83%E3%83%88%E3%83%8D%E3%82%B9%E3%82%B7%E3%83%A5%E3%83%BC%E3%82%BA-%E3%82%AB%E3%82%B8%E3%83%A5%E3%82%A2%E3%83%AB%E3%82%B7%E3%83%A5%E3%83%BC%E3%82%BA-%E3%83%A1%E3%83%B3%E3%82%BA%E3%82%B9%E3%83%9D%E3%83%BC%E3%83%84%E3%82%B7%E3%83%A5%E3%83%BC%E3%82%BA/dp/B07SCB522R/ref=gbps_tit_s-4_d0fd_1bdbfbaf%3F%0D%0Asmid=A12H7KEY9RDPPH%26pf_rd_p=ba82fec7-afd7-4772-8d95-aa1aa054d0fd%26pf_rd_s=slot-4%26pf_rd_t=701%26pf_rd_i=gb_main%26pf_rd_m=AN1VRQENFRJN5%26pf_rd_r=WZQBPGKZR79KQ6M1KAE7%2F%3Ftag%3Da8-affi-258507-22">評価 <font style="color: orange;">★★★★☆</font></a></li>
-                            <li><a href="https://px.a8.net/svt/ejp?a8mat=1ZIM2A+34J5TU+249K+BWGDT&a8ejpredirect=https%3A%2F%2Fwww.amazon.co.jp%2F%E3%83%A9%E3%83%B3%E3%83%8B%E3%83%B3%E3%82%B0%E3%82%B7%E3%83%A5%E3%83%BC%E3%82%BA-%E3%83%8F%E3%82%A4%E3%82%AB%E3%83%83%E3%83%88%E3%82%B9%E3%83%8B%E3%83%BC%E3%82%AB%E3%83%BC-%E3%83%95%E3%82%A3%E3%83%83%E3%83%88%E3%83%8D%E3%82%B9%E3%82%B7%E3%83%A5%E3%83%BC%E3%82%BA-%E3%82%AB%E3%82%B8%E3%83%A5%E3%82%A2%E3%83%AB%E3%82%B7%E3%83%A5%E3%83%BC%E3%82%BA-%E3%83%A1%E3%83%B3%E3%82%BA%E3%82%B9%E3%83%9D%E3%83%BC%E3%83%84%E3%82%B7%E3%83%A5%E3%83%BC%E3%82%BA/dp/B07SCB522R/ref=gbps_tit_s-4_d0fd_1bdbfbaf%3F%0D%0Asmid=A12H7KEY9RDPPH%26pf_rd_p=ba82fec7-afd7-4772-8d95-aa1aa054d0fd%26pf_rd_s=slot-4%26pf_rd_t=701%26pf_rd_i=gb_main%26pf_rd_m=AN1VRQENFRJN5%26pf_rd_r=WZQBPGKZR79KQ6M1KAE7%2F%3Ftag%3Da8-affi-258507-22">79件のレビュー</a></li>
-                        </ul>
-                            <hr><p><u><b>レビュー</b></u><br>
-                            高校生の息子の通学用に購入しました。梅雨時なので、スペア用を探していました。ブラックの27cmを購入しましたが、普段は27cmか27.5cmのスニーカーを履いているので、もしかしたらキツいかな…と思ったのですが、大丈夫でした！底が厚めなのが嬉しかったようで（背が高くなる）、部屋の中でしばらく履いていました。デザインも素敵だと思います。,ナースシューズとして買ったんです。少し履いてみてからレビューの記入をしているんです。期待した通りで、履きやすくて嬉しいです。もう一足を買って専用の運動靴として使おうかなと思います。,サイズがちょうどいいで、とても軽いです。5お父さんはジョギングする時に履いています。お父さんはとても喜んでいます。お得な商品です！！</p>
-                        <br>
-                        <a href="http://twitter.com/share?url=https%3A%2F%2Famazondeals.github.io%2FamazonDealsJP%2FLadiesShoes.html%23item_4&text=%E6%A0%A1%E7%94%9F%E3%81%AE%E6%81%AF%E5%AD%90%E3%81%AE%E9%80%9A%E5%AD%A6%E7%94%A8%E3%81%AB%E8%B3%BC%E5%85%A5%E3%81%97%E3%81%BE%E3%81%97%E3%81%9F%E3%80%82%E6%A2%85%E9%9B%A8%E6%99%82%E3%81%AA%E3%81%AE%E3%81%A7%E3%80%81%E3%82%B9%E3%83%9A%E3%82%A2%E7%94%A8%E3%82%92%E6%8E%A2%E3%81%97%E3%81%A6%E3%81%84%E3%81%BE%E3%81%97%E3%81%9F%E3%80%82%E3%83%96%E3%83%A9%E3%83%83%E3%82%AF%E3%81%AE27cm%E3%82%92%E8%B3%BC%E5%85%A5%E3%81%97%E3%81%BE%E3%81%97%E3%81%9F%E3%81%8C%E3%80%81%E6%99%AE%E6%AE%B5%E3%81%AF27cm%E3%81%8B27.5cm%E3%81%AE%E3%82%B9%E3%83%8B%E3%83%BC%E3%82%AB%E3%83%BC%E3%82%92%E5%B1%A5%E3%81%84%E3%81%A6%E3%81%84%E3%82%8B%E3%81%AE%E3%81%A7%E3%80%81%E3%82%82%E3%81%97%E3%81%8B%E3%81%97%E3%81%9F%E3%82%89%E3%82%AD%E3%83%84%E3%81%84%E3%81%8B%E3%81%AA%E2%80%A6%E3%81%A8%E6%80%9D%E3%81%A3%E3%81%9F&hashtags=%E4%BB%8A%E6%97%A5%E3%81%AE%E3%82%BB%E3%83%BC%E3%83%AB%20%23%E3%83%AC%E3%83%87%E3%82%A3%E3%83%BC%E3%82%B9%E3%82%B7%E3%83%A5%E3%83%BC%E3%82%BA">この商品をツイート</a>
-                    </div>
-                </div>
-                <div class="row" id="item_5">
-                    <div class="s-content__media col-full">
-                         <img src="https://images-na.ssl-images-amazon.com/images/I/413FDqpWPjL._SCLZZZZZZZ___AA640_.jpg" alt="">
-                    </div>
-                    <div class="col-twelve tab-full">
-                        <h3 class="yy_title"><a href="https://px.a8.net/svt/ejp?a8mat=1ZIM2A+34J5TU+249K+BWGDT&a8ejpredirect=https%3A%2F%2Fwww.amazon.co.jp%2FOvMax-%E3%83%A9%E3%83%B3%E3%83%8B%E3%83%B3%E3%82%B0%E3%82%B7%E3%83%A5%E3%83%BC%E3%82%BA-%E3%82%B9%E3%83%9D%E3%83%BC%E3%83%84%E3%82%B7%E3%83%A5%E3%83%BC%E3%82%BA-%E3%82%A6%E3%82%A9%E3%83%BC%E3%82%AD%E3%83%B3%E3%82%B0-38%E3%80%81%E3%83%96%E3%83%A9%E3%83%83%E3%82%AF%EF%BC%89/dp/B071S9L2Y5/ref=gbps_tit_s-4_d0fd_c2ed4cdf%3F%0D%0Asmid=AIAOUF6FH3VVS%26pf_rd_p=ba82fec7-afd7-4772-8d95-aa1aa054d0fd%26pf_rd_s=slot-4%26pf_rd_t=701%26pf_rd_i=gb_main%26pf_rd_m=AN1VRQENFRJN5%26pf_rd_r=WZQBPGKZR79KQ6M1KAE7%2F%3Ftag%3Da8-affi-258507-22.html">OvMaxランニングシューズスニーカーレディーススポーツシューズウォーキング通気軽量(38、ブラック）</a></h3>
-                        <ul>
-                            <li><a href="https://px.a8.net/svt/ejp?a8mat=1ZIM2A+34J5TU+249K+BWGDT&a8ejpredirect=https%3A%2F%2Fwww.amazon.co.jp%2FOvMax-%E3%83%A9%E3%83%B3%E3%83%8B%E3%83%B3%E3%82%B0%E3%82%B7%E3%83%A5%E3%83%BC%E3%82%BA-%E3%82%B9%E3%83%9D%E3%83%BC%E3%83%84%E3%82%B7%E3%83%A5%E3%83%BC%E3%82%BA-%E3%82%A6%E3%82%A9%E3%83%BC%E3%82%AD%E3%83%B3%E3%82%B0-38%E3%80%81%E3%83%96%E3%83%A9%E3%83%83%E3%82%AF%EF%BC%89/dp/B071S9L2Y5/ref=gbps_tit_s-4_d0fd_c2ed4cdf%3F%0D%0Asmid=AIAOUF6FH3VVS%26pf_rd_p=ba82fec7-afd7-4772-8d95-aa1aa054d0fd%26pf_rd_s=slot-4%26pf_rd_t=701%26pf_rd_i=gb_main%26pf_rd_m=AN1VRQENFRJN5%26pf_rd_r=WZQBPGKZR79KQ6M1KAE7%2F%3Ftag%3Da8-affi-258507-22">価格 ¥2,464<sup style="color: red;"><s>価格:¥2,899</s>(15%OFF)</sup></a></li>
-                            <li><a href="https://px.a8.net/svt/ejp?a8mat=1ZIM2A+34J5TU+249K+BWGDT&a8ejpredirect=https%3A%2F%2Fwww.amazon.co.jp%2FOvMax-%E3%83%A9%E3%83%B3%E3%83%8B%E3%83%B3%E3%82%B0%E3%82%B7%E3%83%A5%E3%83%BC%E3%82%BA-%E3%82%B9%E3%83%9D%E3%83%BC%E3%83%84%E3%82%B7%E3%83%A5%E3%83%BC%E3%82%BA-%E3%82%A6%E3%82%A9%E3%83%BC%E3%82%AD%E3%83%B3%E3%82%B0-38%E3%80%81%E3%83%96%E3%83%A9%E3%83%83%E3%82%AF%EF%BC%89/dp/B071S9L2Y5/ref=gbps_tit_s-4_d0fd_c2ed4cdf%3F%0D%0Asmid=AIAOUF6FH3VVS%26pf_rd_p=ba82fec7-afd7-4772-8d95-aa1aa054d0fd%26pf_rd_s=slot-4%26pf_rd_t=701%26pf_rd_i=gb_main%26pf_rd_m=AN1VRQENFRJN5%26pf_rd_r=WZQBPGKZR79KQ6M1KAE7%2F%3Ftag%3Da8-affi-258507-22">評価 <font style="color: orange;">★★★★</font></a></li>
-                            <li><a href="https://px.a8.net/svt/ejp?a8mat=1ZIM2A+34J5TU+249K+BWGDT&a8ejpredirect=https%3A%2F%2Fwww.amazon.co.jp%2FOvMax-%E3%83%A9%E3%83%B3%E3%83%8B%E3%83%B3%E3%82%B0%E3%82%B7%E3%83%A5%E3%83%BC%E3%82%BA-%E3%82%B9%E3%83%9D%E3%83%BC%E3%83%84%E3%82%B7%E3%83%A5%E3%83%BC%E3%82%BA-%E3%82%A6%E3%82%A9%E3%83%BC%E3%82%AD%E3%83%B3%E3%82%B0-38%E3%80%81%E3%83%96%E3%83%A9%E3%83%83%E3%82%AF%EF%BC%89/dp/B071S9L2Y5/ref=gbps_tit_s-4_d0fd_c2ed4cdf%3F%0D%0Asmid=AIAOUF6FH3VVS%26pf_rd_p=ba82fec7-afd7-4772-8d95-aa1aa054d0fd%26pf_rd_s=slot-4%26pf_rd_t=701%26pf_rd_i=gb_main%26pf_rd_m=AN1VRQENFRJN5%26pf_rd_r=WZQBPGKZR79KQ6M1KAE7%2F%3Ftag%3Da8-affi-258507-22">100件のレビュー</a></li>
-                        </ul>
-                            <hr><p><u><b>レビュー</b></u><br>
-                            レビュー通りワンサイズ上を買ったけど幅広足の私には少し狭いなと感じました紐を緩めると窮屈さはないので紐で調節して履いていますソール部分もそれなりになるのでクッション性が高くスイスイ歩けますただ、なんていうかわからないんですが紐のところにあるベロンとした部分に紐を通す穴が開いてないので、ズボッと履くとベロンとした部分が中に入ってしまい、ちょっとそこまでという時でも履きなおさなくてはいけないのが面倒ですそれでも軽くて歩きやすいので良いもの買ったなと思います幅広足だけどシルエットがシュッとしてるのも気に入ってます,この靴は仕事用として、購入しました。立ち仕事で足の痛みが酷かったのですが、この靴にしてから、だいぶ楽になりました。また通気性も良くて、足の蒸れもかなり軽くなりました。買って良かったです。,夏の暑いときに少しでも涼しくてなりたくて風通しの良いスニーカー(仕事用)を探してました。外を歩くと風が通るのがわかるほどです。気持ちいい雨が降る日や冬は向いてないかも。耐久性も問題ないです。ひと夏使用しましたが綺麗なまま</p>
-                        <br>
-                        <a href="http://twitter.com/share?url=https%3A%2F%2Famazondeals.github.io%2FamazonDealsJP%2FLadiesShoes.html%23item_5&text=%E3%83%93%E3%83%A5%E3%83%BC%E9%80%9A%E3%82%8A%E3%83%AF%E3%83%B3%E3%82%B5%E3%82%A4%E3%82%BA%E4%B8%8A%E3%82%92%E8%B2%B7%E3%81%A3%E3%81%9F%E3%81%91%E3%81%A9%E5%B9%85%E5%BA%83%E8%B6%B3%E3%81%AE%E7%A7%81%E3%81%AB%E3%81%AF%E5%B0%91%E3%81%97%E7%8B%AD%E3%81%84%E3%81%AA%E3%81%A8%E6%84%9F%E3%81%98%E3%81%BE%E3%81%97%E3%81%9F%E7%B4%90%E3%82%92%E7%B7%A9%E3%82%81%E3%82%8B%E3%81%A8%E7%AA%AE%E5%B1%88%E3%81%95%E3%81%AF%E3%81%AA%E3%81%84%E3%81%AE%E3%81%A7%E7%B4%90%E3%81%A7%E8%AA%BF%E7%AF%80%E3%81%97%E3%81%A6%E5%B1%A5%E3%81%84%E3%81%A6%E3%81%84%E3%81%BE%E3%81%99%E3%82%BD%E3%83%BC%E3%83%AB%E9%83%A8%E5%88%86%E3%82%82%E3%81%9D%E3%82%8C%E3%81%AA%E3%82%8A%E3%81%AB%E3%81%AA%E3%82%8B%E3%81%AE%E3%81%A7%E3%82%AF%E3%83%83%E3%82%B7%E3%83%A7%E3%83%B3%E6%80%A7%E3%81%8C%E9%AB%98%E3%81%8F%E3%82%B9%E3%82%A4%E3%82%B9%E3%82%A4%E6%AD%A9%E3%81%91%E3%81%BE%E3%81%99%E3%81%9F%E3%81%A0%E3%80%81%E3%81%AA%E3%82%93%E3%81%A6%E3%81%84&hashtags=%E4%BB%8A%E6%97%A5%E3%81%AE%E3%82%BB%E3%83%BC%E3%83%AB%20%23%E3%83%AC%E3%83%87%E3%82%A3%E3%83%BC%E3%82%B9%E3%82%B7%E3%83%A5%E3%83%BC%E3%82%BA">この商品をツイート</a>
-                    </div>
-                </div>
-                <div class="row" id="item_6">
-                    <div class="s-content__media col-full">
-                         <img src="https://images-na.ssl-images-amazon.com/images/I/41WbD%2Ba5maL._AA640_.jpg" alt="">
-                    </div>
-                    <div class="col-twelve tab-full">
-                        <h3 class="yy_title"><a href="https://px.a8.net/svt/ejp?a8mat=1ZIM2A+34J5TU+249K+BWGDT&a8ejpredirect=https%3A%2F%2Fwww.amazon.co.jp%2Fs/browse/ref=gbps_tit_s-4_d0fd_cfce48b8%3F%0D%0Aie=UTF8%26node=3765528051%26smid=AN1VRQENFRJN5%26pf_rd_p=ba82fec7-afd7-4772-8d95-aa1aa054d0fd%26pf_rd_s=slot-4%26pf_rd_t=701%26pf_rd_i=gb_main%26pf_rd_m=AN1VRQENFRJN5%26pf_rd_r=WZQBPGKZR79KQ6M1KAE7%2F%3Ftag%3Da8-affi-258507-22.html">[エーエムエス]レディースシューズパンプスフラットシューズレディース通勤歩きやすいローヒール黒シルバーベージュ4カラー24.0~24.5cm</a></h3>
-                        <ul>
-                            <li><a href="https://px.a8.net/svt/ejp?a8mat=1ZIM2A+34J5TU+249K+BWGDT&a8ejpredirect=https%3A%2F%2Fwww.amazon.co.jp%2Fs/browse/ref=gbps_tit_s-4_d0fd_cfce48b8%3F%0D%0Aie=UTF8%26node=3765528051%26smid=AN1VRQENFRJN5%26pf_rd_p=ba82fec7-afd7-4772-8d95-aa1aa054d0fd%26pf_rd_s=slot-4%26pf_rd_t=701%26pf_rd_i=gb_main%26pf_rd_m=AN1VRQENFRJN5%26pf_rd_r=WZQBPGKZR79KQ6M1KAE7%2F%3Ftag%3Da8-affi-258507-22">価格 ¥2,527<sup style="color: red;"><s>参考価格:¥2,860</s>(12%OFF)</sup></a></li>
-                            <li><a href="https://px.a8.net/svt/ejp?a8mat=1ZIM2A+34J5TU+249K+BWGDT&a8ejpredirect=https%3A%2F%2Fwww.amazon.co.jp%2Fs/browse/ref=gbps_tit_s-4_d0fd_cfce48b8%3F%0D%0Aie=UTF8%26node=3765528051%26smid=AN1VRQENFRJN5%26pf_rd_p=ba82fec7-afd7-4772-8d95-aa1aa054d0fd%26pf_rd_s=slot-4%26pf_rd_t=701%26pf_rd_i=gb_main%26pf_rd_m=AN1VRQENFRJN5%26pf_rd_r=WZQBPGKZR79KQ6M1KAE7%2F%3Ftag%3Da8-affi-258507-22">評価 <font style="color: orange;">★★★</font></a></li>
-                            <li><a href="https://px.a8.net/svt/ejp?a8mat=1ZIM2A+34J5TU+249K+BWGDT&a8ejpredirect=https%3A%2F%2Fwww.amazon.co.jp%2Fs/browse/ref=gbps_tit_s-4_d0fd_cfce48b8%3F%0D%0Aie=UTF8%26node=3765528051%26smid=AN1VRQENFRJN5%26pf_rd_p=ba82fec7-afd7-4772-8d95-aa1aa054d0fd%26pf_rd_s=slot-4%26pf_rd_t=701%26pf_rd_i=gb_main%26pf_rd_m=AN1VRQENFRJN5%26pf_rd_r=WZQBPGKZR79KQ6M1KAE7%2F%3Ftag%3Da8-affi-258507-22">7件のレビュー</a></li>
-                        </ul>
-                            <hr><p><u><b>レビュー</b></u><br>
-                            普段23.5cmだと小さめな商品ではむくむとキツく、24㎝のパンプスだと大きめ、24.5cmは大きすぎて全くダメ。サイズが小さめとレビューで見ていたのですが、そのような口コミでも今まで問題なかったので、今回も23.5～24cmを購入しました。スムーズに足は入りましたが、素材のせいなのか、かかとの部分がかなり硬く、歩き始めた途端に痛くてたまらず、すぐに靴擦れ。ワンサイズ大きい物を買えば良かったのかもしれません。靴擦れ防止になる物を使用すれば問題なく履けるはずですが、購入目的が数分間の徒歩通勤での使用だったので、そこまでして履こうとは思えず、２度と履くことはないかと思っています。合う方には良い買い物になる商品ですし、安いので過度な期待はしていませんでしたが、私には残念な結果になってしまいました。,Thisproductishorrible.Theshoesleaveblackstainsandblistersalloveryourfeet,evenifyouwearsocks!!,スッキリしていて、色もきれいです！少し大きめを購入して正解でした❗23センチを普段履いてますが、23.5センチでピッタリでした，横幅が広い方は少し大きめをおすすめします！</p>
-                        <br>
-                        <a href="http://twitter.com/share?url=https%3A%2F%2Famazondeals.github.io%2FamazonDealsJP%2FLadiesShoes.html%23item_6&text=%E6%AE%B523.5cm%E3%81%A0%E3%81%A8%E5%B0%8F%E3%81%95%E3%82%81%E3%81%AA%E5%95%86%E5%93%81%E3%81%A7%E3%81%AF%E3%82%80%E3%81%8F%E3%82%80%E3%81%A8%E3%82%AD%E3%83%84%E3%81%8F%E3%80%8124%E3%8E%9D%E3%81%AE%E3%83%91%E3%83%B3%E3%83%97%E3%82%B9%E3%81%A0%E3%81%A8%E5%A4%A7%E3%81%8D%E3%82%81%E3%80%8124.5cm%E3%81%AF%E5%A4%A7%E3%81%8D%E3%81%99%E3%81%8E%E3%81%A6%E5%85%A8%E3%81%8F%E3%83%80%E3%83%A1%E3%80%82%E3%82%B5%E3%82%A4%E3%82%BA%E3%81%8C%E5%B0%8F%E3%81%95%E3%82%81%E3%81%A8%E3%83%AC%E3%83%93%E3%83%A5%E3%83%BC%E3%81%A7%E8%A6%8B%E3%81%A6%E3%81%84%E3%81%9F%E3%81%AE%E3%81%A7%E3%81%99%E3%81%8C%E3%80%81%E3%81%9D%E3%81%AE%E3%82%88%E3%81%86%E3%81%AA%E5%8F%A3%E3%82%B3%E3%83%9F%E3%81%A7%E3%82%82%E4%BB%8A%E3%81%BE%E3%81%A7%E5%95%8F%E9%A1%8C%E3%81%AA%E3%81%8B%E3%81%A3%E3%81%9F%E3%81%AE%E3%81%A7%E3%80%81&hashtags=%E4%BB%8A%E6%97%A5%E3%81%AE%E3%82%BB%E3%83%BC%E3%83%AB%20%23%E3%83%AC%E3%83%87%E3%82%A3%E3%83%BC%E3%82%B9%E3%82%B7%E3%83%A5%E3%83%BC%E3%82%BA">この商品をツイート</a>
-                    </div>
-                </div>
-                <div class="row" id="item_7">
-                    <div class="s-content__media col-full">
-                         <img src="https://images-na.ssl-images-amazon.com/images/I/51KbFdWtGEL._SCLZZZZZZZ___AA640_.jpg" alt="">
-                    </div>
-                    <div class="col-twelve tab-full">
-                        <h3 class="yy_title"><a href="https://px.a8.net/svt/ejp?a8mat=1ZIM2A+34J5TU+249K+BWGDT&a8ejpredirect=https%3A%2F%2Fwww.amazon.co.jp%2FLED%E3%83%A9%E3%83%B3%E3%82%BF%E3%83%B3-usb%E5%85%85%E9%9B%BB%E5%BC%8F-2in1%E7%B5%A6%E9%9B%BB%E6%96%B9%E6%B3%95-%E3%82%AD%E3%83%A3%E3%83%B3%E3%83%97%E3%83%A9%E3%83%B3%E3%82%BF%E3%83%B3-%E3%83%95%E3%83%A9%E3%83%83%E3%82%B7%E3%83%A5%E3%83%A9%E3%82%A4%E3%83%88-SOS%E9%98%B2%E7%81%BD%E7%94%A8%E5%93%81-%E5%BF%9C%E6%80%A5/dp/B07TZX55HW/ref=gbph_tit_s-7_59d9_3940df46%3F%0D%0Asmid=A15WF1G47Q0J0M%26pf_rd_p=172feb36-7c12-4e76-afe0-4ec2d6c159d9%26pf_rd_s=slot-7%26pf_rd_t=701%26pf_rd_i=gb_main%26pf_rd_m=AN1VRQENFRJN5%26pf_rd_r=WZQBPGKZR79KQ6M1KAE7%2F%3Ftag%3Da8-affi-258507-22.html">LEDランタン usb充電式電池式2in1給電方法キャンプランタンフラッシュライトポータブルテントライト折り畳み式携帯型高輝度マグネット式懐中電灯防水仕様災害グッズアウトドアSOS防災用品 応急停電登山夜釣りハイキング1個入(ブラック)</a></h3>
-                        <ul>
-                            <li><a href="https://px.a8.net/svt/ejp?a8mat=1ZIM2A+34J5TU+249K+BWGDT&a8ejpredirect=https%3A%2F%2Fwww.amazon.co.jp%2FLED%E3%83%A9%E3%83%B3%E3%82%BF%E3%83%B3-usb%E5%85%85%E9%9B%BB%E5%BC%8F-2in1%E7%B5%A6%E9%9B%BB%E6%96%B9%E6%B3%95-%E3%82%AD%E3%83%A3%E3%83%B3%E3%83%97%E3%83%A9%E3%83%B3%E3%82%BF%E3%83%B3-%E3%83%95%E3%83%A9%E3%83%83%E3%82%B7%E3%83%A5%E3%83%A9%E3%82%A4%E3%83%88-SOS%E9%98%B2%E7%81%BD%E7%94%A8%E5%93%81-%E5%BF%9C%E6%80%A5/dp/B07TZX55HW/ref=gbph_tit_s-7_59d9_3940df46%3F%0D%0Asmid=A15WF1G47Q0J0M%26pf_rd_p=172feb36-7c12-4e76-afe0-4ec2d6c159d9%26pf_rd_s=slot-7%26pf_rd_t=701%26pf_rd_i=gb_main%26pf_rd_m=AN1VRQENFRJN5%26pf_rd_r=WZQBPGKZR79KQ6M1KAE7%2F%3Ftag%3Da8-affi-258507-22">価格 ¥1,698<sup style="color: red;"><s>参考価格:¥7,580</s>(78%OFF)</sup></a></li>
-                            <li><a href="https://px.a8.net/svt/ejp?a8mat=1ZIM2A+34J5TU+249K+BWGDT&a8ejpredirect=https%3A%2F%2Fwww.amazon.co.jp%2FLED%E3%83%A9%E3%83%B3%E3%82%BF%E3%83%B3-usb%E5%85%85%E9%9B%BB%E5%BC%8F-2in1%E7%B5%A6%E9%9B%BB%E6%96%B9%E6%B3%95-%E3%82%AD%E3%83%A3%E3%83%B3%E3%83%97%E3%83%A9%E3%83%B3%E3%82%BF%E3%83%B3-%E3%83%95%E3%83%A9%E3%83%83%E3%82%B7%E3%83%A5%E3%83%A9%E3%82%A4%E3%83%88-SOS%E9%98%B2%E7%81%BD%E7%94%A8%E5%93%81-%E5%BF%9C%E6%80%A5/dp/B07TZX55HW/ref=gbph_tit_s-7_59d9_3940df46%3F%0D%0Asmid=A15WF1G47Q0J0M%26pf_rd_p=172feb36-7c12-4e76-afe0-4ec2d6c159d9%26pf_rd_s=slot-7%26pf_rd_t=701%26pf_rd_i=gb_main%26pf_rd_m=AN1VRQENFRJN5%26pf_rd_r=WZQBPGKZR79KQ6M1KAE7%2F%3Ftag%3Da8-affi-258507-22">評価 <font style="color: orange;">★★★★☆</font></a></li>
-                            <li><a href="https://px.a8.net/svt/ejp?a8mat=1ZIM2A+34J5TU+249K+BWGDT&a8ejpredirect=https%3A%2F%2Fwww.amazon.co.jp%2FLED%E3%83%A9%E3%83%B3%E3%82%BF%E3%83%B3-usb%E5%85%85%E9%9B%BB%E5%BC%8F-2in1%E7%B5%A6%E9%9B%BB%E6%96%B9%E6%B3%95-%E3%82%AD%E3%83%A3%E3%83%B3%E3%83%97%E3%83%A9%E3%83%B3%E3%82%BF%E3%83%B3-%E3%83%95%E3%83%A9%E3%83%83%E3%82%B7%E3%83%A5%E3%83%A9%E3%82%A4%E3%83%88-SOS%E9%98%B2%E7%81%BD%E7%94%A8%E5%93%81-%E5%BF%9C%E6%80%A5/dp/B07TZX55HW/ref=gbph_tit_s-7_59d9_3940df46%3F%0D%0Asmid=A15WF1G47Q0J0M%26pf_rd_p=172feb36-7c12-4e76-afe0-4ec2d6c159d9%26pf_rd_s=slot-7%26pf_rd_t=701%26pf_rd_i=gb_main%26pf_rd_m=AN1VRQENFRJN5%26pf_rd_r=WZQBPGKZR79KQ6M1KAE7%2F%3Ftag%3Da8-affi-258507-22">541件のレビュー</a></li>
-                        </ul>
-                            <hr><p><u><b>レビュー</b></u><br>
-                            防災用に購入しました。明るく軽い電池が使えてUSB充電ができるのもいいと思います。ランタンとしては光源を直視できない程に明るいです。部屋を全体的に照らせます。持ち運び用の懐中電灯としてもスイッチ一押しで使えます。便利だなぁと思ったのは写真も上げてますが、底面に磁石が仕込まれており冷蔵庫などにペタッとつきます。これは夜間に車のボンネットを開けて作業の必要がある時などにボンネット裏に磁石でつきますので大変便利そうです。良い買い物でした！,スマホの写真なのでわかりにくいですが、350mlの缶を少し太くした程度の大きさです。重心は若干下です。一般的なランタンのイメージでいるとかなり小さいように思いますが、明るさは十分で、直視できないくらい明るいです。また、ランタンモードは上に伸ばすだけで自動的に点灯します。伸ばすときは両側の銀色の取っ手を少し広げてロックを解除し、密閉状態を伸ばす感じでゆっくりと引きます。よくある引っ張る部分がカスカスで勝手に戻ったり隙間ができてカタカタと鳴る作りではないです。上部のライトは黒いボタン（ゴム製でカチカチなるタイプ）で3パターンに光ります（白色→左右の赤点滅（早）→左右の赤点滅（遅））。商品画像の通り下に3つ磁石があり、逆さまにして設置してもまず外れないくらいには強力です。充電はmicroUSBで、充電ランプがあるのでわかりやすいです。見た目のプラスチックの質感は普通なので、実用性重視で軽くて小さい物を求める人にはベストだと思います。,先日居住地域で停電があり、急な災害時の備えとして購入しました。サイズはコンバクトながら、十分すぎる明るさに大満足です。写真4の通り、USB端子からの充電の他、単三電池×3で動作する点も非常に魅力的です。赤色灯も備えており、懐中電灯としても利用できます。底面には3点のマグネットが装着されていますので、写真3の通り冷蔵庫等に貼り付けて利用する事も出来ます。災害時やアウトドア、レジャーの際には大活躍だと思います。一家に一台あれば便利なスグレモノです。</p>
-                        <br>
-                        <a href="http://twitter.com/share?url=https%3A%2F%2Famazondeals.github.io%2FamazonDealsJP%2FLadiesShoes.html%23item_7&text=%E7%81%BD%E7%94%A8%E3%81%AB%E8%B3%BC%E5%85%A5%E3%81%97%E3%81%BE%E3%81%97%E3%81%9F%E3%80%82%E6%98%8E%E3%82%8B%E3%81%8F%E8%BB%BD%E3%81%84%E9%9B%BB%E6%B1%A0%E3%81%8C%E4%BD%BF%E3%81%88%E3%81%A6USB%E5%85%85%E9%9B%BB%E3%81%8C%E3%81%A7%E3%81%8D%E3%82%8B%E3%81%AE%E3%82%82%E3%81%84%E3%81%84%E3%81%A8%E6%80%9D%E3%81%84%E3%81%BE%E3%81%99%E3%80%82%E3%83%A9%E3%83%B3%E3%82%BF%E3%83%B3%E3%81%A8%E3%81%97%E3%81%A6%E3%81%AF%E5%85%89%E6%BA%90%E3%82%92%E7%9B%B4%E8%A6%96%E3%81%A7%E3%81%8D%E3%81%AA%E3%81%84%E7%A8%8B%E3%81%AB%E6%98%8E%E3%82%8B%E3%81%84%E3%81%A7%E3%81%99%E3%80%82%E9%83%A8%E5%B1%8B%E3%82%92%E5%85%A8%E4%BD%93%E7%9A%84%E3%81%AB%E7%85%A7%E3%82%89%E3%81%9B%E3%81%BE%E3%81%99%E3%80%82%E6%8C%81%E3%81%A1%E9%81%8B%E3%81%B3%E7%94%A8%E3%81%AE%E6%87%90%E4%B8%AD%E9%9B%BB%E7%81%AF%E3%81%A8%E3%81%97%E3%81%A6%E3%82%82%E3%82%B9%E3%82%A4%E3%83%83%E3%83%81%E4%B8%80%E6%8A%BC%E3%81%97%E3%81%A7&hashtags=%E4%BB%8A%E6%97%A5%E3%81%AE%E3%82%BB%E3%83%BC%E3%83%AB%20%23%E3%83%AC%E3%83%87%E3%82%A3%E3%83%BC%E3%82%B9%E3%82%B7%E3%83%A5%E3%83%BC%E3%82%BA">この商品をツイート</a>
-                    </div>
-                </div>
-                <div class="row" id="item_8">
-                    <div class="s-content__media col-full">
-                         <img src="https://images-na.ssl-images-amazon.com/images/I/41-J9hWar9L._SCLZZZZZZZ___AA640_.jpg" alt="">
-                    </div>
-                    <div class="col-twelve tab-full">
-                        <h3 class="yy_title"><a href="https://px.a8.net/svt/ejp?a8mat=1ZIM2A+34J5TU+249K+BWGDT&a8ejpredirect=https%3A%2F%2Fwww.amazon.co.jp%2F%E8%B6%85%E4%BE%BF%E5%88%A9%E6%97%85%E8%A1%8C%E5%9C%A7%E7%B8%AE%E3%83%90%E3%83%83%E3%82%B0-%E3%83%95%E3%82%A1%E3%82%B9%E3%83%8A%E3%83%BC%E5%9C%A7%E7%B8%AE%E3%81%A7%E8%A1%A3%E9%A1%9E%E3%82%B9%E3%83%9A%E3%83%BC%E3%82%B950%EF%BC%85%E7%AF%80%E7%B4%84-%E5%8F%AF%E5%A4%89%E3%82%B9%E3%83%9A%E3%83%BC%E3%82%B9-%E4%BE%BF%E5%88%A9%E3%82%B0%E3%83%83%E3%82%BA-%E3%82%B0%E3%83%AC%E3%83%BC/dp/B07JF2HVR7/ref=gbph_tit_s-7_59d9_fa28fc4b%3F%0D%0Asmid=A3IR7CWUF8USZL%26pf_rd_p=172feb36-7c12-4e76-afe0-4ec2d6c159d9%26pf_rd_s=slot-7%26pf_rd_t=701%26pf_rd_i=gb_main%26pf_rd_m=AN1VRQENFRJN5%26pf_rd_r=WZQBPGKZR79KQ6M1KAE7%2F%3Ftag%3Da8-affi-258507-22.html">超便利旅行圧縮バッグファスナー圧縮で衣類スペース50％節約軽量出張旅行可変スペース便利グッズ</a></h3>
-                        <ul>
-                            <li><a href="https://px.a8.net/svt/ejp?a8mat=1ZIM2A+34J5TU+249K+BWGDT&a8ejpredirect=https%3A%2F%2Fwww.amazon.co.jp%2F%E8%B6%85%E4%BE%BF%E5%88%A9%E6%97%85%E8%A1%8C%E5%9C%A7%E7%B8%AE%E3%83%90%E3%83%83%E3%82%B0-%E3%83%95%E3%82%A1%E3%82%B9%E3%83%8A%E3%83%BC%E5%9C%A7%E7%B8%AE%E3%81%A7%E8%A1%A3%E9%A1%9E%E3%82%B9%E3%83%9A%E3%83%BC%E3%82%B950%EF%BC%85%E7%AF%80%E7%B4%84-%E5%8F%AF%E5%A4%89%E3%82%B9%E3%83%9A%E3%83%BC%E3%82%B9-%E4%BE%BF%E5%88%A9%E3%82%B0%E3%83%83%E3%82%BA-%E3%82%B0%E3%83%AC%E3%83%BC/dp/B07JF2HVR7/ref=gbph_tit_s-7_59d9_fa28fc4b%3F%0D%0Asmid=A3IR7CWUF8USZL%26pf_rd_p=172feb36-7c12-4e76-afe0-4ec2d6c159d9%26pf_rd_s=slot-7%26pf_rd_t=701%26pf_rd_i=gb_main%26pf_rd_m=AN1VRQENFRJN5%26pf_rd_r=WZQBPGKZR79KQ6M1KAE7%2F%3Ftag%3Da8-affi-258507-22">価格 ¥2,000<sup style="color: red;"><s>価格:¥2,850</s>(30%OFF)</sup></a></li>
-                            <li><a href="https://px.a8.net/svt/ejp?a8mat=1ZIM2A+34J5TU+249K+BWGDT&a8ejpredirect=https%3A%2F%2Fwww.amazon.co.jp%2F%E8%B6%85%E4%BE%BF%E5%88%A9%E6%97%85%E8%A1%8C%E5%9C%A7%E7%B8%AE%E3%83%90%E3%83%83%E3%82%B0-%E3%83%95%E3%82%A1%E3%82%B9%E3%83%8A%E3%83%BC%E5%9C%A7%E7%B8%AE%E3%81%A7%E8%A1%A3%E9%A1%9E%E3%82%B9%E3%83%9A%E3%83%BC%E3%82%B950%EF%BC%85%E7%AF%80%E7%B4%84-%E5%8F%AF%E5%A4%89%E3%82%B9%E3%83%9A%E3%83%BC%E3%82%B9-%E4%BE%BF%E5%88%A9%E3%82%B0%E3%83%83%E3%82%BA-%E3%82%B0%E3%83%AC%E3%83%BC/dp/B07JF2HVR7/ref=gbph_tit_s-7_59d9_fa28fc4b%3F%0D%0Asmid=A3IR7CWUF8USZL%26pf_rd_p=172feb36-7c12-4e76-afe0-4ec2d6c159d9%26pf_rd_s=slot-7%26pf_rd_t=701%26pf_rd_i=gb_main%26pf_rd_m=AN1VRQENFRJN5%26pf_rd_r=WZQBPGKZR79KQ6M1KAE7%2F%3Ftag%3Da8-affi-258507-22">評価 <font style="color: orange;">★★★★</font></a></li>
-                            <li><a href="https://px.a8.net/svt/ejp?a8mat=1ZIM2A+34J5TU+249K+BWGDT&a8ejpredirect=https%3A%2F%2Fwww.amazon.co.jp%2F%E8%B6%85%E4%BE%BF%E5%88%A9%E6%97%85%E8%A1%8C%E5%9C%A7%E7%B8%AE%E3%83%90%E3%83%83%E3%82%B0-%E3%83%95%E3%82%A1%E3%82%B9%E3%83%8A%E3%83%BC%E5%9C%A7%E7%B8%AE%E3%81%A7%E8%A1%A3%E9%A1%9E%E3%82%B9%E3%83%9A%E3%83%BC%E3%82%B950%EF%BC%85%E7%AF%80%E7%B4%84-%E5%8F%AF%E5%A4%89%E3%82%B9%E3%83%9A%E3%83%BC%E3%82%B9-%E4%BE%BF%E5%88%A9%E3%82%B0%E3%83%83%E3%82%BA-%E3%82%B0%E3%83%AC%E3%83%BC/dp/B07JF2HVR7/ref=gbph_tit_s-7_59d9_fa28fc4b%3F%0D%0Asmid=A3IR7CWUF8USZL%26pf_rd_p=172feb36-7c12-4e76-afe0-4ec2d6c159d9%26pf_rd_s=slot-7%26pf_rd_t=701%26pf_rd_i=gb_main%26pf_rd_m=AN1VRQENFRJN5%26pf_rd_r=WZQBPGKZR79KQ6M1KAE7%2F%3Ftag%3Da8-affi-258507-22">127件のレビュー</a></li>
-                        </ul>
-                            <hr><p><u><b>レビュー</b></u><br>
-                            機能は勿論ですが、グレーと赤の組合せがとても気に入っています。その理由は、旅行グッズについて、私個人は、黒は目立たずテンションも上がらず、特に欧米のホテルは間接照明なので室内が暗く忘れ物に注意が必要なので、黒色の旅行用品は一切携行いたしません。,3泊分の夏物の洋服全て入りました。・Tシャツ・半袖・キャミソール・長袖・ワンピース・スカート・下着類・パジャマ上下コツとしては両面「まだ入るかな？」位でとどめておくと一番最後締めやすいです。着たものはレジ袋へ入れて一方方向へ最終的には膝を乗せてファスナーを締め上げました。帰りに洗濯物になったこれらは預け荷物ではなく機内持ち込み可のカートの底に入ったのでその日のうちにこのケースごと洗えて良かったです。圧縮袋もいいですが、空気抜けて堅くなるのでこちらの方が無駄なく省スペースかな？と思いました。今回は夏でTシャツなどでしたが、こちらはシワになっても良いもの、インナー系、かさばるニットなど空気を含む冬服は圧縮袋〜ジャケットや布帛はガーメントバッグシワは嫌、比較的重さのあるモノは着て行く・・・など用途で使い分けると良いと思いました。衣類はトランクの中でも場所を一番取るのでそのスペース分お土産に充てられるのは嬉しいですねｗまた活用するのが楽しみです。,空気を抜くタイプの圧縮袋は掃除機が必要だったり、ビニールの穴が心配なのでファスナータイプを選びました。メンズのXLサイズのTシャツを4〜5枚にデニム、ショートパンツを入れられるくらいの収納力です。たしかにコンパクトになりますしカバンの中はスッキリします。ファスナーや生地はしっかりしていますが、旅先でのトラブルを避けるためにもパンパンにならない程度に収納した方が無難です。</p>
-                        <br>
-                        <a href="http://twitter.com/share?url=https%3A%2F%2Famazondeals.github.io%2FamazonDealsJP%2FLadiesShoes.html%23item_8&text=%E8%83%BD%E3%81%AF%E5%8B%BF%E8%AB%96%E3%81%A7%E3%81%99%E3%81%8C%E3%80%81%E3%82%B0%E3%83%AC%E3%83%BC%E3%81%A8%E8%B5%A4%E3%81%AE%E7%B5%84%E5%90%88%E3%81%9B%E3%81%8C%E3%81%A8%E3%81%A6%E3%82%82%E6%B0%97%E3%81%AB%E5%85%A5%E3%81%A3%E3%81%A6%E3%81%84%E3%81%BE%E3%81%99%E3%80%82%E3%81%9D%E3%81%AE%E7%90%86%E7%94%B1%E3%81%AF%E3%80%81%E6%97%85%E8%A1%8C%E3%82%B0%E3%83%83%E3%82%BA%E3%81%AB%E3%81%A4%E3%81%84%E3%81%A6%E3%80%81%E7%A7%81%E5%80%8B%E4%BA%BA%E3%81%AF%E3%80%81%E9%BB%92%E3%81%AF%E7%9B%AE%E7%AB%8B%E3%81%9F%E3%81%9A%E3%83%86%E3%83%B3%E3%82%B7%E3%83%A7%E3%83%B3%E3%82%82%E4%B8%8A%E3%81%8C%E3%82%89%E3%81%9A%E3%80%81%E7%89%B9%E3%81%AB%E6%AC%A7%E7%B1%B3%E3%81%AE%E3%83%9B%E3%83%86%E3%83%AB%E3%81%AF%E9%96%93%E6%8E%A5%E7%85%A7%E6%98%8E%E3%81%AA%E3%81%AE%E3%81%A7%E5%AE%A4%E5%86%85%E3%81%8C%E6%9A%97%E3%81%8F%E5%BF%98%E3%82%8C%E7%89%A9%E3%81%AB%E6%B3%A8%E6%84%8F%E3%81%8C%E5%BF%85%E8%A6%81%E3%81%AA%E3%81%AE&hashtags=%E4%BB%8A%E6%97%A5%E3%81%AE%E3%82%BB%E3%83%BC%E3%83%AB%20%23%E3%83%AC%E3%83%87%E3%82%A3%E3%83%BC%E3%82%B9%E3%82%B7%E3%83%A5%E3%83%BC%E3%82%BA">この商品をツイート</a>
-                    </div>
-                </div>
-
-    </section>
-    <footer class="s-footer">
-
-        <div class="s-footer__main">
-            <div class="row">
-
+        <div class="card-group">
+            <div class="card">
+                <table><tbody>
+                    <tr>
+                        <td><a href="#item_0"><img src="https://images-na.ssl-images-amazon.com/images/I/41X64UUnNBL._SCLZZZZZZZ___AA640_.jpg" alt=""><br><p>¥2,672<sup style="color:red"><s>価格:¥3,699</s>(28%OFF)</span></p></a>
+                        <td><a href="#item_1"><img src="https://images-na.ssl-images-amazon.com/images/I/41UcvJmc9FL._AA640_.jpg" alt=""><br><p>¥2,625<sup style="color:red"><s>参考価格:¥3,520</s>(25%OFF)</span></p></a>
+                        <td><a href="#item_2"><img src="https://images-na.ssl-images-amazon.com/images/I/51FGR6eu+DL._SCLZZZZZZZ___AA640_.jpg" alt=""><br><p>¥2,006-¥2,340<sup style="color:red"><s>価格:¥2,360-¥2,754</s>(15%OFF)</span></p></a>
+                    </tr>
+                    <tr>
+                        <td><a href="#item_3"><img src="https://images-na.ssl-images-amazon.com/images/I/41WbD%2Ba5maL._AA640_.jpg" alt=""><br><p>¥2,527<sup style="color:red"><s>参考価格:¥2,860</s>(12%OFF)</span></p></a>
+                        <td><a href="#item_4"><img src="https://images-na.ssl-images-amazon.com/images/I/51InFHWyIQL._SCLZZZZZZZ___AA640_.jpg" alt=""><br><p>¥2,989<sup style="color:red"><s>価格:¥3,699</s>(19%OFF)</span></p></a>
+                        <td><a href="#item_5"><img src="https://images-na.ssl-images-amazon.com/images/I/41JVUwNRdhL._SCLZZZZZZZ___AA640_.jpg" alt=""><br><p>¥2,422-¥3,043<sup style="color:red"><s>価格:¥2,850-¥3,580</s>(15%OFF)</span></p></a>
+                    </tr>
+                    <tr>
+                        <td><a href="#item_6"><img src="https://images-na.ssl-images-amazon.com/images/I/41ZMk6b0qHL._SCLZZZZZZZ___AA640_.jpg" alt=""><br><p>¥2,530<sup style="color:red"><s>価格:¥3,180</s>(20%OFF)</span></p></a>
+                        <td><a href="#item_7"><img src="https://images-na.ssl-images-amazon.com/images/I/41aQqYYtfzL._SCLZZZZZZZ___AA640_.jpg" alt=""><br><p>¥1,938<sup style="color:red"><s>価格:¥2,480</s>(22%OFF)</span></p></a>
+                </tbody></table>
             </div>
-        </div> <!-- end s-footer__main -->
-
-        <div class="s-footer__bottom">
-            <div class="row">
-                <div class="col-full">
-                    <div class="s-footer__copyright">
-                        <span>© Copyright Philosophy 2018</span> 
-                        <span>Site Template by <a href="https://colorlib.com/">Colorlib</a></span>
-                    </div>
-
-                    <div class="go-top">
-                        <a class="smoothscroll" title="Back to Top" href="#top"></a>
-                    </div>
-                </div>
-            </div>
-        </div> <!-- end s-footer__bottom -->
-
-    </footer> <!-- end s-footer -->
-
-
-    <!-- preloader
-    ================================================== -->
-    <div id="preloader">
-        <div id="loader">
-            <div class="line-scale">
-                <div></div>
-                <div></div>
-                <div></div>
-                <div></div>
-                <div></div>
+        </div>
+           <div id="card-p-id-1" class="card product-card">
+               <img src="https://images-na.ssl-images-amazon.com/images/I/41X64UUnNBL._SCLZZZZZZZ___AA640_.jpg" alt="">
+               <div class="card-body">
+                   <h5 class="card-title mb-0"><a href="https://px.a8.net/svt/ejp?a8mat=1ZIM2A+34J5TU+249K+BWGDT&a8ejpredirect=https%3A%2F%2Fwww.amazon.co.jp%2F%E3%82%B9%E3%83%9D%E3%83%BC%E3%83%84%E3%82%B5%E3%83%B3%E3%83%80%E3%83%AB-%E3%83%9E%E3%82%B8%E3%83%83%E3%82%AF%E3%83%86%E3%83%BC%E3%83%97-%E3%82%A2%E3%83%B3%E3%82%AF%E3%83%AB%E3%82%B9%E3%83%88%E3%83%A9%E3%83%83%E3%83%97-%E3%83%AC%E3%83%87%E3%82%A3%E3%83%BC%E3%82%B9%E3%82%B7%E3%83%A5%E3%83%BC%E3%82%BA-23-0cm%E3%83%96%E3%83%A9%E3%83%83%E3%82%AF2/dp/B07BTRJC5F/ref=gbps_tit_s-4_28cb_f2612ba5%3F%0D%0Asmid=A2RSQPRA1S3PPP%26pf_rd_p=fa73587f-9e6a-48eb-84c4-73cb5e3e28cb%26pf_rd_s=slot-4%26pf_rd_t=701%26pf_rd_i=gb_main%26pf_rd_m=AN1VRQENFRJN5%26pf_rd_r=QN9PCT9EZNXFS3GX1BSQ%2F%3Ftag%3Da8-affi-258507-22.html">MAIQU厚底サンダルスポーツサンダルマジックテープアンクルストラップレディースシューズ軽量6～8CM</a></h5>
+                   <ul>
+                       <li><a href="https://px.a8.net/svt/ejp?a8mat=1ZIM2A+34J5TU+249K+BWGDT&a8ejpredirect=https%3A%2F%2Fwww.amazon.co.jp%2F%E3%82%B9%E3%83%9D%E3%83%BC%E3%83%84%E3%82%B5%E3%83%B3%E3%83%80%E3%83%AB-%E3%83%9E%E3%82%B8%E3%83%83%E3%82%AF%E3%83%86%E3%83%BC%E3%83%97-%E3%82%A2%E3%83%B3%E3%82%AF%E3%83%AB%E3%82%B9%E3%83%88%E3%83%A9%E3%83%83%E3%83%97-%E3%83%AC%E3%83%87%E3%82%A3%E3%83%BC%E3%82%B9%E3%82%B7%E3%83%A5%E3%83%BC%E3%82%BA-23-0cm%E3%83%96%E3%83%A9%E3%83%83%E3%82%AF2/dp/B07BTRJC5F/ref=gbps_tit_s-4_28cb_f2612ba5%3F%0D%0Asmid=A2RSQPRA1S3PPP%26pf_rd_p=fa73587f-9e6a-48eb-84c4-73cb5e3e28cb%26pf_rd_s=slot-4%26pf_rd_t=701%26pf_rd_i=gb_main%26pf_rd_m=AN1VRQENFRJN5%26pf_rd_r=QN9PCT9EZNXFS3GX1BSQ%2F%3Ftag%3Da8-affi-258507-22">価格 ¥2,672<sup style="color: red;"><s>価格:¥3,699</s>(28%OFF)</sup></a></li>
+                       <li><a href="https://px.a8.net/svt/ejp?a8mat=1ZIM2A+34J5TU+249K+BWGDT&a8ejpredirect=https%3A%2F%2Fwww.amazon.co.jp%2F%E3%82%B9%E3%83%9D%E3%83%BC%E3%83%84%E3%82%B5%E3%83%B3%E3%83%80%E3%83%AB-%E3%83%9E%E3%82%B8%E3%83%83%E3%82%AF%E3%83%86%E3%83%BC%E3%83%97-%E3%82%A2%E3%83%B3%E3%82%AF%E3%83%AB%E3%82%B9%E3%83%88%E3%83%A9%E3%83%83%E3%83%97-%E3%83%AC%E3%83%87%E3%82%A3%E3%83%BC%E3%82%B9%E3%82%B7%E3%83%A5%E3%83%BC%E3%82%BA-23-0cm%E3%83%96%E3%83%A9%E3%83%83%E3%82%AF2/dp/B07BTRJC5F/ref=gbps_tit_s-4_28cb_f2612ba5%3F%0D%0Asmid=A2RSQPRA1S3PPP%26pf_rd_p=fa73587f-9e6a-48eb-84c4-73cb5e3e28cb%26pf_rd_s=slot-4%26pf_rd_t=701%26pf_rd_i=gb_main%26pf_rd_m=AN1VRQENFRJN5%26pf_rd_r=QN9PCT9EZNXFS3GX1BSQ%2F%3Ftag%3Da8-affi-258507-22">評価 <font style="color: orange;">★★★★☆</font></a></li>
+                       <li><a href="https://px.a8.net/svt/ejp?a8mat=1ZIM2A+34J5TU+249K+BWGDT&a8ejpredirect=https%3A%2F%2Fwww.amazon.co.jp%2F%E3%82%B9%E3%83%9D%E3%83%BC%E3%83%84%E3%82%B5%E3%83%B3%E3%83%80%E3%83%AB-%E3%83%9E%E3%82%B8%E3%83%83%E3%82%AF%E3%83%86%E3%83%BC%E3%83%97-%E3%82%A2%E3%83%B3%E3%82%AF%E3%83%AB%E3%82%B9%E3%83%88%E3%83%A9%E3%83%83%E3%83%97-%E3%83%AC%E3%83%87%E3%82%A3%E3%83%BC%E3%82%B9%E3%82%B7%E3%83%A5%E3%83%BC%E3%82%BA-23-0cm%E3%83%96%E3%83%A9%E3%83%83%E3%82%AF2/dp/B07BTRJC5F/ref=gbps_tit_s-4_28cb_f2612ba5%3F%0D%0Asmid=A2RSQPRA1S3PPP%26pf_rd_p=fa73587f-9e6a-48eb-84c4-73cb5e3e28cb%26pf_rd_s=slot-4%26pf_rd_t=701%26pf_rd_i=gb_main%26pf_rd_m=AN1VRQENFRJN5%26pf_rd_r=QN9PCT9EZNXFS3GX1BSQ%2F%3Ftag%3Da8-affi-258507-22">146件のレビュー</a></li>
+                   </ul>
+                   <p><button type="button" class="btn btn-success" data-toggle="collapse" data-target="#collapseItem1" aria-expanded="false" aria-controls="collapseItem1">レビューを表示</button></p>
+                   <div class="collapse" id="collapseItem1">
+                       <div class="card card-body">
+                           <hr><p><u><b>レビュー</b></u><br>
+                           普段24.5を着用、24.5でぴったりサイズです。ベルトが2箇所あるので多少は調節できるので、幅広さん、甲高さんにもオススメできます。厚底で若干ヒール気味なので、盛れるし痩せ見えします。似たような商品は他にもありますが、ソール部分まで黒なのはなかなかなく、汚れが気にならないのが意外とグッドです。白ソックスとか履いて、秋冬もおしゃれに履きこなせそうで楽しみです。,シューズは23センチヒールやサンダルは22.5センチを履くので22.5センチを最初に購入したのですが私の足が幅広の甲高で22.5センチでも履けるのですが前は調節できずギュッと締めつけ感があり後ろはマジックテープで少し調節可能ですが伸ばすとマジックテープでひっつく部分が短くなるなで歩いててとれないか不安で返品しました改めてワンサイズ大きめの23センチを購入したところ前の足幅は締めつけ感もなくしっくりきました後ろのマジックテープですこしキツめに調節したらばっちりでした後ろのマジックテープは短めに調節する場合はマジックテープでひっつく部分ができるので履いてて安心装置もカチッとはめるだけで楽だし歩くとクッションが効いてる感じで快適でした,いつもは23.5～24.0を履いているので24.0にしましたが、つま先がオープンなのでワンサイズ大きくても良かったなと思いました。ベルトの調整は少ししかできませんが、これは問題ありませんでした。残念だったのは、インソールのマーク。今回、私にとってはそこもポイントだったわけですが、紹介されている画像のマークと届いたものは全く違う別物でした。返品も考えましたが、それほど高価なものではないし、サンダルのデザインも履き心地も悪くないし、履いてしまえばマークは見えないのでよしとしました。でも画像どおりでなければ偽物ともいえるので、星マイナスさせてもらいました。</p>
+                       </div>
+                   </div>
+                   <button type="button" class="btn btn-primary d-block center-margin-0-auto ccs-product-counter">
+                       <a href="http://twitter.com/share?url=https%3A%2F%2Famazondeals.github.io%2FamazonDealsJP%2FLadiesShoes.html%23card-p-id-1&text=%E6%AE%B524.5%E3%82%92%E7%9D%80%E7%94%A8%E3%80%8124.5%E3%81%A7%E3%81%B4%E3%81%A3%E3%81%9F%E3%82%8A%E3%82%B5%E3%82%A4%E3%82%BA%E3%81%A7%E3%81%99%E3%80%82%E3%83%99%E3%83%AB%E3%83%88%E3%81%8C2%E7%AE%87%E6%89%80%E3%81%82%E3%82%8B%E3%81%AE%E3%81%A7%E5%A4%9A%E5%B0%91%E3%81%AF%E8%AA%BF%E7%AF%80%E3%81%A7%E3%81%8D%E3%82%8B%E3%81%AE%E3%81%A7%E3%80%81%E5%B9%85%E5%BA%83%E3%81%95%E3%82%93%E3%80%81%E7%94%B2%E9%AB%98%E3%81%95%E3%82%93%E3%81%AB%E3%82%82%E3%82%AA%E3%82%B9%E3%82%B9%E3%83%A1%E3%81%A7%E3%81%8D%E3%81%BE%E3%81%99%E3%80%82%E5%8E%9A%E5%BA%95%E3%81%A7%E8%8B%A5%E5%B9%B2%E3%83%92%E3%83%BC%E3%83%AB%E6%B0%97%E5%91%B3%E3%81%AA%E3%81%AE%E3%81%A7%E3%80%81%E7%9B%9B%E3%82%8C%E3%82%8B%E3%81%97%E7%97%A9%E3%81%9B%E8%A6%8B%E3%81%88%E3%81%97%E3%81%BE%E3%81%99%E3%80%82%E4%BC%BC%E3%81%9F%E3%82%88%E3%81%86%E3%81%AA%E5%95%86%E5%93%81%E3%81%AF&hashtags=%E3%83%AC%E3%83%87%E3%82%A3%E3%83%BC%E3%82%B9%E3%82%B7%E3%83%A5%E3%83%BC%E3%82%BA">Tweet</a>
+                   </button>
+               </div>
+           </div>
+           <div id="card-p-id-2" class="card product-card">
+               <img src="https://images-na.ssl-images-amazon.com/images/I/41UcvJmc9FL._AA640_.jpg" alt="">
+               <div class="card-body">
+                   <h5 class="card-title mb-0"><a href="https://px.a8.net/svt/ejp?a8mat=1ZIM2A+34J5TU+249K+BWGDT&a8ejpredirect=https%3A%2F%2Fwww.amazon.co.jp%2Fs/browse/ref=gbps_tit_s-4_28cb_0b723e99%3F%0D%0Aie=UTF8%26node=3765531051%26smid=AN1VRQENFRJN5%26pf_rd_p=fa73587f-9e6a-48eb-84c4-73cb5e3e28cb%26pf_rd_s=slot-4%26pf_rd_t=701%26pf_rd_i=gb_main%26pf_rd_m=AN1VRQENFRJN5%26pf_rd_r=QN9PCT9EZNXFS3GX1BSQ%2F%3Ftag%3Da8-affi-258507-22.html">[エーエムエス]かかとが踏めるバブーシュレディース2wayパンプスおしゃれかわいい外履き履きやすいブラックシルバーブラック-A24.0~24.5cm</a></h5>
+                   <ul>
+                       <li><a href="https://px.a8.net/svt/ejp?a8mat=1ZIM2A+34J5TU+249K+BWGDT&a8ejpredirect=https%3A%2F%2Fwww.amazon.co.jp%2Fs/browse/ref=gbps_tit_s-4_28cb_0b723e99%3F%0D%0Aie=UTF8%26node=3765531051%26smid=AN1VRQENFRJN5%26pf_rd_p=fa73587f-9e6a-48eb-84c4-73cb5e3e28cb%26pf_rd_s=slot-4%26pf_rd_t=701%26pf_rd_i=gb_main%26pf_rd_m=AN1VRQENFRJN5%26pf_rd_r=QN9PCT9EZNXFS3GX1BSQ%2F%3Ftag%3Da8-affi-258507-22">価格 ¥2,625<sup style="color: red;"><s>参考価格:¥3,520</s>(25%OFF)</sup></a></li>
+                       <li><a href="https://px.a8.net/svt/ejp?a8mat=1ZIM2A+34J5TU+249K+BWGDT&a8ejpredirect=https%3A%2F%2Fwww.amazon.co.jp%2Fs/browse/ref=gbps_tit_s-4_28cb_0b723e99%3F%0D%0Aie=UTF8%26node=3765531051%26smid=AN1VRQENFRJN5%26pf_rd_p=fa73587f-9e6a-48eb-84c4-73cb5e3e28cb%26pf_rd_s=slot-4%26pf_rd_t=701%26pf_rd_i=gb_main%26pf_rd_m=AN1VRQENFRJN5%26pf_rd_r=QN9PCT9EZNXFS3GX1BSQ%2F%3Ftag%3Da8-affi-258507-22">評価 <font style="color: orange;">★★★☆</font></a></li>
+                       <li><a href="https://px.a8.net/svt/ejp?a8mat=1ZIM2A+34J5TU+249K+BWGDT&a8ejpredirect=https%3A%2F%2Fwww.amazon.co.jp%2Fs/browse/ref=gbps_tit_s-4_28cb_0b723e99%3F%0D%0Aie=UTF8%26node=3765531051%26smid=AN1VRQENFRJN5%26pf_rd_p=fa73587f-9e6a-48eb-84c4-73cb5e3e28cb%26pf_rd_s=slot-4%26pf_rd_t=701%26pf_rd_i=gb_main%26pf_rd_m=AN1VRQENFRJN5%26pf_rd_r=QN9PCT9EZNXFS3GX1BSQ%2F%3Ftag%3Da8-affi-258507-22">4件のレビュー</a></li>
+                   </ul>
+                   <p><button type="button" class="btn btn-success" data-toggle="collapse" data-target="#collapseItem2" aria-expanded="false" aria-controls="collapseItem2">レビューを表示</button></p>
+                   <div class="collapse" id="collapseItem2">
+                       <div class="card card-body">
+                           <hr><p><u><b>レビュー</b></u><br>
+                           普段23.5を履いている。サイズ違いで注文し、小さすぎた23〜23.5の方は返品し、23.5〜24.0を購入した。ただ、これも夕方に足がむくんでくると、きつく感じてくる(そのため、かかとが踏めるデザインが幸いしている)。デザインが素敵なので、ダメ押しでもう１サイズ上を購入するか思案中。,全体的に硬い材質かなと思います。履きこんだら馴染んでくるといいなという期待を込めて星4個です。,レビューに、小さめとあったので、少し大きめを買いましたが、なお小さく感じました。素材はペラペラっとしていて、軽いですが伸縮性はありません。靴というよりスリッパのような感覚です。</p>
+                       </div>
+                   </div>
+                   <button type="button" class="btn btn-primary d-block center-margin-0-auto ccs-product-counter">
+                       <a href="http://twitter.com/share?url=https%3A%2F%2Famazondeals.github.io%2FamazonDealsJP%2FLadiesShoes.html%23card-p-id-2&text=%E6%AE%B523.5%E3%82%92%E5%B1%A5%E3%81%84%E3%81%A6%E3%81%84%E3%82%8B%E3%80%82%E3%82%B5%E3%82%A4%E3%82%BA%E9%81%95%E3%81%84%E3%81%A7%E6%B3%A8%E6%96%87%E3%81%97%E3%80%81%E5%B0%8F%E3%81%95%E3%81%99%E3%81%8E%E3%81%9F23%E3%80%9C23.5%E3%81%AE%E6%96%B9%E3%81%AF%E8%BF%94%E5%93%81%E3%81%97%E3%80%8123.5%E3%80%9C24.0%E3%82%92%E8%B3%BC%E5%85%A5%E3%81%97%E3%81%9F%E3%80%82%E3%81%9F%E3%81%A0%E3%80%81%E3%81%93%E3%82%8C%E3%82%82%E5%A4%95%E6%96%B9%E3%81%AB%E8%B6%B3%E3%81%8C%E3%82%80%E3%81%8F%E3%82%93%E3%81%A7%E3%81%8F%E3%82%8B%E3%81%A8%E3%80%81%E3%81%8D%E3%81%A4%E3%81%8F%E6%84%9F%E3%81%98%E3%81%A6%E3%81%8F%E3%82%8B(%E3%81%9D%E3%81%AE%E3%81%9F%E3%82%81%E3%80%81%E3%81%8B%E3%81%8B%E3%81%A8%E3%81%8C%E8%B8%8F%E3%82%81%E3%82%8B%E3%83%87%E3%82%B6%E3%82%A4%E3%83%B3&hashtags=%E3%83%AC%E3%83%87%E3%82%A3%E3%83%BC%E3%82%B9%E3%82%B7%E3%83%A5%E3%83%BC%E3%82%BA">Tweet</a>
+                   </button>
+               </div>
+           </div>
+           <div id="card-p-id-3" class="card product-card">
+               <img src="https://images-na.ssl-images-amazon.com/images/I/51FGR6eu+DL._SCLZZZZZZZ___AA640_.jpg" alt="">
+               <div class="card-body">
+                   <h5 class="card-title mb-0"><a href="https://px.a8.net/svt/ejp?a8mat=1ZIM2A+34J5TU+249K+BWGDT&a8ejpredirect=https%3A%2F%2Fwww.amazon.co.jp%2F%E3%83%A9%E3%83%B3%E3%83%8B%E3%83%B3%E3%82%B0%E3%82%B7%E3%83%A5%E3%83%BC%E3%82%BA-%E3%83%8F%E3%82%A4%E3%82%AB%E3%83%83%E3%83%88%E3%82%B9%E3%83%8B%E3%83%BC%E3%82%AB%E3%83%BC-%E3%83%95%E3%82%A3%E3%83%83%E3%83%88%E3%83%8D%E3%82%B9%E3%82%B7%E3%83%A5%E3%83%BC%E3%82%BA-%E3%82%AB%E3%82%B8%E3%83%A5%E3%82%A2%E3%83%AB%E3%82%B7%E3%83%A5%E3%83%BC%E3%82%BA-%E3%83%A1%E3%83%B3%E3%82%BA%E3%82%B9%E3%83%9D%E3%83%BC%E3%83%84%E3%82%B7%E3%83%A5%E3%83%BC%E3%82%BA/dp/B07SCB522R/ref=gbps_tit_s-4_28cb_1bdbfbaf%3F%0D%0Asmid=A12H7KEY9RDPPH%26pf_rd_p=fa73587f-9e6a-48eb-84c4-73cb5e3e28cb%26pf_rd_s=slot-4%26pf_rd_t=701%26pf_rd_i=gb_main%26pf_rd_m=AN1VRQENFRJN5%26pf_rd_r=QN9PCT9EZNXFS3GX1BSQ%2F%3Ftag%3Da8-affi-258507-22.html">[ANDITTRO]ランニングシューズメンズスニーカーレディースカップルシューズ体育館シューズロートップスニーカー運動靴中学生黒、白、赤、グレー、ピンク、紫6色レディースシューズ22.5CM-28.0CM</a></h5>
+                   <ul>
+                       <li><a href="https://px.a8.net/svt/ejp?a8mat=1ZIM2A+34J5TU+249K+BWGDT&a8ejpredirect=https%3A%2F%2Fwww.amazon.co.jp%2F%E3%83%A9%E3%83%B3%E3%83%8B%E3%83%B3%E3%82%B0%E3%82%B7%E3%83%A5%E3%83%BC%E3%82%BA-%E3%83%8F%E3%82%A4%E3%82%AB%E3%83%83%E3%83%88%E3%82%B9%E3%83%8B%E3%83%BC%E3%82%AB%E3%83%BC-%E3%83%95%E3%82%A3%E3%83%83%E3%83%88%E3%83%8D%E3%82%B9%E3%82%B7%E3%83%A5%E3%83%BC%E3%82%BA-%E3%82%AB%E3%82%B8%E3%83%A5%E3%82%A2%E3%83%AB%E3%82%B7%E3%83%A5%E3%83%BC%E3%82%BA-%E3%83%A1%E3%83%B3%E3%82%BA%E3%82%B9%E3%83%9D%E3%83%BC%E3%83%84%E3%82%B7%E3%83%A5%E3%83%BC%E3%82%BA/dp/B07SCB522R/ref=gbps_tit_s-4_28cb_1bdbfbaf%3F%0D%0Asmid=A12H7KEY9RDPPH%26pf_rd_p=fa73587f-9e6a-48eb-84c4-73cb5e3e28cb%26pf_rd_s=slot-4%26pf_rd_t=701%26pf_rd_i=gb_main%26pf_rd_m=AN1VRQENFRJN5%26pf_rd_r=QN9PCT9EZNXFS3GX1BSQ%2F%3Ftag%3Da8-affi-258507-22">価格 ¥2,006-¥2,340<sup style="color: red;"><s>価格:¥2,360-¥2,754</s>(15%OFF)</sup></a></li>
+                       <li><a href="https://px.a8.net/svt/ejp?a8mat=1ZIM2A+34J5TU+249K+BWGDT&a8ejpredirect=https%3A%2F%2Fwww.amazon.co.jp%2F%E3%83%A9%E3%83%B3%E3%83%8B%E3%83%B3%E3%82%B0%E3%82%B7%E3%83%A5%E3%83%BC%E3%82%BA-%E3%83%8F%E3%82%A4%E3%82%AB%E3%83%83%E3%83%88%E3%82%B9%E3%83%8B%E3%83%BC%E3%82%AB%E3%83%BC-%E3%83%95%E3%82%A3%E3%83%83%E3%83%88%E3%83%8D%E3%82%B9%E3%82%B7%E3%83%A5%E3%83%BC%E3%82%BA-%E3%82%AB%E3%82%B8%E3%83%A5%E3%82%A2%E3%83%AB%E3%82%B7%E3%83%A5%E3%83%BC%E3%82%BA-%E3%83%A1%E3%83%B3%E3%82%BA%E3%82%B9%E3%83%9D%E3%83%BC%E3%83%84%E3%82%B7%E3%83%A5%E3%83%BC%E3%82%BA/dp/B07SCB522R/ref=gbps_tit_s-4_28cb_1bdbfbaf%3F%0D%0Asmid=A12H7KEY9RDPPH%26pf_rd_p=fa73587f-9e6a-48eb-84c4-73cb5e3e28cb%26pf_rd_s=slot-4%26pf_rd_t=701%26pf_rd_i=gb_main%26pf_rd_m=AN1VRQENFRJN5%26pf_rd_r=QN9PCT9EZNXFS3GX1BSQ%2F%3Ftag%3Da8-affi-258507-22">評価 <font style="color: orange;">★★★★☆</font></a></li>
+                       <li><a href="https://px.a8.net/svt/ejp?a8mat=1ZIM2A+34J5TU+249K+BWGDT&a8ejpredirect=https%3A%2F%2Fwww.amazon.co.jp%2F%E3%83%A9%E3%83%B3%E3%83%8B%E3%83%B3%E3%82%B0%E3%82%B7%E3%83%A5%E3%83%BC%E3%82%BA-%E3%83%8F%E3%82%A4%E3%82%AB%E3%83%83%E3%83%88%E3%82%B9%E3%83%8B%E3%83%BC%E3%82%AB%E3%83%BC-%E3%83%95%E3%82%A3%E3%83%83%E3%83%88%E3%83%8D%E3%82%B9%E3%82%B7%E3%83%A5%E3%83%BC%E3%82%BA-%E3%82%AB%E3%82%B8%E3%83%A5%E3%82%A2%E3%83%AB%E3%82%B7%E3%83%A5%E3%83%BC%E3%82%BA-%E3%83%A1%E3%83%B3%E3%82%BA%E3%82%B9%E3%83%9D%E3%83%BC%E3%83%84%E3%82%B7%E3%83%A5%E3%83%BC%E3%82%BA/dp/B07SCB522R/ref=gbps_tit_s-4_28cb_1bdbfbaf%3F%0D%0Asmid=A12H7KEY9RDPPH%26pf_rd_p=fa73587f-9e6a-48eb-84c4-73cb5e3e28cb%26pf_rd_s=slot-4%26pf_rd_t=701%26pf_rd_i=gb_main%26pf_rd_m=AN1VRQENFRJN5%26pf_rd_r=QN9PCT9EZNXFS3GX1BSQ%2F%3Ftag%3Da8-affi-258507-22">79件のレビュー</a></li>
+                   </ul>
+                   <p><button type="button" class="btn btn-success" data-toggle="collapse" data-target="#collapseItem3" aria-expanded="false" aria-controls="collapseItem3">レビューを表示</button></p>
+                   <div class="collapse" id="collapseItem3">
+                       <div class="card card-body">
+                           <hr><p><u><b>レビュー</b></u><br>
+                           高校生の息子の通学用に購入しました。梅雨時なので、スペア用を探していました。ブラックの27cmを購入しましたが、普段は27cmか27.5cmのスニーカーを履いているので、もしかしたらキツいかな…と思ったのですが、大丈夫でした！底が厚めなのが嬉しかったようで（背が高くなる）、部屋の中でしばらく履いていました。デザインも素敵だと思います。,ナースシューズとして買ったんです。少し履いてみてからレビューの記入をしているんです。期待した通りで、履きやすくて嬉しいです。もう一足を買って専用の運動靴として使おうかなと思います。,サイズがちょうどいいで、とても軽いです。5お父さんはジョギングする時に履いています。お父さんはとても喜んでいます。お得な商品です！！</p>
+                       </div>
+                   </div>
+                   <button type="button" class="btn btn-primary d-block center-margin-0-auto ccs-product-counter">
+                       <a href="http://twitter.com/share?url=https%3A%2F%2Famazondeals.github.io%2FamazonDealsJP%2FLadiesShoes.html%23card-p-id-3&text=%E6%A0%A1%E7%94%9F%E3%81%AE%E6%81%AF%E5%AD%90%E3%81%AE%E9%80%9A%E5%AD%A6%E7%94%A8%E3%81%AB%E8%B3%BC%E5%85%A5%E3%81%97%E3%81%BE%E3%81%97%E3%81%9F%E3%80%82%E6%A2%85%E9%9B%A8%E6%99%82%E3%81%AA%E3%81%AE%E3%81%A7%E3%80%81%E3%82%B9%E3%83%9A%E3%82%A2%E7%94%A8%E3%82%92%E6%8E%A2%E3%81%97%E3%81%A6%E3%81%84%E3%81%BE%E3%81%97%E3%81%9F%E3%80%82%E3%83%96%E3%83%A9%E3%83%83%E3%82%AF%E3%81%AE27cm%E3%82%92%E8%B3%BC%E5%85%A5%E3%81%97%E3%81%BE%E3%81%97%E3%81%9F%E3%81%8C%E3%80%81%E6%99%AE%E6%AE%B5%E3%81%AF27cm%E3%81%8B27.5cm%E3%81%AE%E3%82%B9%E3%83%8B%E3%83%BC%E3%82%AB%E3%83%BC%E3%82%92%E5%B1%A5%E3%81%84%E3%81%A6%E3%81%84%E3%82%8B%E3%81%AE%E3%81%A7%E3%80%81%E3%82%82%E3%81%97%E3%81%8B%E3%81%97%E3%81%9F%E3%82%89%E3%82%AD%E3%83%84%E3%81%84%E3%81%8B%E3%81%AA%E2%80%A6%E3%81%A8%E6%80%9D%E3%81%A3%E3%81%9F&hashtags=%E3%83%AC%E3%83%87%E3%82%A3%E3%83%BC%E3%82%B9%E3%82%B7%E3%83%A5%E3%83%BC%E3%82%BA">Tweet</a>
+                   </button>
+               </div>
+           </div>
+           <div id="card-p-id-4" class="card product-card">
+               <img src="https://images-na.ssl-images-amazon.com/images/I/41WbD%2Ba5maL._AA640_.jpg" alt="">
+               <div class="card-body">
+                   <h5 class="card-title mb-0"><a href="https://px.a8.net/svt/ejp?a8mat=1ZIM2A+34J5TU+249K+BWGDT&a8ejpredirect=https%3A%2F%2Fwww.amazon.co.jp%2Fs/browse/ref=gbps_tit_s-4_28cb_cfce48b8%3F%0D%0Aie=UTF8%26node=3765528051%26smid=AN1VRQENFRJN5%26pf_rd_p=fa73587f-9e6a-48eb-84c4-73cb5e3e28cb%26pf_rd_s=slot-4%26pf_rd_t=701%26pf_rd_i=gb_main%26pf_rd_m=AN1VRQENFRJN5%26pf_rd_r=QN9PCT9EZNXFS3GX1BSQ%2F%3Ftag%3Da8-affi-258507-22.html">[エーエムエス]レディースシューズパンプスフラットシューズレディース通勤歩きやすいローヒール黒シルバーベージュ4カラー24.0~24.5cm</a></h5>
+                   <ul>
+                       <li><a href="https://px.a8.net/svt/ejp?a8mat=1ZIM2A+34J5TU+249K+BWGDT&a8ejpredirect=https%3A%2F%2Fwww.amazon.co.jp%2Fs/browse/ref=gbps_tit_s-4_28cb_cfce48b8%3F%0D%0Aie=UTF8%26node=3765528051%26smid=AN1VRQENFRJN5%26pf_rd_p=fa73587f-9e6a-48eb-84c4-73cb5e3e28cb%26pf_rd_s=slot-4%26pf_rd_t=701%26pf_rd_i=gb_main%26pf_rd_m=AN1VRQENFRJN5%26pf_rd_r=QN9PCT9EZNXFS3GX1BSQ%2F%3Ftag%3Da8-affi-258507-22">価格 ¥2,527<sup style="color: red;"><s>参考価格:¥2,860</s>(12%OFF)</sup></a></li>
+                       <li><a href="https://px.a8.net/svt/ejp?a8mat=1ZIM2A+34J5TU+249K+BWGDT&a8ejpredirect=https%3A%2F%2Fwww.amazon.co.jp%2Fs/browse/ref=gbps_tit_s-4_28cb_cfce48b8%3F%0D%0Aie=UTF8%26node=3765528051%26smid=AN1VRQENFRJN5%26pf_rd_p=fa73587f-9e6a-48eb-84c4-73cb5e3e28cb%26pf_rd_s=slot-4%26pf_rd_t=701%26pf_rd_i=gb_main%26pf_rd_m=AN1VRQENFRJN5%26pf_rd_r=QN9PCT9EZNXFS3GX1BSQ%2F%3Ftag%3Da8-affi-258507-22">評価 <font style="color: orange;">★★★</font></a></li>
+                       <li><a href="https://px.a8.net/svt/ejp?a8mat=1ZIM2A+34J5TU+249K+BWGDT&a8ejpredirect=https%3A%2F%2Fwww.amazon.co.jp%2Fs/browse/ref=gbps_tit_s-4_28cb_cfce48b8%3F%0D%0Aie=UTF8%26node=3765528051%26smid=AN1VRQENFRJN5%26pf_rd_p=fa73587f-9e6a-48eb-84c4-73cb5e3e28cb%26pf_rd_s=slot-4%26pf_rd_t=701%26pf_rd_i=gb_main%26pf_rd_m=AN1VRQENFRJN5%26pf_rd_r=QN9PCT9EZNXFS3GX1BSQ%2F%3Ftag%3Da8-affi-258507-22">7件のレビュー</a></li>
+                   </ul>
+                   <p><button type="button" class="btn btn-success" data-toggle="collapse" data-target="#collapseItem4" aria-expanded="false" aria-controls="collapseItem4">レビューを表示</button></p>
+                   <div class="collapse" id="collapseItem4">
+                       <div class="card card-body">
+                           <hr><p><u><b>レビュー</b></u><br>
+                           普段23.5cmだと小さめな商品ではむくむとキツく、24㎝のパンプスだと大きめ、24.5cmは大きすぎて全くダメ。サイズが小さめとレビューで見ていたのですが、そのような口コミでも今まで問題なかったので、今回も23.5～24cmを購入しました。スムーズに足は入りましたが、素材のせいなのか、かかとの部分がかなり硬く、歩き始めた途端に痛くてたまらず、すぐに靴擦れ。ワンサイズ大きい物を買えば良かったのかもしれません。靴擦れ防止になる物を使用すれば問題なく履けるはずですが、購入目的が数分間の徒歩通勤での使用だったので、そこまでして履こうとは思えず、２度と履くことはないかと思っています。合う方には良い買い物になる商品ですし、安いので過度な期待はしていませんでしたが、私には残念な結果になってしまいました。,Thisproductishorrible.Theshoesleaveblackstainsandblistersalloveryourfeet,evenifyouwearsocks!!,スッキリしていて、色もきれいです！少し大きめを購入して正解でした❗23センチを普段履いてますが、23.5センチでピッタリでした，横幅が広い方は少し大きめをおすすめします！</p>
+                       </div>
+                   </div>
+                   <button type="button" class="btn btn-primary d-block center-margin-0-auto ccs-product-counter">
+                       <a href="http://twitter.com/share?url=https%3A%2F%2Famazondeals.github.io%2FamazonDealsJP%2FLadiesShoes.html%23card-p-id-4&text=%E6%AE%B523.5cm%E3%81%A0%E3%81%A8%E5%B0%8F%E3%81%95%E3%82%81%E3%81%AA%E5%95%86%E5%93%81%E3%81%A7%E3%81%AF%E3%82%80%E3%81%8F%E3%82%80%E3%81%A8%E3%82%AD%E3%83%84%E3%81%8F%E3%80%8124%E3%8E%9D%E3%81%AE%E3%83%91%E3%83%B3%E3%83%97%E3%82%B9%E3%81%A0%E3%81%A8%E5%A4%A7%E3%81%8D%E3%82%81%E3%80%8124.5cm%E3%81%AF%E5%A4%A7%E3%81%8D%E3%81%99%E3%81%8E%E3%81%A6%E5%85%A8%E3%81%8F%E3%83%80%E3%83%A1%E3%80%82%E3%82%B5%E3%82%A4%E3%82%BA%E3%81%8C%E5%B0%8F%E3%81%95%E3%82%81%E3%81%A8%E3%83%AC%E3%83%93%E3%83%A5%E3%83%BC%E3%81%A7%E8%A6%8B%E3%81%A6%E3%81%84%E3%81%9F%E3%81%AE%E3%81%A7%E3%81%99%E3%81%8C%E3%80%81%E3%81%9D%E3%81%AE%E3%82%88%E3%81%86%E3%81%AA%E5%8F%A3%E3%82%B3%E3%83%9F%E3%81%A7%E3%82%82%E4%BB%8A%E3%81%BE%E3%81%A7%E5%95%8F%E9%A1%8C%E3%81%AA%E3%81%8B%E3%81%A3%E3%81%9F%E3%81%AE%E3%81%A7%E3%80%81&hashtags=%E3%83%AC%E3%83%87%E3%82%A3%E3%83%BC%E3%82%B9%E3%82%B7%E3%83%A5%E3%83%BC%E3%82%BA">Tweet</a>
+                   </button>
+               </div>
+           </div>
+           <div id="card-p-id-5" class="card product-card">
+               <img src="https://images-na.ssl-images-amazon.com/images/I/51InFHWyIQL._SCLZZZZZZZ___AA640_.jpg" alt="">
+               <div class="card-body">
+                   <h5 class="card-title mb-0"><a href="https://px.a8.net/svt/ejp?a8mat=1ZIM2A+34J5TU+249K+BWGDT&a8ejpredirect=https%3A%2F%2Fwww.amazon.co.jp%2FUSB%E5%85%85%E9%9B%BB%E5%BC%8F-%E6%B6%B2%E6%99%B6%E8%A1%A8%E7%A4%BA%E3%80%90%E6%9C%80%E6%96%B0%E5%BC%B7%E5%8A%9B%E3%83%A2%E3%83%87%E3%83%AB-9%E6%AE%B5%E9%9A%8E%E5%BC%B7%E5%BA%A6%E3%80%91%E8%85%B9%E7%AD%8B%E3%83%88%E3%83%AC%E3%83%BC%E3%83%8B%E3%83%B3%E3%82%B0-%E3%82%B8%E3%82%A7%E3%83%AB%E3%82%B7%E3%83%BC%E3%83%8810%E6%9E%9A%E4%BB%98%E3%81%8D-%E6%97%A5%E6%9C%AC%E8%AA%9E%E8%AA%AC%E6%98%8E%E6%9B%B8%E4%BB%98%E3%81%8D/dp/B07S7HC7VD/ref=gbph_tit_s-7_59d9_5b0758de%3F%0D%0Asmid=A2N3VYGB4VLLF6%26pf_rd_p=172feb36-7c12-4e76-afe0-4ec2d6c159d9%26pf_rd_s=slot-7%26pf_rd_t=701%26pf_rd_i=gb_main%26pf_rd_m=AN1VRQENFRJN5%26pf_rd_r=QN9PCT9EZNXFS3GX1BSQ%2F%3Ftag%3Da8-affi-258507-22.html">EMS腹筋ベルト筋トレ器具USB充電式液晶表示【最新強力モデル6モード9段階強度】腹筋トレーニングダイエットジェルシート10枚付き日本語説明書付き</a></h5>
+                   <ul>
+                       <li><a href="https://px.a8.net/svt/ejp?a8mat=1ZIM2A+34J5TU+249K+BWGDT&a8ejpredirect=https%3A%2F%2Fwww.amazon.co.jp%2FUSB%E5%85%85%E9%9B%BB%E5%BC%8F-%E6%B6%B2%E6%99%B6%E8%A1%A8%E7%A4%BA%E3%80%90%E6%9C%80%E6%96%B0%E5%BC%B7%E5%8A%9B%E3%83%A2%E3%83%87%E3%83%AB-9%E6%AE%B5%E9%9A%8E%E5%BC%B7%E5%BA%A6%E3%80%91%E8%85%B9%E7%AD%8B%E3%83%88%E3%83%AC%E3%83%BC%E3%83%8B%E3%83%B3%E3%82%B0-%E3%82%B8%E3%82%A7%E3%83%AB%E3%82%B7%E3%83%BC%E3%83%8810%E6%9E%9A%E4%BB%98%E3%81%8D-%E6%97%A5%E6%9C%AC%E8%AA%9E%E8%AA%AC%E6%98%8E%E6%9B%B8%E4%BB%98%E3%81%8D/dp/B07S7HC7VD/ref=gbph_tit_s-7_59d9_5b0758de%3F%0D%0Asmid=A2N3VYGB4VLLF6%26pf_rd_p=172feb36-7c12-4e76-afe0-4ec2d6c159d9%26pf_rd_s=slot-7%26pf_rd_t=701%26pf_rd_i=gb_main%26pf_rd_m=AN1VRQENFRJN5%26pf_rd_r=QN9PCT9EZNXFS3GX1BSQ%2F%3Ftag%3Da8-affi-258507-22">価格 ¥2,989<sup style="color: red;"><s>価格:¥3,699</s>(19%OFF)</sup></a></li>
+                       <li><a href="https://px.a8.net/svt/ejp?a8mat=1ZIM2A+34J5TU+249K+BWGDT&a8ejpredirect=https%3A%2F%2Fwww.amazon.co.jp%2FUSB%E5%85%85%E9%9B%BB%E5%BC%8F-%E6%B6%B2%E6%99%B6%E8%A1%A8%E7%A4%BA%E3%80%90%E6%9C%80%E6%96%B0%E5%BC%B7%E5%8A%9B%E3%83%A2%E3%83%87%E3%83%AB-9%E6%AE%B5%E9%9A%8E%E5%BC%B7%E5%BA%A6%E3%80%91%E8%85%B9%E7%AD%8B%E3%83%88%E3%83%AC%E3%83%BC%E3%83%8B%E3%83%B3%E3%82%B0-%E3%82%B8%E3%82%A7%E3%83%AB%E3%82%B7%E3%83%BC%E3%83%8810%E6%9E%9A%E4%BB%98%E3%81%8D-%E6%97%A5%E6%9C%AC%E8%AA%9E%E8%AA%AC%E6%98%8E%E6%9B%B8%E4%BB%98%E3%81%8D/dp/B07S7HC7VD/ref=gbph_tit_s-7_59d9_5b0758de%3F%0D%0Asmid=A2N3VYGB4VLLF6%26pf_rd_p=172feb36-7c12-4e76-afe0-4ec2d6c159d9%26pf_rd_s=slot-7%26pf_rd_t=701%26pf_rd_i=gb_main%26pf_rd_m=AN1VRQENFRJN5%26pf_rd_r=QN9PCT9EZNXFS3GX1BSQ%2F%3Ftag%3Da8-affi-258507-22">評価 <font style="color: orange;">★★★★☆</font></a></li>
+                       <li><a href="https://px.a8.net/svt/ejp?a8mat=1ZIM2A+34J5TU+249K+BWGDT&a8ejpredirect=https%3A%2F%2Fwww.amazon.co.jp%2FUSB%E5%85%85%E9%9B%BB%E5%BC%8F-%E6%B6%B2%E6%99%B6%E8%A1%A8%E7%A4%BA%E3%80%90%E6%9C%80%E6%96%B0%E5%BC%B7%E5%8A%9B%E3%83%A2%E3%83%87%E3%83%AB-9%E6%AE%B5%E9%9A%8E%E5%BC%B7%E5%BA%A6%E3%80%91%E8%85%B9%E7%AD%8B%E3%83%88%E3%83%AC%E3%83%BC%E3%83%8B%E3%83%B3%E3%82%B0-%E3%82%B8%E3%82%A7%E3%83%AB%E3%82%B7%E3%83%BC%E3%83%8810%E6%9E%9A%E4%BB%98%E3%81%8D-%E6%97%A5%E6%9C%AC%E8%AA%9E%E8%AA%AC%E6%98%8E%E6%9B%B8%E4%BB%98%E3%81%8D/dp/B07S7HC7VD/ref=gbph_tit_s-7_59d9_5b0758de%3F%0D%0Asmid=A2N3VYGB4VLLF6%26pf_rd_p=172feb36-7c12-4e76-afe0-4ec2d6c159d9%26pf_rd_s=slot-7%26pf_rd_t=701%26pf_rd_i=gb_main%26pf_rd_m=AN1VRQENFRJN5%26pf_rd_r=QN9PCT9EZNXFS3GX1BSQ%2F%3Ftag%3Da8-affi-258507-22">473件のレビュー</a></li>
+                   </ul>
+                   <p><button type="button" class="btn btn-success" data-toggle="collapse" data-target="#collapseItem5" aria-expanded="false" aria-controls="collapseItem5">レビューを表示</button></p>
+                   <div class="collapse" id="collapseItem5">
+                       <div class="card card-body">
+                           <hr><p><u><b>レビュー</b></u><br>
+                           ダイエットしたくて購入。というか筋トレがめんどくさかったため購入。こういう機材を買うのは初めてですが、あぁ〜こんな感じなのかという印象でした。パットは貼るだけ簡単装着、なおかつ思ったより軽い印象でした。そして肝心なスイッチを入れてからですが、これも思ったより負荷が来てビックリしました。というのも強さの強弱が選べる仕様ですので、自分の好みに選べるのですが、冗談でMAXの強さにすると流石に痛かったです。ただやはり筋トレする時間がない人やする気がない人向けで、日常生活中にできるものなので、すごく重宝しております。ボタンでパチッととめるタイプです。つけたままでも充電可能。専用ケーブルがついているので3個まとめて充電できます。microUSBでの充電なので出張や旅行などの持ち運びにも便利。楽して鍛えたい。という事で、届いてから毎晩TVを見ながらスマホを触りながら使用中。強さによってピリピリピクピクする感じでしっかり刺激を感じます。ジェルパッドのサイズは小さめに思いましたが、使ってみると二の腕とかふくらはぎにもピタッとついて丁度良いサイズ感です。腹筋には6枚ピタッとつくのでしっかりお腹全体にピクピクきます。昨日届いて、さっそく腹筋に使用しました。充電して使うタイプなのですが、結構すぐに充電できました。9段階に強さを調節できて、スタートしてから約10分間で自動停止します。操作方法も説明書が付属されているので分かりやすいです。使用感ですが、腹筋が使われている感じがきちんと伝わってきました…！通常の腹筋だと、疲れてしまい途中で諦めてしまうのですが、これなら私でも続けられそうです。ペタッと貼ってスイッチ入れると腹筋している状況と同じような感じたので、すごくオススメです…！他社のものを使用していましたがシートの粘着力がなくなってから辞めてしまいましたがポッコリお腹が気になりだして今回こちらを購入しました。まず強力版というだけあってレベル1でもしっかり効いてる感じがします。またマッサージ効果もあるみたいなので家族にも使わせてあげたいです(^^)充電も比較的短く一気に3台分できるのも良いですね。ズボラな私でもテレビを観ながらとかふとした時に簡単に出来るので引き締めれたらいいなと今後に期待です！,以前、某有名メーカーのベルトタイプを使用していましたが、ベルトタイプは鍛えたい部分にうまくパットが当たらず苦労しましたが、この商品は貼るタイプなのでお腹でも腕でも足でも鍛えたい部分にピンポイントで狙って貼り付けられるのがとても使いやすいです。有名メーカーに比べてかなり値段が安かったので振動の強さが弱くないかなーと心配もありましたが、びっくりするくらい強力です。慣れるまではレベル1ですらきつかった。いまはなんとか耐えてレベル4くらいまではいけてます。ここまですると少し筋肉痛を感じ始めました。足や二の腕などの脂肪が柔らかい場所はEMSが振動するたびにその部分がビクッビクッと揺れるくらい強力です。すぐに効果は出ませんがかなり強力なので使い続けたら効果が出そうと期待しています。,最近運動不足で少しお腹が手出てきたので、自宅で筋トレ・腹筋ダイエットがしたいと思いこちらの商品を購入しました。腹筋ベルトの使用は初めてなので少し不安がありましたが、日本語の取扱説明書がついており分かりやすかったです。シートは薄く軽量でジェルパッドで装着でき、充電はUSBで出来るので持ち運びにも便利だと思います。ベルトが3種類・コントローラが3個付属しており色んな使い方ができそうです。運動プログラムは6種類・強度は9段階からそれぞれ選ぶ事ができ、一定時間が経過すると自動停止するので安心です。それにお腹だけでなく足や腕でも好きな所に貼れるので、実用的な効果が得られると思います。1つ注意すべき点は、パワーが非常に強力なので低レベルから初めて徐々にレベルを上げていくのが賢明だと思います。まだ2日しか使用していませんが、継続すれば効果が得られそうな予感がします。とにかく低価格でこのコスパなら満足できる商品だと思いますね。</p>
+                       </div>
+                   </div>
+                   <button type="button" class="btn btn-primary d-block center-margin-0-auto ccs-product-counter">
+                       <a href="http://twitter.com/share?url=https%3A%2F%2Famazondeals.github.io%2FamazonDealsJP%2FLadiesShoes.html%23card-p-id-5&text=%E3%82%A4%E3%82%A8%E3%83%83%E3%83%88%E3%81%97%E3%81%9F%E3%81%8F%E3%81%A6%E8%B3%BC%E5%85%A5%E3%80%82%E3%81%A8%E3%81%84%E3%81%86%E3%81%8B%E7%AD%8B%E3%83%88%E3%83%AC%E3%81%8C%E3%82%81%E3%82%93%E3%81%A9%E3%81%8F%E3%81%95%E3%81%8B%E3%81%A3%E3%81%9F%E3%81%9F%E3%82%81%E8%B3%BC%E5%85%A5%E3%80%82%E3%81%93%E3%81%86%E3%81%84%E3%81%86%E6%A9%9F%E6%9D%90%E3%82%92%E8%B2%B7%E3%81%86%E3%81%AE%E3%81%AF%E5%88%9D%E3%82%81%E3%81%A6%E3%81%A7%E3%81%99%E3%81%8C%E3%80%81%E3%81%82%E3%81%81%E3%80%9C%E3%81%93%E3%82%93%E3%81%AA%E6%84%9F%E3%81%98%E3%81%AA%E3%81%AE%E3%81%8B%E3%81%A8%E3%81%84%E3%81%86%E5%8D%B0%E8%B1%A1%E3%81%A7%E3%81%97%E3%81%9F%E3%80%82%E3%83%91%E3%83%83%E3%83%88%E3%81%AF%E8%B2%BC%E3%82%8B%E3%81%A0%E3%81%91%E7%B0%A1%E5%8D%98%E8%A3%85%E7%9D%80%E3%80%81%E3%81%AA%E3%81%8A%E3%81%8B%E3%81%A4%E6%80%9D%E3%81%A3%E3%81%9F%E3%82%88%E3%82%8A%E8%BB%BD%E3%81%84%E5%8D%B0%E8%B1%A1%E3%81%A7%E3%81%97%E3%81%9F%E3%80%82&hashtags=%E3%83%AC%E3%83%87%E3%82%A3%E3%83%BC%E3%82%B9%E3%82%B7%E3%83%A5%E3%83%BC%E3%82%BA">Tweet</a>
+                   </button>
+               </div>
+           </div>
+           <div id="card-p-id-6" class="card product-card">
+               <img src="https://images-na.ssl-images-amazon.com/images/I/41JVUwNRdhL._SCLZZZZZZZ___AA640_.jpg" alt="">
+               <div class="card-body">
+                   <h5 class="card-title mb-0"><a href="https://px.a8.net/svt/ejp?a8mat=1ZIM2A+34J5TU+249K+BWGDT&a8ejpredirect=https%3A%2F%2Fwww.amazon.co.jp%2FDeeplee-%E3%82%A8%E3%82%A2%E3%83%BC%E3%83%9E%E3%83%83%E3%83%88-%E3%82%AD%E3%83%A3%E3%83%B3%E3%83%97%E3%83%9E%E3%83%83%E3%83%88-%E3%82%AD%E3%83%A3%E3%83%B3%E3%83%94%E3%83%B3%E3%82%B0%E3%83%9E%E3%83%83%E3%83%88-40D%E3%83%8A%E3%82%A4%E3%83%AD%E3%83%B3/dp/B07QYZ118P/ref=gbph_tit_s-7_59d9_af54d7f5%3F%0D%0Asmid=A3EMZCR1N24HGS%26pf_rd_p=172feb36-7c12-4e76-afe0-4ec2d6c159d9%26pf_rd_s=slot-7%26pf_rd_t=701%26pf_rd_i=gb_main%26pf_rd_m=AN1VRQENFRJN5%26pf_rd_r=QN9PCT9EZNXFS3GX1BSQ%2F%3Ftag%3Da8-affi-258507-22.html">Deepleeエアーマットテントマットキャンプマットエアーベッドアウトドアキャンピングマット超軽量耐水加工寝袋キャンプアウトドアマットピロー付きコンパクト40DナイロンTPU生地花見防災用品山登りテント泊車中泊収納袋付き</a></h5>
+                   <ul>
+                       <li><a href="https://px.a8.net/svt/ejp?a8mat=1ZIM2A+34J5TU+249K+BWGDT&a8ejpredirect=https%3A%2F%2Fwww.amazon.co.jp%2FDeeplee-%E3%82%A8%E3%82%A2%E3%83%BC%E3%83%9E%E3%83%83%E3%83%88-%E3%82%AD%E3%83%A3%E3%83%B3%E3%83%97%E3%83%9E%E3%83%83%E3%83%88-%E3%82%AD%E3%83%A3%E3%83%B3%E3%83%94%E3%83%B3%E3%82%B0%E3%83%9E%E3%83%83%E3%83%88-40D%E3%83%8A%E3%82%A4%E3%83%AD%E3%83%B3/dp/B07QYZ118P/ref=gbph_tit_s-7_59d9_af54d7f5%3F%0D%0Asmid=A3EMZCR1N24HGS%26pf_rd_p=172feb36-7c12-4e76-afe0-4ec2d6c159d9%26pf_rd_s=slot-7%26pf_rd_t=701%26pf_rd_i=gb_main%26pf_rd_m=AN1VRQENFRJN5%26pf_rd_r=QN9PCT9EZNXFS3GX1BSQ%2F%3Ftag%3Da8-affi-258507-22">価格 ¥2,422-¥3,043<sup style="color: red;"><s>価格:¥2,850-¥3,580</s>(15%OFF)</sup></a></li>
+                       <li><a href="https://px.a8.net/svt/ejp?a8mat=1ZIM2A+34J5TU+249K+BWGDT&a8ejpredirect=https%3A%2F%2Fwww.amazon.co.jp%2FDeeplee-%E3%82%A8%E3%82%A2%E3%83%BC%E3%83%9E%E3%83%83%E3%83%88-%E3%82%AD%E3%83%A3%E3%83%B3%E3%83%97%E3%83%9E%E3%83%83%E3%83%88-%E3%82%AD%E3%83%A3%E3%83%B3%E3%83%94%E3%83%B3%E3%82%B0%E3%83%9E%E3%83%83%E3%83%88-40D%E3%83%8A%E3%82%A4%E3%83%AD%E3%83%B3/dp/B07QYZ118P/ref=gbph_tit_s-7_59d9_af54d7f5%3F%0D%0Asmid=A3EMZCR1N24HGS%26pf_rd_p=172feb36-7c12-4e76-afe0-4ec2d6c159d9%26pf_rd_s=slot-7%26pf_rd_t=701%26pf_rd_i=gb_main%26pf_rd_m=AN1VRQENFRJN5%26pf_rd_r=QN9PCT9EZNXFS3GX1BSQ%2F%3Ftag%3Da8-affi-258507-22">評価 <font style="color: orange;">★★★★☆</font></a></li>
+                       <li><a href="https://px.a8.net/svt/ejp?a8mat=1ZIM2A+34J5TU+249K+BWGDT&a8ejpredirect=https%3A%2F%2Fwww.amazon.co.jp%2FDeeplee-%E3%82%A8%E3%82%A2%E3%83%BC%E3%83%9E%E3%83%83%E3%83%88-%E3%82%AD%E3%83%A3%E3%83%B3%E3%83%97%E3%83%9E%E3%83%83%E3%83%88-%E3%82%AD%E3%83%A3%E3%83%B3%E3%83%94%E3%83%B3%E3%82%B0%E3%83%9E%E3%83%83%E3%83%88-40D%E3%83%8A%E3%82%A4%E3%83%AD%E3%83%B3/dp/B07QYZ118P/ref=gbph_tit_s-7_59d9_af54d7f5%3F%0D%0Asmid=A3EMZCR1N24HGS%26pf_rd_p=172feb36-7c12-4e76-afe0-4ec2d6c159d9%26pf_rd_s=slot-7%26pf_rd_t=701%26pf_rd_i=gb_main%26pf_rd_m=AN1VRQENFRJN5%26pf_rd_r=QN9PCT9EZNXFS3GX1BSQ%2F%3Ftag%3Da8-affi-258507-22">255件のレビュー</a></li>
+                   </ul>
+                   <p><button type="button" class="btn btn-success" data-toggle="collapse" data-target="#collapseItem6" aria-expanded="false" aria-controls="collapseItem6">レビューを表示</button></p>
+                   <div class="collapse" id="collapseItem6">
+                       <div class="card card-body">
+                           <hr><p><u><b>レビュー</b></u><br>
+                           車中泊する為エアーマットを色々と探しましたが、数15-20回息を吹き込むだけで簡単に完成させる事ができました。しまう時も畳みながら空気を抜けば簡単に収納する事ができました。ウレタンフォーム入りのものを購入するか迷いましたが、こちらは意外と寝心地がよくカビも生えにくそうなので良かったです。（ウレタンフォームは寝汗を放置してたり、洗った後に完全に乾かさないとカビが生えそう）アウトドア用というよりも普段使う寝具として購入してみました（ベッドを置くスペースが無かった為）とても柔らかく個人的にはこのままでも朝まで寝られましたが、完全なベッドとして十分な睡眠を得るにはこの上に何も敷かないのは厳しかったです。（当たり前ですが…）その為普段はぶ厚い寝袋を下に敷いています。それで普通に寝られるようになりました。,キャンプツーリング用に購入。かさばらないのが何より気に入りました☆自分の息を吹き込んでふくらます手間は要りますがそんなに苦はなりませんでした。片付けも楽にできました。エアー式マットとしては軽量、コンパクトで買って良かったと思います。,値段の割にはしっかりしていて、使用感も問題無かった。空気を入れるのも簡単です。重さも軽量で問題無しです。セッティングはハンドポンプで膨らませるので２分くらいで完成します。気持ちよく使えました。キャンプに欠かせない一品です！良い商品をありがとうございました。友人にもオススメしました。</p>
+                       </div>
+                   </div>
+                   <button type="button" class="btn btn-primary d-block center-margin-0-auto ccs-product-counter">
+                       <a href="http://twitter.com/share?url=https%3A%2F%2Famazondeals.github.io%2FamazonDealsJP%2FLadiesShoes.html%23card-p-id-6&text=%E4%B8%AD%E6%B3%8A%E3%81%99%E3%82%8B%E7%82%BA%E3%82%A8%E3%82%A2%E3%83%BC%E3%83%9E%E3%83%83%E3%83%88%E3%82%92%E8%89%B2%E3%80%85%E3%81%A8%E6%8E%A2%E3%81%97%E3%81%BE%E3%81%97%E3%81%9F%E3%81%8C%E3%80%81%E6%95%B015-20%E5%9B%9E%E6%81%AF%E3%82%92%E5%90%B9%E3%81%8D%E8%BE%BC%E3%82%80%E3%81%A0%E3%81%91%E3%81%A7%E7%B0%A1%E5%8D%98%E3%81%AB%E5%AE%8C%E6%88%90%E3%81%95%E3%81%9B%E3%82%8B%E4%BA%8B%E3%81%8C%E3%81%A7%E3%81%8D%E3%81%BE%E3%81%97%E3%81%9F%E3%80%82%E3%81%97%E3%81%BE%E3%81%86%E6%99%82%E3%82%82%E7%95%B3%E3%81%BF%E3%81%AA%E3%81%8C%E3%82%89%E7%A9%BA%E6%B0%97%E3%82%92%E6%8A%9C%E3%81%91%E3%81%B0%E7%B0%A1%E5%8D%98%E3%81%AB%E5%8F%8E%E7%B4%8D%E3%81%99%E3%82%8B%E4%BA%8B%E3%81%8C%E3%81%A7%E3%81%8D%E3%81%BE%E3%81%97%E3%81%9F%E3%80%82%E3%82%A6%E3%83%AC%E3%82%BF%E3%83%B3%E3%83%95%E3%82%A9%E3%83%BC%E3%83%A0%E5%85%A5%E3%82%8A%E3%81%AE%E3%82%82%E3%81%AE%E3%82%92%E8%B3%BC&hashtags=%E3%83%AC%E3%83%87%E3%82%A3%E3%83%BC%E3%82%B9%E3%82%B7%E3%83%A5%E3%83%BC%E3%82%BA">Tweet</a>
+                   </button>
+               </div>
+           </div>
+           <div id="card-p-id-7" class="card product-card">
+               <img src="https://images-na.ssl-images-amazon.com/images/I/41ZMk6b0qHL._SCLZZZZZZZ___AA640_.jpg" alt="">
+               <div class="card-body">
+                   <h5 class="card-title mb-0"><a href="https://px.a8.net/svt/ejp?a8mat=1ZIM2A+34J5TU+249K+BWGDT&a8ejpredirect=https%3A%2F%2Fwww.amazon.co.jp%2F%E3%80%90%E4%BB%A4%E5%92%8C%E6%9C%80%E6%96%B0%E7%89%88%EF%BC%86%E9%99%90%E7%95%8C%E7%AA%81%E7%A0%B438%E6%99%82%E9%96%93%E9%80%A3%E7%B6%9A%E5%86%8D%E7%94%9F%E3%80%91Bluetooth%E3%82%A4%E3%83%A4%E3%83%9B%E3%83%B3-Bluetooth5-0-%E9%96%8B%E9%96%89%E5%8F%AF%E8%83%BD%E5%91%BC%E5%90%B8%E3%83%A9%E3%83%B3%E3%83%97-%E3%83%AF%E3%82%A4%E3%83%A4%E3%83%AC%E3%82%B9%E3%82%A4%E3%83%A4%E3%83%9B%E3%83%B3-CVC8-0%E3%83%8E%E3%82%A4%E3%82%BA%E3%82%AD%E3%83%A3%E3%83%B3%E3%82%BB%E3%83%AA%E3%83%B3%E3%82%B0%E6%90%AD%E8%BC%89/dp/B07VVHYBD8/ref=gbph_tit_s-7_59d9_020f7f65%3F%0D%0Asmid=A1ST0UTB502JNW%26pf_rd_p=172feb36-7c12-4e76-afe0-4ec2d6c159d9%26pf_rd_s=slot-7%26pf_rd_t=701%26pf_rd_i=gb_main%26pf_rd_m=AN1VRQENFRJN5%26pf_rd_r=QN9PCT9EZNXFS3GX1BSQ%2F%3Ftag%3Da8-affi-258507-22.html">【令和最新版＆限界突破38時間連続再生】BluetoothイヤホンBluetooth5.0スポーツイヤホン開閉可能呼吸ランプ38時間使用&720時間待機自動ペアリング15M通信範囲Hi-Fi高音質ワイヤレスイヤホンIPX7防水マイク付きランニング用CVC8.0ノイズキャンセリング搭載ハンズフリー通話Siri起動可能ブルートゥースイヤホンiPhone/iPad/Android適用</a></h5>
+                   <ul>
+                       <li><a href="https://px.a8.net/svt/ejp?a8mat=1ZIM2A+34J5TU+249K+BWGDT&a8ejpredirect=https%3A%2F%2Fwww.amazon.co.jp%2F%E3%80%90%E4%BB%A4%E5%92%8C%E6%9C%80%E6%96%B0%E7%89%88%EF%BC%86%E9%99%90%E7%95%8C%E7%AA%81%E7%A0%B438%E6%99%82%E9%96%93%E9%80%A3%E7%B6%9A%E5%86%8D%E7%94%9F%E3%80%91Bluetooth%E3%82%A4%E3%83%A4%E3%83%9B%E3%83%B3-Bluetooth5-0-%E9%96%8B%E9%96%89%E5%8F%AF%E8%83%BD%E5%91%BC%E5%90%B8%E3%83%A9%E3%83%B3%E3%83%97-%E3%83%AF%E3%82%A4%E3%83%A4%E3%83%AC%E3%82%B9%E3%82%A4%E3%83%A4%E3%83%9B%E3%83%B3-CVC8-0%E3%83%8E%E3%82%A4%E3%82%BA%E3%82%AD%E3%83%A3%E3%83%B3%E3%82%BB%E3%83%AA%E3%83%B3%E3%82%B0%E6%90%AD%E8%BC%89/dp/B07VVHYBD8/ref=gbph_tit_s-7_59d9_020f7f65%3F%0D%0Asmid=A1ST0UTB502JNW%26pf_rd_p=172feb36-7c12-4e76-afe0-4ec2d6c159d9%26pf_rd_s=slot-7%26pf_rd_t=701%26pf_rd_i=gb_main%26pf_rd_m=AN1VRQENFRJN5%26pf_rd_r=QN9PCT9EZNXFS3GX1BSQ%2F%3Ftag%3Da8-affi-258507-22">価格 ¥2,530<sup style="color: red;"><s>価格:¥3,180</s>(20%OFF)</sup></a></li>
+                       <li><a href="https://px.a8.net/svt/ejp?a8mat=1ZIM2A+34J5TU+249K+BWGDT&a8ejpredirect=https%3A%2F%2Fwww.amazon.co.jp%2F%E3%80%90%E4%BB%A4%E5%92%8C%E6%9C%80%E6%96%B0%E7%89%88%EF%BC%86%E9%99%90%E7%95%8C%E7%AA%81%E7%A0%B438%E6%99%82%E9%96%93%E9%80%A3%E7%B6%9A%E5%86%8D%E7%94%9F%E3%80%91Bluetooth%E3%82%A4%E3%83%A4%E3%83%9B%E3%83%B3-Bluetooth5-0-%E9%96%8B%E9%96%89%E5%8F%AF%E8%83%BD%E5%91%BC%E5%90%B8%E3%83%A9%E3%83%B3%E3%83%97-%E3%83%AF%E3%82%A4%E3%83%A4%E3%83%AC%E3%82%B9%E3%82%A4%E3%83%A4%E3%83%9B%E3%83%B3-CVC8-0%E3%83%8E%E3%82%A4%E3%82%BA%E3%82%AD%E3%83%A3%E3%83%B3%E3%82%BB%E3%83%AA%E3%83%B3%E3%82%B0%E6%90%AD%E8%BC%89/dp/B07VVHYBD8/ref=gbph_tit_s-7_59d9_020f7f65%3F%0D%0Asmid=A1ST0UTB502JNW%26pf_rd_p=172feb36-7c12-4e76-afe0-4ec2d6c159d9%26pf_rd_s=slot-7%26pf_rd_t=701%26pf_rd_i=gb_main%26pf_rd_m=AN1VRQENFRJN5%26pf_rd_r=QN9PCT9EZNXFS3GX1BSQ%2F%3Ftag%3Da8-affi-258507-22">評価 <font style="color: orange;">★★★★☆</font></a></li>
+                       <li><a href="https://px.a8.net/svt/ejp?a8mat=1ZIM2A+34J5TU+249K+BWGDT&a8ejpredirect=https%3A%2F%2Fwww.amazon.co.jp%2F%E3%80%90%E4%BB%A4%E5%92%8C%E6%9C%80%E6%96%B0%E7%89%88%EF%BC%86%E9%99%90%E7%95%8C%E7%AA%81%E7%A0%B438%E6%99%82%E9%96%93%E9%80%A3%E7%B6%9A%E5%86%8D%E7%94%9F%E3%80%91Bluetooth%E3%82%A4%E3%83%A4%E3%83%9B%E3%83%B3-Bluetooth5-0-%E9%96%8B%E9%96%89%E5%8F%AF%E8%83%BD%E5%91%BC%E5%90%B8%E3%83%A9%E3%83%B3%E3%83%97-%E3%83%AF%E3%82%A4%E3%83%A4%E3%83%AC%E3%82%B9%E3%82%A4%E3%83%A4%E3%83%9B%E3%83%B3-CVC8-0%E3%83%8E%E3%82%A4%E3%82%BA%E3%82%AD%E3%83%A3%E3%83%B3%E3%82%BB%E3%83%AA%E3%83%B3%E3%82%B0%E6%90%AD%E8%BC%89/dp/B07VVHYBD8/ref=gbph_tit_s-7_59d9_020f7f65%3F%0D%0Asmid=A1ST0UTB502JNW%26pf_rd_p=172feb36-7c12-4e76-afe0-4ec2d6c159d9%26pf_rd_s=slot-7%26pf_rd_t=701%26pf_rd_i=gb_main%26pf_rd_m=AN1VRQENFRJN5%26pf_rd_r=QN9PCT9EZNXFS3GX1BSQ%2F%3Ftag%3Da8-affi-258507-22">87件のレビュー</a></li>
+                   </ul>
+                   <p><button type="button" class="btn btn-success" data-toggle="collapse" data-target="#collapseItem7" aria-expanded="false" aria-controls="collapseItem7">レビューを表示</button></p>
+                   <div class="collapse" id="collapseItem7">
+                       <div class="card card-body">
+                           <hr><p><u><b>レビュー</b></u><br>
+                           コンパクトで装着感に優れたワイヤレスイヤホンの登場です。サイズ、デザイン共に女性の方にオススメでございます！ランプが格好いいで自由にON/OFFできるなんてすごく使い心地が良いです。謳い文句のとおり38時間ほど連続再生できたので満足しています。音質の方、低域の量感は多めのバランスなのですが、ボワついたりこもった感じは控えめ。中高域に被りまくってボーカルが引っ込んでしまったりなどなく、中々ヌケがよく分離感も感じられるクリアな音質。そして、音の広がりもしっかりと感じられます。この価格帯の製品の中では頭一つ抜けた納得のクオリティだと思います。音の厚みや迫力とヌケの良さをしっかり両立した音質です。Bluetoothも非常に安定しており、切れることはほぼありません。ネックバンドタイプのワイヤレスイヤホンですが、装着してみてつけている感覚がほぼありませんでした。とても快適でネックバンド部分は柔らかく柔軟性がある為、軽く丸めて収納できるというコンパクトさ。,コンパクトで装着感に優れたワイヤレスイヤホンの登場です。サイズ、デザイン共に女性の方にオススメでございます！ペアリングは携帯電話とPCでテストしてみましたがスムーズにペアリングでき問題ありません。2回目以降は自動接続がかかるので接続が簡単です。首に常にぶら下げられるので聴きたい時にすぐ聴けますし、ごつくもないので悪目立ちもしません。音質を考えたときのコスパは良いとは言えないと思いますが、利便性を考えれば良い製品だと思います。私は非常に満足しています。,作業中のBGMとしてイヤホンで音楽を聴く事が多いのでなるべくバッテリーが長時間持続する物を希望していました。昨年購入したワイヤレスイヤホンは2時間程度のバッテリー寿命だったので席を外す際は充電ケーブルをつないでいましたが、こちらは作業終了まで充電の必要は無さそうです。もう秋なので大丈夫かと思いますが、夏場はイヤホンでも結構耳の汗が気になってました。(オーバーヘッドタイプのヘッドホンは暑くて無理でした)こちらは防汗対策がされているようなのでその点での故障確率は低くなってるのではないかと期待してます。ただ、説明書やパッケージのどこにも「IPX7防水」とは書かれていなかったのは気になりました。音質については「音楽が流れていればいい」程度のユーザーなのであまりこだわりは無いのですが、やや低音が強調されている感じはあります。聴いている音楽のジャンルによっては迫力を増したり、あるいは不自然に感じたりするかもしれません。</p>
+                       </div>
+                   </div>
+                   <button type="button" class="btn btn-primary d-block center-margin-0-auto ccs-product-counter">
+                       <a href="http://twitter.com/share?url=https%3A%2F%2Famazondeals.github.io%2FamazonDealsJP%2FLadiesShoes.html%23card-p-id-7&text=%E3%83%B3%E3%83%91%E3%82%AF%E3%83%88%E3%81%A7%E8%A3%85%E7%9D%80%E6%84%9F%E3%81%AB%E5%84%AA%E3%82%8C%E3%81%9F%E3%83%AF%E3%82%A4%E3%83%A4%E3%83%AC%E3%82%B9%E3%82%A4%E3%83%A4%E3%83%9B%E3%83%B3%E3%81%AE%E7%99%BB%E5%A0%B4%E3%81%A7%E3%81%99%E3%80%82%E3%82%B5%E3%82%A4%E3%82%BA%E3%80%81%E3%83%87%E3%82%B6%E3%82%A4%E3%83%B3%E5%85%B1%E3%81%AB%E5%A5%B3%E6%80%A7%E3%81%AE%E6%96%B9%E3%81%AB%E3%82%AA%E3%82%B9%E3%82%B9%E3%83%A1%E3%81%A7%E3%81%94%E3%81%96%E3%81%84%E3%81%BE%E3%81%99%EF%BC%81%E3%83%A9%E3%83%B3%E3%83%97%E3%81%8C%E6%A0%BC%E5%A5%BD%E3%81%84%E3%81%84%E3%81%A7%E8%87%AA%E7%94%B1%E3%81%ABON%2FOFF%E3%81%A7%E3%81%8D%E3%82%8B%E3%81%AA%E3%82%93%E3%81%A6%E3%81%99%E3%81%94%E3%81%8F%E4%BD%BF%E3%81%84%E5%BF%83%E5%9C%B0%E3%81%8C%E8%89%AF%E3%81%84%E3%81%A7%E3%81%99%E3%80%82%E8%AC%B3%E3%81%84%E6%96%87%E5%8F%A5%E3%81%AE%E3%81%A8%E3%81%8A%E3%82%8A38&hashtags=%E3%83%AC%E3%83%87%E3%82%A3%E3%83%BC%E3%82%B9%E3%82%B7%E3%83%A5%E3%83%BC%E3%82%BA">Tweet</a>
+                   </button>
+               </div>
+           </div>
+           <div id="card-p-id-8" class="card product-card">
+               <img src="https://images-na.ssl-images-amazon.com/images/I/41aQqYYtfzL._SCLZZZZZZZ___AA640_.jpg" alt="">
+               <div class="card-body">
+                   <h5 class="card-title mb-0"><a href="https://px.a8.net/svt/ejp?a8mat=1ZIM2A+34J5TU+249K+BWGDT&a8ejpredirect=https%3A%2F%2Fwww.amazon.co.jp%2F%E9%9B%BB%E6%B0%97%E3%83%96%E3%83%A9%E3%83%B3%E3%82%B1%E3%83%83%E3%83%88-USB%E3%83%96%E3%83%A9%E3%83%B3%E3%82%B1%E3%83%83%E3%83%88-%E8%82%A9%E6%8E%9B%E3%81%91%E3%80%902019%E5%B9%B4%E6%9C%80%E6%96%B0%E5%BC%B7%E5%8C%96%E7%89%88-%E3%81%82%E3%81%A3%E3%81%9F%E3%81%8B%E3%83%96%E3%83%A9%E3%83%B3%E3%82%B1%E3%83%83%E3%83%88%E3%80%91%E3%81%8A%E3%81%97%E3%82%83%E3%82%8C-%E6%97%A5%E6%9C%AC%E8%AA%9E%E8%AA%AC%E6%98%8E%E6%9B%B8%E4%BB%98%E3%81%8D/dp/B07X8VY3JJ/ref=gbph_tit_s-7_59d9_0adbcc39%3F%0D%0Asmid=A2ZY6FGDJSS7RS%26pf_rd_p=172feb36-7c12-4e76-afe0-4ec2d6c159d9%26pf_rd_s=slot-7%26pf_rd_t=701%26pf_rd_i=gb_main%26pf_rd_m=AN1VRQENFRJN5%26pf_rd_r=QN9PCT9EZNXFS3GX1BSQ%2F%3Ftag%3Da8-affi-258507-22.html">電気ブランケットUSBブランケットひざ掛け肩掛け【2019年最新強化版あったかブランケット】電気毛布柔らかい肌に優しいおしゃれ寒さ対策車中暖房オフィス旅行出張キャンプ用品日本語説明書付き冬物家電ブラック</a></h5>
+                   <ul>
+                       <li><a href="https://px.a8.net/svt/ejp?a8mat=1ZIM2A+34J5TU+249K+BWGDT&a8ejpredirect=https%3A%2F%2Fwww.amazon.co.jp%2F%E9%9B%BB%E6%B0%97%E3%83%96%E3%83%A9%E3%83%B3%E3%82%B1%E3%83%83%E3%83%88-USB%E3%83%96%E3%83%A9%E3%83%B3%E3%82%B1%E3%83%83%E3%83%88-%E8%82%A9%E6%8E%9B%E3%81%91%E3%80%902019%E5%B9%B4%E6%9C%80%E6%96%B0%E5%BC%B7%E5%8C%96%E7%89%88-%E3%81%82%E3%81%A3%E3%81%9F%E3%81%8B%E3%83%96%E3%83%A9%E3%83%B3%E3%82%B1%E3%83%83%E3%83%88%E3%80%91%E3%81%8A%E3%81%97%E3%82%83%E3%82%8C-%E6%97%A5%E6%9C%AC%E8%AA%9E%E8%AA%AC%E6%98%8E%E6%9B%B8%E4%BB%98%E3%81%8D/dp/B07X8VY3JJ/ref=gbph_tit_s-7_59d9_0adbcc39%3F%0D%0Asmid=A2ZY6FGDJSS7RS%26pf_rd_p=172feb36-7c12-4e76-afe0-4ec2d6c159d9%26pf_rd_s=slot-7%26pf_rd_t=701%26pf_rd_i=gb_main%26pf_rd_m=AN1VRQENFRJN5%26pf_rd_r=QN9PCT9EZNXFS3GX1BSQ%2F%3Ftag%3Da8-affi-258507-22">価格 ¥1,938<sup style="color: red;"><s>価格:¥2,480</s>(22%OFF)</sup></a></li>
+                       <li><a href="https://px.a8.net/svt/ejp?a8mat=1ZIM2A+34J5TU+249K+BWGDT&a8ejpredirect=https%3A%2F%2Fwww.amazon.co.jp%2F%E9%9B%BB%E6%B0%97%E3%83%96%E3%83%A9%E3%83%B3%E3%82%B1%E3%83%83%E3%83%88-USB%E3%83%96%E3%83%A9%E3%83%B3%E3%82%B1%E3%83%83%E3%83%88-%E8%82%A9%E6%8E%9B%E3%81%91%E3%80%902019%E5%B9%B4%E6%9C%80%E6%96%B0%E5%BC%B7%E5%8C%96%E7%89%88-%E3%81%82%E3%81%A3%E3%81%9F%E3%81%8B%E3%83%96%E3%83%A9%E3%83%B3%E3%82%B1%E3%83%83%E3%83%88%E3%80%91%E3%81%8A%E3%81%97%E3%82%83%E3%82%8C-%E6%97%A5%E6%9C%AC%E8%AA%9E%E8%AA%AC%E6%98%8E%E6%9B%B8%E4%BB%98%E3%81%8D/dp/B07X8VY3JJ/ref=gbph_tit_s-7_59d9_0adbcc39%3F%0D%0Asmid=A2ZY6FGDJSS7RS%26pf_rd_p=172feb36-7c12-4e76-afe0-4ec2d6c159d9%26pf_rd_s=slot-7%26pf_rd_t=701%26pf_rd_i=gb_main%26pf_rd_m=AN1VRQENFRJN5%26pf_rd_r=QN9PCT9EZNXFS3GX1BSQ%2F%3Ftag%3Da8-affi-258507-22">評価 <font style="color: orange;">★★★★</font></a></li>
+                       <li><a href="https://px.a8.net/svt/ejp?a8mat=1ZIM2A+34J5TU+249K+BWGDT&a8ejpredirect=https%3A%2F%2Fwww.amazon.co.jp%2F%E9%9B%BB%E6%B0%97%E3%83%96%E3%83%A9%E3%83%B3%E3%82%B1%E3%83%83%E3%83%88-USB%E3%83%96%E3%83%A9%E3%83%B3%E3%82%B1%E3%83%83%E3%83%88-%E8%82%A9%E6%8E%9B%E3%81%91%E3%80%902019%E5%B9%B4%E6%9C%80%E6%96%B0%E5%BC%B7%E5%8C%96%E7%89%88-%E3%81%82%E3%81%A3%E3%81%9F%E3%81%8B%E3%83%96%E3%83%A9%E3%83%B3%E3%82%B1%E3%83%83%E3%83%88%E3%80%91%E3%81%8A%E3%81%97%E3%82%83%E3%82%8C-%E6%97%A5%E6%9C%AC%E8%AA%9E%E8%AA%AC%E6%98%8E%E6%9B%B8%E4%BB%98%E3%81%8D/dp/B07X8VY3JJ/ref=gbph_tit_s-7_59d9_0adbcc39%3F%0D%0Asmid=A2ZY6FGDJSS7RS%26pf_rd_p=172feb36-7c12-4e76-afe0-4ec2d6c159d9%26pf_rd_s=slot-7%26pf_rd_t=701%26pf_rd_i=gb_main%26pf_rd_m=AN1VRQENFRJN5%26pf_rd_r=QN9PCT9EZNXFS3GX1BSQ%2F%3Ftag%3Da8-affi-258507-22">36件のレビュー</a></li>
+                   </ul>
+                   <p><button type="button" class="btn btn-success" data-toggle="collapse" data-target="#collapseItem8" aria-expanded="false" aria-controls="collapseItem8">レビューを表示</button></p>
+                   <div class="collapse" id="collapseItem8">
+                       <div class="card card-body">
+                           <hr><p><u><b>レビュー</b></u><br>
+                           そろそろ寒くなってくるのでusbブランケットが欲しいなーと思い探していました。サイズはちょうど良く軽くてそれをベースに選んで購入しましたが、商品自体はすぐに温まり、温度も中温ぐらいで私はぴったりでした。思ったとおり操作はusb式でお部屋でも野外でも使えるので大変便利で冬にはかなり使えそうな感じです。,いきなり気温が下がってきたので、購入しました。まず週末のアウトドアで使いましたがめちゃくちゃ役立ちました！コンセントでは無くUSBなのでズボンのポケットに充電器を入れてそこから電源供給しながら使用したのですがとても暖かく快適に過ごせました。冬のドライブでも窓側の肩が冷えていつも風邪を引きそうになっていたのですがこれがあればそんな心配無くなりそうです。期待以上の大活躍ぶりで追加購入を検討しています。,寒くなるので、こちらの商品を買ってみましたがとても使いやすい.電気掛け毛布を探していたのですが、あまり小さいのも大きすぎるのも邪魔になるので、さまざまな商品をみていました。大人の膝掛けとして十分な大きさですが、畳むとコンパクト。足全体をすっぽり包めるようにヨコの長さがもう少し長ければ、完璧です。もう一枚欲しいです！</p>
+                       </div>
+                   </div>
+                   <button type="button" class="btn btn-primary d-block center-margin-0-auto ccs-product-counter">
+                       <a href="http://twitter.com/share?url=https%3A%2F%2Famazondeals.github.io%2FamazonDealsJP%2FLadiesShoes.html%23card-p-id-8&text=%E3%82%8D%E3%81%9D%E3%82%8D%E5%AF%92%E3%81%8F%E3%81%AA%E3%81%A3%E3%81%A6%E3%81%8F%E3%82%8B%E3%81%AE%E3%81%A7usb%E3%83%96%E3%83%A9%E3%83%B3%E3%82%B1%E3%83%83%E3%83%88%E3%81%8C%E6%AC%B2%E3%81%97%E3%81%84%E3%81%AA%E3%83%BC%E3%81%A8%E6%80%9D%E3%81%84%E6%8E%A2%E3%81%97%E3%81%A6%E3%81%84%E3%81%BE%E3%81%97%E3%81%9F%E3%80%82%E3%82%B5%E3%82%A4%E3%82%BA%E3%81%AF%E3%81%A1%E3%82%87%E3%81%86%E3%81%A9%E8%89%AF%E3%81%8F%E8%BB%BD%E3%81%8F%E3%81%A6%E3%81%9D%E3%82%8C%E3%82%92%E3%83%99%E3%83%BC%E3%82%B9%E3%81%AB%E9%81%B8%E3%82%93%E3%81%A7%E8%B3%BC%E5%85%A5%E3%81%97%E3%81%BE%E3%81%97%E3%81%9F%E3%81%8C%E3%80%81%E5%95%86%E5%93%81%E8%87%AA%E4%BD%93%E3%81%AF%E3%81%99%E3%81%90%E3%81%AB%E6%B8%A9%E3%81%BE%E3%82%8A%E3%80%81%E6%B8%A9%E5%BA%A6%E3%82%82%E4%B8%AD%E6%B8%A9%E3%81%90%E3%82%89%E3%81%84%E3%81%A7%E7%A7%81%E3%81%AF%E3%81%B4%E3%81%A3%E3%81%9F%E3%82%8A%E3%81%A7%E3%81%97%E3%81%9F%E3%80%82&hashtags=%E3%83%AC%E3%83%87%E3%82%A3%E3%83%BC%E3%82%B9%E3%82%B7%E3%83%A5%E3%83%BC%E3%82%BA">Tweet</a>
+                   </button>
+               </div>
+           </div>
+        <div class="card-group">
+            <div class="card">
+                <button type="button" class="btn btn-warning d-block center-margin-0-auto ccs-product-counter"><a href="./PC.html">パソコン・周辺機器</a></button><button type="button" class="btn btn-warning d-block center-margin-0-auto ccs-product-counter"><a href="./DIY.html">DIY・工具・ガーデン</a></button><button type="button" class="btn btn-warning d-block center-margin-0-auto ccs-product-counter"><a href="./Camera.html">カメラ</a></button><button type="button" class="btn btn-warning d-block center-margin-0-auto ccs-product-counter"><a href="./Homeerectronics.html">家電</a></button><button type="button" class="btn btn-warning d-block center-margin-0-auto ccs-product-counter"><a href="./Headphone.html">イヤホン・ヘッドホン</a></button><button type="button" class="btn btn-warning d-block center-margin-0-auto ccs-product-counter"><a href="./Hobby.html">ホビー</a></button><button type="button" class="btn btn-warning d-block center-margin-0-auto ccs-product-counter"><a href="./Smartphone.html">携帯電話・スマートフォン</a></button><button type="button" class="btn btn-warning d-block center-margin-0-auto ccs-product-counter"><a href="./Drugstore.html">ドラッグストア</a></button><button type="button" class="btn btn-warning d-block center-margin-0-auto ccs-product-counter"><a href="./Beauty.html">ビューティー</a></button><button type="button" class="btn btn-warning d-block center-margin-0-auto ccs-product-counter"><a href="./Drink.html">食品・飲料・お酒</a></button><button type="button" class="btn btn-warning d-block center-margin-0-auto ccs-product-counter"><a href="./HomeKitchen.html">ホーム＆キッチン</a></button><button type="button" class="btn btn-warning d-block center-margin-0-auto ccs-product-counter"><a href="./MensShoes.html">メンズシューズ</a></button><button type="button" class="btn btn-warning d-block center-margin-0-auto ccs-product-counter"><a href="./LadiesShoes.html">レディースシューズ</a></button><button type="button" class="btn btn-warning d-block center-margin-0-auto ccs-product-counter"><a href="./Outdoor.html">スポーツ＆アウトドア</a></button><button type="button" class="btn btn-warning d-block center-margin-0-auto ccs-product-counter"><a href="./CarBike.html">カー＆バイク用品</a></button>
             </div>
         </div>
     </div>
-
-
-    <!-- Java Script
-    ================================================== -->
-    <script src="js/jquery-3.2.1.min.js"></script>
-    <script src="js/plugins.js"></script>
-    <script src="js/main.js"></script>
-
 </body>
-
-</html>
