@@ -1,0 +1,192 @@
+/*boxの枠線のデザイン、幅など*/
+
+#affili-box{
+    border: 3px solid #f8f8f8;
+    display: flex;
+    width: 100%;
+    margin-bottom: 20px;
+}
+
+/*1.イメージ画像の余白、、サイズ指定、上下中心など*/
+
+.afi-image {
+    padding: 30px 20px 0;
+    margin: auto 0;
+    max-width: 200px;
+    height: auto;
+}
+
+/*アフィリリンクのイメージ画像の最大サイズ指定*/
+
+.afi-image a img{
+    max-width: 200px;
+    height: auto;
+    padding-right: 20px;
+}
+
+/*右側（説明、ボタン）の余白、幅*/
+
+#afi-info{
+    padding: 30px 20px 0;
+    width: 80%;
+}
+
+/*本タイトルリンク(2)と説明(3)の間の余白*/
+
+.afi-detail{
+    margin-top: 5px;
+}
+
+/*ボタン、上の余白*/
+
+#link-button{
+    display: flex;
+    margin-top: 20px;
+}
+
+/*ボタンの文字の装飾*/
+
+#link-button a{
+    font-size: 15px;
+    color: white;
+    font-weight: bold;
+    font-family: arial;
+    text-decoration: none;
+    display: block;
+}
+
+/*それぞれのボタンの装飾*/
+
+.acite-btn{
+    background-color: #ffd700;
+    border-radius: 5px;
+    text-align: center;
+    margin-right: 5px;
+    width: 30%;
+    padding: 10px 0;
+}
+
+.bcite-btn{
+    background-color: #ff4500;
+    border-radius: 5px;
+    text-align: center;
+    margin-right: 5px;
+    width: 30%;
+    padding: 10px 0;
+}
+
+.ccite-btn{
+    background-color: #1e90ff;
+    border-radius: 5px;
+    text-align: center;
+    margin-right: 5px;
+    width: 30%;
+    padding: 10px 0;
+}
+
+/*１つボタンの時の装飾*/
+
+.acite-onebtn{
+    background-color: #1e90ff;
+    border-radius: 5px;
+    text-align: center;
+    width: 100%;
+    padding: 10px 0;
+}
+
+/*2つボタンの時の装飾*/
+
+.acite-twobtn{
+    background-color: #ffd700;
+    border-radius: 5px;
+    text-align: center;
+    margin-right: 5px;
+    width: 50%;
+    padding: 10px 0;
+}
+
+.bcite-twobtn{
+    background-color: #ff4500;
+    border-radius: 5px;
+    text-align: center;
+    margin-right: 5px;
+    width: 50%;
+    padding: 10px 0;
+}
+
+/*768pxになったら、ボタンが縦並びになる。ボタンの幅や余白など調整*/
+
+@media screen and (max-width: 768px) {
+    #link-button{
+	display: block;
+    }
+    
+    　　.acite-btn,.bcite-btn,.ccite-btn,.acite-twobtn,.bcite-twobtn{
+	margin: 0 auto 5px;
+	width: 80%;
+    }
+}
+
+/*480pxになったらすべて縦並びになる。ボタンの幅や余白、画像など調整*/
+
+@media screen and (max-width: 480px) {
+    #affili-box{
+	display: block;
+	text-align: center;
+	width: 100%;
+	}
+    
+    #afi-info{
+	margin: 10px auto 0;
+    }
+    
+    .afi-image{
+	max-width: 100%;
+    }
+    
+    .acite-btn,.bcite-btn,.ccite-btnn,.acite-twobtn,.bcite-twobtn{
+	margin: 0 auto 5px;
+	width: 80%;
+    }
+}
+
+/* CSS for LQIP blur added by Yama190220\n';
+   use calss "lazyload blur" instead of "lazyload" */\n';
+.blur {
+    -webkit-filter: blur(3px);
+    filter: blur(3px);
+    transition: filter 600ms, -webkit-filter 600ms;
+}
+.blur.lazyloaded {
+    -webkit-filter: blur(0);
+    filter: blur(0);
+}
+
+.yy_title { // 見出しの装飾
+    padding: 0.4em 0.5em; /* 文字の上下 左右の余白 */
+    color: #494949; /* 文字色 */
+    /* background: #f4f4f4; */ /* 背景色 */
+    border-left: solid 10px #7db4ff; /* 左線 */
+    border-bottom: solid 3px #d4d4d7; /* 下線 */
+}
+.yy_marker {
+    background:rgba(0, 0, 0, 0) linear-gradient(transparent 60%, #FFDFEF 0%) repeat scroll 0 0;
+}
+.yy_marker2 {
+    background:rgba(0, 0, 0, 0) linear-gradient(transparent 60%, #cce5ff 0%) repeat scroll 0 0;
+}
+.yy_marker3 {
+    background:rgba(0, 0, 0, 0) linear-gradient(transparent 60%, #ffffbc 0%) repeat scroll 0 0;
+}
+.yy_date {
+    text-align: left;
+    color: #ff6347;
+}
+.yy_author {
+    text-align: right;
+    color: #5f9ea0;
+}
+.yy_pubdate {
+    text-align: right;
+    color: #006400;
+}

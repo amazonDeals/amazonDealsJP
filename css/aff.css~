@@ -1,0 +1,151 @@
+/*boxの枠線のデザイン、幅など*/
+
+#affili-box{
+    border: 3px solid #f8f8f8;
+    display: flex;
+    width: 100%;
+    margin-bottom: 20px;
+}
+
+/*1.イメージ画像の余白、、サイズ指定、上下中心など*/
+
+.afi-image {
+    padding: 30px 20px 0;
+    margin: auto 0;
+    max-width: 200px;
+    height: auto;
+}
+
+/*アフィリリンクのイメージ画像の最大サイズ指定*/
+
+.afi-image a img{
+    max-width: 200px;
+    height: auto;
+    padding-right: 20px;
+}
+
+/*右側（説明、ボタン）の余白、幅*/
+
+#afi-info{
+    padding: 30px 20px 0;
+    width: 80%;
+}
+
+/*本タイトルリンク(2)と説明(3)の間の余白*/
+
+.afi-detail{
+    margin-top: 5px;
+}
+
+/*ボタン、上の余白*/
+
+#link-button{
+    display: flex;
+    margin-top: 20px;
+}
+
+/*ボタンの文字の装飾*/
+
+#link-button a{
+    font-size: 15px;
+    color: white;
+    font-weight: bold;
+    font-family: arial;
+    text-decoration: none;
+    display: block;
+}
+
+/*それぞれのボタンの装飾*/
+
+.acite-btn{
+    background-color: #ffd700;
+    border-radius: 5px;
+    text-align: center;
+    margin-right: 5px;
+    width: 30%;
+    padding: 10px 0;
+}
+
+.bcite-btn{
+    background-color: #ff4500;
+    border-radius: 5px;
+    text-align: center;
+    margin-right: 5px;
+    width: 30%;
+    padding: 10px 0;
+}
+
+.ccite-btn{
+    background-color: #1e90ff;
+    border-radius: 5px;
+    text-align: center;
+    margin-right: 5px;
+    width: 30%;
+    padding: 10px 0;
+}
+
+/*１つボタンの時の装飾*/
+
+.acite-onebtn{
+    background-color: #1e90ff;
+    border-radius: 5px;
+    text-align: center;
+    width: 100%;
+    padding: 10px 0;
+}
+
+/*2つボタンの時の装飾*/
+
+.acite-twobtn{
+    background-color: #ffd700;
+    border-radius: 5px;
+    text-align: center;
+    margin-right: 5px;
+    width: 50%;
+    padding: 10px 0;
+}
+
+.bcite-twobtn{
+    background-color: #ff4500;
+    border-radius: 5px;
+    text-align: center;
+    margin-right: 5px;
+    width: 50%;
+    padding: 10px 0;
+}
+
+/*768pxになったら、ボタンが縦並びになる。ボタンの幅や余白など調整*/
+
+@media screen and (max-width: 768px) {
+    #link-button{
+	display: block;
+    }
+    
+    　　.acite-btn,.bcite-btn,.ccite-btn,.acite-twobtn,.bcite-twobtn{
+	margin: 0 auto 5px;
+	width: 80%;
+    }
+}
+
+/*480pxになったらすべて縦並びになる。ボタンの幅や余白、画像など調整*/
+
+@media screen and (max-width: 480px) {
+    #affili-box{
+	display: block;
+	text-align: center;
+	width: 100%;
+	}
+    
+    #afi-info{
+	margin: 10px auto 0;
+    }
+    
+    .afi-image{
+	max-width: 100%;
+    }
+    
+    .acite-btn,.bcite-btn,.ccite-btnn,.acite-twobtn,.bcite-twobtn{
+	margin: 0 auto 5px;
+	width: 80%;
+    }
+}
